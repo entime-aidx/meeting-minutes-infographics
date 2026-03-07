@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>議事録：Lark エキスパートコース Day2 外部連携実践</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --accent-dim: #0ea5e9;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --success: #4ade80;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem;
+      line-height: 1.7;
+    }
+    .container { max-width: 960px; margin: 0 auto; }
+    
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .meta { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted); }
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    
+    section {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--border);
+    }
+    section h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    section h3 {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    ul { list-style: none; }
+    li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent-dim);
+      font-weight: 700;
+    }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+    
+    .diagram-box {
+      background: rgba(0,0,0,0.25);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin: 1rem 0;
+      border: 1px solid var(--border);
+    }
+    .diagram-box .mermaid {
+      display: flex;
+      justify-content: center;
+    }
+    .diagram-caption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+    
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th, td { padding: 0.6rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { color: var(--text-muted); font-weight: 600; font-size: 0.8rem; width: 35%; }
+    
+    .term-card {
+      background: rgba(0,0,0,0.2);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
+      font-size: 0.88rem;
+    }
+    .term-card strong { color: var(--accent); }
+    
+    .flow-visual {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 1rem 0;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+    }
+    .flow-step {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-align: center;
+      flex: 1;
+      min-width: 80px;
+    }
+    .flow-arrow {
+      color: var(--accent);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    footer { margin-top: 2rem; padding-top: 1rem; font-size: 0.8rem; color: var(--text-muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Lark エキスパートコース Day2 外部連携実践</h1>
+      <p class="meta">2026年3月7日（土）｜オンライン｜約2時間31分｜講師：遠藤匠馬</p>
+      <span class="badge">議事録＋復習用</span>
+    </header>
+
+    <!-- 図解1: 全体の流れ -->
+    <section>
+      <h2>📊 本日の流れ（図解）</h2>
+      <div class="diagram-box">
+        <div class="mermaid">
+flowchart TD
+    A[前回おさらい<br>API・認証・Webhook] --> B[HTTPの解説]
+    B --> C[メソッド・ステータスコード]
+    C --> D[JSONデータ形式]
+    D --> E[GASの概要]
+    E --> F[実技① GAS→Base]
+    F --> G[休憩]
+    G --> H[実技② Base→GAS]
+    H --> I[質疑応答・終了]
+        </div>
+        <p class="diagram-caption">議論の流れ</p>
+      </div>
+    </section>
+
+    <div class="grid2">
+      <section>
+        <h2>開催概要</h2>
+        <p><strong>参加者：</strong>笹原・MANABU・鎌田・山本・宮平・原田・藤田・志田・砂川 ほか</p>
+        <p style="margin-top:0.5rem;"><strong>目的：</strong>HTTP・JSON・GASの理解、Base×GAS双方向連携の実践</p>
+      </section>
+      <section>
+        <h2>主要トピック</h2>
+        <p>HTTPメソッド（GET/POST/PUT/PATCH/DELETE）、ステータスコード、JSON、GAS（コンテナバインド/スタンドアロン）</p>
+      </section>
+    </div>
+
+    <!-- HTTPメソッド -->
+    <section>
+      <h2>🌐 HTTPメソッドとステータスコード</h2>
+      <table>
+        <tr><th>メソッド</th><th>用途</th></tr>
+        <tr><td>GET</td><td>情報取得</td></tr>
+        <tr><td>POST</td><td>新規作成</td></tr>
+        <tr><td>PUT</td><td>情報更新</td></tr>
+        <tr><td>PATCH</td><td>部分更新</td></tr>
+        <tr><td>DELETE</td><td>情報削除</td></tr>
+      </table>
+      <p style="margin-top:0.75rem; font-size:0.85rem; color:var(--text-muted);">
+        <strong>ステータスコード：</strong>200番台＝成功 / 400番台＝クライアント側エラー / 500番台＝サーバー側エラー
+      </p>
+    </section>
+
+    <!-- 実技の流れ -->
+    <section>
+      <h2>🔄 実技：GAS ⇄ Base 双方向連携</h2>
+      <h3>① GAS → Base</h3>
+      <div class="flow-visual">
+        <span class="flow-step">スプレッドシート</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">GAS実行</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Webhook URL</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">Baseレコード追加</span>
+      </div>
+      <h3>② Base → GAS</h3>
+      <div class="flow-visual">
+        <span class="flow-step">Baseボタン</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">HTTP POST</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">GASデプロイURL</span>
+        <span class="flow-arrow">→</span>
+        <span class="flow-step">シート書き込み</span>
+      </div>
+    </section>
+
+    <!-- JSON・GAS -->
+    <section>
+      <h2>📦 JSON と GAS</h2>
+      <div class="term-card">
+        <strong>JSON</strong>＝HTTP通信時のデータ形式。キーとバリュー。文字列はダブルクォーテーション、数字はそのまま。
+      </div>
+      <div class="term-card">
+        <strong>GAS</strong>＝Google Apps Script。コンテナバインド（スプシ紐づき）とスタンドアロン（ドライブ単体）の2種類。
+      </div>
+    </section>
+
+    <!-- 質疑の要点 -->
+    <section>
+      <h2>❓ 質疑の要点</h2>
+      <ul>
+        <li><strong>仕事での活用：</strong>各APIを調べ、Lark・Baseと連携。kintone・Salesforce等は外部連携知識が必須</li>
+        <li><strong>自動化なしで可能？</strong>Lark APIを直接叩く場合はGASだけで完結</li>
+        <li><strong>AIでコード生成：</strong>処理の流れ・Webhookの有無を明確に伝えると精度が上がる</li>
+        <li><strong>エラー調査：</strong>手がかり（ステータスコード・ログ）を掴んでからAIに投げる</li>
+      </ul>
+    </section>
+
+    <!-- ネクストアクション -->
+    <section>
+      <h2>📌 ネクストアクション</h2>
+      <ul>
+        <li><strong>全員：</strong>クロード（Pro推奨）に触れておく</li>
+        <li><strong>次回：</strong>Lark API・MCP連携の実践</li>
+        <li><strong>遠藤氏：</strong>ガス関連のわかりやすいYouTubeを共有</li>
+      </ul>
+    </section>
+
+    <footer>
+      Lark 議事録Skill により作成｜アーカイブ復習用｜詳細は議事録Markdownを参照
+    </footer>
+  </div>
+
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'dark',
+      themeVariables: {
+        primaryColor: '#1e293b',
+        primaryTextColor: '#f1f5f9',
+        primaryBorderColor: '#38bdf8',
+        lineColor: '#94a3b8',
+        secondaryColor: '#0f172a',
+        tertiaryColor: '#334155'
+      }
+    });
+  </script>
+</body>
+</html>
