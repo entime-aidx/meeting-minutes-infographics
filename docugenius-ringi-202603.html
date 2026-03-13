@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DocuGenius 導入稟議 — 守成クラブ宮崎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07090f;
+  --bg-card: #0f1219;
+  --bg-card-alt: #141a24;
+  --bg-highlight: #1a2233;
+  --accent: #38bdf8;
+  --accent-dim: rgba(56,189,248,.1);
+  --accent-border: rgba(56,189,248,.25);
+  --gold: #f0b429;
+  --gold-dim: rgba(240,180,41,.1);
+  --gold-border: rgba(240,180,41,.25);
+  --red: #f87171;
+  --red-dim: rgba(248,113,113,.08);
+  --red-border: rgba(248,113,113,.2);
+  --green: #34d399;
+  --green-dim: rgba(52,211,153,.08);
+  --green-border: rgba(52,211,153,.2);
+  --text: #e4e8f0;
+  --text-sub: #8899b0;
+  --text-dim: #4d5d73;
+  --border: rgba(255,255,255,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Noto Sans JP','DM Sans',sans-serif;
+  font-weight:400;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px;}
+
+/* ── HERO ── */
+.hero{
+  position:relative;padding:72px 0 56px;text-align:center;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-300px;left:50%;transform:translateX(-50%);
+  width:900px;height:900px;
+  background:radial-gradient(circle,rgba(56,189,248,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--accent-border);padding:5px 18px;border-radius:20px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-size:clamp(26px,4.5vw,48px);font-weight:900;line-height:1.15;
+  letter-spacing:-1px;margin-bottom:14px;
+}
+.hero h1 em{font-style:normal;color:var(--accent);}
+.hero-sub{
+  font-size:15px;color:var(--text-sub);max-width:560px;margin:0 auto 36px;
+}
+.hero-amount{
+  display:inline-flex;align-items:baseline;gap:6px;
+  background:var(--accent-dim);border:1px solid var(--accent-border);
+  padding:12px 32px;border-radius:8px;
+}
+.hero-amount .yen{
+  font-family:'DM Sans',sans-serif;font-size:42px;font-weight:700;
+  color:var(--accent);line-height:1;
+}
+.hero-amount .yen small{font-size:18px;font-weight:500;}
+.hero-amount .tax{font-size:13px;color:var(--text-sub);}
+
+/* ── SECTION ── */
+.section{padding:56px 0;border-top:1px solid var(--border);}
+.s-label{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;
+}
+.s-label.blue{color:var(--accent);}
+.s-label.red{color:var(--red);}
+.s-label.green{color:var(--green);}
+.s-label.gold{color:var(--gold);}
+.s-title{
+  font-size:clamp(20px,3vw,30px);font-weight:700;line-height:1.3;margin-bottom:10px;
+}
+.s-lead{font-size:14px;color:var(--text-sub);max-width:680px;margin-bottom:32px;}
+
+/* ── ONELINER ── */
+.oneliner{
+  background:var(--bg-card);border:1px solid var(--accent-border);
+  border-radius:8px;padding:28px 32px;text-align:center;
+  margin-bottom:8px;
+}
+.oneliner p{font-size:17px;font-weight:700;line-height:1.6;}
+.oneliner em{font-style:normal;color:var(--accent);}
+
+/* ── PROBLEM CARDS ── */
+.problems{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.p-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-left:3px solid var(--red);padding:22px 24px;border-radius:4px;
+}
+.p-card .p-num{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  color:var(--red);letter-spacing:1px;margin-bottom:6px;
+}
+.p-card h3{font-size:15px;font-weight:700;margin-bottom:8px;}
+.p-card p{font-size:13px;color:var(--text-sub);line-height:1.65;}
+
+/* ── FLOW ── */
+.flow-compare{
+  display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:stretch;
+}
+@media(max-width:700px){
+  .flow-compare{grid-template-columns:1fr;gap:12px;}
+  .flow-arrow{transform:rotate(90deg);}
+}
+.flow-box{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:8px;padding:28px 24px;
+}
+.flow-box.bad{border-top:3px solid var(--red);}
+.flow-box.good{border-top:3px solid var(--green);}
+.flow-box .fb-label{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;
+}
+.flow-box.bad .fb-label{color:var(--red);}
+.flow-box.good .fb-label{color:var(--green);}
+.flow-steps{list-style:none;}
+.flow-steps li{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 0;border-bottom:1px solid var(--border);
+  font-size:14px;
+}
+.flow-steps li:last-child{border-bottom:none;}
+.flow-steps .step-icon{
+  flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;
+}
+.flow-box.bad .step-icon{background:var(--red-dim);color:var(--red);}
+.flow-box.good .step-icon{background:var(--green-dim);color:var(--green);}
+.flow-steps .step-warn{
+  display:inline-block;font-size:11px;font-weight:600;
+  color:var(--red);background:var(--red-dim);
+  padding:2px 8px;border-radius:3px;margin-left:auto;
+}
+.flow-steps .step-ok{
+  display:inline-block;font-size:11px;font-weight:600;
+  color:var(--green);background:var(--green-dim);
+  padding:2px 8px;border-radius:3px;margin-left:auto;
+}
+.flow-arrow{
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-size:28px;padding-top:40px;
+}
+
+/* ── CHANGE TABLE ── */
+.change-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;
+  margin-top:24px;
+}
+.change-item{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:6px;padding:20px;text-align:center;
+}
+.change-item .ci-label{font-size:12px;color:var(--text-sub);margin-bottom:8px;}
+.change-item .ci-before{
+  font-size:13px;color:var(--red);text-decoration:line-through;margin-bottom:4px;
+}
+.change-item .ci-after{font-size:16px;font-weight:700;color:var(--green);}
+
+/* ── ROI ── */
+.roi-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;}
+.roi-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:8px;padding:28px 24px;position:relative;overflow:hidden;
+}
+.roi-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+}
+.roi-card.monthly::before{background:var(--accent);}
+.roi-card.yearly::before{background:var(--gold);}
+.roi-card.intangible::before{background:var(--green);}
+.roi-card .rc-num{
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;
+}
+.roi-card.monthly .rc-num{color:var(--accent);}
+.roi-card.yearly .rc-num{color:var(--gold);}
+.roi-card.intangible .rc-num{color:var(--green);}
+.roi-card h3{font-size:16px;font-weight:700;margin-bottom:14px;}
+
+.calc-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;
+}
+.calc-row:last-child{border-bottom:none;}
+.calc-row .cr-label{color:var(--text-sub);}
+.calc-row .cr-value{
+  font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;
+}
+.calc-row.highlight{
+  background:var(--accent-dim);margin:8px -12px 0;padding:10px 12px;
+  border-radius:4px;border-bottom:none;
+}
+.calc-row.highlight .cr-value{color:var(--accent);font-size:17px;}
+.calc-row.highlight-gold{
+  background:var(--gold-dim);margin:8px -12px 0;padding:10px 12px;
+  border-radius:4px;border-bottom:none;
+}
+.calc-row.highlight-gold .cr-value{color:var(--gold);font-size:17px;}
+.intangible-list{list-style:none;}
+.intangible-list li{
+  display:flex;gap:10px;padding:10px 0;
+  border-bottom:1px solid var(--border);font-size:13px;
+}
+.intangible-list li:last-child{border-bottom:none;}
+.intangible-list .il-icon{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  background:var(--green-dim);color:var(--green);
+  display:flex;align-items:center;justify-content:center;font-size:12px;
+}
+.intangible-list .il-title{font-weight:600;margin-bottom:2px;}
+.intangible-list .il-desc{color:var(--text-sub);font-size:12px;line-height:1.5;}
+
+/* ── ALIGNMENT ── */
+.align-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;}
+.align-item{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-left:3px solid var(--gold);padding:20px 22px;border-radius:4px;
+}
+.align-item .ai-kpi{
+  font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;
+  color:var(--gold);margin-bottom:6px;
+}
+.align-item h4{font-size:14px;font-weight:700;margin-bottom:6px;}
+.align-item p{font-size:13px;color:var(--text-sub);line-height:1.5;}
+
+/* ── SUMMARY ── */
+.summary-box{
+  background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(240,180,41,.04));
+  border:1px solid var(--accent-border);border-radius:10px;
+  padding:36px 32px;
+}
+.summary-items{list-style:none;counter-reset:si;}
+.summary-items li{
+  counter-increment:si;display:flex;align-items:flex-start;gap:14px;
+  padding:14px 0;border-bottom:1px solid var(--border);font-size:15px;font-weight:500;
+}
+.summary-items li:last-child{border-bottom:none;}
+.summary-items li::before{
+  content:counter(si);flex-shrink:0;
+  width:32px;height:32px;border-radius:50%;
+  background:var(--accent-dim);color:var(--accent);
+  font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.summary-items em{font-style:normal;color:var(--accent);}
+
+/* ── FOOTER ── */
+.footer{
+  padding:40px 0;border-top:1px solid var(--border);
+  text-align:center;font-size:12px;color:var(--text-dim);
+}
+
+/* ── GAUGE ── */
+.gauge-wrap{
+  display:flex;align-items:center;justify-content:center;gap:40px;
+  margin:32px 0;flex-wrap:wrap;
+}
+.gauge{position:relative;width:160px;height:160px;}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg);}
+.gauge circle{fill:none;stroke-width:10;}
+.gauge .bg{stroke:var(--border);}
+.gauge .fg{stroke-linecap:round;transition:stroke-dashoffset .8s ease;}
+.gauge .center-text{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  text-align:center;
+}
+.gauge .gt-value{
+  font-family:'DM Sans',sans-serif;font-size:32px;font-weight:700;line-height:1;
+}
+.gauge .gt-label{font-size:11px;color:var(--text-sub);margin-top:4px;}
+
+/* ── ANIM ── */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-badge">Approval Request — 2026.03</div>
+    <h1>名簿印刷を<em>自動化</em>する<br>最後の一手</h1>
+    <p class="hero-sub">Larkの会員データから印刷用名簿を自動生成するサードパーティツール「DocuGenius」の導入稟議</p>
+    <div class="hero-amount">
+      <span class="yen">¥3,300<small>/月</small></span>
+      <span class="tax">（税込）</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ひと言で ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="oneliner">
+      <p>Larkのデータから印刷用の名簿を<em>自動で生成</em>できるツールです。<br>手作業の転記がなくなり、<em>名簿ミスがゼロ</em>になります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 課題 ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="s-label red">Issues</div>
+    <h2 class="s-title">なぜ必要か — 3つの課題</h2>
+    <p class="s-lead">「人が悪い」のではなく「仕組みに問題がある」。<br>仕組みを変えれば、構造的に解決できる。</p>
+    <div class="problems">
+      <div class="p-card">
+        <div class="p-num">Issue 01</div>
+        <h3>手作業の転記でミスが起きる</h3>
+        <p>Larkの会員データをスプレッドシートに手動で転記して名簿を作成。310名分を毎月手で写しており、2月例会では実際に情報の不整合が発生した。400名になればさらに深刻化する。</p>
+      </div>
+      <div class="p-card">
+        <div class="p-num">Issue 02</div>
+        <h3>情報の管理場所が2つに分散</h3>
+        <p>Lark（データの原本）とスプレッドシート（印刷用の加工コピー）が併存。どちらが最新か分からなくなるリスクがあり、「スプシ使用率0%」の目標と矛盾している。</p>
+      </div>
+      <div class="p-card">
+        <div class="p-num">Issue 03</div>
+        <h3>複数担当者で管理が複雑化</h3>
+        <p>名簿関連だけで4名以上が関与。「誰がいつ何をするか」の調整コストが高く、特定の人がいないと名簿が作れない属人化が発生している。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Before/After ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="s-label green">Solution</div>
+    <h2 class="s-title">DocuGeniusで何が変わるか</h2>
+    <p class="s-lead">転記作業をゼロにし、Larkから直接印刷用PDFを自動生成する。</p>
+
+    <div class="flow-compare">
+      <div class="flow-box bad">
+        <div class="fb-label">Before — 現在のフロー</div>
+        <ul class="flow-steps">
+          <li><span class="step-icon">1</span>Lark（会員データ）</li>
+          <li><span class="step-icon">2</span>手作業でスプシに転記<span class="step-warn">ミス発生</span></li>
+          <li><span class="step-icon">3</span>スプシで整形・確認</li>
+          <li><span class="step-icon">4</span>印刷</li>
+        </ul>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box good">
+        <div class="fb-label">After — 導入後のフロー</div>
+        <ul class="flow-steps">
+          <li><span class="step-icon">1</span>Lark（会員データ）</li>
+          <li><span class="step-icon">2</span>DocuGeniusで自動生成<span class="step-ok">自動</span></li>
+          <li><span class="step-icon">3</span>印刷</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="change-grid">
+      <div class="change-item">
+        <div class="ci-label">スプシへの転記</div>
+        <div class="ci-before">毎月必要</div>
+        <div class="ci-after">不要</div>
+      </div>
+      <div class="change-item">
+        <div class="ci-label">名簿のミス</div>
+        <div class="ci-before">起きうる</div>
+        <div class="ci-after">構造的にゼロ</div>
+      </div>
+      <div class="change-item">
+        <div class="ci-label">管理場所</div>
+        <div class="ci-before">2箇所</div>
+        <div class="ci-after">Lark 1箇所</div>
+      </div>
+      <div class="change-item">
+        <div class="ci-label">属人化</div>
+        <div class="ci-before">特定の人のみ</div>
+        <div class="ci-after">誰でもできる</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="s-label blue">Return on Investment</div>
+    <h2 class="s-title">3,300円は高い？安い？</h2>
+    <p class="s-lead">3つの角度から、投資対効果を検証する。</p>
+
+    <div class="gauge-wrap">
+      <div class="gauge">
+        <svg viewBox="0 0 120 120">
+          <circle class="bg" cx="60" cy="60" r="50"/>
+          <circle class="fg" cx="60" cy="60" r="50"
+            stroke="var(--accent)"
+            stroke-dasharray="314"
+            stroke-dashoffset="140"/>
+        </svg>
+        <div class="center-text">
+          <div class="gt-value" style="color:var(--accent)">1.8<span style="font-size:16px">倍</span></div>
+          <div class="gt-label">月次リターン</div>
+        </div>
+      </div>
+      <div class="gauge">
+        <svg viewBox="0 0 120 120">
+          <circle class="bg" cx="60" cy="60" r="50"/>
+          <circle class="fg" cx="60" cy="60" r="50"
+            stroke="var(--gold)"
+            stroke-dasharray="314"
+            stroke-dashoffset="82"/>
+        </svg>
+        <div class="center-text">
+          <div class="gt-value" style="color:var(--gold)">4.5<span style="font-size:16px">h</span></div>
+          <div class="gt-label">月次削減時間</div>
+        </div>
+      </div>
+      <div class="gauge">
+        <svg viewBox="0 0 120 120">
+          <circle class="bg" cx="60" cy="60" r="50"/>
+          <circle class="fg" cx="60" cy="60" r="50"
+            stroke="var(--green)"
+            stroke-dasharray="314"
+            stroke-dashoffset="50"/>
+        </svg>
+        <div class="center-text">
+          <div class="gt-value" style="color:var(--green)">¥3.2<span style="font-size:16px">万</span></div>
+          <div class="gt-label">年間純削減</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-cards">
+      <div class="roi-card monthly">
+        <div class="rc-num">Angle 01 — 月次</div>
+        <h3>時給で換算する</h3>
+        <div class="calc-row">
+          <span class="cr-label">データ転記・照合</span>
+          <span class="cr-value">2〜3h</span>
+        </div>
+        <div class="calc-row">
+          <span class="cr-label">エラー修正・差し替え</span>
+          <span class="cr-value">1h</span>
+        </div>
+        <div class="calc-row">
+          <span class="cr-label">担当者間の確認連絡</span>
+          <span class="cr-value">1h</span>
+        </div>
+        <div class="calc-row">
+          <span class="cr-label">削減コスト（@¥1,500）</span>
+          <span class="cr-value">¥6,000</span>
+        </div>
+        <div class="calc-row">
+          <span class="cr-label">DocuGenius費用</span>
+          <span class="cr-value">-¥3,300</span>
+        </div>
+        <div class="calc-row highlight">
+          <span class="cr-label" style="color:var(--text);font-weight:600">毎月の純削減</span>
+          <span class="cr-value">+¥2,700</span>
+        </div>
+      </div>
+
+      <div class="roi-card yearly">
+        <div class="rc-num">Angle 02 — 年間</div>
+        <h3>年間で見る</h3>
+        <div class="calc-row">
+          <span class="cr-label">DocuGenius 年間費用</span>
+          <span class="cr-value">¥39,600</span>
+        </div>
+        <div class="calc-row">
+          <span class="cr-label">削減される作業コスト</span>
+          <span class="cr-value">¥72,000</span>
+        </div>
+        <div class="calc-row highlight-gold">
+          <span class="cr-label" style="color:var(--text);font-weight:600">年間の純削減効果</span>
+          <span class="cr-value">+¥32,400</span>
+        </div>
+        <div style="text-align:center;margin-top:20px;font-size:13px;color:var(--text-sub);">
+          投資額の<span style="color:var(--gold);font-weight:700;font-size:18px;">約1.8倍</span>がお得
+        </div>
+      </div>
+
+      <div class="roi-card intangible">
+        <div class="rc-num">Angle 03 — 定性</div>
+        <h3>お金に換算できない効果</h3>
+        <ul class="intangible-list">
+          <li>
+            <span class="il-icon">●</span>
+            <div>
+              <div class="il-title">名簿の信頼性</div>
+              <div class="il-desc">他会場から来た方へのファーストインプレッション。全国事務局会議でも名簿は重要視されている</div>
+            </div>
+          </li>
+          <li>
+            <span class="il-icon">●</span>
+            <div>
+              <div class="il-title">精神的な安心</div>
+              <div class="il-desc">「合ってるかな…」という不安がなくなる。例会前日の深夜対応もなくなる</div>
+            </div>
+          </li>
+          <li>
+            <span class="il-icon">●</span>
+            <div>
+              <div class="il-title">属人化の解消</div>
+              <div class="il-desc">担当者が不在でも名簿が出せる。受付17時定時開始が安定する</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 方針との整合性 ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="s-label gold">Alignment</div>
+    <h2 class="s-title">既に決めた方針の「実行」</h2>
+    <p class="s-lead">新しいことを始める提案ではない。既に合意した方針を完遂するための手段。</p>
+    <div class="align-grid">
+      <div class="align-item">
+        <div class="ai-kpi">KPI — スプシ使用率</div>
+        <h4>目標: 0%</h4>
+        <p>スプシ廃止の最後のピースがこのツール。これが入ればスプシを完全に手放せる。</p>
+      </div>
+      <div class="align-item">
+        <div class="ai-kpi">KPI — 名簿エラー</div>
+        <h4>目標: 0件</h4>
+        <p>手作業をなくすことで、構造的にエラーが発生しない仕組みが完成する。</p>
+      </div>
+      <div class="align-item">
+        <div class="ai-kpi">KPI — 受付定時開始率</div>
+        <h4>目標: 100%</h4>
+        <p>名簿作成の工数が激減し、資料遅延を根本的に解決できる。</p>
+      </div>
+      <div class="align-item">
+        <div class="ai-kpi">決裁権限マトリクス</div>
+        <h4>予算1万円以内は部会自決</h4>
+        <p>3,300円/月は部会レベルで判断可能な範囲。上位会議のエスカレーション不要。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUMMARY ===== -->
+<section class="section">
+  <div class="wrap fade-in">
+    <div class="s-label blue">Conclusion</div>
+    <h2 class="s-title">まとめ</h2>
+    <div class="summary-box">
+      <ul class="summary-items">
+        <li><em>月3,300円</em>で、毎月4〜5時間の手作業と名簿ミスのリスクが<em>ゼロ</em>になる</li>
+        <li>年間で<em>約32,000円のコスト削減</em>。投資の<em>約1.8倍</em>がお得</li>
+        <li>「Lark一本化」「スプシ完全廃止」を完遂するための<em>最後の一手</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>DocuGenius 導入稟議 — 守成クラブ宮崎 Lステップ＆Lark部会<br>起案: 寺山大夢 / 2026年3月13日</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+});
+</script>
+</body>
+</html>
