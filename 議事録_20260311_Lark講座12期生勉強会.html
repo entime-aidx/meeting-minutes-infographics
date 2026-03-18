@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lark講座12期生 勉強会 議事録 | 2026.03.11</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f14;
+    --surface: #1a1a24;
+    --surface-2: #22222e;
+    --border: #2a2a3a;
+    --text: #e8e6f0;
+    --text-dim: #8888a0;
+    --lime: #a8e06c;
+    --lime-dark: #6b9e3a;
+    --coral: #ff6b6b;
+    --coral-dim: #cc5555;
+    --blue: #6ba3ff;
+    --purple: #b388ff;
+    --amber: #ffd54f;
+    --teal: #4dd0c4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 48px 36px 64px;
+  }
+
+  /* Header */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-tag {
+    display: inline-block;
+    background: var(--lime);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+  }
+  .header h1 span { color: var(--lime); }
+  .header-meta {
+    text-align: right;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.9;
+    white-space: nowrap;
+  }
+
+  /* Attendees */
+  .attendees {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .att {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px 5px 5px;
+    font-size: 12px;
+  }
+  .att-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--bg);
+  }
+  .att-role { color: var(--text-dim); font-size: 10px; }
+
+  /* Section */
+  .section { margin-bottom: 36px; }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* Topic cards */
+  .topics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .topic {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+  }
+  .topic.full { grid-column: 1 / -1; }
+  .topic-tag {
+    position: absolute;
+    top: -9px;
+    left: 16px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 2px 10px;
+    border-radius: 8px;
+    color: var(--bg);
+  }
+  .topic h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 2px;
+  }
+  .topic ul { list-style: none; padding: 0; }
+  .topic li {
+    font-size: 12.5px;
+    padding: 3px 0 3px 16px;
+    position: relative;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .topic li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--lime);
+    font-weight: 700;
+  }
+
+  /* Quote cards */
+  .quote-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+  .quote-card strong { color: var(--teal); }
+
+  /* Decisions */
+  .decisions-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .dec {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    border-top: 3px solid var(--lime);
+  }
+  .dec h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--lime);
+    margin-bottom: 6px;
+  }
+  .dec p {
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  /* Action table */
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .action-table th {
+    background: var(--surface-2);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+  .action-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .badge-red { background: rgba(255,107,107,0.15); color: var(--coral); }
+  .badge-amber { background: rgba(255,213,79,0.15); color: var(--amber); }
+  .badge-blue { background: rgba(107,163,255,0.15); color: var(--blue); }
+  .badge-lime { background: rgba(168,224,108,0.15); color: var(--lime); }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    margin: 8px 0;
+  }
+  .tl-item {
+    flex: 1;
+    padding: 14px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    text-align: center;
+    font-size: 11.5px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .tl-item:first-child { border-radius: 8px 0 0 8px; }
+  .tl-item:last-child { border-radius: 0 8px 8px 0; }
+  .tl-item strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  .tl-item:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--lime);
+    font-size: 14px;
+    z-index: 1;
+    font-weight: 700;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 44px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    .page { padding: 24px 16px; }
+    .header { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .decisions-grid { grid-template-columns: repeat(2, 1fr); }
+    .timeline { flex-wrap: wrap; }
+    .tl-item { min-width: 45%; }
+    .tl-item::after { display: none; }
+  }
+  @media print {
+    body { background: #fff; color: #111; }
+    .page { padding: 20px; }
+    .topic, .dec { border-color: #ddd; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <div class="header-tag">Lark講座 ─ 議事録</div>
+      <h1><span>12期生</span> 勉強会</h1>
+    </div>
+    <div class="header-meta">
+      <strong style="color:var(--text)">2026年3月11日（水）</strong><br>
+      12:59頃〜15:47頃<br>
+      オンライン（Lark）<br>
+      約2時間48分
+    </div>
+  </div>
+
+  <!-- Attendees -->
+  <div class="attendees">
+    <div class="att"><div class="att-dot" style="background:var(--lime)">寺</div> 寺山 大夢 <span class="att-role">講師</span></div>
+    <div class="att"><div class="att-dot" style="background:var(--coral)">大</div> 大城 未緒 <span class="att-role">運営</span></div>
+    <div class="att"><div class="att-dot" style="background:var(--blue)">後</div> 後藤 和輝 <span class="att-role">運営</span></div>
+    <div class="att"><div class="att-dot" style="background:var(--purple)">原</div> 原 健一郎</div>
+    <div class="att"><div class="att-dot" style="background:var(--amber)">渡</div> 渡辺 理絵</div>
+    <div class="att"><div class="att-dot" style="background:var(--teal)">森</div> 森山 達成</div>
+    <div class="att"><div class="att-dot" style="background:#ff9cee">森</div> 森尾 大樹</div>
+    <div class="att"><div class="att-dot" style="background:#90caf9">稲</div> 稲葉 秀憲</div>
+    <div class="att"><div class="att-dot" style="background:var(--lime-dark)">鎌</div> 鎌田 弘和 <span class="att-role">サポーター</span></div>
+    <div class="att"><div class="att-dot" style="background:#b39ddb">木</div> 木村 <span class="att-role">サポーター</span></div>
+  </div>
+
+  <!-- 本日の流れ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="sec-icon" style="background:var(--purple);">📊</div>
+      本日の流れ
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><strong>オープニング</strong>稲葉氏紹介・ゴール共有</div>
+      <div class="tl-item"><strong>各自発表</strong>作りたいもの・進捗</div>
+      <div class="tl-item"><strong>グループコンサル</strong>A/B 15分×2〜3往復</div>
+      <div class="tl-item"><strong>工夫・気づき</strong>進捗率発表</div>
+      <div class="tl-item"><strong>まとめ</strong>個別面談案内</div>
+    </div>
+  </div>
+
+  <!-- 学んだこと -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="sec-icon" style="background:var(--lime);">📚</div>
+      学んだこと
+    </div>
+    <div class="topics-grid">
+      <div class="topic">
+        <div class="topic-tag" style="background:var(--lime);">設計</div>
+        <h3>マスター・正規化・ビュー</h3>
+        <ul>
+          <li>マスターから引っ張る設計（項目をベースに直接作らない）</li>
+          <li>正規化くんで既存帳票をテーブル設計に細分化</li>
+          <li>ビューでフィルタ・表示を分けてシンプルに再構成</li>
+        </ul>
+      </div>
+      <div class="topic">
+        <div class="topic-tag" style="background:var(--amber);">操作</div>
+        <h3>ルックアップ・双方向・フォーム</h3>
+        <ul>
+          <li>ルックアップ：他テーブルの値を参照して表示・集計</li>
+          <li>双方向関連：関連テーブル間で相互に参照・更新</li>
+          <li>フォーム連携で登録を自動転記、手入力不要</li>
+          <li>大分類→中分類の連動選択で登録をわかりやすく</li>
+        </ul>
+      </div>
+      <div class="topic full">
+        <div class="topic-tag" style="background:var(--teal);">Base vs スプレッドシート</div>
+        <h3>Lark Base の強み</h3>
+        <ul>
+          <li>リマインド通知を送った後、同じレコードを編集・更新できる</li>
+          <li>スプレッドシートでは難しい「通知→データ更新」の一連の流れが実現しやすい</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 気づき -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="sec-icon" style="background:var(--coral);">💡</div>
+      気づき
+    </div>
+    <div class="quote-card"><strong>原氏：</strong>ベースがしっかりできていないと、自動化・ダッシュボードにうまく繋がらない</div>
+    <div class="quote-card"><strong>森山氏：</strong>やりたいことに対してよりシンプルに組み立てる。いろんな引き出しを揃えて、一つの手段にこだわらず試行錯誤</div>
+    <div class="quote-card"><strong>稲葉氏：</strong>最終的な目的をはっきりさせる。使う人がわかりやすくシンプルに使えるように設計</div>
+    <div class="quote-card"><strong>渡辺氏：</strong>骨組み・計画を頭で思い描く。聞ける人がここにいっぱいいるのは心強い</div>
+    <div class="quote-card"><strong>寺山氏：</strong>グループコンサル形式で横の人の事例も知れて勉強になる。パンクするのは当然、楽しむには横のつながりが重要</div>
+  </div>
+
+  <!-- ネクストアクション -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="sec-icon" style="background:var(--blue);">⚡</div>
+      次回やること・ネクストアクション
+    </div>
+    <table class="action-table">
+      <thead>
+        <tr><th>アクション</th><th>担当</th><th>期限</th><th>優先度</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ベース設計を形にする</td><td>12期生全員</td><td>来週まで</td><td><span class="badge badge-red">即時</span></td></tr>
+        <tr><td>個別面談（具体的な質問を持参）</td><td>必要に応じて</td><td>随時</td><td><span class="badge badge-amber">高</span></td></tr>
+        <tr><td>自動化・ダッシュボードの操作</td><td>運営</td><td>来週 or 再来週</td><td><span class="badge badge-blue">中</span></td></tr>
+        <tr><td>アンケート回答</td><td>全員</td><td>明日まで</td><td><span class="badge badge-lime">要</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote-card" style="margin-top:14px;">
+      <strong>個別面談のコツ：</strong>「ここにこの数字を出すにはどうすればいいですか」「もっとシンプルにする方法はありますか」など、具体的な質問で30分を有効に。
+    </div>
+  </div>
+
+  <!-- 進捗一覧 -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="sec-icon" style="background:var(--teal);">📋</div>
+      参加者ごとの進捗
+    </div>
+    <table class="action-table">
+      <thead>
+        <tr><th>氏名</th><th>テーマ</th><th>進捗</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>原 健一郎</td><td>オンライン秘書・案件マッチング</td><td>30〜40%</td></tr>
+        <tr><td>渡辺 理絵</td><td>ランチタイムカフェ売上管理</td><td>約30%</td></tr>
+        <tr><td>森山 達成</td><td>ダンススタジオ回数券管理</td><td>60〜70%</td></tr>
+        <tr><td>森尾 大樹</td><td>コインパーキング管理</td><td>途中退出</td></tr>
+        <tr><td>稲葉 秀憲</td><td>税理士事務所管理</td><td>約3%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Lark講座12期生 勉強会 | Lark Minutes 文字起こしより作成</span>
+    <span>2026.03.11</span>
+  </div>
+
+</div>
+</body>
+</html>
