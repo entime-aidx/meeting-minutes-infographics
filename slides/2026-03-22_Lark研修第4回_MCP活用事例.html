@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lark研修第4回_MCP活用事例</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+        }
+        .reveal h1 {
+            font-size: 2em;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        .reveal h2 {
+            font-size: 1.4em;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.3em;
+            margin-bottom: 0.6em;
+        }
+        .reveal ul {
+            font-size: 0.85em;
+            line-height: 1.8;
+            text-align: left;
+        }
+        .reveal ul li {
+            margin-bottom: 0.3em;
+        }
+        .title-slide .subtitle {
+            font-size: 1em;
+            color: #64748b;
+            margin-top: 1em;
+        }
+        .title-slide .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3em 1em;
+            border-radius: 999px;
+            font-size: 0.7em;
+            margin-top: 1.5em;
+            font-weight: 700;
+        }
+        .action-slide h2 {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+        .action-slide .action-item {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 0.4em 0.8em;
+            border-radius: 4px;
+            margin-bottom: 0.5em;
+            list-style: none;
+        }
+        .reveal section {
+            text-align: left;
+        }
+        .title-slide {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        
+        <section class="title-slide">
+            <h1>Lark研修第4回_MCP活用事例</h1>
+            <p class="subtitle">2026-03-22 01:20</p>
+            <p class="badge">議事録</p>
+        </section>
+        <section>
+            <h2>1. 開催概要</h2>
+            <ul><li>| 項目 | 内容 | |------|------| | **日時** | 2026年3月22日（日）01:20頃開始（研修開始タイムスタンプ：2026-03-21 20:58 CST、日本時間換算で翌日未明）※ 全体所要時間：約2時間10分 | | **場所** | オンライン（Lark ビデオ通話） | | **回数** | 第4回（全研修のうち講義形式としては最終回） |</li><li>▶ 出席者（敬称略）</li><li>| 氏名 | 備考 | |------|------| | 寺山 大夢 | 進行役・主催（Lark研究所） | | 遠藤 匠馬（翔馬） | 講師・エンジニア | | 眞子（Mako） | 受講者（当初体調不良による欠席連絡あり→途中参加） | | 宮平 | 受講者（5分遅れで参加） | | 砂川 | 受講者 | | 原田（原） | 受講者 | | 竹村 | 受講者 | | 荒川 | 受講者 | | 山本 竜生 | 受講者 | | 鎌田 博和（Hirokazu Kamata） | 受講者 | | MANABU（学） | 受講者 | &gt; **注記：** 笹原さん・ゆかさんは欠席。眞子さんは体調不良のため当初仮面オフ（カメラオフ）での参加。合計参加者数は約11名。 ---</li></ul>
+        </section>
+        <section>
+            <h2>2. 研修の目的と背景</h2>
+            <ul><li>▶ 目的</li><li>MCP（Model Context Protocol：AIと外部システムをつなぐ標準通信規格）の活用事例を理解する。</li><li>前回接続したLarkのMCPを実際に使い、Lark Bitable（以下「ベース」）をAIで作成する体験をする。</li><li>受講者からの要望（活用事例・外部連携の具体例を知りたい）に応えるコンテンツを提供する。</li><li>▶ 背景</li><li>本研修は全4回の講義形式で構成されており、**今回が講義形式の最終回**。</li><li>次回は「作業会」を1回挟み、その後「発表会」という流れに変更することが寺山氏と遠藤氏の間で合意されている。</li><li>前回（第3回）はMCPの概念説明とClaude（Anthropic社のAI）およびLarkのMCP接続設定を実施済み。</li></ul>
+        </section>
+        <section>
+            <h2>3. 研修内容</h2>
+            <ul><li>▶ 3-1. 前回（第3回）の振り返り ― MCPの概念整理</li><li>**02:19頃 ～ 08:20頃** 遠藤氏より、MCPの概要について以下のとおり再確認が行われた。 | 項目 | 説明 | |------|------| | **MCP（Model Context Protocol）とは** | LLMアプリ（ChatGPT・Claude・Cursorなど）と外部システムをつなぐための**標準通信規格**。HTTPに類似した通信プロトコル。 | | **MCPがない場合** | 各AIアプリが外部サービス1つひとつに個別接続設定が必要。 | | **MCPがある場合** | MCPサーバーを1つ挟むことで、ChatGPT・Claude・Cursor等がすべて同一設定で接続可能になる。 | | **構成要素（5要素）** | ①リモートサービス、②ローカルデータソース、③MCPサーバー、④MCPクライアント、⑤MCPホスト | &gt; **補足：** 5つの構成要素の詳細は「概念として掴む程度で問題なし」と遠藤氏よりコメントあり。 ---</li><li>▶ 3-2. 活用事例紹介 ― 公式LINEとLark Bitableの連携</li><li>**08:20頃 ～ 23:51頃** 遠藤氏より、実際に構築した公式LINEとLark Bitable（ベース）の連携システムについてデモを交えて説明が行われた。 ``` 公式LINE ↓ Webフック（友達追加イベントで発火） GAS（Google Apps Script）※プログラムを挟む中継役 ↓ Lark API（直接呼び出し） Lark Bitable（ベース） ↓ ボタンクリックトリガーの自動化 公式LINE（1対1メッセージ送信） ``` 1. **友達情報の自動登録**</li><li>公式LINEに友達追加されたタイミングでWebフック（外部イベント発生時に自動通知を送る仕組み）が発火。</li><li>発火先をGASのデプロイ済みアプリに設定し、友達情報（LINEユーザーID・プロフィール表示名等）をLark Bitable（ベース）に登録。</li><li>LarkのAPIを直接呼び出してレコードを登録（自動化機能は使用せず）。</li><li>2. **1対1メッセージ送信**</li></ul>
+        </section>
+        <section>
+            <h2>4. 質疑応答（主なもの）</h2>
+            <ul><li>▶ Q1. 「友達情報」とは何を指すのか？</li><li>| 項目 | 内容 | |------|------| | **質問者** | 眞子（Mako）氏 | | **質問内容** | 「ここでの友達情報とは何を意味しますか？」「送られてきたメッセージのテキスト内容のことですか？」「LINEの登録名ということで大丈夫ですか？」 | | **回答（遠藤氏）** | テキスト内容ではなく、LINEユーザーIDとプロフィール表示名（LINE登録名）のことを指す。公式LINEに友達追加した全ユーザーの識別情報（ID・名前）がベースに蓄積される仕組み。なお、公式LINEアカウントごとに異なるIDが振られるため、複数の公式LINEに登録しても識別が可能。 | ---</li><li>▶ Q2. GASを経由することの意味は？</li><li>| 項目 | 内容 | |------|------| | **質問者** | 竹村氏（コメント欄から） | | **質問内容** | 「GASを使用しなくてもLarkに接続できるが、GASを経由することでメッセージ送信等ができるようになるイメージで合っているか？」 | | **回答（遠藤氏）** | ほぼ正しい理解だが補足あり。メッセージ送信自体はGASを使わずに直接公式LINEに送ることも可能。今回GASを使ったのは、Webフックで受け取った友達情報をベースに登録する処理を自動化機能を使わずに実現するためのプログラム記述が必要だったため。また自動化の実行回数を節約する目的もある。 | ---</li><li>▶ Q3. L ステップ・宴等と Lark Bitable の並列連携は可能か？</li><li>| 項目 | 内容 | |------|------| | **質問者** | 寺山 大夢氏 | | **質問内容** | 「LステップやL MEMEなどの拡張ツールを使っているアカウントでも同じ設計が可能か？干渉するか？」 | | **回答（遠藤氏）** | **干渉する。** LステップやうたげはすべてLINEのメッセージングAPIを起点としており、一方の設定をすると他方が使えなくなる。LステップとLark Bitableを連携させることは、LステップがAPIを公開していないため基本的に不可。 | ---</li><li>▶ Q4. JSONを使う理由・使わなくていいケースは？</li><li>| 項目 | 内容 | |------|------| | **質問者** | 寺山 大夢氏・MANABU氏 | | **質問内容** | 「以前クロードに普通にベース作りたいと言ったら自動で作れたが、今回のJSONとはどう違う？」「JSONを直接書けないメンバーはどうすればよいか？」 | | **回答（遠藤氏・寺山氏）** | MCPを使って作ること自体は同じ。JSONは**精度向上のための手段**。実務的には①自然言語でClaudeにJSONを生成させ、②生成されたJSONでベースを作成する流れが現実的。受講者全員がJSONを手書きできる必要はない。 | ---</li></ul>
+        </section>
+        <section>
+            <h2>5. 受講者の主な所感・感想</h2>
+            <ul><li>▶ ポジティブな点</li><li>MCPを使ったベース自動作成のデモはイメージの具体化に役立った。</li><li>LINE連携の活用事例は実務に近く理解しやすかった。</li><li>バディワーク形式への期待感がうかがえた。</li><li>▶ 課題・改善要望（アンケート・発言から）</li><li>**外部連携全般のイメージが掴みにくい**（寺山氏がアンケートを確認し言及）。</li><li>JSONはエンジニア以外には難易度が高い。「JSONを触らない形での実務的な活用法を優先してほしい」という意見（MANABU氏）。</li><li>自然言語から始めて、どこまでできてどこからできないかを確認するアプローチの方が学習効果が高いという意見（MANABU氏）。</li></ul>
+        </section>
+        <section>
+            <h2>6. ネクストアクション・決定事項</h2>
+            <ul><li>▶ 決定事項</li><li>| # | 内容 | 担当 | 時期 | |---|------|------|------| | 1 | **講義形式は今回（第4回）で終了**とする | — | 確定 | | 2 | **次回：作業会**を1回実施する | 全員 | 次回（日程未確定） | | 3 | **その次：発表会**を実施する | 全員 | 作業会後 | | 4 | アンケート結果次第で**作業会の回数増加・発表時期の後ろ倒し等のスケジュール調整**を行う可能性あり | 寺山氏・遠藤氏 | 随時 |</li><li>▶ 各自のネクストアクション</li><li>| # | 内容 | 担当 | 備考 | |---|------|------|------| | 1 | グループワーク：ClaudeとLark MCPを使ってベース（テーブル・フィールド・レコード含む）を作成する | 全受講者（バディ単位） | 研修内15分ワーク→完了後全体共有 | | 2 | グループワーク後：各チームの代表者が進め方・気づきを全体共有する | 各チーム代表者 | 15分ワーク終了後 | | 3 | Claudeのスキルズ（プロジェクト機能）へのLark公式ドキュメント登録方法の説明 | 遠藤氏 | ワーク終了後 | | 4 | グループワーク中の巡回サポート（特にルーム3：荒川・山本、ルーム4：砂川・MANABU を重点的に） | 遠藤氏・寺山氏 | ワーク中 | | 5 | アンケート内容の精査と今後のスケジュール調整 | 寺山氏 | 次回研修までに |</li><li>▶ 受講者の持ち帰り事項</li><li>| # | 内容 | |---|------| | 1 | Lark公式デベロッパーサイト（英語）のフィールドタイプ定義を確認する | | 2 | ClaudeへのLark情報（フィールドタイプ等）の渡し方を習得する | | 3 | サンプルJSONを活用してClaudeにベース作成用JSONを生成させる練習をする | | 4 | 自分の業務課題に合ったベース設計を考え、発表会に向けて準備する | ---</li></ul>
+        </section>
+        <section>
+            <h2>補足・注記</h2>
+            <ul><li>文字起こし中に「宮原さん」と呼ばれている箇所があるが、前後の文脈から「宮平さん」の誤記と判断した（[要確認]）。</li><li>遠藤氏が「カーソル」と呼んでいるのは、AI搭載コードエディター「Cursor」のこと。</li><li>「ベース」は「Lark Bitable」（Larkのデータベース・スプレッドシート機能）の通称として使用されている。</li><li>「ガス（GAS）」はGoogle Apps Scriptの略称。</li><li>文字起こし内の一部、音声が不明瞭と思われる箇所（「経由するんですけど、経由して」「画像を経由する」など）は、前後の文脈から「GASを経由する」意図と推測して記述した（[要確認：原文では「画像」と聞こえる箇所があるが、「GAS」の聞き誤りと推定]）。</li><li>--- *以上*</li></ul>
+        </section>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        controls: true,
+        progress: true,
+        center: false,
+        slideNumber: 'c/t',
+    });
+</script>
+</body>
+</html>
