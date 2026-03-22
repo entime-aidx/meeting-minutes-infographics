@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮崎DXサミット2026 運営打合せ（集客）議事録 | 2026.02.05</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f172a;
+    --paper: #f8fafc;
+    --accent: #059669;
+    --accent-dark: #047857;
+    --teal: #0d9488;
+    --navy: #1e3a5f;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 16px rgba(15,23,42,0.06);
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 1100px; margin: 0 auto; padding: 40px 32px 60px; }
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 20px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .header-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+  }
+  .header-meta {
+    text-align: right;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.8;
+  }
+  .header-meta strong { color: var(--ink); }
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .stat-card:nth-child(1)::before { background: var(--accent); }
+  .stat-card:nth-child(2)::before { background: var(--teal); }
+  .stat-card:nth-child(3)::before { background: var(--navy); }
+  .stat-card:nth-child(4)::before { background: #ea580c; }
+  .stat-number {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  .stat-card:nth-child(1) .stat-number { color: var(--accent); }
+  .stat-card:nth-child(2) .stat-number { color: var(--teal); }
+  .stat-card:nth-child(3) .stat-number { color: var(--navy); }
+  .stat-card:nth-child(4) .stat-number { color: #ea580c; }
+  .stat-label { font-size: 12px; color: #64748b; margin-top: 4px; }
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .attendees {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+  .attendee {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 6px 14px 6px 6px;
+    font-size: 12px;
+    box-shadow: var(--shadow);
+  }
+  .attendee-avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .attendee:nth-child(5n+1) .attendee-avatar { background: var(--accent); }
+  .attendee:nth-child(5n+2) .attendee-avatar { background: var(--teal); }
+  .attendee:nth-child(5n+3) .attendee-avatar { background: var(--navy); }
+  .attendee:nth-child(5n+4) .attendee-avatar { background: #ea580c; }
+  .attendee:nth-child(5n+5) .attendee-avatar { background: #db2777; }
+  .topics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .topic-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+  .topic-card.wide { grid-column: 1 / -1; }
+  .topic-num {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: var(--navy);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+  .topic-card h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 4px;
+  }
+  .topic-card ul { list-style: none; padding: 0; }
+  .topic-card li {
+    font-size: 13px;
+    padding: 4px 0 4px 16px;
+    position: relative;
+    line-height: 1.6;
+  }
+  .topic-card li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 11px;
+  }
+  .decisions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .decision {
+    background: linear-gradient(135deg, #065f46 0%, var(--accent) 100%);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    position: relative;
+  }
+  .decision-num {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    opacity: 0.2;
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    line-height: 1;
+  }
+  .decision h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #a7f3d0;
+  }
+  .decision p { font-size: 12px; line-height: 1.6; opacity: 0.95; }
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .action-table th {
+    background: var(--ink);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .action-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card-bg);
+  }
+  .action-table tr:last-child td { border-bottom: none; }
+  .flow {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px 0;
+  }
+  .flow-step {
+    background: var(--card-bg);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 12px 14px;
+    min-width: 100px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.5;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+  }
+  .flow-step strong {
+    display: block;
+    font-size: 12px;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+  .flow-arrow { font-size: 18px; color: var(--accent); padding: 0 4px; }
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: #94a3b8;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .event-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent) 0%, #34d399 100%);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .note-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 12px;
+    color: #065f46;
+    margin-top: 12px;
+  }
+  @media print {
+    .page { padding: 20px; }
+    .topics { grid-template-columns: 1fr; }
+    .decisions { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .page { padding: 20px 16px; }
+    .header { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .topics { grid-template-columns: 1fr; }
+    .decisions { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="event-badge">宮崎DXサミット2026</div>
+      <div class="header-label">全国AIDX協会 ─ 運営打合せ（進捗・集客）</div>
+      <h1>運営打合せ 議事録</h1>
+    </div>
+    <div class="header-meta">
+      <strong>2026年2月5日（木）</strong><br>
+      15:59 CST〜<br>
+      オンライン（Lark想定）<br>
+      約1時間8分
+    </div>
+  </div>
+
+  <div class="attendees">
+    <div class="attendee"><div class="attendee-avatar">寺</div>寺山 大夢</div>
+    <div class="attendee"><div class="attendee-avatar">笹</div>笹原 彰朗</div>
+    <div class="attendee"><div class="attendee-avatar">秋</div>秋丸 康予</div>
+    <div class="attendee"><div class="attendee-avatar">清</div>清水 大輔</div>
+    <div class="attendee"><div class="attendee-avatar">村</div>村山 美佳</div>
+    <div class="attendee"><div class="attendee-avatar">高</div>髙橋 沙斗志（耳／テキスト）</div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-number">100</div>
+      <div class="stat-label">2月末目標（申込）</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">申込（運営除く・当時）</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3/27</div>
+      <div class="stat-label">本番（金）</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">2/12</div>
+      <div class="stat-label">チラシ配布目安（例会）</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--navy);">🎯</div>
+      本会の焦点
+    </div>
+    <div class="topics">
+      <div class="topic-card wide">
+        <div class="topic-num">GOAL</div>
+        <h3>進捗共有と「2月末100名」への泥臭い集客</h3>
+        <ul>
+          <li>役割を4チームに再整理し、「何をすればいいか」を明確化</li>
+          <li>声かけリスト（分母）をLark Baseで共有。個別メッセージ中心</li>
+          <li>チラシ・LP・PR・CM・SNSを並走。当日は商談につながるブース設計</li>
+          <li>PTIX申込をLark Baseへ連携し、可視化とフォローを改善</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--accent);">📋</div>
+      主要トピック
+    </div>
+    <div class="topics">
+      <div class="topic-card">
+        <div class="topic-num">01</div>
+        <h3>役割4チーム</h3>
+        <ul>
+          <li>笹原：登壇構成／秋丸：メディア露出</li>
+          <li>髙橋：SNS・100名動員／清水：当日会場・音響</li>
+          <li>稲森：企画コンテンツ（グループ上の割当て）</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">02</div>
+        <h3>2月末100の理由</h3>
+        <ul>
+          <li>100枠で希少感→達成後に＋30など第2弾の打ち出し</li>
+          <li>直前の「人数足りません」より、早期の満席感を優先</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">03</div>
+        <h3>チラシ・配布</h3>
+        <ul>
+          <li>画像データ：週明け〜週末目安／印刷：桑畑（MRT関連）</li>
+          <li>2/12 三島支部・同友会で配布・声かけ（村山・笹原）</li>
+          <li>守成世話人会でレバレッジ。川路氏へ3月開催を正確に伝達</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-num">04</div>
+        <h3>メディア・SNS</h3>
+        <ul>
+          <li>PR：村山が構成→開催3〜4週間前にメディアへ</li>
+          <li>TV：後藤造園枠・MRT営業と相談（秋丸＋タイム）</li>
+          <li>インスタ：ストーリー・広告は寺山＋髙橋（当日夕方に詰め）</li>
+        </ul>
+      </div>
+      <div class="topic-card wide">
+        <div class="topic-num">05</div>
+        <h3>LP・PTIX・その他</h3>
+        <ul>
+          <li>LP公開済（Facebook・寺山サイト）。桑山氏：飲食表記で自己紹介修正→LP整合</li>
+          <li>PTIXは通知が弱い→Lark Base連携を寺山＋笹原で開発</li>
+          <li>登壇者の同業呼び・「行列最後尾」心理の演出などアイデア共有</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--teal);">🔄</div>
+      当日までの論理（イメージ）
+    </div>
+    <div class="flow">
+      <div class="flow-step"><strong>リスト</strong>Baseで分母管理</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><strong>個別DM</strong>テンプレ避ける</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><strong>紙・PR</strong>チラシ＋露出</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><strong>2月末</strong>100名達成</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><strong>3/27</strong>本番＋商談導線</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:var(--accent);">✓</div>
+      決定・合意事項
+    </div>
+    <div class="decisions">
+      <div class="decision">
+        <div class="decision-num">1</div>
+        <h4>声かけリスト</h4>
+        <p>Lark Baseで共有。分母100未満なら達成困難と認識合わせ</p>
+      </div>
+      <div class="decision">
+        <div class="decision-num">2</div>
+        <h4>2月末100</h4>
+        <p>心理的な満席感→＋枠の二段構え。集客後は商談設計へ</p>
+      </div>
+      <div class="decision">
+        <div class="decision-num">3</div>
+        <h4>チラシ</h4>
+        <p>対面・電話の声かけに有効。2/12例会で配布目標</p>
+      </div>
+      <div class="decision">
+        <div class="decision-num">4</div>
+        <h4>PTIX</h4>
+        <p>寺山＋村山で管理。Base連携を笹原協力で進める</p>
+      </div>
+      <div class="decision">
+        <div class="decision-num">5</div>
+        <h4>司会</h4>
+        <p>川路氏オファー継続。正式依頼未送の相手あり要対応</p>
+      </div>
+      <div class="decision">
+        <div class="decision-num">6</div>
+        <h4>夜の打合せ</h4>
+        <p>当日21時頃〜ジョイフル（宮崎メンバー最大5名）</p>
+      </div>
+    </div>
+    <div class="note-box">
+      文字起こしゆれ：安江／安根＝秋丸、鎌田・亀村＝上村（BeLavo）、ようと＝勇一郎氏 等。正式表記は関係資料と突合してください。
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:#ea580c;">👥</div>
+      役割分担（本会整理）
+    </div>
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>領域</th>
+          <th>担当の目安</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>全体・進行</td>
+          <td>寺山（笹原がファシリ）</td>
+        </tr>
+        <tr>
+          <td>登壇構成</td>
+          <td>笹原</td>
+        </tr>
+        <tr>
+          <td>メディア露出</td>
+          <td>秋丸＋寺山</td>
+        </tr>
+        <tr>
+          <td>SNS・動員</td>
+          <td>髙橋（タイム）＋寺山</td>
+        </tr>
+        <tr>
+          <td>当日会場・音響・ブース構想</td>
+          <td>清水（岩切等と連携）</td>
+        </tr>
+        <tr>
+          <td>企画コンテンツ</td>
+          <td>稲森 はるか（グループ割当）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">
+      <div class="section-icon" style="background:#ea580c;">📌</div>
+      ネクストアクション
+    </div>
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>アクション</th>
+          <th>担当</th>
+          <th>期限</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>声かけリスト Lark Base</td>
+          <td>笹原</td>
+          <td>速やかに</td>
+        </tr>
+        <tr>
+          <td>プレスリリース構成</td>
+          <td>村山</td>
+          <td>メディア持参用に先行作成</td>
+        </tr>
+        <tr>
+          <td>経営者への声かけ</td>
+          <td>清水</td>
+          <td>チラシと並行</td>
+        </tr>
+        <tr>
+          <td>TV枠・見積・CM差し替え</td>
+          <td>秋丸＋髙橋</td>
+          <td>MRT営業と調整</td>
+        </tr>
+        <tr>
+          <td>全体スライド・スケジュール</td>
+          <td>笹原</td>
+          <td>鎌田氏共有分を踏まえ作成</td>
+        </tr>
+        <tr>
+          <td>PTIX→Lark Base連携</td>
+          <td>寺山＋笹原</td>
+          <td>本会後すぐ技術MTG</td>
+        </tr>
+        <tr>
+          <td>桑山氏コメント反映・LP更新</td>
+          <td>秋丸→寺山</td>
+          <td>飲食表記・文字数</td>
+        </tr>
+        <tr>
+          <td>インスタ広告・運用詳細</td>
+          <td>寺山＋髙橋</td>
+          <td>当日夕方 面談</td>
+        </tr>
+        <tr>
+          <td>宮崎メンバー打合せ</td>
+          <td>寺山・秋丸・清水・長・岩切 他</td>
+          <td>当日21時頃〜 ジョイフル</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>宮崎DXサミット2026 運営打合せ（集客） | 2026.02.05</span>
+    <span>詳細は 議事録_20260205_宮崎DXサミット運営打合せ_集客.md</span>
+  </div>
+
+</div>
+</body>
+</html>
