@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宮崎DXサミット2026 登壇者プレ報告 議事録 | 2026.03.17</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f172a;
+    --paper: #f8fafc;
+    --accent: #0ea5e9;
+    --accent-dark: #0284c7;
+    --teal: #14b8a6;
+    --navy: #1e3a5f;
+    --coral: #f97316;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 16px rgba(15,23,42,0.06);
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px 60px;
+  }
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 20px;
+    border-bottom: 3px solid var(--coral);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+  .header-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--coral);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+  }
+  .header-meta {
+    text-align: right;
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.8;
+  }
+  .header-meta strong {
+    color: var(--ink);
+  }
+
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .stat-card:nth-child(1)::before { background: var(--coral); }
+  .stat-card:nth-child(2)::before { background: var(--accent); }
+  .stat-card:nth-child(3)::before { background: var(--teal); }
+  .stat-card:nth-child(4)::before { background: var(--navy); }
+  .stat-number {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .stat-card:nth-child(1) .stat-number { color: var(--coral); }
+  .stat-card:nth-child(2) .stat-number { color: var(--accent); }
+  .stat-card:nth-child(3) .stat-number { color: var(--teal); }
+  .stat-card:nth-child(4) .stat-number { color: var(--navy); }
+  .stat-label {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  /* タイムテーブル */
+  .timeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  .timeline-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+  }
+  .timeline-item.host { border-left: 4px solid var(--coral); }
+  .timeline-item.presenter { border-left: 4px solid var(--accent); }
+  .timeline-item.break { border-left: 4px solid #94a3b8; background: #f1f5f9; }
+  .timeline-arrow {
+    color: #cbd5e1;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* 登壇者カード */
+  .presenters {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .presenter-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+  }
+  .presenter-card-header {
+    padding: 16px 18px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .presenter-card:nth-child(1) .presenter-card-header { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); }
+  .presenter-card:nth-child(2) .presenter-card-header { background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%); }
+  .presenter-card:nth-child(3) .presenter-card-header { background: linear-gradient(135deg, #c2410c 0%, #f97316 100%); }
+  .presenter-card-body {
+    padding: 18px;
+    flex: 1;
+  }
+  .presenter-card h4 {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .presenter-card ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .presenter-card li {
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .presenter-card li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-size: 10px;
+  }
+  .presenter-tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  /* 課題→解決のフロー */
+  .flow-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .flow-box h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .flow-badge {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .flow-badge.before { background: #fef2f2; color: #b91c1c; }
+  .flow-badge.after { background: #dcfce7; color: #15803d; }
+  .flow-arrow { color: var(--accent); font-size: 18px; }
+
+  /* 注意事項 */
+  .notice-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .notice-card {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+  }
+  .notice-card.wifi {
+    background: #eff6ff;
+    border-color: #93c5fd;
+  }
+  .notice-card h4 {
+    font-size: 13px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* アクション */
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .action-table th {
+    background: var(--ink);
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+  .action-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--card-bg);
+  }
+  .action-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .event-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--coral) 0%, #ea580c 100%);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: #94a3b8;
+  }
+
+  @media print {
+    .page { padding: 20px; }
+    .presenters { grid-template-columns: 1fr; }
+    .notice-cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .page { padding: 20px 16px; }
+    .header { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .presenters { grid-template-columns: 1fr; }
+    .notice-cards { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; align-items: stretch; }
+    .timeline-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="event-badge">宮崎DXサミット2026</div>
+      <div class="header-label">全国AIDX協会 ─ 議事録</div>
+      <h1>登壇者プレ報告</h1>
+    </div>
+    <div class="header-meta">
+      <strong>2026年3月17日（火）</strong><br>
+      12:56 CST〜（約1時間20分）<br>
+      オンライン（Lark）
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-number">約30名</div>
+      <div class="stat-label">申込実数</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">+20名</div>
+      <div class="stat-label">口頭意向</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">5社</div>
+      <div class="stat-label">登壇者</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3/27</div>
+      <div class="stat-label">本番日</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">
+      <span class="section-icon" style="background:var(--accent);">📋</span>
+      当日タイムテーブル
+    </h2>
+    <div class="timeline">
+      <span class="timeline-item host">主催挨拶（寺山）</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item presenter">メモリード</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item break">休憩</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item presenter">長友整骨院</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item presenter">日向市観光協会</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item presenter">金本組</span>
+      <span class="timeline-arrow">→</span>
+      <span class="timeline-item presenter">アドカム</span>
+    </div>
+    <p style="font-size:12px;color:#64748b;">※発表ごとに専用アンケートを5種類用意（商談につなげやすい設計）／本プレで画面共有したのは<strong>観光協会・アドカム・長友</strong>の3社</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">
+      <span class="section-icon" style="background:var(--teal);">🎤</span>
+      登壇者プレ報告の要点
+    </h2>
+
+    <div class="presenters">
+      <div class="presenter-card">
+        <div class="presenter-card-header">日向市観光協会</div>
+        <div class="presenter-card-body">
+          <h4>立石一真・高木局長｜三部作</h4>
+          <ul>
+            <li>1部：Excel地獄の実態（問い合わせ管理の限界、属人化）</li>
+            <li>2部：LarkでDB構築、フォーム→テーブル→ボット</li>
+            <li>3部：対応漏れゼロ、Excel完全廃止、テレワーク可能に</li>
+          </ul>
+          <span class="presenter-tag">Gensparkでスライド作成</span>
+          <h4 style="margin-top:14px;">フィードバック</h4>
+          <ul>
+            <li>心境の変化・働く人の満足度・意思決定／抵抗のリアル</li>
+            <li>小規模→先進性・誇り（感情に訴える締め）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="presenter-card">
+        <div class="presenter-card-header">アドカム</div>
+        <div class="presenter-card-body">
+          <h4>桑山直幸｜小規模飲食・レジュメ→スライド化予定</h4>
+          <ul>
+            <li>社長1+社員3+バイト10〜12名、夜型・すれ違い、紙管理、IT低</li>
+            <li>Lark：日報、就業規則（NotebookLM）、タイムカード（社労士と電子承認）</li>
+            <li>業界特化SaaSはほぼ比較なし（周囲アナログ）</li>
+          </ul>
+          <span class="presenter-tag">事務員丸投げではなくLarkでシステム化</span>
+          <h4 style="margin-top:14px;">フィードバック</h4>
+          <ul>
+            <li>「野望」の原動力を語る</li>
+            <li>勤怠QR体験・位置情報必須デモ（テスト中）</li>
+            <li>取締役＝抵抗勢力ネタも参考に</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="presenter-card">
+        <div class="presenter-card-header">長友整骨院</div>
+        <div class="presenter-card-body">
+          <h4>宮原和樹｜トップダウンからの脱却</h4>
+          <ul>
+            <li>Before：スプレッドシート分散、個人売上見れない</li>
+            <li>After：ダッシュボードで全体・院・個人を1画面で可視化</li>
+            <li>個人↔店舗紐づけ、月・先月・年間をボタン1つで切替</li>
+          </ul>
+          <span class="presenter-tag">現場責任者が「やるぞ」の右腕に</span>
+          <h4 style="margin-top:14px;">フィードバック</h4>
+          <ul>
+            <li>7〜8人の先生をどうまとめたか</li>
+            <li>泥臭いエピソードがあるとよい</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">
+      <span class="section-icon" style="background:var(--navy);">⚠️</span>
+      運営・技術面の注意
+    </h2>
+    <div class="notice-cards">
+      <div class="notice-card wifi">
+        <h4>📶 Wi-Fi</h4>
+        MRT miccはWi-Fiが入りにくい構造。スライドは<strong>ローカル保存</strong>し、PowerPoint等で投影を推奨。テザリングもやや遅い可能性。
+      </div>
+      <div class="notice-card">
+        <h4>📄 配布物</h4>
+        登壇者資料のPDF配布は<strong>行わない</strong>。直接話を聞きに来てもらう方針。
+      </div>
+      <div class="notice-card">
+        <h4>📱 電波確認</h4>
+        会場で<strong>特定キャリアが繋がりにくい</strong>という情報あり。<strong>岩崎さんへ再確認</strong>（長智子）。
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">
+      <span class="section-icon" style="background:var(--coral);">✅</span>
+      次のアクション
+    </h2>
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>担当</th>
+          <th>内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>各登壇者</td>
+          <td>フィードバックを反映し、スライド・台本を仕上げる</td>
+        </tr>
+        <tr>
+          <td>寺山</td>
+          <td>出征での告知、FB紹介文シェア促進、集合写真のSNS投稿</td>
+        </tr>
+        <tr>
+          <td>笹原</td>
+          <td>当日の流れを来週共有、個別スライド相談に対応</td>
+        </tr>
+        <tr>
+          <td>桑山</td>
+          <td>同友会などへの参加呼びかけ</td>
+        </tr>
+        <tr>
+          <td>全員</td>
+          <td>3月27日本番に向け、個別グループで連絡</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footer">
+    宮崎DXサミット2026 登壇者プレ報告 議事録｜2026年3月17日｜全国AIDX協会
+  </div>
+
+</div>
+</body>
+</html>
