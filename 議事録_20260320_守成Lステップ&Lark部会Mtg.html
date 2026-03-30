@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>守成クラブ宮崎 Lステップ＆Lark部会Mtg 議事録 | 2026.03.20</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f14;
+    --surface: #1a1a24;
+    --surface-2: #22222e;
+    --border: #2a2a3a;
+    --text: #e8e6f0;
+    --text-dim: #8888a0;
+    --lime: #a8e06c;
+    --lime-dark: #6b9e3a;
+    --coral: #ff6b6b;
+    --blue: #6ba3ff;
+    --purple: #b388ff;
+    --amber: #ffd54f;
+    --teal: #4dd0c4;
+    --orange: #ffb347;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { max-width: 1140px; margin: 0 auto; padding: 48px 36px 80px; }
+
+  /* Header */
+  .header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-tag {
+    display: inline-block;
+    background: var(--teal);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .header h1 { font-size: 28px; font-weight: 900; line-height: 1.35; }
+  .header h1 span { color: var(--teal); }
+  .header-meta { text-align: right; font-size: 13px; color: var(--text-dim); line-height: 1.9; white-space: nowrap; }
+
+  /* Attendees */
+  .attendees { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+  .att {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 5px 14px 5px 5px; font-size: 12px;
+  }
+  .att-dot {
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800; color: var(--bg);
+  }
+
+  /* Summary pills */
+  .summary-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .pill {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 20px;
+    flex: 1; min-width: 180px;
+  }
+  .pill-label { font-size: 10px; color: var(--text-dim); letter-spacing: 2px; font-weight: 600; margin-bottom: 6px; }
+  .pill-val { font-size: 20px; font-weight: 900; }
+
+  /* Section */
+  .section { margin-bottom: 52px; }
+  .section-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 24px;
+  }
+  .section-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 900; flex-shrink: 0;
+    color: var(--bg);
+  }
+  .section-title { font-size: 20px; font-weight: 800; }
+  .section-sub { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+
+  /* Card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .card-title { font-size: 13px; font-weight: 700; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 10px; }
+
+  /* Problem / Solution */
+  .ps-grid { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 16px; align-items: center; margin-bottom: 16px; }
+  .ps-box { background: var(--surface-2); border-radius: 10px; padding: 18px; }
+  .ps-label { font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; }
+  .ps-arrow { text-align: center; font-size: 22px; color: var(--text-dim); }
+  .problem .ps-label { color: var(--coral); }
+  .solution .ps-label { color: var(--lime); }
+
+  /* Flow diagram */
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-row { display: flex; align-items: stretch; gap: 0; }
+  .flow-step {
+    flex: 1;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .flow-arrow-h { display: flex; align-items: center; justify-content: center; padding: 0 6px; font-size: 18px; color: var(--text-dim); flex-shrink: 0; }
+  .flow-arrow-v { text-align: center; padding: 6px 0; font-size: 18px; color: var(--text-dim); }
+  .flow-step small { display: block; font-size: 11px; color: var(--text-dim); margin-top: 4px; font-weight: 400; }
+  .flow-step.highlight { border-color: var(--lime); }
+  .flow-step.new { border-color: var(--teal); background: rgba(77,208,196,0.06); }
+  .flow-step.removed { border-color: var(--coral); opacity: 0.5; text-decoration: line-through; }
+  .flow-step.warn { border-color: var(--amber); }
+
+  /* Comparison */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .compare-col { background: var(--surface-2); border-radius: 12px; padding: 20px; }
+  .compare-col-title { font-size: 11px; font-weight: 800; letter-spacing: 2px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .compare-col-title.before { color: var(--coral); }
+  .compare-col-title.after { color: var(--lime); }
+
+  /* Decision badge */
+  .decision-list { display: flex; flex-direction: column; gap: 10px; }
+  .decision-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--surface-2); border-radius: 10px; padding: 14px 16px;
+  }
+  .decision-icon {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; margin-top: 1px;
+  }
+  .decision-icon.ok { background: rgba(168,224,108,0.15); color: var(--lime); border: 1px solid var(--lime-dark); }
+  .decision-icon.pending { background: rgba(255,213,79,0.15); color: var(--amber); border: 1px solid rgba(255,213,79,0.4); }
+  .decision-icon.action { background: rgba(107,163,255,0.15); color: var(--blue); border: 1px solid rgba(107,163,255,0.4); }
+  .decision-text { font-size: 14px; line-height: 1.6; }
+  .decision-text strong { font-weight: 700; }
+  .decision-who { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+  /* Action table */
+  .action-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .action-table th {
+    background: var(--surface-2); padding: 10px 14px;
+    text-align: left; font-size: 11px; color: var(--text-dim);
+    letter-spacing: 1px; font-weight: 700;
+    border-bottom: 1px solid var(--border);
+  }
+  .action-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .action-table tr:last-child td { border-bottom: none; }
+  .who-tag {
+    display: inline-block;
+    background: var(--surface-2); border-radius: 4px;
+    padding: 2px 8px; font-size: 11px; color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .due-tag {
+    display: inline-block;
+    border-radius: 4px; padding: 2px 8px; font-size: 11px;
+    white-space: nowrap; font-weight: 700;
+  }
+  .due-urgent { background: rgba(255,107,107,0.15); color: var(--coral); }
+  .due-soon { background: rgba(255,213,79,0.15); color: var(--amber); }
+  .due-later { background: rgba(107,163,255,0.15); color: var(--blue); }
+
+  /* Note */
+  .note { background: rgba(179,136,255,0.08); border: 1px solid rgba(179,136,255,0.25); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: var(--purple); margin-top: 14px; }
+  .note strong { font-weight: 700; }
+
+  /* Tag inline */
+  .tag { display: inline-block; border-radius: 4px; padding: 1px 8px; font-size: 11px; font-weight: 700; }
+  .tag-new { background: rgba(77,208,196,0.15); color: var(--teal); }
+  .tag-del { background: rgba(255,107,107,0.15); color: var(--coral); }
+  .tag-chg { background: rgba(255,179,71,0.15); color: var(--orange); }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* Footer */
+  .footer { text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header-tag">MEETING MINUTES</div>
+      <h1>守成クラブ宮崎<br><span>Lステップ＆Lark部会 Mtg</span></h1>
+    </div>
+    <div class="header-meta">
+      2026年3月20日（金）<br>
+      20:51〜23:20（2時間29分）<br>
+      オンライン（Larkビデオ会議）<br>
+      議事録作成：2026-03-30
+    </div>
+  </div>
+
+  <!-- ATTENDEES -->
+  <div class="attendees">
+    <div class="att"><div class="att-dot" style="background:#4dd0c4">寺</div>寺山大夢（進行・Lark担当）</div>
+    <div class="att"><div class="att-dot" style="background:#b388ff">緒</div>緒方総隆（代表）</div>
+    <div class="att"><div class="att-dot" style="background:#ffd54f">髙</div>髙八重充（Lステップ担当）</div>
+    <div class="att"><div class="att-dot" style="background:#6ba3ff">衣</div>衣笠遼司（印刷・名簿担当）</div>
+    <div class="att"><div class="att-dot" style="background:#ff9cbb">中</div>中平風（事務局）</div>
+    <div class="att"><div class="att-dot" style="background:#a8e06c">坂</div>坂口桜子（事務局）</div>
+    <div class="att"><div class="att-dot" style="background:#ffb347">岩</div>岩切葵</div>
+    <div class="att"><div class="att-dot" style="background:#888">長</div>長智子</div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-row">
+    <div class="pill">
+      <div class="pill-label">AGENDA</div>
+      <div class="pill-val" style="color:var(--teal)">4 議題</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">DECISIONS</div>
+      <div class="pill-val" style="color:var(--lime)">4 決定</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">ACTIONS</div>
+      <div class="pill-val" style="color:var(--amber)">5 タスク</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">KEY CHANGE</div>
+      <div class="pill-val" style="font-size:15px; color:var(--blue)">ゲスト登録 Lark一本化</div>
+    </div>
+  </div>
+
+  <!-- ===== AGENDA 1 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--coral)">1</div>
+      <div>
+        <div class="section-title">名簿の印刷チェック体制の整備</div>
+        <div class="section-sub">前回例会で名簿2ページ（約40名分）が漏れた問題への対応</div>
+      </div>
+    </div>
+
+    <!-- Problem / Cause -->
+    <div class="ps-grid">
+      <div class="ps-box problem">
+        <div class="ps-label">PROBLEM</div>
+        <p style="font-size:14px">前回例会の名簿から<strong>最後の2ページ（約40名分）が抜け落ちた</strong>。当日、会員・世話人から複数件の問い合わせが発生。坂口さんがMRTに掛け合い、各テーブルに追加配布して対応。</p>
+      </div>
+      <div class="ps-arrow">→</div>
+      <div class="ps-box solution">
+        <div class="ps-label">ROOT CAUSE</div>
+        <p style="font-size:14px">衣笠さんが<strong>式次第＋名簿を結合した最終版PDFを、チェックに出さずそのまま印刷所に入校してしまった</strong>。チェック工程が途中で抜けていた。</p>
+      </div>
+    </div>
+
+    <!-- New flow -->
+    <div class="card">
+      <div class="card-title">新チェックフロー <span class="tag tag-new">NEW</span></div>
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-step highlight">
+            寺山<br>
+            <small>名簿PDFをグループに送付</small>
+          </div>
+          <div class="flow-arrow-h">→</div>
+          <div class="flow-step highlight">
+            衣笠<br>
+            <small>式次第PDF＋名簿PDFを結合、最終版作成</small>
+          </div>
+          <div class="flow-arrow-h">→</div>
+          <div class="flow-step new">
+            事務局へ投げる<br>
+            <small>例会前日 <strong>20時まで</strong>に提出</small>
+          </div>
+        </div>
+        <div class="flow-arrow-v">↓</div>
+        <div class="flow-row">
+          <div class="flow-step new">
+            坂口＋有田<br>
+            <small>最終データをチェック <span class="tag tag-new">有田さん追加</span></small>
+          </div>
+          <div class="flow-arrow-h">→</div>
+          <div class="flow-step new">
+            坂口がGOサイン<br>
+            <small>問題なければ承認</small>
+          </div>
+          <div class="flow-arrow-h">→</div>
+          <div class="flow-step highlight">
+            衣笠→印刷所（桑畑）に入校<br>
+            <small>GOサイン後に実施</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="decision-list">
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>名簿締め切りアナウンスは衣笠さんが行う</strong>（世話人実行委員グループLINEへ）
+          <div class="decision-who">決定者：全員合意</div>
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>最終印刷データは例会前日20時までに事務局に提出</strong>し、チェックを受けてからのみ入校する
+          <div class="decision-who">決定者：全員合意</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== AGENDA 2 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--amber)">2</div>
+      <div>
+        <div class="section-title">本部名簿・Lステップの名前不一致問題</div>
+        <div class="section-sub">漢字の異体字・半角記号による文字化けへの対応</div>
+      </div>
+    </div>
+
+    <div class="compare-grid" style="margin-bottom:16px">
+      <div class="compare-col">
+        <div class="compare-col-title before">発生していた問題</div>
+        <ul style="font-size:13px; padding-left:18px; line-height:2">
+          <li>本部名簿とLステップで<strong>名前の漢字が異なる</strong>ケース（例：枝 vs 異体字）</li>
+          <li>会社名に<strong>半角記号（+、#ベース等）</strong>が含まれると名簿上で文字化け</li>
+          <li>株式会社→<strong>（株）に自動変換</strong>される（本部システムのルール）</li>
+          <li>メールアドレス未登録会員が多数</li>
+        </ul>
+      </div>
+      <div class="compare-col">
+        <div class="compare-col-title after">今後の対応方針</div>
+        <ul style="font-size:13px; padding-left:18px; line-height:2">
+          <li>新入会申込書は<strong>全国統一フォーム</strong>に。本部側での手書き→入力エラーが激減</li>
+          <li>半角記号による文字化けは<strong>事務局が個別確認・修正</strong></li>
+          <li>既存のメールアドレス未登録会員は<strong>本人からの変更申請</strong>を促す</li>
+          <li>今後のゲスト登録ではメールアドレスが<strong>必須項目</strong>に</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>補足：</strong> 今後の入会申込書はシステムから事務局が入力するため、本部名簿とのデータ不一致は大幅に減少する見込み。半角記号の文字化けはLark側のエンコード（文字コード）の問題の可能性あり。事務局が発見次第、都度修正対応。
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== AGENDA 3 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--teal)">3</div>
+      <div>
+        <div class="section-title">ゲスト登録フロー → Lark一本化（4月から）</div>
+        <div class="section-sub">最重要議題：ゲスト登録の方式を抜本的に変更</div>
+      </div>
+    </div>
+
+    <!-- Before / After comparison -->
+    <div style="margin-bottom: 20px;">
+      <div style="font-size:11px; font-weight:800; color:var(--text-dim); letter-spacing:2px; margin-bottom:14px;">登録フロー 変更前後の比較</div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <div class="compare-col-title before">旧フロー（3月まで）</div>
+          <div class="flow" style="gap:8px">
+            <div class="flow-step warn"><strong>LINE登録</strong><small>LステップのQRコードを読み取り</small></div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step warn">
+              申し込み期限<strong>前</strong><br>
+              <small>→ Lステップ（LINE公式）で登録<br>会員情報フォーム（10〜15分）</small>
+            </div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step removed">
+              申し込み期限<strong>後</strong><br>
+              <small>→ Larkで直接申し込み<br>（期限切れ対応）</small>
+            </div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step warn">
+              会員登録フォーム（Lステップ）<br>
+              <small>正会員 or 準会員 or ゲストを選択</small>
+            </div>
+          </div>
+          <div style="margin-top:14px; padding:12px; background:rgba(255,107,107,0.08); border-radius:8px; font-size:12px; color:var(--coral);">
+            ⚠️ <strong>問題点：</strong>ゲストが誤って「準会員」を選択→名札が作成されない事故が発生。Lステップ登録の稼働が大きく、受付が混雑。
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-col-title after">新フロー（4月から）<span class="tag tag-new" style="margin-left:8px">NEW</span></div>
+          <div class="flow" style="gap:8px">
+            <div class="flow-step new"><strong>Lark登録</strong><small>LarkフォームのQRコードを読み取り</small></div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step new">
+              <strong>Larkフォームで申し込み</strong><br>
+              <small>アカウント不要。どのタイミングでも可。<br>メールアドレスが必須項目に</small>
+            </div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step new">
+              世話人に<strong>リアルタイム通知</strong><br>
+              <small>入力と同時にLarkで全員に通知</small>
+            </div>
+            <div class="flow-arrow-v">↓</div>
+            <div class="flow-step new">
+              入会した場合のみ<br>
+              <strong>Lステップ登録</strong>を促す<br>
+              <small>LINE登録→QR読み取り1分で完了</small>
+            </div>
+          </div>
+          <div style="margin-top:14px; padding:12px; background:rgba(77,208,196,0.08); border-radius:8px; font-size:12px; color:var(--teal);">
+            ✅ <strong>改善点：</strong>「準会員」誤選択ゼロに。稼働を最小化。メールアドレス取得で事後通知も可能。期限前後の使い分けが不要に。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- なぜ今月から可能か -->
+    <div class="card">
+      <div class="card-title">なぜ4月からLark一本化が可能になったか</div>
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon action">📧</div>
+          <div class="decision-text">
+            <strong>今月からゲスト登録時にメールアドレスが必須</strong>になった。<br>
+            → メールアドレスがあればLステップ未登録でも事後にアナウンス可能
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon action">👤</div>
+          <div class="decision-text">
+            <strong>正会員はほぼ全員Lステップ登録済み</strong>。<br>
+            → 例会案内はLステップ（LINE）で届く。準会員 or 正会員の選択肢が不要に
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon action">🔗</div>
+          <div class="decision-text">
+            <strong>LarkフォームはLarkアカウント不要</strong>で回答可能（Google フォームと同様）<br>
+            → ゲストへの敷居が低い
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 対応事項 -->
+    <div class="decision-list">
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>4月からゲスト登録をLark一本化</strong>。Lステップへのゲスト登録フローを廃止
+          <div class="decision-who">担当：寺山（フロー変更）/ 髙八重（Lステップ設定変更）</div>
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>Lステップのゲスト向け会員登録フォームから「準会員」選択肢を削除</strong>（ゲスト＋高会場のみに）
+          <div class="decision-who">担当：髙八重</div>
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>ゲスト向けリッチメニューを常時表示に変更</strong>（期限前後の切り替え不要）
+          <div class="decision-who">担当：髙八重</div>
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">✓</div>
+        <div class="decision-text">
+          <strong>Larkゲスト登録フォームにメールアドレスを必須項目として追加</strong>
+          <div class="decision-who">担当：事務局（坂口）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== AGENDA 4 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--purple)">4</div>
+      <div>
+        <div class="section-title">名簿フォーマットの改善</div>
+        <div class="section-sub">Lark出力版を元のスプレッドシート版に近づける（継続議題）</div>
+      </div>
+    </div>
+
+    <!-- 現状と方針 -->
+    <div class="compare-grid" style="margin-bottom:16px">
+      <div class="compare-col">
+        <div class="compare-col-title before">現状の課題（会員・事務局からの声）</div>
+        <ul style="font-size:13px; padding-left:18px; line-height:2">
+          <li>名前のフォントが小さく見づらい</li>
+          <li>カラムの幅が広すぎる</li>
+          <li>以前のスプレッドシート版と比べてレイアウトが異なる</li>
+          <li>姓名間にスペースがない（本部名簿のデータ仕様）</li>
+          <li>特殊文字・半角記号の文字化け</li>
+        </ul>
+      </div>
+      <div class="compare-col">
+        <div class="compare-col-title after">改善方針（決定）</div>
+        <ul style="font-size:13px; padding-left:18px; line-height:2">
+          <li><strong>衣笠さんがLark名簿の試作版を作成</strong></li>
+          <li>フォントサイズ・線の太さ・背景色などを調整</li>
+          <li>1ページあたりの行数を調整（現在より増やせる見込み）</li>
+          <li>世話人会で試作版を提示してフィードバックを得る</li>
+          <li>Larkで元の水準が再現できれば<strong>Lark一本化を確定</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 費用の件 -->
+    <div class="card">
+      <div class="card-title">Lark有料プラン追加（3,000円/月）の件</div>
+      <div style="font-size:14px; line-height:1.8; margin-bottom:12px">
+        衣笠さんがLarkで名簿フォーマットを自由に編集するためには、<strong>Lark有料アカウントの追加</strong>が必要（+3,000円/月）。
+      </div>
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon pending">⏳</div>
+          <div class="decision-text">
+            <strong>衣笠さんが試作版を作成後、世話人会で結果を報告。その上で課金の承認を得る</strong>
+            <div class="decision-who">緒方代表が世話人会で説明・説得を担当</div>
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending">⏳</div>
+          <div class="decision-text">
+            現在の守成宮崎アカウントに支払いを追加。<strong>次期会計の岩切のカードを使用予定</strong>
+            <div class="decision-who">確定は世話人会後</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>議論のポイント：</strong> スプレッドシートに戻すか否かの判断は「Larkで同等水準のレイアウトが作れるか」にかかっている。衣笠さんが試作版を作成し、事務局・世話人に見せた上で最終判断。スプシ戻しの可能性は<strong>「Larkで再現できない場合のみ」</strong>とする方向。
+    </div>
+  </div>
+
+
+  <hr>
+
+  <!-- ===== ACTION TABLE ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--lime);color:#0f0f14">▶</div>
+      <div>
+        <div class="section-title">ネクストアクション一覧</div>
+        <div class="section-sub">今回の会議で確定したタスク</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:0; overflow:hidden">
+      <table class="action-table">
+        <thead>
+          <tr>
+            <th style="width:28px">#</th>
+            <th>アクション</th>
+            <th>担当</th>
+            <th>期限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">1</td>
+            <td>Lステップのゲスト向け回答フォームから「準会員」選択肢を削除/変更</td>
+            <td><span class="who-tag">髙八重</span></td>
+            <td><span class="due-tag due-urgent">4月例会前</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">3</td>
+            <td>ゲスト向けリッチメニューを常時表示（期限前後の切り替え廃止）に設定変更</td>
+            <td><span class="who-tag">髙八重</span></td>
+            <td><span class="due-tag due-urgent">4月例会前</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">4</td>
+            <td>Larkゲスト登録フォームにメールアドレス（必須）を追加</td>
+            <td><span class="who-tag">事務局（坂口）</span></td>
+            <td><span class="due-tag due-urgent">4月例会前</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">5</td>
+            <td>Lark名簿フォーマットの試作版を作成（元のスプシ版に近いレイアウト）</td>
+            <td><span class="who-tag">衣笠</span></td>
+            <td><span class="due-tag due-soon">世話人会前</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">6</td>
+            <td>世話人会でLark有料プラン追加（3,000円/月）の説明・承認取得</td>
+            <td><span class="who-tag">緒方代表</span></td>
+            <td><span class="due-tag due-soon">次回世話人会</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== DECISION SUMMARY ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--lime);color:#0f0f14">✓</div>
+      <div>
+        <div class="section-title">決定事項まとめ</div>
+      </div>
+    </div>
+    <div class="decision-list">
+      <div class="decision-item">
+        <div class="decision-icon ok">1</div>
+        <div class="decision-text"><strong>名簿印刷チェック体制：</strong>例会前日20時までに事務局へデータ提出→坂口（＋有田）がチェック→GOサイン後に衣笠が入校</div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">2</div>
+        <div class="decision-text"><strong>名簿締め切りアナウンス：</strong>衣笠さんが世話人実行委員グループLINEへ通知</div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">3</div>
+        <div class="decision-text"><strong>本部名簿の文字化け：</strong>半角記号・特殊文字が原因。事務局が発見次第個別修正</div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">4</div>
+        <div class="decision-text"><strong>ゲスト登録フロー：4月からLark一本化。</strong>期限前後の使い分け廃止。Lステップへのゲスト誘導も廃止</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    守成クラブ宮崎 Lステップ＆Lark部会Mtg 議事録 — 2026年3月20日<br>
+    文字起こしデータより作成 / 議事録作成：2026-03-30
+  </div>
+
+</div>
+</body>
+</html>
