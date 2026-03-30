@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>守成クラブ宮崎 フォロー部会ミーティング 議事録 | 2026.03.29</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0f14; --surface: #1a1a24; --surface-2: #22222e; --border: #2a2a3a;
+    --text: #e8e6f0; --text-dim: #8888a0;
+    --lime: #a8e06c; --lime-dark: #6b9e3a; --coral: #ff6b6b; --blue: #6ba3ff;
+    --purple: #b388ff; --amber: #ffd54f; --teal: #4dd0c4; --orange: #ffb347;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { max-width: 1140px; margin: 0 auto; padding: 48px 36px 80px; }
+
+  .header { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .header-tag { display: inline-block; background: var(--blue); color: var(--bg); font-size: 10px; font-weight: 800; letter-spacing: 3px; padding: 4px 12px; border-radius: 3px; margin-bottom: 12px; }
+  .header h1 { font-size: 28px; font-weight: 900; line-height: 1.35; }
+  .header h1 span { color: var(--blue); }
+  .header-meta { text-align: right; font-size: 13px; color: var(--text-dim); line-height: 1.9; white-space: nowrap; }
+
+  .attendees { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; }
+  .att { display: inline-flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 5px 14px 5px 5px; font-size: 12px; }
+  .att-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--bg); }
+
+  .summary-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .pill { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 20px; flex: 1; min-width: 180px; }
+  .pill-label { font-size: 10px; color: var(--text-dim); letter-spacing: 2px; font-weight: 600; margin-bottom: 6px; }
+  .pill-val { font-size: 20px; font-weight: 900; }
+
+  .section { margin-bottom: 52px; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+  .section-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 900; flex-shrink: 0; color: var(--bg); }
+  .section-title { font-size: 20px; font-weight: 800; }
+  .section-sub { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-size: 13px; font-weight: 700; color: var(--text-dim); letter-spacing: 1px; margin-bottom: 14px; }
+
+  .member-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+  .member-card { background: var(--surface-2); border-radius: 10px; padding: 16px; border-left: 3px solid var(--border); }
+  .member-card.urgent { border-left-color: var(--coral); }
+  .member-card.caution { border-left-color: var(--amber); }
+  .member-card.watch { border-left-color: var(--blue); }
+  .member-card.ok { border-left-color: var(--lime); }
+  .member-name { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
+  .member-status { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+  .status-nayami { background: rgba(255,107,107,0.15); color: var(--coral); }
+  .status-taikai { background: rgba(255,213,79,0.15); color: var(--amber); }
+  .status-blank { background: rgba(107,163,255,0.15); color: var(--blue); }
+  .member-note { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+  .member-owner { font-size: 11px; color: var(--teal); margin-top: 6px; font-weight: 600; }
+
+  .flow { display: flex; flex-direction: column; gap: 0; }
+  .flow-row { display: flex; align-items: stretch; gap: 0; }
+  .flow-step { flex: 1; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; text-align: center; font-size: 13px; font-weight: 600; }
+  .flow-arrow-h { display: flex; align-items: center; justify-content: center; padding: 0 6px; font-size: 18px; color: var(--text-dim); flex-shrink: 0; }
+  .flow-arrow-v { text-align: center; padding: 6px 0; font-size: 18px; color: var(--text-dim); }
+  .flow-step small { display: block; font-size: 11px; color: var(--text-dim); margin-top: 4px; font-weight: 400; }
+  .flow-step.new { border-color: var(--teal); background: rgba(77,208,196,0.06); }
+  .flow-step.highlight { border-color: var(--lime); }
+
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .compare-col { background: var(--surface-2); border-radius: 12px; padding: 20px; }
+  .compare-col-title { font-size: 11px; font-weight: 800; letter-spacing: 2px; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .compare-col-title.before { color: var(--coral); }
+  .compare-col-title.after { color: var(--lime); }
+  .compare-list { list-style: none; }
+  .compare-list li { font-size: 13px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .compare-list li:last-child { border-bottom: none; }
+  .compare-list li::before { margin-right: 8px; }
+  .compare-col.before .compare-list li::before { content: "✗"; color: var(--coral); }
+  .compare-col.after .compare-list li::before { content: "✓"; color: var(--lime); }
+
+  .decision-list { display: flex; flex-direction: column; gap: 10px; }
+  .decision-item { display: flex; align-items: flex-start; gap: 12px; background: var(--surface-2); border-radius: 10px; padding: 14px 16px; }
+  .decision-icon { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 13px; margin-top: 1px; }
+  .decision-icon.ok { background: rgba(168,224,108,0.15); color: var(--lime); border: 1px solid var(--lime-dark); }
+  .decision-icon.pending { background: rgba(255,213,79,0.15); color: var(--amber); border: 1px solid rgba(255,213,79,0.4); }
+  .decision-icon.action { background: rgba(107,163,255,0.15); color: var(--blue); border: 1px solid rgba(107,163,255,0.4); }
+  .decision-text { font-size: 14px; line-height: 1.6; }
+  .decision-text strong { font-weight: 700; }
+  .decision-who { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+  .action-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .action-table th { background: var(--surface-2); padding: 10px 14px; text-align: left; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; font-weight: 700; border-bottom: 1px solid var(--border); }
+  .action-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .action-table tr:last-child td { border-bottom: none; }
+  .who-tag { display: inline-block; background: var(--surface-2); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: var(--text-dim); white-space: nowrap; }
+  .due-tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 11px; white-space: nowrap; font-weight: 700; }
+  .due-urgent { background: rgba(255,107,107,0.15); color: var(--coral); }
+  .due-soon { background: rgba(255,213,79,0.15); color: var(--amber); }
+  .due-later { background: rgba(107,163,255,0.15); color: var(--blue); }
+
+  .note { background: rgba(179,136,255,0.08); border: 1px solid rgba(179,136,255,0.25); border-radius: 10px; padding: 14px 18px; font-size: 13px; color: var(--purple); margin-top: 14px; }
+  .note strong { font-weight: 700; }
+  .tag { display: inline-block; border-radius: 4px; padding: 1px 8px; font-size: 11px; font-weight: 700; }
+  .tag-new { background: rgba(77,208,196,0.15); color: var(--teal); }
+  .tag-chg { background: rgba(255,179,71,0.15); color: var(--orange); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  .footer { text-align: center; font-size: 12px; color: var(--text-dim); margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header-tag">MEETING MINUTES</div>
+      <h1>守成クラブ宮崎<br><span>フォロー部会 ミーティング</span></h1>
+    </div>
+    <div class="header-meta">
+      2026年3月29日（日）<br>
+      21:02〜（27分35秒）<br>
+      オンライン（Larkビデオ会議）<br>
+      議事録作成：2026-03-31
+    </div>
+  </div>
+
+  <!-- ATTENDEES -->
+  <div class="attendees">
+    <div class="att"><div class="att-dot" style="background:#4dd0c4">寺</div>寺山大夢（進行・Lark担当）</div>
+    <div class="att"><div class="att-dot" style="background:#6ba3ff">岩</div>岩切葵（フォロー部リーダー）</div>
+    <div class="att"><div class="att-dot" style="background:#ffd54f">下</div>下野（フォロー部）</div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-row">
+    <div class="pill">
+      <div class="pill-label">AGENDA</div>
+      <div class="pill-val" style="color:var(--blue)">3 議題</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">DECISIONS</div>
+      <div class="pill-val" style="color:var(--lime)">3 決定</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">ACTIONS</div>
+      <div class="pill-val" style="color:var(--amber)">5 タスク</div>
+    </div>
+    <div class="pill">
+      <div class="pill-label">KEY CHANGE</div>
+      <div class="pill-val" style="font-size:15px; color:var(--teal)">Larkフィルタービュー導入</div>
+    </div>
+  </div>
+
+  <!-- ===== AGENDA 1 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--coral)">1</div>
+      <div>
+        <div class="section-title">今月のフォロー状況共有</div>
+        <div class="section-sub">岩切さんによる要注意会員のピックアップ報告</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">要注意会員リスト（3月時点）</div>
+      <div class="member-grid">
+
+        <div class="member-card urgent">
+          <div class="member-name">矢野静香さん</div>
+          <span class="member-status status-nayami">悩み中</span>
+          <div class="member-note">ニーナさんの部下。退会理由の記入なし。ニーナさん経由でアプローチすれば続けてくれる可能性が高い。</div>
+          <div class="member-owner">→ 下野さんが連絡（近所・連絡先あり）</div>
+        </div>
+
+        <div class="member-card caution">
+          <div class="member-name">西村さん</div>
+          <span class="member-status status-blank">回答なし</span>
+          <div class="member-note">例会への参加なし・売上も立っていない。紹介者が関西（梅田会場）。フォローの見込みが読みにくい状況。</div>
+          <div class="member-owner">→ 花吉さんのヒアリング結果次第</div>
+        </div>
+
+        <div class="member-card watch">
+          <div class="member-name">上田さん</div>
+          <span class="member-status status-blank">回答なし</span>
+          <div class="member-note">青年部会にも参加実績あり。デメリットを感じている様子はない。紹介者は新里さん。</div>
+          <div class="member-owner">→ 新里さんに確認依頼済み</div>
+        </div>
+
+        <div class="member-card watch">
+          <div class="member-name">木下さん</div>
+          <span class="member-status status-blank">回答なし</span>
+          <div class="member-note">シルバーアクセル。熊本会場にも参加実績あり積極的。ただし年齢的な体力面が懸念。</div>
+          <div class="member-owner">→ こむらさんの回答次第</div>
+        </div>
+
+        <div class="member-card watch">
+          <div class="member-name">岡崎さん</div>
+          <span class="member-status status-blank">回答なし</span>
+          <div class="member-note">ちょこちょこ交流があり大丈夫そう。紹介者は荒田美優さん。</div>
+          <div class="member-owner">→ 荒田さんに確認依頼済み</div>
+        </div>
+
+        <div class="member-card caution">
+          <div class="member-name">岩倉さん</div>
+          <span class="member-status status-blank">回答なし</span>
+          <div class="member-note">こむらさんから「辞めたい場合どうすれば？」と相談あり。過去のアンケートでもネガティブな反応。退会の可能性あり。</div>
+          <div class="member-owner">→ 要ヒアリング</div>
+        </div>
+
+        <div class="member-card ok">
+          <div class="member-name">中村さん（ニンニクむし）</div>
+          <span class="member-status" style="background:rgba(168,224,108,0.15);color:var(--lime)">様子見</span>
+          <div class="member-note">下野さんが先月電話済み。補助金制度の仕事が立て込んでいて忙しい。終わったら例会参加予定との回答あり。</div>
+          <div class="member-owner">→ 下野さんフォロー中・様子見</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>課題：</strong>フォロー後の結果追跡が不十分。世話人会で対応方針を決めても記録が残らず、なぁなぁになるケースが発生している。フォロー結果を<strong>Larkに記録し、途中経過を追える仕組み</strong>が必要。
+    </div>
+  </div>
+
+  <!-- ===== AGENDA 2 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--teal)">2</div>
+      <div>
+        <div class="section-title">Larkフォロー管理の改善</div>
+        <div class="section-sub">リマインド漏れ対策とフィルタービューの整備</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">課題：リマインド漏れ <span class="tag tag-chg">改善</span></div>
+      <div class="compare-grid">
+        <div class="compare-col before">
+          <div class="compare-col-title before">BEFORE — 現状の問題</div>
+          <ul class="compare-list">
+            <li>岩切さん一人がリマインドを担当</li>
+            <li>タイミングを忘れてしまうことがある</li>
+            <li>月初・例会前の2回送れていない</li>
+            <li>LINEで送るため情報が分散</li>
+          </ul>
+        </div>
+        <div class="compare-col after">
+          <div class="compare-col-title after">AFTER — 改善方針</div>
+          <ul class="compare-list">
+            <li>フォローグループで誰かが「そろそろリマインドを」と声かけ</li>
+            <li>月初（1日）と例会前（10日前後）の2回</li>
+            <li>将来的にはLarkで自動化（長期目標）</li>
+            <li>Larkを連絡ツールのスタンダードに</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">新フィルタービュー（寺山さんが実装済み） <span class="tag tag-new">NEW</span></div>
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-step new">
+            ステータス：悩み中<br>
+            <small>退会検討中の会員</small>
+          </div>
+          <div class="flow-arrow-h">＋</div>
+          <div class="flow-step new">
+            ステータス：退会予定<br>
+            <small>理由によっては引き止め可能</small>
+          </div>
+          <div class="flow-arrow-h">＋</div>
+          <div class="flow-step new">
+            ステータス：空欄（ハイフン）<br>
+            <small>未回答者を漏れなく把握</small>
+          </div>
+        </div>
+        <div class="flow-arrow-v">↓</div>
+        <div class="flow-row">
+          <div class="flow-step highlight" style="flex: none; width: 100%; border-radius: 10px;">
+            対象者を一覧で抽出 → 後追いフォローだけに集中できる
+          </div>
+        </div>
+      </div>
+      <div class="note" style="margin-top: 14px;">
+        <strong>補足：</strong>デフォルト値にハイフン（−）を設定することで、空欄での絞り込みが可能になった。以前は「更新予定」の人も混入してしまっていた問題を解決。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">寺山さんの方針：Lark文化の定着</div>
+      <p style="font-size:14px; line-height:1.8;">リマインドを人力で回すのではなく、<strong>Larkを見る習慣</strong>を作ることが本質的な解決策。毎月1日に「3ヶ月前にステータス未更新の会員リスト」を自動表示できるようになれば、世話人が後追いするだけの運用が実現できる。LINEとLarkの二重管理をなくし、<strong>Larkをコミュニケーションのスタンダード</strong>にすることが前提条件。</p>
+    </div>
+  </div>
+
+  <!-- ===== AGENDA 3 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--amber)">3</div>
+      <div>
+        <div class="section-title">会計・決済フローの整備</div>
+        <div class="section-sub">承認フロー設定と決済アカウント移行</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">対応が必要な2件</div>
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon pending">!</div>
+          <div class="decision-text">
+            <strong>Lark会計承認フローの設定</strong>：申請〜承認〜支払いの一連のフローをLark上で完結させる。寺山さんと岩切さんで別途打ち合わせを実施。
+            <div class="decision-who">担当：寺山・岩切 / 期限：火曜日（3/31）昼頃</div>
+          </div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending">!</div>
+          <div class="decision-text">
+            <strong>決済アカウントを衣笠さんに移行</strong>：現在の守成宮崎アカウントから衣笠さんのアカウントへの決済移行を世話人会までに完了させる必要あり。
+            <div class="decision-who">担当：寺山 / 期限：次回世話人会まで</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== NEXT ACTIONS ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--amber);color:#0f0f14">→</div>
+      <div>
+        <div class="section-title">ネクストアクション</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="action-table">
+        <thead>
+          <tr>
+            <th style="width:32px">#</th>
+            <th>アクション</th>
+            <th>担当</th>
+            <th>期限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">1</td>
+            <td>矢野さんに連絡を取り、継続意向を確認</td>
+            <td><span class="who-tag">下野</span></td>
+            <td><span class="due-tag due-urgent">近日中</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">2</td>
+            <td>フォローグループでリマインドを共有する習慣を開始（月初・例会前）</td>
+            <td><span class="who-tag">岩切・下野・安根</span></td>
+            <td><span class="due-tag due-soon">4月から</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">3</td>
+            <td>Larkフォロー管理のフィルタービューを活用して対象者抽出・フォロー記録を開始</td>
+            <td><span class="who-tag">岩切</span></td>
+            <td><span class="due-tag due-soon">次回世話人会前</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">4</td>
+            <td>Lark会計承認フローの設定（打ち合わせ）</td>
+            <td><span class="who-tag">寺山・岩切</span></td>
+            <td><span class="due-tag due-urgent">3/31（火）</span></td>
+          </tr>
+          <tr>
+            <td style="color:var(--text-dim); font-size:12px">5</td>
+            <td>決済アカウントを衣笠さんへ移行</td>
+            <td><span class="who-tag">寺山</span></td>
+            <td><span class="due-tag due-urgent">世話人会まで</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== DECISION SUMMARY ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num" style="background:var(--lime);color:#0f0f14">✓</div>
+      <div>
+        <div class="section-title">決定事項まとめ</div>
+      </div>
+    </div>
+    <div class="decision-list">
+      <div class="decision-item">
+        <div class="decision-icon ok">1</div>
+        <div class="decision-text">
+          <strong>Larkフィルタービュー導入：</strong>「悩み中・退会予定・空欄（ハイフン）」の会員を一覧抽出するビューを寺山さんが実装。毎月のフォロー業務に活用する。
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">2</div>
+        <div class="decision-text">
+          <strong>リマインド運用：</strong>月初（1日）と例会前（10日前後）の2回、フォローグループで声かけを行う。担当固定ではなく誰かが気づいて発信する運用。将来的に自動化を目指す。
+        </div>
+      </div>
+      <div class="decision-item">
+        <div class="decision-icon ok">3</div>
+        <div class="decision-text">
+          <strong>フォロー結果の記録：</strong>世話人会での決定をLarkに残し、途中経過を追跡できるようにする。「なぁなぁ」になる問題を防止。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    守成クラブ宮崎 フォロー部会ミーティング 議事録 — 2026年3月29日<br>
+    文字起こしデータより作成 / 議事録作成：2026-03-31
+  </div>
+
+</div>
+</body>
+</html>
