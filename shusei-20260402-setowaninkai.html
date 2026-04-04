@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>守成クラブ宮崎 世話人会 2026/04/02 議事録</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    min-height: 100vh;
+    padding: 48px 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* ヘッダー */
+  .header {
+    text-align: center;
+    margin-bottom: 52px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #21262d;
+  }
+  .header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 40px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header .subtitle { font-size: 16px; color: #8b949e; margin-bottom: 20px; }
+  .header .participants {
+    display: inline-block;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.7;
+  }
+  .header .participants strong { color: #e6edf3; }
+
+  /* セクションヘッダー */
+  .section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #8b949e;
+    text-transform: uppercase;
+    margin: 48px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #21262d;
+  }
+
+  /* カードグリッド */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .full { grid-column: 1 / -1; }
+
+  /* カード */
+  .card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-accent {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .acc-orange { background: linear-gradient(90deg, #f59e0b, #f97316); }
+  .acc-red    { background: linear-gradient(90deg, #ef4444, #ec4899); }
+  .acc-blue   { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+  .acc-green  { background: linear-gradient(90deg, #10b981, #84cc16); }
+  .acc-purple { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+  .acc-yellow { background: linear-gradient(90deg, #eab308, #f59e0b); }
+  .acc-pink   { background: linear-gradient(90deg, #ec4899, #f43f5e); }
+  .acc-teal   { background: linear-gradient(90deg, #14b8a6, #3b82f6); }
+
+  .card-icon { font-size: 24px; margin-bottom: 10px; }
+  .card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #8b949e;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .card-body { font-size: 13px; color: #8b949e; line-height: 1.7; }
+
+  /* 目標数字 */
+  .big-number {
+    font-size: 64px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin: 8px 0;
+  }
+  .big-sub { font-size: 13px; color: #8b949e; }
+
+  /* NGリスト */
+  .ng-list { list-style: none; margin-top: 8px; }
+  .ng-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  .ng-list li:last-child { border-bottom: none; }
+  .ng-badge {
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* タグリスト */
+  .tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: #8b949e;
+  }
+  .tag.new { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); color: #34d399; }
+  .tag.warn { background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); color: #fbbf24; }
+
+  /* アジェンダカード */
+  .agenda-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .agenda-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #21262d;
+  }
+  .agenda-tag {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 900;
+    flex-shrink: 0;
+  }
+  .tag-a { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .tag-b { background: rgba(16,185,129,0.2); color: #34d399; }
+  .tag-c { background: rgba(139,92,246,0.2); color: #a78bfa; }
+  .tag-d { background: rgba(245,158,11,0.2); color: #fbbf24; }
+
+  .agenda-header-text h3 { font-size: 14px; font-weight: 700; }
+  .agenda-header-text p { font-size: 12px; color: #8b949e; margin-top: 2px; }
+  .agenda-body { padding: 16px 20px; }
+  .agenda-item {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-item-num {
+    width: 22px; height: 22px;
+    background: #21262d;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; color: #8b949e;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .agenda-item-content { flex: 1; }
+  .agenda-item-title { font-weight: 700; color: #e6edf3; margin-bottom: 4px; }
+  .agenda-item-desc { color: #8b949e; font-size: 12px; line-height: 1.6; }
+
+  /* 決議バッジ */
+  .decision-list { list-style: none; }
+  .decision-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  .decision-list li:last-child { border-bottom: none; }
+  .check { color: #34d399; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* インフォメーション */
+  .info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+  }
+  .info-row:last-child { border-bottom: none; }
+  .info-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  /* 数字ハイライト */
+  .highlight {
+    display: inline-block;
+    font-weight: 700;
+    color: #f59e0b;
+  }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid #21262d;
+    font-size: 12px;
+    color: #484f58;
+  }
+
+  @media (max-width: 900px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .full { grid-column: auto; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ヘッダー -->
+  <div class="header">
+    <div class="badge">守成クラブ宮崎 · 世話人会</div>
+    <h1>2026年4月2日（木）</h1>
+    <div class="subtitle">定例世話人会 議事録ビジュアルサマリー</div>
+    <div class="participants">
+      <strong>参加者（24名）：</strong>緒方・高橋・川越・岩田・長・樋渡・岩切・高八重・下野・原口・児玉・寺山・衣笠・甲斐・長田・福田・新里・中野（てげ）・坂口・中平・秋丸・永吉・中野（インパクトワークス）・岡山
+    </div>
+  </div>
+
+  <!-- 代表より -->
+  <div class="section-title">🎯 代表より — 今期の最重要目標</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-accent acc-orange"></div>
+      <div class="card-icon">🏆</div>
+      <div class="card-label">11周年記念例会 目標</div>
+      <div class="big-number">200名</div>
+      <div class="big-sub">参加者を目指す</div>
+      <div class="tag-list">
+        <span class="tag warn">🚗 鹿児島キャラバン</span>
+        <span class="tag warn">🚗 大分キャラバン</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-accent acc-green"></div>
+      <div class="card-icon">📈</div>
+      <div class="card-label">会員数目標</div>
+      <div class="big-number">400名</div>
+      <div class="big-sub">達成への意識を全部で統一</div>
+      <div class="card-body" style="margin-top:12px">
+        「<strong style="color:#e6edf3">どうしたら達成できるか</strong>」に各部が時間を割いていく。出発進行の強化・ゲストフォローを徹底。
+      </div>
+    </div>
+  </div>
+
+  <!-- 九州代表者会議・お知らせ -->
+  <div class="section-title">📢 九州代表者会議 & お知らせ</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-accent acc-red"></div>
+      <div class="card-icon">🚫</div>
+      <div class="card-label">本部からのNG項目（九州代表者会議報告）</div>
+      <ul class="ng-list">
+        <li><span class="ng-badge">NG①</span>準会員の登壇（ワンコイン含む）</li>
+        <li><span class="ng-badge">NG②</span>チラシ配布（全体禁止・自テーブルのみ可）</li>
+        <li><span class="ng-badge">NG③</span>ブース出展（8月より解禁予定）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-accent acc-teal"></div>
+      <div class="card-icon">📚</div>
+      <div class="card-label">修学院 出前講座（佐賀開催）</div>
+      <div class="card-body">
+        小冊子：10冊 / 年間 <span class="highlight">13,200円</span><br>
+        宮崎では <span class="highlight">30名</span> 集めることを目標<br><br>
+        <span style="color:#e6edf3">• 入塾URLを共有</span><br>
+        <span style="color:#e6edf3">• チェック体制を強化（事務局）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 決議事項・重要事項 -->
+  <div class="section-title">✅ 決議・重要事項</div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-accent acc-purple"></div>
+      <div class="card-icon">👥</div>
+      <div class="card-label">新実行委員 決議（5名）</div>
+      <ul class="decision-list">
+        <li><span class="check">✓</span>本田さん</li>
+        <li><span class="check">✓</span>串間さん</li>
+        <li><span class="check">✓</span>八尾さん</li>
+        <li><span class="check">✓</span>飯村さん</li>
+        <li><span class="check">✓</span>横山さん</li>
+      </ul>
+      <div class="card-body" style="margin-top:10px; font-size:12px">
+        紹介者をグループライン招待・世話人目指すか確認
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-accent acc-yellow"></div>
+      <div class="card-icon">🏅</div>
+      <div class="card-label">皆勤賞 2年ぶりに復活</div>
+      <div style="margin: 8px 0;">
+        <span class="big-number" style="font-size:44px">20名</span>
+        <span style="font-size:13px; color:#8b949e"> 該当者</span>
+      </div>
+      <div class="card-body">
+        賞金：<span class="highlight">3,000円</span>（2部会でも使用可）<br>
+        受付でお渡し
+      </div>
+      <div style="margin-top: 14px;">
+        <div class="card-label" style="margin-bottom: 6px;">委嘱状授与式</div>
+        <div class="card-body">時間をかけないよう配慮して実施</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-accent acc-pink"></div>
+      <div class="card-icon">📻</div>
+      <div class="card-label">ラジオ — 仕組み化で黒字化へ</div>
+      <ul class="decision-list">
+        <li><span class="check">→</span>令和8年より <strong style="color:#e6edf3">月1放送</strong>（例会翌日）</li>
+        <li><span class="check">→</span>男女2名ずつのMC体制</li>
+        <li><span class="check">→</span>1回の放送で最大 <span class="highlight">10社</span> 紹介</li>
+        <li><span class="check">→</span>現在 <span class="highlight">17名</span> 協賛（宮崎・延岡・都城）</li>
+        <li><span class="check">→</span>赤字分：分割返済計画（2年1か月）</li>
+        <li><span class="check">→</span>今期 <strong style="color:#34d399">黒字スタート見込み</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-accent acc-blue"></div>
+      <div class="card-icon">🔧</div>
+      <div class="card-label">運営改善 — その他決定事項</div>
+      <div class="info-row"><div class="info-dot" style="background:#60a5fa"></div><div>世話人会出欠名簿を <strong style="color:#e6edf3">Larkで管理</strong></div></div>
+      <div class="info-row"><div class="info-dot" style="background:#60a5fa"></div><div>TM勉強会：4月を中級→<strong style="color:#e6edf3">初級</strong> に変更</div></div>
+      <div class="info-row"><div class="info-dot" style="background:#60a5fa"></div><div>世話人会・例会への<strong style="color:#e6edf3">出席義務化</strong></div></div>
+      <div class="info-row"><div class="info-dot" style="background:#60a5fa"></div><div>各部会代表者会議：テキスト事前共有で<strong style="color:#e6edf3">時間短縮</strong></div></div>
+      <div class="info-row"><div class="info-dot" style="background:#60a5fa"></div><div>イベントカレンダーを<strong style="color:#e6edf3">Larkで作成</strong></div></div>
+      <div class="info-row"><div class="info-dot" style="background:#fbbf24"></div><div>Larkゲスト登録のURL更新（旧URLが残存）</div></div>
+    </div>
+  </div>
+
+  <!-- 改善検討議題 -->
+  <div class="section-title">🗂️ 改善検討議題リスト【最終完全版】</div>
+  <div style="font-size:13px; color:#8b949e; margin-bottom: 20px; line-height:1.7">
+    3月例会振り返りアンケートをもとに抽出した4カテゴリ・8議題。各議題は「課題の仮説」と「具体的な提案」で構成されています。
+  </div>
+
+  <!-- A -->
+  <div class="agenda-card">
+    <div class="agenda-header">
+      <div class="agenda-tag tag-a">A</div>
+      <div class="agenda-header-text">
+        <h3>事務局・受付・準備プロセスの最適化</h3>
+        <p>受付インフラの整備・名簿精度の向上</p>
+      </div>
+    </div>
+    <div class="agenda-body">
+      <div class="agenda-item">
+        <div class="agenda-item-num">1</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">受付インフラの整備と準備工数の削減</div>
+          <div class="agenda-item-desc">①受付専用の予備PC確保 ②リボン・封筒の準備を前日完了へ変更 ③受付マニュアル（釣り銭・時計合わせ含む）の作成・厳守を決議</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-item-num">2</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">名簿作成の完全自動化・標準化と告知スケジュールの早期化</div>
+          <div class="agenda-item-desc">①名簿の事業内容入力を必須化・ダブルチェック体制確立 ②勉強会等スケジュールは3ヶ月先まで即時共有</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="agenda-card">
+    <div class="agenda-header">
+      <div class="agenda-tag tag-b">B</div>
+      <div class="agenda-header-text">
+        <h3>例会プログラムと商談の質向上</h3>
+        <p>TM運営の標準化・車座の時間最適化</p>
+      </div>
+    </div>
+    <div class="agenda-body">
+      <div class="agenda-item">
+        <div class="agenda-item-num">1</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">TMの役割再定義と「迷い時間」のゼロ化</div>
+          <div class="agenda-item-desc">①話す順番はTMが即座に指定するルール再徹底 ②新任TMへのフォロー強化 ③話す内容を事前アナウンスする仕組みを導入</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-item-num">2</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">商談密度を高めるための進行・配置の最適化</div>
+          <div class="agenda-item-desc">①進行を数分圧縮し、2回目の車座後に5分間の名刺交換タイムを新設 ②司会・音響・他会場周知者が車座に参加できるローテーション構築</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="agenda-card">
+    <div class="agenda-header">
+      <div class="agenda-tag tag-c">C</div>
+      <div class="agenda-header-text">
+        <h3>組織運営と会員サービスの強化</h3>
+        <p>業務分散・IT活用によるネットワーキング高度化</p>
+      </div>
+    </div>
+    <div class="agenda-body">
+      <div class="agenda-item">
+        <div class="agenda-item-num">1</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">特定個人への業務集中解消と当番制の導入</div>
+          <div class="agenda-item-desc">①「15時入り担当」を完全当番制にする ②二部会受付など手薄な箇所への人員配置をあらかじめ決議</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-item-num">2</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">リアルタイム座席把握と会員属性情報の可視化</div>
+          <div class="agenda-item-desc">①当日の座席表をLark等でリアルタイム閲覧できる仕組みを検討 ②サロン系会員の利用促進・同業種交流機会の試験導入</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="agenda-card">
+    <div class="agenda-header">
+      <div class="agenda-tag tag-d">D</div>
+      <div class="agenda-header-text">
+        <h3>会場・集客・マインドセット</h3>
+        <p>会場選定基準の確立・出発進行の強化</p>
+      </div>
+    </div>
+    <div class="agenda-body">
+      <div class="agenda-item">
+        <div class="agenda-item-num">1</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">交流を最大化する会場構造の優先順位決定</div>
+          <div class="agenda-item-desc">①今後の会場選定で「大広間・同一フロア」を最優先事項とする ②現在の会場では中央に寄せるなどの配置工夫を徹底。次回から2会場制に変更</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-item-num">2</div>
+        <div class="agenda-item-content">
+          <div class="agenda-item-title">出発進行の強化と「赤会員8割」達成へのアクション</div>
+          <div class="agenda-item-desc">①出発進行の演出をより力強く再構築（4月担当：新里） ②世話人紹介ページの作成 ③紹介者ありの場合の受付・フォローフローの特別マニュアル化</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    守成クラブ宮崎 世話人会 2026/04/02（木）議事録をもとに自動生成<br>
+    Lark API 経由で取得した全文（5,132文字）から主要ポイントを抽出・構造化
+  </div>
+
+</div>
+</body>
+</html>
