@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会議記録 インフォグラフィック | 寺山大夢</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #0f1117;
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header .label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #f59e0b;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+  .header p {
+    font-size: 13px;
+    color: #666;
+  }
+
+  .section { margin-bottom: 40px; }
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #2a2d3a;
+  }
+
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .card {
+    background: #1a1d27;
+    border: 1px solid #2a2d3a;
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .card:hover { border-color: #f59e0b; transform: translateY(-2px); }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .card.orange::before { background: linear-gradient(90deg, #f59e0b, #f97316); }
+  .card.blue::before   { background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+  .card.green::before  { background: linear-gradient(90deg, #10b981, #84cc16); }
+  .card.purple::before { background: linear-gradient(90deg, #8b5cf6, #ec4899); }
+  .card.red::before    { background: linear-gradient(90deg, #ef4444, #ec4899); }
+
+  .card-date {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .card-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .badge-orange { background: rgba(245,158,11,0.2); color: #f59e0b; }
+  .badge-blue   { background: rgba(59,130,246,0.2); color: #60a5fa; }
+  .badge-green  { background: rgba(16,185,129,0.2); color: #34d399; }
+  .badge-purple { background: rgba(139,92,246,0.2); color: #a78bfa; }
+
+  .footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 12px;
+    color: #444;
+  }
+
+  @media (max-width: 600px) {
+    .cards { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="label">Meeting Minutes · Infographics</div>
+    <h1>会議記録 ビジュアルアーカイブ</h1>
+    <p>各会議の要点をインフォグラフィックで一覧できます</p>
+  </div>
+
+  <!-- 守成クラブ宮崎 -->
+  <div class="section">
+    <div class="section-title">守成クラブ宮崎</div>
+    <div class="cards">
+
+      <a class="card orange" href="shusei-20260402-setowaninkai.html">
+        <div class="badge badge-orange">世話人会</div>
+        <div class="card-date">2026年4月2日（木）</div>
+        <div class="card-title">世話人会 — 11周年200名・改善議題A〜D</div>
+        <div class="card-desc">代表より200名目標・NG項目・修学院出前講座・新実行委員5名・改善プロジェクト</div>
+      </a>
+
+      <a class="card blue" href="shusei-20260329-follow.html">
+        <div class="badge badge-blue">フォロー部会</div>
+        <div class="card-date">2026年3月29日</div>
+        <div class="card-title">フォロー部会</div>
+        <div class="card-desc">フォロー活動の振り返りと改善</div>
+      </a>
+
+      <a class="card blue" href="shusei-20260320.html">
+        <div class="badge badge-blue">会議</div>
+        <div class="card-date">2026年3月20日</div>
+        <div class="card-title">3月定例</div>
+        <div class="card-desc">3月定例会議の記録</div>
+      </a>
+
+      <a class="card green" href="shusei-202603-reform.html">
+        <div class="badge badge-green">改革提案</div>
+        <div class="card-date">2026年3月</div>
+        <div class="card-title">運営改革提案</div>
+        <div class="card-desc">組織・運営体制の改革提案まとめ</div>
+      </a>
+
+      <a class="card purple" href="shusei-20260227-follow.html">
+        <div class="badge badge-purple">フォロー部会</div>
+        <div class="card-date">2026年2月27日</div>
+        <div class="card-title">フォロー部会Mtg</div>
+        <div class="card-desc">フォロー部会の活動記録</div>
+      </a>
+
+      <a class="card purple" href="shusei-20260227-lstep.html">
+        <div class="badge badge-purple">Lステップ部会</div>
+        <div class="card-date">2026年2月27日</div>
+        <div class="card-title">Lステップ&Lark部会Mtg</div>
+        <div class="card-desc">デジタル活用部会の記録</div>
+      </a>
+
+      <a class="card blue" href="shusei-20260202-general.html">
+        <div class="badge badge-blue">代表者会議</div>
+        <div class="card-date">2026年2月2日</div>
+        <div class="card-title">各部会代表者Mtg</div>
+        <div class="card-desc">各部会代表者による会議記録</div>
+      </a>
+
+      <a class="card green" href="shusei-20260126-ops.html">
+        <div class="badge badge-green">事務局</div>
+        <div class="card-date">2026年1月26日</div>
+        <div class="card-title">事務局打合せ — 運用フロー設計</div>
+        <div class="card-desc">事務局の運用フロー設計会議</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Lark講座 -->
+  <div class="section">
+    <div class="section-title">Lark講座</div>
+    <div class="cards">
+
+      <a class="card blue" href="lark-20260311-study.html">
+        <div class="badge badge-blue">勉強会</div>
+        <div class="card-date">2026年3月11日</div>
+        <div class="card-title">Lark講座12期生 勉強会</div>
+        <div class="card-desc">12期生勉強会の記録</div>
+      </a>
+
+      <a class="card purple" href="expert-20260307-day2.html">
+        <div class="badge badge-purple">エキスパート</div>
+        <div class="card-date">2026年3月7日</div>
+        <div class="card-title">エキスパートコース Day2 — 外部連携実践</div>
+        <div class="card-desc">外部API連携・自動化の実践研修</div>
+      </a>
+
+      <a class="card orange" href="expert-day1-kickoff.html">
+        <div class="badge badge-orange">エキスパート</div>
+        <div class="card-date">2026年</div>
+        <div class="card-title">エキスパートコース Day1 キックオフ</div>
+        <div class="card-desc">エキスパートコースの開始記録</div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- その他 -->
+  <div class="section">
+    <div class="section-title">その他</div>
+    <div class="cards">
+
+      <a class="card green" href="dxsummit-20260317-ops.html">
+        <div class="badge badge-green">DXサミット</div>
+        <div class="card-date">2026年3月17日</div>
+        <div class="card-title">宮崎DXサミット 運営MTG</div>
+        <div class="card-desc">DXサミット運営会議の記録</div>
+      </a>
+
+      <a class="card green" href="dxsummit-20260310-ops.html">
+        <div class="badge badge-green">DXサミット</div>
+        <div class="card-date">2026年3月10日</div>
+        <div class="card-title">宮崎DXサミット 運営MTG</div>
+        <div class="card-desc">DXサミット運営会議の記録</div>
+      </a>
+
+      <a class="card blue" href="dxsummit-20260205-ops.html">
+        <div class="badge badge-blue">DXサミット</div>
+        <div class="card-date">2026年2月5日</div>
+        <div class="card-title">宮崎DXサミット 運営MTG</div>
+        <div class="card-desc">DXサミット運営会議の記録</div>
+      </a>
+
+      <a class="card purple" href="dxsummit-20251212-kickoff.html">
+        <div class="badge badge-purple">DXサミット</div>
+        <div class="card-date">2025年12月12日</div>
+        <div class="card-title">宮崎DXサミット キックオフ</div>
+        <div class="card-desc">DXサミット立ち上げ会議</div>
+      </a>
+
+      <a class="card orange" href="docugenius-ringi-202603.html">
+        <div class="badge badge-orange">稟議</div>
+        <div class="card-date">2026年3月</div>
+        <div class="card-title">DocuGenius 導入稟議</div>
+        <div class="card-desc">DocuGenius導入に関する稟議資料</div>
+      </a>
+
+      <a class="card green" href="meishi-20260304.html">
+        <div class="badge badge-green">名刺</div>
+        <div class="card-date">2026年3月4日</div>
+        <div class="card-title">名刺デザイン</div>
+        <div class="card-desc">名刺デザインの記録</div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    株式会社Entime / 寺山大夢 · 会議記録インフォグラフィック
+  </div>
+
+</div>
+</body>
+</html>
