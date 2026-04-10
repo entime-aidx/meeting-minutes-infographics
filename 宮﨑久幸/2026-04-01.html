@@ -4,140 +4,363 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宮﨑久幸　2026年4月1日</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <style>
-        :root {
-            --primary: #1a56db;
-            --accent: #f59e0b;
-            --dark: #1e293b;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
         }
-        .reveal h1 {
-            font-size: 1.6em;
-            color: var(--primary);
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 48px 0 56px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .doc-title {
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
         }
-        .reveal h2 {
-            font-size: 1.3em;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.3em;
-            margin-bottom: 0.6em;
-        }
-        .reveal ul {
-            font-size: 0.78em;
-            line-height: 1.75;
-            text-align: left;
-            margin-left: 1em;
-        }
-        .reveal ul li {
-            margin-bottom: 0.4em;
-        }
-        .title-slide .subtitle {
-            font-size: 0.85em;
-            color: #334155;
-            margin-top: 1.2em;
-            line-height: 1.6;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .title-slide .hint {
-            font-size: 0.65em;
+        .doc-overview {
+            font-size: 0.95rem;
             color: #94a3b8;
-            margin-top: 2em;
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 24px;
         }
-        .decision-slide h2 {
-            color: #047857;
-            border-bottom-color: #10b981;
+        .doc-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
         }
-        .decision-slide .decision-item {
-            background: #d1fae5;
-            border-left: 4px solid #10b981;
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
-            list-style: none;
-            font-size: 0.78em;
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
         }
-        .action-slide h2 {
-            color: #dc2626;
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num {
+            background: #059669;
+            font-size: 1.2rem;
+        }
+        .action-num {
+            background: #dc2626;
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            flex: 1;
+        }
+        .decision-section .section-title {
+            border-bottom-color: #059669;
+            color: #065f46;
+        }
+        .action-section .section-title {
             border-bottom-color: #dc2626;
+            color: #991b1b;
         }
-        .action-slide .action-item {
-            background: #fef3c7;
-            border-left: 4px solid var(--accent);
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
+
+        /* ── 箇条書き ── */
+        .doc-list {
             list-style: none;
-            font-size: 0.78em;
+            padding: 0;
         }
-        .reveal section {
-            text-align: left;
+        .doc-list li {
+            padding: 10px 16px 10px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .title-slide {
+        .doc-list li:hover {
+            border-left-color: #0d9488;
+            background: #f8fafc;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .card-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        .card-bullets li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 4px 0 4px 12px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            color: #064e3b;
+        }
+        .check {
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 12px;
+            border-top: 3px solid #f97316;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .action-who {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .action-what {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
             text-align: center;
-        }
-        .reveal .controls {
-            color: var(--accent);
-        }
-        .reveal .progress {
-            color: var(--accent);
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-<div class="reveal">
-    <div class="slides">
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">宮﨑久幸　2026年4月1日</h1>
+            <p class="doc-overview">株式会社エンタイムの2月度の売上・経費の確認および予実管理を行い、立替金の精算処理、事業区分（構築代行 → 伴走支援）の整理、個人事業主口座への資金移動、妻への給与支払いに関する社会保険上の懸念点など</p>
+            <div class="doc-meta">2026年4月1日</div>
+        </div>
+    </div>
+    <div class="doc-body">
         
-        <section class="title-slide">
-            <h1>宮﨑久幸　2026年4月1日</h1>
-            <p class="subtitle">株式会社エンタイムの2月度の売上・経費の確認および予実振り返りを行い、立替金の精算、事業区分（構築代行 vs 伴走支援）の整理、個人事業主口座への振替処理、妻への給与支払いに関する社会保険上の懸念、返</p>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">先週のイベントについて</div>
+            <ul class="card-bullets"><li>先週開催したイベント（Lark関連のオフラインイベント）が大盛況だった</li><li>申し込みベースで 100名 が集まった</li><li>イベント後、約15件の個別相談 を地元企業の経営者から受けた</li><li>オフラインでリアルに会うことの価値を実感。年齢層が高い経営者は膝を突き合わせて話を聞きたいというニーズがある</li><li>今後3〜4ヶ月はこのようなイベント企画を継続し、来期への種まきをしていく方針</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">経費項目の確認</div>
+            <ul class="card-bullets"><li>マック分け（約5,000円）：消耗品（ガジェット系）</li><li>ボンドボンドさん：外注費（ホームページ制作）</li><li>広告宣伝費 272,000円：単発。AI の勉強代（コンサル受講）→ 支払報酬 に科目変更</li><li>ハナナ（花田）さん：外注費で処理（Lark関連）</li><li>グーセッション（坂口氏）：元社員。宮﨑氏が別途適切に処理する</li><li>中央住建：事務所関連費用</li><li>サイファーパートナーズ：事務所のWi-Fi設定費用（消耗品扱い）</li><li>アルーサー 約11万円：通信費。2ヶ月分で契約最後の支払い</li><li>飲食費・交際費：Larkには入力済みだが、マネーフォワードへの反映がまだ一部未確認（レシート未取込の可能性）</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">立替金の精算処理</div>
+            <ul class="card-bullets"><li>過去の立替分について、Larkチャットのピン留めメッセージを参照しながら付け合わせを実施</li><li>未払金の取り崩し処理として、以下の月別対応を確認：</li><li>56,090円 → 2025年8月分</li><li>41,020円 → 2025年10月分</li><li>15万円 → 2025年11月分</li><li>98,000円 → 2025年12月分</li><li>61,930円 → 2025年7月分</li><li>38,000円 → 2025年9月分</li><li>56,000円 → 2026年1月分</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">売上・業績の確認</div>
+            <ul class="card-bullets"><li>2月売上：4,259,900円（Larkベースと一致確認済み）</li><li>主な顧客：原研一郎氏（約60万）、シスコム（約39万）、相馬企画、森山氏、家村氏など</li><li>60万円台が3件、40万円台が2件で約180万円</li><li>今期累計売上（8ヶ月）：約3,600万円</li><li>粗利：2,760万円（一人で外注費を差し引いた残り）</li><li>営業利益：約1,880万円</li><li>前期売上は 3,865万円 → 今期は前期超えの見通し</li><li>当初目標5,000万円だったが、外注費・固定費の低下、坂口氏の退職もあり、4,000〜4,500万円 で着地すれば十分との認識</li><li>銀行評価も売上成長と利益確保により高評価の見込み。ただし継続性が銀行の留意点</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">事業区分の変更（構築代行 → DX伴走支援）</div>
+            <ul class="card-bullets"><li>当初、法人＝教育事業、個人事業＝構築代行という区分で運営していた</li><li>「構築代行」という言い方をやめ、「DX伴走支援」として事業を再定義</li><li>変更の背景（2つの懸念点）：</li><li>ゴール設計の難しさ：顧客の解像度が低く、言葉の定義にズレがある（例：勤怠管理と言いつつシフト調整・給与計算CSV出力まで求められる）</li><li>費用発生タイミングの問題：要件定義のヒアリング時間に費用が発生していなかった。また構築後に使い方の教育も必要でコンサル的要素が入る</li><li>新しいモデル：</li><li>3ヶ月パッケージ（月額15万円×3ヶ月＝税込約50万円）</li><li>1ヶ月目：課題抽出・ヒアリング</li><li>2〜3ヶ月目：構築・実装</li><li>4ヶ月目以降：必要に応じ延長</li><li>3ヶ月の期限により顧客側もコミットしてくれるため、成果が出やすい</li><li>議論の結果、伴走支援は「構築事業」（伴走込みの構築事業）に分類することで合意</li><li>7〜8割は仕組みの構築であり、教育は付随要素</li><li>運用後の継続的なメンテナンス依頼（月額保守）も見込まれる</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">構築事業2件の個人事業への振替</div>
+            <ul class="card-bullets"><li>相馬企画とヌルカの2件（各495,000円、合計約100万円）は構築事業と確認</li><li>法人口座で受領しているが、本来は個人事業の収益</li><li>契約書の巻き直しは顧客負担を考慮し、この2件はそのまま</li><li>法人口座から個人事業口座へ送金する形で処理</li><li>4月中 に資金移動を実施</li><li>今後の構築案件は、個人事業（エンターム個人事業）で契約する</li><li>ヌルカは月額165,000円×3ヶ月の分割払い</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">Larkベースの銀行明細管理</div>
+            <ul class="card-bullets"><li>法人口座と個人事業口座の両方をLarkの同一テーブル（銀行明細）に入力済み</li><li>タブ（ビュー）で法人・個人を分けて閲覧可能</li><li>宮﨑氏向けに「銀行口座ごと」のビューを新規作成</li><li>2025年1月以降のデータで個人事業分を確認できるよう設定</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">妻への給与支払いに関する問題</div>
+            <ul class="card-bullets"><li>妻への支払い額は 29,000円 程度で変更なし</li><li>法人から個人（家族単位）への経費処理として、社会保険料が発生しない形を想定していたが…</li><li>懸念点： 妻はJA（農協）に勤務しており、そちらで社会保険に加入済み</li><li>継続的に別の法人から報酬を得ると、JA に副業報告が必要になる可能性</li><li>JA が副業NGの場合は難しい</li><li>単発（決算期のみの手伝い等）であれば社会保険上の問題は発生しにくい</li><li>→ 妻にJAの副業規定を確認することに</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">返金対応の件</div>
+            <ul class="card-bullets"><li>以前からの返金案件（体調不良による受講中止。クレームではない）</li><li>当初の費用満額ではなく、約10万円の返金 で落ち着きそう</li><li>寺田氏が3月25日頃にLarkチャットで返金合意書（案）を送付済み</li><li>タイトルを「返金ご一緒に」変更、こちらの落ち度がない旨を記載</li><li>宮﨑氏が内容を確認し、フィードバックする</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">レシート・領収書の送付状況</div>
+            <ul class="card-bullets"><li>2月分：寺田氏はLarkに入力済み、レターパックでも送付済みの認識</li><li>宮﨑氏側で未取込の可能性あり → 確認する</li><li>3月分：昨日実施分があり、今週中にまとめて送付予定</li><li>接待交際費が現状7万円計上だが、レシート反映後はもう少し増える見込み</li></ul>
+        </div></div>
+            </div>
         </section>
-        <section>
-            <h2>会議の概要</h2>
-            <ul><li>株式会社エンタイムの2月度の売上・経費の確認および予実振り返りを行い、立替金の精算、事業区分（構築代行 vs 伴走支援）の整理、個人事業主口座への振替処理、妻への給与支払いに関する社会保険上の懸念、返金対応案件の確認など、経理・事業運営に関する多岐にわたる事項を協議した。</li></ul>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>同友会での事例比較：訪問看護・ケアマネ施設を運営する会社の発表を聴講。スタッフ25名で売上1億3,000万円、利益約2,000万円。人件費は安いが、施設入居者がいる限り安定収益。エンタイムとの違いは「継続性・安定性」vs「毎月の新規獲得の必要性」。余剰資金をイベント等に再投資し、自ら仕事を生み出す楽しみを感じている</li><li>ホームページ：外注（ボンドボンド）で新しいホームページを制作中。DX全体像、法人向けDX研修、個人向けLark講座、DX伴走支援の3事業を掲載</li><li>銀行評価：売上成長・利益確保により高評価見込みだが、銀行は「継続性」を留意している</li><li>個人事業口座の資金不足：現時点で個人事業口座にお金がほぼないため、法人からの振替が急務</li><li>役員報酬：現在月額10万円</li></ul>
+            </div>
         </section>
-        <section>
-            <h2>先週のイベント報告</h2>
-            <ul><li>先週開催したオフラインイベントが大盛況だった</li><li>申し込みベースで100名が集まった</li><li>イベント後に約15件の個別相談を地元企業の経営者から獲得</li><li>オフラインで直接会うことの有効性を実感（特に年齢層が高い経営者はリアルでの対話を好む）</li><li>Larkの認知拡大にも効果があった</li></ul>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>立替金の精算処理：各月の金額と対応月を確認完了。未払金の取り崩しとして処理済み</div><div class="decision-item"><span class="check">✓</span>DX伴走支援の事業区分：「伴走込みの構築事業」として個人事業側に分類</div><div class="decision-item"><span class="check">✓</span>相馬企画・ヌルカの2件（計約100万円）：法人口座から個人事業口座へ振り替える。今回の2件は契約書の巻き直しはしない</div><div class="decision-item"><span class="check">✓</span>今後の構築案件：個人事業（エンターム）名義で契約する</div><div class="decision-item"><span class="check">✓</span>広告宣伝費272,000円：科目を「支払報酬」に変更</div><div class="decision-item"><span class="check">✓</span>今期の売上目標：4,000〜4,500万円で着地すれば十分（当初5,000万円目標から修正）</div><div class="decision-item"><span class="check">✓</span>次回打ち合わせ：4月23日（木）8:30〜</div></div>
+            </div>
         </section>
-        <section>
-            <h2>立替金の精算・未払金の確認</h2>
-            <ul><li>寺田氏が立て替えていた分の精算内容をLarkチャットのピン留めメッセージを参照しながら確認</li><li>各月の立替金を以下の通り突き合わせ：</li><li>2025年7月： 61,000円</li><li>2025年8月： 56,090円</li><li>2025年9月： 38,000円</li><li>2025年10月： 41,020円</li><li>2025年11月： 150,000円</li><li>2025年12月： 98,000円（9万8千円）</li></ul>
-        </section>
-        <section>
-            <h2>経費項目の確認</h2>
-            <ul><li>マック分け（ガジェット系、約5,000円）： 消耗品として計上</li><li>ボンドボンド： 外注費（ホームページ制作）</li><li>広告宣伝費 272,000円： AI関連の勉強代（コンサル受講）→ 支払報酬に変更</li><li>ハナナ（花田）さん： 外注費でOK（Lark関連）</li><li>坂口氏（元社員）： 宮﨑氏が適切に処理する</li><li>中央住建： 事務所関連費用（消耗品）</li><li>サイファーパートナーズ： 事務所のWi-Fi設定費用（事務所関連で同類）</li><li>アルーサー 11万円： 通信費（2ヶ月分、契約最後）</li></ul>
-        </section>
-        <section>
-            <h2>2月の売上・業績確認</h2>
-            <ul><li>2月売上： 4,259,900円（Larkデータと一致）</li><li>主な売上先：</li><li>原研一郎氏： 約60万円</li><li>シスコム： 約39万円</li><li>相馬企画</li><li>森山氏、家村氏 等</li><li>60万円台が3件、40万円台が2件（合計約180万円）</li><li>今期累計売上（8ヶ月）： 約3,600万円</li></ul>
-        </section>
-        <section>
-            <h2>事業区分の変更（構築代行→伴走支援→構築事業）</h2>
-            <ul><li>当初、個人事業主として「構築代行」を行う予定だったが、考え方が変わった</li><li>構築代行の問題点：</li><li>1. 顧客のゴールの解像度が低く、言葉の定義にズレがある（例：勤怠管理と言いつつ、シフト調整や給与計算CSV出力も期待される） 2. 要件定義のための打ち合わせ時間に費用が発生しない 3. 構築後に使い方を教える必要があり、コンサルティング的要素が発生</li><li>新しいモデル「DX伴走支援」：</li><li>3ヶ月パッケージ（月額15万円×3ヶ月＝税込約50万円）</li><li>1ヶ月目：課題抽出・ヒアリング</li><li>2〜3ヶ月目：構築・実装</li><li>4ヶ月目以降：必要に応じて延長</li></ul>
-        </section>
-        <section>
-            <h2>構築事業2件の口座振替</h2>
-            <ul><li>相馬企画とヌルカの2件が該当</li><li>各49.5万円×2＝約100万円</li><li>ヌルカは165,000円×3ヶ月の分割払い</li><li>法人口座で受領済みだが、実質は個人事業の売上</li><li>法人口座から個人事業口座へ振替が必要</li><li>今回の2件は契約書の巻き直しは顧客負担が大きい</li></ul>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">寺田氏</div>
+                <div class="action-what">妻にJAの副業規定を確認する</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺田氏</div>
+                <div class="action-what">法人口座から個人事業口座へ構築事業2件分（約100万円）を送金</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月中（今日明日目処）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺田氏</div>
+                <div class="action-what">3月分のレシート・領収書をまとめて送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週中</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮﨑氏</div>
+                <div class="action-what">3月の給与明細を寺田氏へ送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>早急に</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮﨑氏</div>
+                <div class="action-what">返金合意書（案）の内容を確認し、フィードバック</div>
+                <div class="action-when"><span class="when-badge">期限</span>早急に</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮﨑氏</div>
+                <div class="action-what">2月分レシートの受領・取込状況を確認し、差異があれば連絡</div>
+                <div class="action-when"><span class="when-badge">期限</span>早急に</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮﨑氏</div>
+                <div class="action-what">坂口氏（グーセッション）の経費処理を適切に行う</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
+            </div></div>
+            </div>
         </section>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-    Reveal.initialize({
-        hash: true,
-        transition: 'slide',
-        controls: true,
-        progress: true,
-        center: true,
-        slideNumber: 'c/t',
-        controlsTutorial: true,
-    });
-</script>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
 </body>
 </html>
