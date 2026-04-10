@@ -112,14 +112,15 @@
             padding: 0;
         }
         .doc-list li {
-            padding: 10px 16px 10px 20px;
+            padding: 12px 16px 12px 20px;
             border-left: 3px solid #e2e8f0;
-            margin-bottom: 8px;
-            font-size: 0.92rem;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
             color: #334155;
             background: #fff;
             border-radius: 0 8px 8px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.7;
         }
         .doc-list li:hover {
             border-left-color: #0d9488;
@@ -129,34 +130,39 @@
         /* ── カードグリッド ── */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
         }
         .info-card {
             background: #fff;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             border-top: 3px solid #0d9488;
         }
         .card-title {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
         }
         .card-bullets {
             list-style: none;
             padding: 0;
         }
         .card-bullets li {
-            font-size: 0.85rem;
-            color: #475569;
-            padding: 4px 0 4px 12px;
-            border-left: 2px solid #e2e8f0;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 6px 0 6px 14px;
+            border-left: 3px solid #ccfbf1;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .card-bullets li:hover {
+            border-left-color: #0d9488;
+            color: #0f172a;
         }
 
         /* ── 決定事項 ── */
@@ -243,8 +249,8 @@
         <div class="header-inner">
             <span class="doc-badge">議事録</span>
             <h1 class="doc-title">AI/DXサミット　2026年3月24日</h1>
-            <p class="doc-overview">AI/DXサミット in 愛知の開催に向け、現在の集客状況（申込23名）を確認した上で、懇親会会場の予約、登壇者・司会の決定、グループワークのテーマ・運営方法、弁当の選定、スポンサー募集の導線整備、表</p>
-            <div class="doc-meta">2026年3月24日</div>
+            <p class="doc-overview">AI/DXサミット in 愛知（2026年4月25日開催予定）の第2回準備会議。現時点の申込者数23名の状況を確認し、参加者100名・20チーム体制を目標に集客を本格化する方針を決定した。懇親会会場の予約（80名規模・4,500円プラン・19時開始）、グループワークのテーマ4種（収支管理・顧客/営業管理・勤怠管理・マーケティング施策管理）の確定、登壇者（二宮真理子→磯原良介の順）、司会（門田さん）、弁当（矢尾彦・1,200円・名古屋名物系）、表彰賞品（1位Amazonギフト2,000円×5名、2位1,000円、3位名古屋名物お菓子）など具体的な運営事項を決定した。</p>
+            <div class="doc-meta">2026年3月24日 ／ - タイムさん（発言者名未表示、ファシリテーター、協会代表、Lark研究所運営）</div>
         </div>
     </div>
     <div class="doc-body">
@@ -257,56 +263,52 @@
             <div class="section-body">
                 <div class="card-grid">
         <div class="info-card">
-            <div class="card-title">現在の参加申込状況</div>
-            <ul class="card-bullets"><li>Peatix経由で現時点の申込数は 23名</li><li>タイムさんの講座受講者が中心。サポーター（当日の各チーム支援者）として 10名 を確保済み（県外からの参加者含む）。あと2名程度追加見込み</li><li>前回大阪開催の申込は73名、東京は66名。今回は 100名 を目標とする</li><li>サポーターにはマサさんなどスキルのある方への打診も検討</li></ul>
+            <div class="card-title">現時点の参加申込状況</div>
+            <ul class="card-bullets"><li>Peatixでの現時点の申込者数は23名で、大半がタイムさんの講座受講生や運営側の知り合いである</li><li>タイムさんが声をかけたサポーター（当日のグループワーク支援要員）は10名で、弁当等を運営側で負担する条件で県外からも参加予定</li><li>あと2名ほどサポーターの追加声かけ中で、合計12名程度になる見込み</li><li>二宮真理子さんのスタッフ2名も弁当込みで参加予定</li><li>前回の東京は申込66名、大阪は申込73名（実参加はいずれも約8割）で、今回は申込100名を目標とする</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">チーム編成</div>
-            <ul class="card-bullets"><li>参加者100名の場合、4〜5人＋サポーター1名の構成で 約20チーム を想定</li><li>チーム人数はサポーター数に応じて柔軟に調整（4〜5人程度）</li><li>磯原さん・庄司さん（東海林さん）など運営メンバーもサポーターとして入れる（隠し玉として活用）</li><li>席次はランダムではなく、同じ会社の人はバラけるように意図的に配置する</li></ul>
+            <div class="card-title">チーム編成とサポーター体制</div>
+            <ul class="card-bullets"><li>参加者100名を想定し、1チーム4〜5名＋サポーター1名の編成で約20チームを目指す</li><li>サポーター12名＋運営側（磯原・庄司・タイム等）で不足分を補い、20チーム近くを確保可能</li><li>マサさん等スキルのある人にもサポーター側での参加を打診する方針</li><li>席次は事前に運営側で決定し、同じ会社の人はバラけるよう意図的に配置する</li><li>名札は前回同様、参加者が手書きで自分の呼んでほしい名前を大きく書く方式とする（まなぶさんが前回準備した名札ホルダーを今回も使用）</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">懇親会（1次会）会場</div>
-            <ul class="card-bullets"><li>磯原さんがピックアップした候補店から選定</li><li>駅・会場から近い店を第一候補とし、80名規模で予約する方針</li><li>19時開始、食べ飲み放題プラン（生ビール付き）</li><li>当初候補の店は80名入るが大広間ではなく、30名の部屋＋10名ずつの小部屋に分かれる構造と判明</li><li>交流のしやすさを考慮し、最大でも2〜3部屋程度にまとまる会場を並行して探すことに</li><li>東海林さんから「神戸館」の提案もあったが、結婚式の予約で埋まっていると二宮さんが確認済み</li><li>予算は 1人5,000円以内 を目標（生ビール付きだと+500円で5,500円になるケースあり。4,000円プラン+500円等で調整）</li><li>現在の候補店は一旦 2週間キープ しつつ、より適した会場も探す</li></ul>
+            <div class="card-title">懇親会会場の選定</div>
+            <ul class="card-bullets"><li>懇親会は19時開始、80名規模で予約する方針を決定</li><li>磯原さんがピックアップした候補店のうち、7,000円→5,000円割引の食べ飲み放題3時間プランを第一候補に選定</li><li>門田さんが電話確認したところ、生ビール付きはプラス500円で5,500円になるため、4,000円プラン+生ビール500円の4,500円プランで予算内に収める方向</li><li>席が30名の大広間＋10名ずつの小部屋に分かれる構成のため、交流・席替えの観点から大きな間が取れる別候補も並行して探す</li><li>現在の店は2週間前までキープ可能で、より適した会場があれば変更する</li><li>庄司さんから神戸館（伏見エリア）の提案があったが、二宮さんが確認済みで結婚式等で予約済みだった</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">登壇者・順番</div>
-            <ul class="card-bullets"><li>二宮真理子さん（1番手） と 磯原良介（安江）さん（2番手） の2名で確定</li><li>理由：二宮さんの内容が万人受けしやすく、磯原さんは前回に近い内容（稼ぎ方等）になるため、二宮さんが先の方が自然</li><li>二宮さんは「Larkの寺マリコ」として活動しており、Larkの魅力を初心者から長年ユーザーまで語る内容</li><li>LP用に顔写真とプロフィールテキストを二宮さんから磯原さんへ送付する</li></ul>
+            <div class="card-title">登壇者・司会の決定</div>
+            <ul class="card-bullets"><li>登壇は二宮真理子さん（1番手）→磯原良介さん（2番手）の順で決定</li><li>二宮さんは先日パッションで行ったLarkセミナーと同様の内容をベースに、初心者から長年使っている人まで向けた「Larkの魅力を語る」形式で登壇</li><li>磯原さんは前回大阪と同様の「どうやって稼ぐか」系の内容を予定しており、万人受けする二宮さんの方を先にする構成が自然と判断</li><li>司会は門田さんに決定（磯原さんの社員、愛知にゆかりがあり原稿読みが上手いとの評価）</li><li>前回大阪では美代さんが司会・タイムキーパーを担当した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">司会</div>
-            <ul class="card-bullets"><li>門田さん が司会に決定</li><li>華やかで愛知にゆかりがある方が望ましいという方針から抜擢</li><li>門田さんは「原稿を読むのがうまい」とのこと。原稿を準備して臨む</li><li>タイムキーパーや指示出しがメイン業務</li></ul>
-        </div>
-        <div class="info-card">
-            <div class="card-title">主催者表記・協会について</div>
-            <ul class="card-bullets"><li>タイムさんが代表の協会が今週末に設立予定（定款提出済み）</li><li>パンフレット等の主催者欄は 協会名＋代表タイムさん のシンプルな形にする</li><li>協会のウェブサイトもAIで作成中。今週末にはたたき台を共有予定</li><li>イベントタブに今回のイベント情報も掲載予定</li></ul>
+            <div class="card-title">LP・パンフレット・協会ウェブサイト</div>
+            <ul class="card-bullets"><li>LPの登壇者情報が「カミングスーン」のままなので、二宮さんのプロフィール写真・テキスト（Larkの寺マリコ運営、バックオフィス支援等）を送付してもらい更新する</li><li>主催者紹介欄はタイムさん1名とし、肩書きを「協会代表」に変更する</li><li>パンフレットはまなぶさんが前回の知見を活かして担当し、入稿デッドラインから逆算してスポンサー情報の締切を4月11日に設定</li><li>協会のウェブサイトはAIで全制作しており、今週末にたたき台を共有予定で、イベントタブに今回のサミットを第一弾として掲載する</li></ul>
         </div>
         <div class="info-card">
             <div class="card-title">スポンサー募集</div>
-            <ul class="card-bullets"><li>スポンサー向けLPは作成済みだが、申込ボタンのリンク先が未設定で機能していない</li><li>「相談をする」ボタンの遷移先として、Larkでスポンサー問い合わせフォームを作成する方針</li><li>決済はユニバペイ（普段使っているカード決済）を利用</li><li>スポンサー募集の締切は 4月11日（パンフレット入稿の都合上、2週間前が限度）</li><li>ブース最大枠は 16枠（うち3枠は運営側で賄うことも可能。外部向けは最大13枠）</li><li>サポーターに1万円程度でのスポンサー参加を打診する可能性あり</li><li>15万円のスポンサーが入らなかった場合は運営側が後ろ面（パンフレット裏面）に入る</li></ul>
+            <ul class="card-bullets"><li>スポンサー募集LPは存在するが、申込ボタンのリンク先が未設定で機能していない状態</li><li>タイムさんがLarkでスポンサー問い合わせフォーム（プラン選択・名前・質問事項）を作成し、磯原さんのスタッフがLP内のボタンにリンク設置する（翌日中に公開可能）</li><li>スポンサー枠は最大16枠で、外部から有料スポンサーが入らなかった場合は運営側3枠で対応し、残り13枠を外部募集</li><li>スポンサー締切は4月11日（イベント2週間前）、パンフレット入稿に間に合わせるため</li><li>タイムさんのサポーター陣に1万円程度のスポンサー参加を打診する可能性あり</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">グループワークのテーマ・運営</div>
-            <ul class="card-bullets"><li>確定テーマ3つ：</li><li>収支管理（売上・支出、銀行口座・クレジット・現金の統合管理）</li><li>顧客管理・営業管理（案件管理の要素も含む）</li><li>勤怠管理</li><li>4つ目候補としてマーケティング施策管理（広告データ分析等）を検討したが、専門用語（CV、CPA等）がわからない参加者には難しいため、該当スキルのサポーターが来る場合のみ採用（来なければ3テーマ）</li><li>プロジェクト管理は2時間では重すぎるため除外。ただし3テーマの中にプロジェクト管理の要素を組み込む</li><li>ダミーデータ（サンプルデータ）はこちらで事前準備する</li><li>東海林さん：収支管理・顧客管理/営業管理のサンプルデータ（既存のものをExcelに変換）</li><li>二宮さん：従業員データ（勤怠用含む）</li><li>サポーターには事前に得意テーマを聞いておき、意図的にマッチするチームに配置する（くじ引き風に見せる）</li><li>課題説明は 東海林（庄司）さんがスライド等で全体に説明 してからグループワーク開始</li><li>ベースはタイムさんのLarkアカウント上に各チーム分を作成し、参加者に共有 → タイムさん側で進捗を把握できるメリット</li><li>自動化（オートメーション）は外部ユーザーが操作できないため、タイムさんが都度トグルをONにする運用</li><li>使用するLarkの機能（ベース、フォーム、承認等）は指定せず、サポーター・チームの判断に任せる → 多様なアプローチが出て面白い</li></ul>
+            <div class="card-title">グループワークのテーマ・運営方法</div>
+            <ul class="card-bullets"><li>グループワークは2時間で構築＋発表の体験型形式で、参加者にLarkでの成功体験を持ち帰ってもらうことが目的</li><li>テーマは最終的に3つに絞り込み（4つ目のマーケティング施策管理はサポーター適任者が来れば追加）：</li><li>収支管理（銀行CSV・クレジットCSV等のダミーデータ付き）</li><li>顧客管理・営業管理（案件管理の要素も含む）</li><li>勤怠管理（従業員データのみ提供、構築方法はチームに委ねる）</li><li>ダミーデータ担当：庄司さんが1番・2番のサンプルデータ（既存のものをExcel化して提供）、二宮さんが従業員データを作成</li><li>勤怠管理はダミーデータ不要で、従業員データだけ渡してベース・フォーム・承認アプリなど好きな方法で構築してもらう（アプローチの違いが出て面白い）</li><li>サポーターには事前にどのテーマが得意かヒアリングし、得意テーマのチームに配置する（やらせ的だが心理的安心感を確保）</li><li>グループワーク冒頭の課題説明は庄司さんが担当し、スライド等で視覚的に説明する</li><li>チームへのテーマ割り当ては抽選ではなく、運営側で事前に指定する方式</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">発表・審査・表彰</div>
-            <ul class="card-bullets"><li>2時間で構築 → 各チーム 5分間のデモ発表（資料作成は不要）</li><li>工夫した点などを発表</li><li>審査はリアルタイム投票形式（全参加者が採点、自動集計される仕組みをタイムさんが構築）</li><li>審査項目は既存の10項目（プレゼン力5項目＋Lark機能活用5項目）から、今回は資料なしのため Lark機能性寄りの3〜5問に集約</li><li>「驚き」「アイデアの斬新さ」等の項目も検討</li><li>表彰と景品：</li><li>1位：Amazonギフト券 2,000円 × 5名分（1チーム分）= 10,000円</li><li>2位：Amazonギフト券 1,000円 × 5名分</li><li>3位：名古屋名物のお菓子（ゆかり等、500〜800円程度）</li></ul>
+            <div class="card-title">ベース構築の環境</div>
+            <ul class="card-bullets"><li>タイムさんのLarkアカウント上にチームごとのベースを事前作成し、参加者に共有する方式を採用（庄司さんの提案）</li><li>メリット：運営側がリアルタイムで全チームの進捗を把握可能、参加者がリンク共有する手間が不要</li><li>課題：自動化（オートメーション）のトグルは外部メンバーが操作できないため、タイムさんが都度オンにする対応が必要</li><li>無料プランのユーザーは一部機能制限があるため、サポーターの有料プラン確認も必要</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">名札</div>
-            <ul class="card-bullets"><li>前回同様、手書きの名札 を各自に書いてもらう（フルネームでもニックネームでもOK）</li><li>名札のケース等の準備は MANABUさん が担当（前回の在庫確認含む）</li></ul>
+            <div class="card-title">採点・表彰</div>
+            <ul class="card-bullets"><li>発表後の審査はタイムさんが普段講座で使っているリアルタイム集計フォームを活用</li><li>採点項目は従来の10項目（プレゼン能力5項目＋Lark機能活用5項目）から、今回は資料作成なしのためLark機能系に集約して3〜5問程度に簡略化</li><li>全参加者が投票し、自分の名前と発表者（チーム）を選択する形式</li><li>表彰は3位まで：</li><li>1位：Amazonギフト券2,000円×5名分（チーム人数分）＝10,000円</li><li>2位：Amazonギフト券1,000円×5名分</li><li>3位：名古屋名物のお菓子（ゆかり等、500〜800円程度）</li><li>二宮さんの助言：5,000円にするなら2位3位も必要、1位のみなら2,000円が適切（もらえなかった人のモチベーション低下を防ぐ）</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">弁当</div>
-            <ul class="card-bullets"><li>矢場彦の弁当（1,200円）＋お茶 に決定</li><li>名古屋らしさ（海老入り等）があり、コスパも良い</li><li>夜に懇親会があるため、昼はシンプルでOKとの判断</li><li>手配は二宮さんが担当</li></ul>
+            <div class="card-title">弁当の決定</div>
+            <ul class="card-bullets"><li>1,500円以内の予算で、矢尾彦の1,200円弁当（海老など名古屋名物入り）＋お茶に決定</li><li>夜に懇親会があるため昼はシンプルで良いとの判断</li><li>参加者全員分のお菓子・プレゼントも500〜800円程度で二宮さんが手配</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">Larkアカウントの事前準備</div>
-            <ul class="card-bullets"><li>参加者には 事前にLarkアカウントを取得し、ログインできる状態 で来場してもらう（最低条件）</li><li>過去のセミナーでアカウント3つ作ってしまった人や、パスワードがわからない人が多く、それだけで30分取られるケースがある</li><li>パスワード管理は自己責任であることを今回も強く周知する</li></ul>
+            <div class="card-title">Larkアカウント事前準備の注意</div>
+            <ul class="card-bullets"><li>参加者には事前にLarkアカウントにログインできる状態で来場することを必須条件とする</li><li>二宮さんの経験上、アカウントを3つ作ってしまった人やパスワードがわからない人の対応で30分取られるケースが頻発（特に名古屋で多い印象）</li><li>パスワード管理は自己責任であることを事前告知で強調する</li></ul>
         </div>
         <div class="info-card">
             <div class="card-title">宮崎イベントの共有</div>
-            <ul class="card-bullets"><li>タイムさんが今週宮崎でオフラインイベントを開催。77名申込（隠し玉含め90名見込み）</li><li>テレビ取材も入る予定</li><li>地方開催の集客戦略として、今後皆さんの地域イベントにも参考情報を共有予定</li></ul>
+            <ul class="card-bullets"><li>タイムさんが今週宮崎でオフラインイベントを開催予定で、現時点で77名申込＋隠し玉約10名で90名規模の見込み</li><li>テレビ取材も入る契約を取得済み</li><li>集客の戦略や経験を今後共有し、各地域でのイベント開催の参考にする</li></ul>
         </div></div>
             </div>
         </section>
@@ -316,7 +318,7 @@
                 <h2 class="section-title">その他メモ</h2>
             </div>
             <div class="section-body">
-                <ul class="doc-list"><li>前回大阪開催では総参加者の約8割が懇親会に参加した実績あり</li><li>Peatixのフォームは公開中のため編集不可。業種の項目追加は次回以降の対応とし、今回は各自の知り合いベースで業種情報を埋めていく</li><li>二宮さんのセミナー（パッション開催）に磯原さんが参加しており、内容が非常にわかりやすかったと評価。名古屋エリアではLark未経験・初心者層が多い傾向</li><li>近藤さん（近藤塾の塾長）が磯原さんの紹介でパッションのセミナーに参加。アカウント3つ作ってしまった人物</li><li>磯原さんの会社には22時強制退社ルールがあり、管理者2人（磯原さん含む）が気づかず破っていた</li><li>協会のウェブサイトはAI活用で作成中。会員情報をLarkのデータベースで管理し、サイトに連携させる構想あり</li><li>タイムさんの宮崎イベントではテレビ取材も入る。赤字覚悟で開催しており、地方イベントの集客ノウハウを今後共有予定</li></ul>
+                <ul class="doc-list"><li>協会設立：タイムさんが定款を提出済みで、今週末（3月28〜29日頃）に協会として正式に立ち上がる予定。磯原さん・まなぶさんにも協会への参画を依頼済み</li><li>協会ウェブサイト：AIで全制作しており、会員情報をLarkのデータベースで管理し、サイト上に表示させる構想あり</li><li>Peatixの制約：公開中のイベントページはフォーム編集ができない仕様のため、業種情報の追加取得は断念し、運営メンバーの知見で参加者の業種を把握する方針</li><li>前回大阪イベントの実績：申込73名・参加約8割（約58名）、懇親会は1人5,000円、登壇者6名のパンフレットを10日前に入稿（タイトなスケジュールだった）</li><li>宮崎イベント：今週開催、77名申込＋隠し玉10名で約90名見込み、テレビ取材あり。この経験を愛知イベントの集客戦略に活用予定</li><li>Larkアカウント問題：名古屋エリアの参加者はアカウント複数作成・パスワード紛失の発生率が高い傾向（二宮さんの経験談）。事前告知の徹底が重要</li><li>次回打ち合わせ以降の予定：最大あと3回（4/7、4月中旬、4月下旬）の打ち合わせを想定。日中開催とする（門田さんの勤務時間内対応のため。磯原社は22時強制退社ルールあり）</li></ul>
             </div>
         </section>
         <section class="doc-section decision-section">
@@ -325,7 +327,7 @@
                 <h2 class="section-title">決定事項</h2>
             </div>
             <div class="section-body">
-                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>登壇順序： 1番手 二宮真理子さん → 2番手 磯原（安江）さん</div><div class="decision-item"><span class="check">✓</span>司会： 門田さん</div><div class="decision-item"><span class="check">✓</span>グループワークテーマ： 収支管理 / 顧客管理・営業管理 / 勤怠管理 の3つ（マーケティングは条件付き4つ目）</div><div class="decision-item"><span class="check">✓</span>チーム構成： 4〜5名＋サポーター1名、約20チーム（参加者数に応じて調整）</div><div class="decision-item"><span class="check">✓</span>席次： 同会社はバラけるよう意図的に配置</div><div class="decision-item"><span class="check">✓</span>懇親会： 80名規模、19時開始、1人5,000円以内の食べ飲み放題。現候補をキープしつつ大広間のある会場も探す</div><div class="decision-item"><span class="check">✓</span>スポンサー締切： 4月11日。最大16枠（外部向け最大13枠）</div><div class="decision-item"><span class="check">✓</span>弁当： 矢場彦の1,200円弁当＋お茶</div><div class="decision-item"><span class="check">✓</span>名札： 手書き方式（前回同様）</div><div class="decision-item"><span class="check">✓</span>表彰景品： 1位 Amazonギフト2,000円×5名、2位 1,000円×5名、3位 名古屋名物お菓子</div><div class="decision-item"><span class="check">✓</span>審査： リアルタイム全員投票、項目は3〜5問に絞る</div><div class="decision-item"><span class="check">✓</span>ベース構築環境： タイムさんのアカウント上に各チーム分を作成し共有</div><div class="decision-item"><span class="check">✓</span>主催者表記： 協会名＋代表タイムさん</div><div class="decision-item"><span class="check">✓</span>次回MTG： 4月7日（火）15:00〜</div></div>
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>登壇順は二宮真理子さん（1番手）→磯原良介さん（2番手）に決定</div><div class="decision-item"><span class="check">✓</span>司会は門田さん（磯原社スタッフ）に決定</div><div class="decision-item"><span class="check">✓</span>懇親会は80名規模・19時開始・4,500円（4,000円プラン＋生ビール500円）で予約（現候補店をキープしつつ大広間のある別候補も並行探索）</div><div class="decision-item"><span class="check">✓</span>スポンサー締切は4月11日、最大16枠（外部13枠＋運営3枠）</div><div class="decision-item"><span class="check">✓</span>グループワークのテーマは3つ（収支管理・顧客/営業管理・勤怠管理）＋マーケティング施策管理は条件付き4つ目</div><div class="decision-item"><span class="check">✓</span>チーム編成は4〜5名＋サポーター1名、席次は運営側で事前決定（同一会社はバラけさせる）</div><div class="decision-item"><span class="check">✓</span>ベースはタイムさんのLarkアカウント上に事前作成し参加者に共有する方式</div><div class="decision-item"><span class="check">✓</span>弁当は矢尾彦1,200円弁当＋お茶に決定</div><div class="decision-item"><span class="check">✓</span>表彰は1位（Amazonギフト2,000円×5）、2位（1,000円×5）、3位（名古屋名物お菓子）</div><div class="decision-item"><span class="check">✓</span>名札は参加者が手書きで記入する方式（まなぶさんが準備）</div><div class="decision-item"><span class="check">✓</span>次回打ち合わせは4月7日（火）15:00</div><div class="decision-item"><span class="check">✓</span>LP主催者欄のタイムさんの肩書きを「協会代表」に変更</div></div>
             </div>
         </section>
         <section class="doc-section action-section">
@@ -337,103 +339,108 @@
                 <div class="action-grid">
             <div class="action-card">
                 <div class="action-who">タイムさん</div>
-                <div class="action-what">スポンサー問い合わせフォーム（Lark）を作成し、磯原さんへリンク送付</div>
-                <div class="action-when"><span class="when-badge">期限</span>本日〜翌日中</div>
+                <div class="action-what">スポンサー問い合わせフォーム（Lark）を作成し磯原さんへリンク送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>3月25日（翌日）</div>
             </div>
             <div class="action-card">
                 <div class="action-who">磯原さん（スタッフ）</div>
-                <div class="action-what">スポンサーLPのボタンにフォームリンクを差し込み・公開</div>
-                <div class="action-when"><span class="when-badge">期限</span>リンク受領後（翌日中）</div>
+                <div class="action-what">スポンサーLPのボタンにフォームリンクを差し込み公開</div>
+                <div class="action-when"><span class="when-badge">期限</span>3月25日（翌日・スタッフ稼働時間中）</div>
             </div>
             <div class="action-card">
-                <div class="action-who">磯原さん</div>
-                <div class="action-what">懇親会会場の予約探し（80名・大広間タイプ）を並行で進める</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月7日MTGまで</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">二宮さん</div>
-                <div class="action-what">LP用の顔写真＋プロフィールテキストを磯原さんへ送付</div>
-                <div class="action-when"><span class="when-badge">期限</span>早め</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">二宮さん</div>
-                <div class="action-what">弁当（矢場彦）・お茶の手配</div>
-                <div class="action-when"><span class="when-badge">期限</span>参加人数確定後</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">二宮さん</div>
-                <div class="action-what">3位景品の名古屋名物お菓子を手配</div>
-                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">二宮さん</div>
-                <div class="action-what">従業員データ（勤怠用ダミーデータ含む）の作成</div>
-                <div class="action-when"><span class="when-badge">期限</span>次回MTGまでに方向性共有</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">東海林（庄司）さん</div>
-                <div class="action-what">収支管理・顧客管理/営業管理のサンプルデータをExcel形式で準備</div>
+                <div class="action-who">二宮真理子さん</div>
+                <div class="action-what">LP用のプロフィール写真・テキスト（肩書き・登壇内容）を磯原さんに送付</div>
                 <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
             </div>
             <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">LP主催者欄の肩書き修正テキストを磯原さんに送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">磯原さん</div>
+                <div class="action-what">懇親会会場の追加探索（80名・大広間あり）、現候補店は2週間前までキープ</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月7日次回MTGまで</div>
+            </div>
+            <div class="action-card">
                 <div class="action-who">東海林（庄司）さん</div>
-                <div class="action-what">グループワークの課題説明スライド作成</div>
+                <div class="action-what">グループワーク用ダミーデータ作成（収支管理・顧客/営業管理の2テーマ分、既存データをExcel化）</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月7日次回MTGまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">二宮真理子さん</div>
+                <div class="action-what">グループワーク用従業員データ（勤怠管理テーマ用）を作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月7日次回MTGまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">東海林（庄司）さん</div>
+                <div class="action-what">グループワーク冒頭の課題説明資料（スライド等）を作成</div>
                 <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
             </div>
             <div class="action-card">
                 <div class="action-who">タイムさん</div>
-                <div class="action-what">審査用リアルタイム投票の仕組み構築</div>
+                <div class="action-what">採点・投票のリアルタイム集計フォームを作成（項目3〜5問に簡略化）</div>
                 <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
             </div>
             <div class="action-card">
                 <div class="action-who">タイムさん</div>
-                <div class="action-what">各チーム用のベースをLark上に作成</div>
-                <div class="action-when"><span class="when-badge">期限</span>イベント前（人数確定後）</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">タイムさん</div>
-                <div class="action-what">サポーターへの得意テーマヒアリング・チーム配置検討</div>
-                <div class="action-when"><span class="when-badge">期限</span>参加者確定後</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">タイムさん</div>
-                <div class="action-what">1位・2位のAmazonギフト券の手配</div>
+                <div class="action-what">チームごとのベースをLark上に事前作成</div>
                 <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">サポーター陣へのスポンサー参加打診（1万円程度）</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月11日まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">サポーター陣への得意テーマヒアリング</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">まなぶさん</div>
+                <div class="action-what">名札ホルダー等の準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>当日まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">まなぶさん</div>
+                <div class="action-what">パンフレット制作（入稿デッドライン確認）</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月15日頃（入稿目安）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">二宮真理子さん</div>
+                <div class="action-what">弁当（矢尾彦）・お茶・参加者向けお菓子の手配</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">二宮真理子さん</div>
+                <div class="action-what">スポンサーLP公開後、知り合いにスポンサー案内を開始</div>
+                <div class="action-when"><span class="when-badge">期限</span>LP公開後すぐ</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">門田さん</div>
+                <div class="action-what">司会の原稿準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">磯原さん</div>
+                <div class="action-what">1位・2位のAmazonギフト券手配（計15,000円分）</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">二宮真理子さん</div>
+                <div class="action-what">3位景品（名古屋名物お菓子・ゆかり等）の手配</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">全員</div>
+                <div class="action-what">集客活動の本格化（各自20名ずつ目標、合計100名申込を目指す）</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月7日次回MTGで進捗確認</div>
             </div>
             <div class="action-card">
                 <div class="action-who">タイムさん</div>
                 <div class="action-what">協会ウェブサイトのたたき台を共有</div>
-                <div class="action-when"><span class="when-badge">期限</span>今週末</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">タイムさん</div>
-                <div class="action-what">主催者欄のテキスト（協会代表としての肩書き等）を磯原さんへ送付</div>
-                <div class="action-when"><span class="when-badge">期限</span>早め</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">MANABUさん</div>
-                <div class="action-what">パンフレット作成（前回同様）。入稿デッドラインを逆算して管理</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月15日頃までに入稿</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">MANABUさん</div>
-                <div class="action-what">名札ケース等の在庫確認・準備</div>
-                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">門田さん</div>
-                <div class="action-what">司会原稿の準備</div>
-                <div class="action-when"><span class="when-badge">期限</span>イベント前</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">全員</div>
-                <div class="action-what">集客活動の本格化（各自20名程度の目標感）</div>
-                <div class="action-when"><span class="when-badge">期限</span>継続</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">全員</div>
-                <div class="action-what">参加者の業種情報をベースに入力（知り合い分）</div>
-                <div class="action-when"><span class="when-badge">期限</span>随時</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週末（3月28〜29日頃）</div>
             </div></div>
             </div>
         </section>
