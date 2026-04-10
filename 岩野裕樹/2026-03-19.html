@@ -4,111 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>岩野裕樹　2026年3月19日</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <style>
-        :root {
-            --primary: #1a56db;
-            --accent: #f59e0b;
-            --dark: #1e293b;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
         }
-        .reveal h1 {
-            font-size: 1.6em;
-            color: var(--primary);
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 48px 0 56px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .doc-title {
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
         }
-        .reveal h2 {
-            font-size: 1.3em;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.3em;
-            margin-bottom: 0.6em;
-        }
-        .reveal ul {
-            font-size: 0.78em;
-            line-height: 1.75;
-            text-align: left;
-            margin-left: 1em;
-        }
-        .reveal ul li {
-            margin-bottom: 0.4em;
-        }
-        .title-slide .subtitle {
-            font-size: 0.9em;
-            color: #64748b;
-            margin-top: 1em;
-        }
-        .title-slide .hint {
-            font-size: 0.65em;
+        .doc-overview {
+            font-size: 0.95rem;
             color: #94a3b8;
-            margin-top: 2em;
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 24px;
         }
-        .action-slide h2 {
-            color: #dc2626;
+        .doc-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
+        }
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num {
+            background: #059669;
+            font-size: 1.2rem;
+        }
+        .action-num {
+            background: #dc2626;
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            flex: 1;
+        }
+        .decision-section .section-title {
+            border-bottom-color: #059669;
+            color: #065f46;
+        }
+        .action-section .section-title {
             border-bottom-color: #dc2626;
+            color: #991b1b;
         }
-        .action-slide .action-item {
-            background: #fef3c7;
-            border-left: 4px solid var(--accent);
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
+
+        /* ── 箇条書き ── */
+        .doc-list {
             list-style: none;
-            font-size: 0.78em;
+            padding: 0;
         }
-        .reveal section {
-            text-align: left;
+        .doc-list li {
+            padding: 10px 16px 10px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .title-slide {
+        .doc-list li:hover {
+            border-left-color: #0d9488;
+            background: #f8fafc;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .card-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        .card-bullets li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 4px 0 4px 12px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            color: #064e3b;
+        }
+        .check {
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 12px;
+            border-top: 3px solid #f97316;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .action-who {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .action-what {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
             text-align: center;
-        }
-        .reveal .controls {
-            color: var(--accent);
-        }
-        .reveal .progress {
-            color: var(--accent);
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-<div class="reveal">
-    <div class="slides">
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">岩野裕樹　2026年3月19日</h1>
+            <p class="doc-overview">寺山氏が立ち上げ準備中のDX・AI普及を目的とした一般社団法人（協会）の概要を共有し、岩野氏が専門とする「民間助成金」スキームを組み合わせて、Lark導入サービスの単価引き上げ・販売促進を実現する協業</p>
+            <div class="doc-meta">2026年3月19日</div>
+        </div>
+    </div>
+    <div class="doc-body">
         
-        <section class="title-slide">
-            <h1>岩野裕樹　2026年3月19日</h1>
-            <p class="subtitle">岩野裕樹 と 寺山 大夢: 【60分】AI及びDX研修に関する打ち合わせ</p>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">寺山氏が立ち上げる協会（一般社団法人）の概要</div>
+            <ul class="card-bullets"><li>設立背景： 寺山氏はYouTubeで情報発信しており問い合わせも来るが、地方（宮崎等）の経営者がDX・AIの情報にアクセスできない／DX支援者側も地元企業と接点を持てないという双方の課題がある</li><li>目的： DX・AIに関するマッチングプラットフォームの構築（支援者と企業をつなぐコミュニティ）</li><li>形態： 一般社団法人</li><li>理事： すでに5名が集まり、キックオフ済み</li><li>会員制度： 年会費33,000円（月約3,000円）で、オフラインイベント・オンラインセミナーへ参加可能</li><li>活動内容： Larkに限らず、SNS・LINE・ECサイト等の各分野の専門家が参加し、企業側はDX導入事例を発表、支援者側は課題解決事例を発表する双方向の事例共有</li><li>運営方針： 営業色が強すぎる人は退会させる。ギブの精神がある人を集める</li><li>進捗： 準備は約8割完了。定価設定等を詰めている段階</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">Larkというツールの説明</div>
+            <ul class="card-bullets"><li>開発元： ByteDance（TikTok運営会社）が開発した統合ツール</li><li>寺山氏の役割： Larkを各企業向けにオーダーメイドで構築・研修するのが寺山氏のビジネス</li><li>Larkの特徴：</li><li>チャット、スケジュール管理、ビデオ会議、スプレッドシート、ドキュメント等が1つに統合</li><li>無料プランから使用可能（乗り換えコストが低い）</li><li>ダッシュボード機能でスプレッドシートのデータを可視化でき、複数店舗の売上分析や目標達成率の確認が容易</li><li>自動化機能あり（例：売上入力→自動でチャットに通知。二重入力の手間を削減）</li><li>カスタマイズ可能（飲食店向け、クリニック向け等、業種別テンプレートをすでに保有）</li><li>社内利用がメイン。社外との業務委託管理（請求書等）にも使用可能</li><li>現在の価格帯： ミニマムで3ヶ月伴走支援、約50万円前後</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">民間助成金スキームの活用提案（岩野氏）</div>
+            <ul class="card-bullets"><li>民間助成金の仕組み：</li><li>公的な補助金・助成金（IT導入補助金、リスキリング等）と異なり、財源は公金ではなく寺山氏側がぐるっと回す構造</li><li>「中小企業振興支援協会」という団体が民間助成金を運営。実質的には「トビライズ」という会社が社団法人と共に構築・運営</li><li>申請手続きはテンプレート化されており、税制上の申請・事業計画も対応済み</li><li>申請費用は助成額の10%。岩野氏の取り分は3%</li><li>公的補助金との比較優位：</li><li>景気・予算に左右されない（IT補助金は期ごとに予算がなくなる、制度変更リスクあり）</li><li>雇用保険加入が条件ではない → 役員・業務委託でも対象可</li><li>実績報告や5年間調査といった煩雑な手続きが不要</li><li>研修名目に限らず、構築費用等にも自由に設定可能</li><li>「最大1/2」「最大2/3」等の見せ方を自由にカスタマイズできる</li><li>助成金の返還時期もこちらで設定可能 → キャッシュフロー改善に寄与</li><li>価格設計の方向性：</li><li>現在の50万円では助成金スキームを絡めるメリットが薄い</li><li>200万〜300万円レンジに引き上げ、助成金で半額～75%戻る設計が有効</li><li>例：600万円の導入費用 → 75%助成で顧客実質負担150万円、寺山氏の手残り約200万円</li><li>岩野氏は75%設定で他の民間助成金も運用中</li><li>顧客心理と売りやすさ：</li><li>DX・AI文脈では顧客は補助金・助成金が使えると期待する傾向が強い</li><li>ITツール会社がIT導入補助金のベンダー登録をした場合としない場合で売上が3倍差（東京の統計）</li><li>「50万円です」より「300万円だが助成金で150万円戻る（寺山氏のところだけ認定）」の方が属人的でない営業が可能（＝「バカでも売れる」設計）</li><li>助成金があればチャレンジしようという企業心理を活用</li><li>全額前払いが必要なため、キャッシュフローが改善される</li><li>少額で細かい要求をする顧客を排除できる</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">業種別展開の可能性</div>
+            <ul class="card-bullets"><li>クリニック（美容クリニック等）への展開：</li><li>岩野氏は14クリニックを運営。現状スプレッドシートで管理しており、Larkのダッシュボードが非常に有効</li><li>美容クリニックは機材（ダーマペン、ボルニューマ等）が多数あり、売上・課題の可視化ニーズが高い</li><li>クリニックは節税間口が少ないため、3月決算で300万円を経費計上→6ヶ月後に半額戻るスキームが魅力的</li><li>岩野氏自身、DXに過去合計約6,000万円の損失経験あり（ノーション構築等で失敗）</li><li>飲食店・保険業・引越し業・運送業等： 業種別にカスタマイズ・パッケージ名を変えて「○○向けDX」と打ち出すことで訴求力が上がる</li><li>同業者（DX支援者）への横展開：</li><li>寺山氏のLark講座受講生等にも同じ民間助成金スキームを提供できる</li><li>協会の会員に対して「民間助成金を作ってあげる」サービスとしてOEM的に展開可能</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">IT導入補助金の最新情報（会議中にリアルタイムで共有）</div>
+            <ul class="card-bullets"><li>2024年度・2025年度のインボイス枠の交付決定を受けた事業者は、2026年度は受けられなくなった</li><li>他の枠で通るかは調査中</li><li>IT導入補助金が厳しくなるほど、民間助成金の需要が跳ねるとの岩野氏の見解</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">その他の話題</div>
+            <ul class="card-bullets"><li>寺山氏の同業者（名古屋）がIT導入補助金で2,400万円を取得した事例あり → 岩野氏の分析では1社上限350万円のため、関連会社複数社を使った可能性が高い</li><li>岩野氏は「令和のトラ」（投資番組）関連のコミュニティを裏で運営しており、出資先社長をトラとして出演させていた経験がある。コミュニティ運営のノウハウも持つ</li></ul>
+        </div></div>
+            </div>
         </section>
-        <section>
-            <h2>会議の概要</h2>
-            <ul><li>寺山氏が立ち上げ準備中のAI・DX分野の一般社団法人（マッチングプラットフォーム型コミュニティ）の概要説明と、岩野氏が専門とする民間助成金スキームを組み合わせたビジネスモデルについて打ち合わせを行った。具体的には、Larkという統合業務ツールの導入支援に助成金を絡めることで、単価を上げつつ顧客の実質負担を下げる仕組みの可能性について議論した。</li></ul>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>岩野氏は社労士事務所の代表で、助成金を30万件以上扱ってきた実績がある。その立場から「公金（リスキリング・IT補助金等）を否定する社労士事務所」というパンチのある打ち出しが可能</li><li>民間助成金は顧客側から「財源はどこか」と聞かれることは統計上少なく、「助成金が出ます」だけで成立している</li><li>寺山氏の協会は宮崎発だが、全国展開が可能な枠組み</li><li>Larkは無料プランがあるため、顧客側の初期導入ハードルが低い</li><li>岩野氏はXフォワードの調査にも関与しており、助成金業界の動向に精通</li></ul>
+            </div>
         </section>
-        <section>
-            <h2>主な議題と内容</h2>
-            <ul><li>▶ 1. 一般社団法人（AI・DXマッチングプラットフォーム）の概要説明</li><li>設立背景： 地方（宮崎等）の経営者がDX・AI情報にアクセスしづらい一方、支援側も地元企業との接点が持てないという双方の課題を解決するために設立</li><li>仕組み： マッチングできるプラットフォーム型のコミュニティ</li><li>理事： すでに5名集まっており、キックオフ済み</li><li>会員制度： 年会費33,000円（月約3,000円）で、オフラインイベントやオンラインセミナーに参加可能</li><li>活動内容：</li><li>企業側：自社の課題をツール導入で解決した事例を発表</li><li>支援側：AI・Lark等を活用した支援事例を発表</li><li>双方で事例共有を行い、マッチングを促進</li><li>方針： 営業色の強い参加者は排除し、ギブ精神のある人を重視。過度な営業活動を行う会員には退会を求める</li></ul>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>協業の方向性は合意： 寺山氏のLark導入サービスに岩野氏の民間助成金スキームを組み合わせて展開する</div><div class="decision-item"><span class="check">✓</span>価格帯の方向性： 50万円ではなく、数百万円レンジ（200万〜600万円程度）に設定し、助成金で75%程度戻る設計を目指す</div><div class="decision-item"><span class="check">✓</span>導入コストの分担： 岩野氏側も導入コストを負担する意向あり（全額負担＋レベニューシェアも選択肢）</div><div class="decision-item"><span class="check">✓</span>今後の打ち合わせ回数： あと1〜2回（各1時間程度）で詳細を詰めきる</div></div>
+            </div>
         </section>
-        <section>
-            <h2>その他メモ</h2>
-            <ul><li>本会議はLark上で実施（寺山氏がLarkの専門家として河江氏から紹介）</li><li>岩野氏はLark初利用で、カメラONにすると動作が重くなる事象が発生（カメラOFFで参加）</li><li>前回の日程変更があった旨、岩野氏から謝罪あり</li><li>文字起こしは会議途中（岩野氏の助成金提案の説明中）で終了しており、後半の議論内容は不明</li><li>岩野氏は医療クリニック関連の事業を展開しており、現在14拠点を運営（Larkのダッシュボード活用に強い関心）</li></ul>
-        </section>
-        <section class="action-slide">
-            <h2>ネクストアクション</h2>
-            <ul><li class='action-item'>本会議では最終確定事項の明示的な記録はなし（会議途中で文字起こしが終了しているため）</li><li class='action-item'>引き続き、助成金スキームとLark導入支援の組み合わせについて具体的に詰めていく方向性は合意</li><li class='action-item'>担当者：岩野氏　アクション：民間助成金で活用可能なスキームの具体的な条件・申請要件の整理　期限：次回打ち合わせまで</li><li class='action-item'>担当者：寺山氏　アクション：Lark導入支援の料金体系（助成金活用を前提とした単価設定）の検討　期限：次回打ち合わせまで</li><li class='action-item'>担当者：両者　アクション：助成金×Lark導入の具体的なビジネスモデル・関わり方の確定　期限：次回打ち合わせ</li></ul>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">費用・単価の提案ベースの資料をまとめる（価格設計・どのレンジで行きたいか）</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">Larkの資料（説明資料）を岩野氏に送付する</div>
+                <div class="action-when"><span class="when-badge">期限</span>早めに</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">岩野氏</div>
+                <div class="action-what">Larkの資料を元に周囲（クリニック等）で反応をテストマーケティングする</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">岩野氏</div>
+                <div class="action-what">IT補助金改定情報等を踏まえて民間助成金スキーム側の情報を整理する</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">双方</div>
+                <div class="action-what">次回打ち合わせの日程調整を行う</div>
+                <div class="action-when"><span class="when-badge">期限</span>近日中</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">河江氏</div>
+                <div class="action-what">岩野氏にSignalで送った件について夜に電話で連絡</div>
+                <div class="action-when"><span class="when-badge">期限</span>当日夜</div>
+            </div></div>
+            </div>
         </section>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-    Reveal.initialize({
-        hash: true,
-        transition: 'slide',
-        controls: true,
-        progress: true,
-        center: true,
-        slideNumber: 'c/t',
-        controlsTutorial: true,
-    });
-</script>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
 </body>
 </html>
