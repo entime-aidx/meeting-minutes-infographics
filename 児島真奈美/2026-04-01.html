@@ -4,144 +4,371 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>児島真奈美　2026年4月1日</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <style>
-        :root {
-            --primary: #1a56db;
-            --accent: #f59e0b;
-            --dark: #1e293b;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
         }
-        .reveal h1 {
-            font-size: 1.6em;
-            color: var(--primary);
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 48px 0 56px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .doc-title {
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
         }
-        .reveal h2 {
-            font-size: 1.3em;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.3em;
-            margin-bottom: 0.6em;
-        }
-        .reveal ul {
-            font-size: 0.78em;
-            line-height: 1.75;
-            text-align: left;
-            margin-left: 1em;
-        }
-        .reveal ul li {
-            margin-bottom: 0.4em;
-        }
-        .title-slide .subtitle {
-            font-size: 0.85em;
-            color: #334155;
-            margin-top: 1.2em;
-            line-height: 1.6;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .title-slide .hint {
-            font-size: 0.65em;
+        .doc-overview {
+            font-size: 0.95rem;
             color: #94a3b8;
-            margin-top: 2em;
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 24px;
         }
-        .decision-slide h2 {
-            color: #047857;
-            border-bottom-color: #10b981;
+        .doc-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
         }
-        .decision-slide .decision-item {
-            background: #d1fae5;
-            border-left: 4px solid #10b981;
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
-            list-style: none;
-            font-size: 0.78em;
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
         }
-        .action-slide h2 {
-            color: #dc2626;
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num {
+            background: #059669;
+            font-size: 1.2rem;
+        }
+        .action-num {
+            background: #dc2626;
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            flex: 1;
+        }
+        .decision-section .section-title {
+            border-bottom-color: #059669;
+            color: #065f46;
+        }
+        .action-section .section-title {
             border-bottom-color: #dc2626;
+            color: #991b1b;
         }
-        .action-slide .action-item {
-            background: #fef3c7;
-            border-left: 4px solid var(--accent);
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
+
+        /* ── 箇条書き ── */
+        .doc-list {
             list-style: none;
-            font-size: 0.78em;
+            padding: 0;
         }
-        .reveal section {
-            text-align: left;
+        .doc-list li {
+            padding: 10px 16px 10px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .title-slide {
+        .doc-list li:hover {
+            border-left-color: #0d9488;
+            background: #f8fafc;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .card-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        .card-bullets li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 4px 0 4px 12px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            color: #064e3b;
+        }
+        .check {
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 12px;
+            border-top: 3px solid #f97316;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .action-who {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .action-what {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
             text-align: center;
-        }
-        .reveal .controls {
-            color: var(--accent);
-        }
-        .reveal .progress {
-            color: var(--accent);
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-<div class="reveal">
-    <div class="slides">
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">児島真奈美　2026年4月1日</h1>
+            <p class="doc-overview">前半はLarkサミット（宮崎開催）の振り返りや今後の全国イベント展開について雑談し、後半は児島さんがタイムさんに対してインタビュー形式でヒアリングを実施。タイムさんの事業内容・強み・起業の経緯・ビジョ</p>
+            <div class="doc-meta">2026年4月1日</div>
+        </div>
+    </div>
+    <div class="doc-body">
         
-        <section class="title-slide">
-            <h1>児島真奈美　2026年4月1日</h1>
-            <p class="subtitle">児島真奈美さんがタイムさんに対して、タイムさんの事業内容・起業の経緯・強み・ビジョンなどを深掘りするインタビューを実施した。冒頭では先日開催された宮崎でのLarkリアルイベントの振り返りや今後のイベン</p>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">Larkサミット（宮崎開催）の振り返り</div>
+            <ul class="card-bullets"><li>サミット後の懇親会は2次会まであり、8人で肉を食べに行き、帰宅は3時頃。県外組が多くホテル泊まりだった</li><li>タイムさんの手元にサミット経由で 13件の個別相談 が入っている（導入相談・講座参加希望など）</li><li>児島さんはサミットを通じて多くの人とつながり、自身の事務局スタッフもLarkスキル向上委員会に参加させた</li><li>児島さんの事務局スタッフが早速「Larkスキル向上委員会」のセミナーに参加し、カズ先生の回（年度スタート・入学式的な回、Larkの教科書を1年かけて学ぶ説明）を受講</li><li>イベント運営はタイムさん以外のメンバー（チラシ作成・会場手配など）が大きく貢献</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">今後のLarkイベント全国展開計画</div>
+            <ul class="card-bullets"><li>児島さんは名古屋イベントの前週に名古屋に行く予定のため参加不可</li><li>沖縄合宿は「それまでに稼ごう」という趣旨で、マネタイズが前提</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">児島さんの背景情報</div>
+            <ul class="card-bullets"><li>地元は広島（安芸郡熊野町）、大分には再婚をきっかけに移住し12年目</li><li>普段はほぼオンラインで活動しており、リアルイベント参加は久しぶりだった</li><li>タイムさんもサラリーマン時代に広島（観音）に3年間在住、営業をしていた</li><li>2018年頃の広島の豪雨災害で、児島さんの地元（熊野町）で山崩れ・死者が出た。同級生も亡くなった</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：タイムさんの事業内容</div>
+            <ul class="card-bullets"><li>事業： Larkを使ったDX伴走支援（法人向け）＋ 個人向けLark講座の2本柱</li><li>サービスの本質： AIやツールの進化と人間のリテラシーのギャップを埋めること。働き方改革の手伝い</li><li>「コンサルティング」という表現は避け、「伴走支援」と表現 している（コンサルという言葉を嫌う人がいるため）</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：顧客の効果・ターゲット</div>
+            <ul class="card-bullets"><li>効果： 主観的な判断から客観的データに基づく判断へ移行。現在地の把握、目標とのギャップの可視化、施策の精度向上</li><li>具体例： 整骨院の事例 — 売上データ・リピート率・新規成約率などを計測することで「売上が上がらない」という抽象課題から「この数字がボトルネック」と明確化</li><li>ターゲット顧客は大きく2タイプ：</li><li>アナログ型（地方企業に多い）： ノートやExcelで管理、データ蓄積の文化がない。「スマホで仕事できたらいいな」「手元で数字見たい」「社員の現場把握ができない」</li><li>ツール過多型（ITリテラシー高い層）： Notion・kintone・Cybozu・Spreadsheet等を併用しすぎてデータが分散。「あの情報はスプシ？Notion？」と迷う状態</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：選ばれる理由・強み</div>
+            <ul class="card-bullets"><li>実例の多さ： 多業種の導入実績があり、業界ごとの「うちではどうなの？」に応えられる</li><li>実名でのSNS発信： YouTubeで人となりがわかる</li><li>お客様の声の対談動画： 「Larkスペース受講生対談」としてYouTubeに公開</li><li>先行者利益： 2023年頃（約2年前）からLark特化のYouTubeを開始。当時は「なぜそんなニッチな発信を」と言われたが、結果的にLarkで検索すると自分に行き着く状態を構築</li><li>初回ヒアリングから課題特定・構築までのスピード感： 課題領域は勤怠・売上・日報など10個程度に集約されるため、パターン認識が早い。本日の相談者も1時間強で60〜70%の構築が完了</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：起業の経緯</div>
+            <ul class="card-bullets"><li>前職： サラリーマン（広島で営業）→ 起業後はSNS運用代行（LINE構築）</li><li>転機： SNS運用代行時代にChatwork・Zoom・Notion・Spreadsheetなどツールが乱立し、管理コストが比例して増加。自身がボトルネック化</li><li>Larkとの出会い： 知人から紹介され、約1.5ヶ月で社内ツールをすべてLarkに統合。業務委託メンバーからも「楽になった」と好評</li><li>事業転換のきっかけ： 自身の課題解決体験を横展開できると確信し、DX伴走支援へ</li><li>父親のエピソード：</li><li>父は花屋を自営（ビニールハウスで花を育て販売）、母は給食センターの公務員</li><li>幼少期にハウスの一角の紙の山（伝票類）や月末のパートへの給料支払いの苦労を目撃</li><li>台風でビニールハウスが損壊し、経営難から廃業</li><li>一方で父は家族の時間を大切にし、旅行やキャンプ、参観日に来てくれた</li><li>2023年1月に父が他界。「もっと親孝行すればよかった」という思い</li><li>この原体験が「働き方を変えて大切な人との時間を増やす」という事業の根幹に</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：事業ステップの体系化</div>
+            <ul class="card-bullets"><li>悩みの自覚 → 自身のツール乱立・属人化の体験</li><li>自分の負の解決 → Larkで統合、スキル習得</li><li>小さな実績作り → 埼玉の柿小屋オーナーに月3万円（月2回×1時間のビデオ会議）で3ヶ月伴走</li><li>成果物の構築 → 売上管理のExcel→Lark移行など、月10万円程度で受注</li><li>継続・拡大 → 単価を上げながら事業を拡大</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：印象的な成功事例</div>
+            <ul class="card-bullets"><li>冠婚葬祭会社「メモリアル」の事例：</li><li>当初の課題は「人材不足」と全員が回答</li><li>実態は人材不足ではなく、仕組みの欠如だった</li><li>毎月の数字集計・発表資料作成が自動化され、月末の残業が解消</li><li>月末3時間の残業削減 × 12ヶ月 = 年間36時間 を家族との時間に転換</li><li>導入後は「人材不足とは言わなくなった」「逆に暇になった」との声。空いた時間を顧客訪問やマネジメントに活用</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：ビジョン・今後の展望</div>
+            <ul class="card-bullets"><li>軸①： 自ら地場企業のDX支援を続ける（オフライン活動含む）</li><li>軸②： Lark講座で支援者を育成し、全国の地場企業をカバーする循環を作る</li><li>「競合を増やしているのでは」と言われるが、自分がサポートできない企業は無数にある</li><li>受講生が地元企業を支援する構造を目指す</li><li>現在の講座生は 27都道府県 に在籍（折り返し地点を超えた）。大分にもシローさんが1年半前から在籍</li><li>目標は 47都道府県すべてにカバー</li><li>少数精鋭でも売上が上がる持続可能な企業を増やし、鬱や「働きたくない」というネガティブな状態を減らしたい</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">インタビュー：来てほしい顧客像・入口</div>
+            <ul class="card-bullets"><li>理想の顧客： ビジョンを持っている経営者。手段ではなく「会社のあり方」を語れる人</li><li>現場は変わりたくない、経営者は変わりたい、というギャップをビジョンで橋渡しできる人</li><li>初めての入口：</li><li>YouTubeでLarkを検索 → テンプレート（特典）をダウンロードして試す</li><li>Larkスキル向上委員会に参加して手を動かしながら学ぶ</li><li>LINE登録が最も早い連絡手段</li><li>背中を押す一言： 「リスクないんだったら、やったらいいんじゃないですか。お金もかからないし、情報は落ちてるんで、リターンは大きすぎる」</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">タイムさんのコンサルティングスタンス</div>
+            <ul class="card-bullets"><li>顧客の要望を鵜呑みにしない。要望が増えた際に「そもそも何のためですか」と目的に立ち返る</li><li>不要な機能追加はデータベースの複雑化を招くため抑制</li><li>飲み物の構成比を出すだけでは売上施策に直結しない → 客単価の向上やメニュー構成など、より構造的なアプローチを提案</li><li>複数店舗で客単価1,000円の差がある場合、自社内のベストプラクティスを横展開</li><li>業界の「当たり前」を外部の素人視点で問い直すことが価値</li></ul>
+        </div></div>
+            </div>
         </section>
-        <section>
-            <h2>会議の概要</h2>
-            <ul><li>児島真奈美さんがタイムさんに対して、タイムさんの事業内容・起業の経緯・強み・ビジョンなどを深掘りするインタビューを実施した。冒頭では先日開催された宮崎でのLarkリアルイベントの振り返りや今後のイベント展開について意見交換し、その後インタビュー形式でタイムさんのプロフィール記事作成のための情報収集が行われた。</li></ul>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>タイムさんはストーリーを漫画化した資料を持っており、インタビュー中に画面共有で見せた（SNS運用代行時代の課題→Lark導入→事業転換の流れ）</li><li>児島さんは「一席診断をするプロが集まるコミュニティ」を運営しており、コミュニケーションツールとしてLarkを使用中</li><li>Larkスキル向上委員会は有料の学校とは別の無料コミュニティで、カズ先生が監修・講義を担当</li><li>タイムさんの講座生27都道府県の残り20県の開拓が今後の課題</li><li>児島さんは広島にも知人が多く、広島でのイベント開催時にも協力可能な示唆あり</li><li>タイムさんは大分をプライベートで家族旅行先として気に入っている（別府・由布院・海たまご・ハーモニーランド等）</li></ul>
+            </div>
         </section>
-        <section>
-            <h2>宮崎リアルイベントの振り返り</h2>
-            <ul><li>先日宮崎でLark関連のリアルイベント（サミット）を開催し、盛況だった</li><li>イベント後の懇親会は2次会まであり、県外参加者が多くホテル泊、帰宅は3時頃</li><li>イベント後、タイムさんの手元に 13件の個別相談 が入っている（導入相談・講座入会希望など）</li><li>児島さんはイベントで多くの方と繋がり、早速「Lark向上委員会」（カズ先生主催、有料講座の前段階にあたる無料の委員会）に参加した</li><li>児島さんの事務局メンバーもLark向上委員会のセミナーに参加し、喜んでいた</li><li>カズ先生が初回（入学式的な位置づけ）で「Larkの教科書」を使った1年間のカリキュラムの説明を実施</li></ul>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>インタビュー内容を児島さんがまとめ、タイムさんの紹介コンテンツを作成する</div><div class="decision-item"><span class="check">✓</span>タイムさんはコンテンツ用の 顔写真（掲載用画像） を児島さんに送付する</div><div class="decision-item"><span class="check">✓</span>児島さん側でタイムさんのYouTubeリンクやその他関連リンクを収集・記事内に挿入する</div><div class="decision-item"><span class="check">✓</span>完成後、タイムさんに確認してもらう流れ</div></div>
+            </div>
         </section>
-        <section>
-            <h2>今後のリアルイベント展開計画</h2>
-            <ul><li>児島さんは名古屋イベントの前週に名古屋出張があり参加できず残念</li><li>各地域の人の力を借りながら全国展開していくのが面白いという共通認識</li><li>児島さんの地元は広島（安芸郡熊野町）で、現在は大分在住（再婚で移住、11〜12年目）</li><li>タイムさんもサラリーマン時代に広島（観音）に3年間在住、営業をしていた</li><li>時期：直近　場所：名古屋　コンセプト：Larkアカウント保有者向け。設計・活用の壁を越える実践寄りの内容</li><li>時期：7月　場所：福岡　コンセプト：詳細未定</li><li>時期：10月　場所：沖縄（希望）　コンセプト：1泊2日の合宿形式。夜の交流で深い関係性・協業を生む狙い</li><li>時期：未定　場所：大分　コンセプト：児島さんが現地で動くと申し出</li></ul>
-        </section>
-        <section>
-            <h2>インタビュー：タイムさんの事業内容</h2>
-            <ul><li>事業内容： Larkを使ったDXの伴走支援（法人向け）と、個人向けのLark講座の2本柱</li><li>サービスの本質： AIやツールの進化と人間のリテラシーのギャップを埋めること。働き方改革の手伝い</li><li>呼び方： 「コンサルティング」は敬遠される人もいるため、「伴走支援」と表現している</li></ul>
-        </section>
-        <section>
-            <h2>インタビュー：顧客が実感している効果</h2>
-            <ul><li>主観から客観へ： 経験値や勘に頼っていた判断が、数字で可視化されるようになる</li><li>現在地の把握： 毎月の売上がピタッと合う会社はほぼなく、経費の把握も曖昧な会社が多い → 目標とのギャップが明確になり、施策の精度が上がる</li><li>整骨院の事例： リピート率・新規成約率などのデータを取ることで、「売上が足りない」という抽象課題から「この数字がボトルネック」という具体的アクションに落とし込めた</li><li>選択肢を絞る効果： 客観的指標で課題を特定することで迷いが減る</li></ul>
-        </section>
-        <section>
-            <h2>インタビュー：ターゲット顧客の2つの属性</h2>
-            <ul><li>1. アナログ企業（地方に多い）： ノートやExcelで管理。データ蓄積の文化・習慣がない。効果を実感しやすい</li><li>口癖：「スマホで仕事できたらいいな」「手元で数字見れたら」「あの社員は今どこの現場？」</li><li>2. ITリテラシーは高いがツール過多の企業： Notion、kintone、サイボウズ、スプレッドシート等を併用し、データが分散して集計できない</li><li>口癖：「お客さんの情報ってスプシ？それともNotion？」「何がどこにあるかわからない」</li></ul>
-        </section>
-        <section>
-            <h2>インタビュー：タイムさんが選ばれる理由</h2>
-            <ul><li>1. 実例の多さ： 様々な業界での導入実績があり、「自分の業界ではどうか」という質問に答えられる 2. 実名でのSNS発信： 人となりがわかる 3. お客様の声（対談動画）： YouTubeで「Larkスペース受講生対談」として公開しており、他社にはほぼない取り組み 4. 先行者利益： 2023年頃（約2年前）にLarkのニッチなYouTube発信を開始。当時は「なぜそんなニッチなYouTubeを？」と言われたが、今では「Lark」で検索するとほぼタイムさんに辿り着く</li></ul>
-        </section>
-        <section>
-            <h2>インタビュー：タイムさんの強み</h2>
-            <ul><li>業種を問わないパターン認識： 飲食店でも福祉でも、課題領域（勤怠・売上・日報など）は10個程度に集約される。過去の豊富な経験が頭にインストールされているため、初回ヒアリングから課題の構造を見極めるスピードが早い</li><li>具体例： この日の前の相談者に対し、1時間ちょっとで60〜70%の構築を完了し、大変喜ばれた</li><li>顧客の要望を鵜呑みにしない姿勢： 機能追加要望が増えた</li></ul>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">掲載用の顔写真を児島さんに送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>早め（期限明示なし）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">児島さん</div>
+                <div class="action-what">インタビュー内容をまとめて紹介コンテンツを作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>未定（完成次第タイムさんに共有）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">児島さん</div>
+                <div class="action-what">タイムさんのYouTube・関連リンクを収集しコンテンツに挿入</div>
+                <div class="action-when"><span class="when-badge">期限</span>コンテンツ作成時</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">完成したコンテンツを確認・フィードバック</div>
+                <div class="action-when"><span class="when-badge">期限</span>児島さんから共有後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">名古屋イベントの準備（Larkアカウント保有者向け、直近開催）</div>
+                <div class="action-when"><span class="when-badge">期限</span>直近</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">タイムさん</div>
+                <div class="action-what">福岡イベント（7月）、沖縄合宿（10月）の企画推進</div>
+                <div class="action-when"><span class="when-badge">期限</span>各開催月まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">児島さん</div>
+                <div class="action-what">大分でのLarkイベント開催時に現地で動く（時期未定）</div>
+                <div class="action-when"><span class="when-badge">期限</span>未定</div>
+            </div></div>
+            </div>
         </section>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-    Reveal.initialize({
-        hash: true,
-        transition: 'slide',
-        controls: true,
-        progress: true,
-        center: true,
-        slideNumber: 'c/t',
-        controlsTutorial: true,
-    });
-</script>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
 </body>
 </html>
