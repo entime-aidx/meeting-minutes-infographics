@@ -112,14 +112,15 @@
             padding: 0;
         }
         .doc-list li {
-            padding: 10px 16px 10px 20px;
+            padding: 12px 16px 12px 20px;
             border-left: 3px solid #e2e8f0;
-            margin-bottom: 8px;
-            font-size: 0.92rem;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
             color: #334155;
             background: #fff;
             border-radius: 0 8px 8px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.7;
         }
         .doc-list li:hover {
             border-left-color: #0d9488;
@@ -129,34 +130,39 @@
         /* ── カードグリッド ── */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
         }
         .info-card {
             background: #fff;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             border-top: 3px solid #0d9488;
         }
         .card-title {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
         }
         .card-bullets {
             list-style: none;
             padding: 0;
         }
         .card-bullets li {
-            font-size: 0.85rem;
-            color: #475569;
-            padding: 4px 0 4px 12px;
-            border-left: 2px solid #e2e8f0;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 6px 0 6px 14px;
+            border-left: 3px solid #ccfbf1;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .card-bullets li:hover {
+            border-left-color: #0d9488;
+            color: #0f172a;
         }
 
         /* ── 決定事項 ── */
@@ -243,8 +249,8 @@
         <div class="header-inner">
             <span class="doc-badge">議事録</span>
             <h1 class="doc-title">岩野裕樹　2026年3月19日</h1>
-            <p class="doc-overview">寺山氏が立ち上げ準備中のDX・AI普及を目的とした一般社団法人（協会）の概要を共有し、岩野氏が専門とする「民間助成金」スキームを組み合わせて、Lark導入サービスの単価引き上げ・販売促進を実現する協業</p>
-            <div class="doc-meta">2026年3月19日</div>
+            <p class="doc-overview">寺山氏が立ち上げ準備中のAI・DX推進の一般社団法人（協会）の概要説明と、岩野氏が手掛ける民間助成金スキームを組み合わせた協業の方向性を議論した。Larkというオールインワンツールの導入支援を高単価商品化し、民間助成金（75%還付）を営業上のフックとすることで、公的補助金に依存しない販売モデルを構築する方針が共有された。具体的な単価設計と提案資料を次回までに双方が準備することで合意した。</p>
+            <div class="doc-meta">2026年3月19日 ／ - 岩野裕樹（社労士事務所経営、民間助成金スキーム構築側）</div>
         </div>
     </div>
     <div class="doc-body">
@@ -257,28 +263,32 @@
             <div class="section-body">
                 <div class="card-grid">
         <div class="info-card">
-            <div class="card-title">寺山氏が立ち上げる協会（一般社団法人）の概要</div>
-            <ul class="card-bullets"><li>設立背景： 寺山氏はYouTubeで情報発信しており問い合わせも来るが、地方（宮崎等）の経営者がDX・AIの情報にアクセスできない／DX支援者側も地元企業と接点を持てないという双方の課題がある</li><li>目的： DX・AIに関するマッチングプラットフォームの構築（支援者と企業をつなぐコミュニティ）</li><li>形態： 一般社団法人</li><li>理事： すでに5名が集まり、キックオフ済み</li><li>会員制度： 年会費33,000円（月約3,000円）で、オフラインイベント・オンラインセミナーへ参加可能</li><li>活動内容： Larkに限らず、SNS・LINE・ECサイト等の各分野の専門家が参加し、企業側はDX導入事例を発表、支援者側は課題解決事例を発表する双方向の事例共有</li><li>運営方針： 営業色が強すぎる人は退会させる。ギブの精神がある人を集める</li><li>進捗： 準備は約8割完了。定価設定等を詰めている段階</li></ul>
+            <div class="card-title">寺山氏が立ち上げる協会の概要</div>
+            <ul class="card-bullets"><li>寺山氏はYouTubeでの発信を通じて問い合わせを受けているが、宮崎等の地元経営者がDX・AI情報にアクセスできない課題と、DX支援者側が地元企業と接点を持てない課題の双方を解決するためにマッチングプラットフォームとしての社団法人を立ち上げる。</li><li>すでに理事5名が集まり、キックオフも完了している段階である。</li><li>会員制で年会費33,000円（月約3,000円）を設定し、オフラインイベントやオンラインセミナーを通じたマッチング・勉強会を提供する。</li><li>Larkに限らず、SNS・LINE・ECサイト等の各分野の専門家に参加してもらい、地元企業はDX導入事例を発表、支援者側はツール活用事例を発表する双方向の場を目指す。</li><li>自分だけ儲けようとする人や営業色が強すぎる人は退会させる方針で、ギブできる人を中心にコミュニティを運営する。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">Larkというツールの説明</div>
-            <ul class="card-bullets"><li>開発元： ByteDance（TikTok運営会社）が開発した統合ツール</li><li>寺山氏の役割： Larkを各企業向けにオーダーメイドで構築・研修するのが寺山氏のビジネス</li><li>Larkの特徴：</li><li>チャット、スケジュール管理、ビデオ会議、スプレッドシート、ドキュメント等が1つに統合</li><li>無料プランから使用可能（乗り換えコストが低い）</li><li>ダッシュボード機能でスプレッドシートのデータを可視化でき、複数店舗の売上分析や目標達成率の確認が容易</li><li>自動化機能あり（例：売上入力→自動でチャットに通知。二重入力の手間を削減）</li><li>カスタマイズ可能（飲食店向け、クリニック向け等、業種別テンプレートをすでに保有）</li><li>社内利用がメイン。社外との業務委託管理（請求書等）にも使用可能</li><li>現在の価格帯： ミニマムで3ヶ月伴走支援、約50万円前後</li></ul>
+            <div class="card-title">Larkツールの特徴と導入支援ビジネス</div>
+            <ul class="card-bullets"><li>Larkはチャット・スケジュール管理・ビデオ会議・スプレッドシート・ダッシュボード等を1つにまとめたオールインワンツールで、ByteDance（TikTok運営会社）が開発している。</li><li>無料プランから利用可能で、乗り換えコストがかからないことが大きなメリットである。</li><li>寺山氏はLark自体を開発しているわけではなく、各企業向けにオーダーメイドで構築・研修を行う立場である。</li><li>飲食店向けの事例として、複数店舗の売上データをスプレッドシートに入力するとダッシュボードが自動生成され、店舗別抽出や目標達成率の可視化ができ、会議が効率化される。</li><li>自動化機能により、売上入力と社内チャットへの報告を1アクションで完了でき、二重作業を解消する。</li><li>現在のミニマムプランは3ヶ月伴走支援で約50万円前後の価格帯である。</li><li>業種別（飲食店・クリニック・保険・運送・引越し等）にテンプレートが既に存在し、カスタマイズ対応可能である。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">民間助成金スキームの活用提案（岩野氏）</div>
-            <ul class="card-bullets"><li>民間助成金の仕組み：</li><li>公的な補助金・助成金（IT導入補助金、リスキリング等）と異なり、財源は公金ではなく寺山氏側がぐるっと回す構造</li><li>「中小企業振興支援協会」という団体が民間助成金を運営。実質的には「トビライズ」という会社が社団法人と共に構築・運営</li><li>申請手続きはテンプレート化されており、税制上の申請・事業計画も対応済み</li><li>申請費用は助成額の10%。岩野氏の取り分は3%</li><li>公的補助金との比較優位：</li><li>景気・予算に左右されない（IT補助金は期ごとに予算がなくなる、制度変更リスクあり）</li><li>雇用保険加入が条件ではない → 役員・業務委託でも対象可</li><li>実績報告や5年間調査といった煩雑な手続きが不要</li><li>研修名目に限らず、構築費用等にも自由に設定可能</li><li>「最大1/2」「最大2/3」等の見せ方を自由にカスタマイズできる</li><li>助成金の返還時期もこちらで設定可能 → キャッシュフロー改善に寄与</li><li>価格設計の方向性：</li><li>現在の50万円では助成金スキームを絡めるメリットが薄い</li><li>200万〜300万円レンジに引き上げ、助成金で半額～75%戻る設計が有効</li><li>例：600万円の導入費用 → 75%助成で顧客実質負担150万円、寺山氏の手残り約200万円</li><li>岩野氏は75%設定で他の民間助成金も運用中</li><li>顧客心理と売りやすさ：</li><li>DX・AI文脈では顧客は補助金・助成金が使えると期待する傾向が強い</li><li>ITツール会社がIT導入補助金のベンダー登録をした場合としない場合で売上が3倍差（東京の統計）</li><li>「50万円です」より「300万円だが助成金で150万円戻る（寺山氏のところだけ認定）」の方が属人的でない営業が可能（＝「バカでも売れる」設計）</li><li>助成金があればチャレンジしようという企業心理を活用</li><li>全額前払いが必要なため、キャッシュフローが改善される</li><li>少額で細かい要求をする顧客を排除できる</li></ul>
+            <div class="card-title">民間助成金スキームの仕組みと活用方法</div>
+            <ul class="card-bullets"><li>岩野氏は「中小企業振興支援協会」と「トビライズ」という会社が共同で構築した民間助成金の仕組みを活用しており、申請業務はトビライズが担当している。</li><li>民間助成金は公的補助金（IT導入補助金・リスキリング等）と異なり、財源が雇用保険や税金ではなく支援者側（寺山氏側）が回す形であるため、景気や政策変更に左右されない。</li><li>雇用保険加入が条件にならないため、役員や業務委託の人材も対象にでき、研修名目・構築名目いずれでも対応可能である。</li><li>見せ方として「最大1/2」「最大2/3」「75%還付」等を自由に設定でき、「審査のもと行います」という表現で運用する。</li><li>助成額の10%が申請費用として必要で、そのうち岩野氏側の取り分は助成額の3%である。</li><li>還付時期もこちらで設定可能なため、例えば10ヶ月グリップすればキャッシュフローが大幅に改善する。</li><li>LMS（学習管理システム）への記録義務もなく、公的助成金より運用負荷が圧倒的に低い。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">業種別展開の可能性</div>
-            <ul class="card-bullets"><li>クリニック（美容クリニック等）への展開：</li><li>岩野氏は14クリニックを運営。現状スプレッドシートで管理しており、Larkのダッシュボードが非常に有効</li><li>美容クリニックは機材（ダーマペン、ボルニューマ等）が多数あり、売上・課題の可視化ニーズが高い</li><li>クリニックは節税間口が少ないため、3月決算で300万円を経費計上→6ヶ月後に半額戻るスキームが魅力的</li><li>岩野氏自身、DXに過去合計約6,000万円の損失経験あり（ノーション構築等で失敗）</li><li>飲食店・保険業・引越し業・運送業等： 業種別にカスタマイズ・パッケージ名を変えて「○○向けDX」と打ち出すことで訴求力が上がる</li><li>同業者（DX支援者）への横展開：</li><li>寺山氏のLark講座受講生等にも同じ民間助成金スキームを提供できる</li><li>協会の会員に対して「民間助成金を作ってあげる」サービスとしてOEM的に展開可能</li></ul>
+            <div class="card-title">単価設計と営業戦略</div>
+            <ul class="card-bullets"><li>岩野氏は、50万円の価格帯では民間助成金を絡めるメリットが薄く、200万〜300万円以上のレンジに設定し、助成金で50%〜75%を還付する見せ方が最も営業しやすいと提案した。</li><li>IT補助金のベンダー登録をしている会社としていない会社では売上が3倍差になっているという統計があり、助成金が絡むことで営業の属人性を排除し「バカでも売れる」状態を作れると岩野氏は説明した。</li><li>寺山氏は、お客さんへの見せ方として600〜700万円で提示し75%還付（手残り200万円程度）とする設計を提案し、岩野氏も75%設定で一致した。</li><li>寺山氏の知人（名古屋）はLarkをIT導入補助金で導入し、関連会社複数を使って合計2,400万円を獲得した事例がある（IT導入補助金の1社上限は350万円のため、複数社利用と推定）。</li><li>民間助成金なら、IT補助金やリスキリングと併用しても問題なく、「寺山さんのところだけ助成金として認められている」という独占的な見せ方が可能である。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">IT導入補助金の最新情報（会議中にリアルタイムで共有）</div>
-            <ul class="card-bullets"><li>2024年度・2025年度のインボイス枠の交付決定を受けた事業者は、2026年度は受けられなくなった</li><li>他の枠で通るかは調査中</li><li>IT導入補助金が厳しくなるほど、民間助成金の需要が跳ねるとの岩野氏の見解</li></ul>
+            <div class="card-title">クリニック・医療分野への展開可能性</div>
+            <ul class="card-bullets"><li>岩野氏は自身が14クリニックを関与先に持ち、美容クリニック等では機材（ダーマペン、ボルニューマ等）が無数にあり、スプレッドシートだけでは売上分析・課題把握が困難な現状があると説明した。</li><li>クリニック（特に保険診療）は節税間口が少ないため、3月決算前に300万円を支出し6ヶ月後に半分還付される方が節税メリットがあり、高単価でも受け入れられやすい。</li><li>岩野氏自身がDXに挑戦して合計約6,000万円を損した経験があり（Notion等の一元化ツール導入で数百万円支払い途中で損切りした事例含む）、現場のペインを熟知している。</li><li>「医療向けDX」「クリニック向け」等の業種特化パッケージとして見せることで、「我々のための商品」と感じてもらえ、成約率が上がるという戦略を共有した。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">その他の話題</div>
-            <ul class="card-bullets"><li>寺山氏の同業者（名古屋）がIT導入補助金で2,400万円を取得した事例あり → 岩野氏の分析では1社上限350万円のため、関連会社複数社を使った可能性が高い</li><li>岩野氏は「令和のトラ」（投資番組）関連のコミュニティを裏で運営しており、出資先社長をトラとして出演させていた経験がある。コミュニティ運営のノウハウも持つ</li></ul>
+            <div class="card-title">協業の枠組みと差別化ポイント</div>
+            <ul class="card-bullets"><li>岩野氏は導入費用の全額負担も検討しており、一部レベニューシェアでの協業も視野に入れている。</li><li>岩野氏の社労士事務所は助成金を30万件以上取り扱ってきた実績があり、「公金を否定する社労士事務所」というパンチワードで差別化を図れる。</li><li>寺山氏を「認定講師」として位置づけ、協会としてフューチャーする見せ方が有効である。</li><li>協業のベネフィットは①初期コストのリスク分散、②売りやすいツールの構築、③社労士事務所の信用力を出しにできる、④協会会員向けに民間助成金スキームをOEM提供できる、の4点。</li><li>岩野氏は「令和のトラ」に出資し裏で運営した経験があり、コミュニティ運営のノウハウも持っている。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">IT導入補助金の最新動向</div>
+            <ul class="card-bullets"><li>会議中にリアルタイムで情報が入り、2024年度・2025年度のインボイス枠で交付決定を受けた事業者は2026年度は申請不可となる改定が発表された。</li><li>他の枠で通るかは調査中の段階である。</li><li>公的補助金が厳しくなるほど民間助成金の需要が高まるため、追い風になるとの見解を岩野氏が示した。</li></ul>
         </div></div>
             </div>
         </section>
@@ -288,7 +298,7 @@
                 <h2 class="section-title">その他メモ</h2>
             </div>
             <div class="section-body">
-                <ul class="doc-list"><li>岩野氏は社労士事務所の代表で、助成金を30万件以上扱ってきた実績がある。その立場から「公金（リスキリング・IT補助金等）を否定する社労士事務所」というパンチのある打ち出しが可能</li><li>民間助成金は顧客側から「財源はどこか」と聞かれることは統計上少なく、「助成金が出ます」だけで成立している</li><li>寺山氏の協会は宮崎発だが、全国展開が可能な枠組み</li><li>Larkは無料プランがあるため、顧客側の初期導入ハードルが低い</li><li>岩野氏はXフォワードの調査にも関与しており、助成金業界の動向に精通</li></ul>
+                <ul class="doc-list"><li>民間助成金の運営構造： 「中小企業振興支援協会」（社団法人）が申請窓口、「トビライズ」社が実務（申請処理等）を担当、岩野氏はスキーム・戦略・資金を提供し取り分は助成額の3%。</li><li>Lark導入支援の競合優位性： IT導入補助金のベンダー登録が不要、5年間の実績報告義務なし、不支給リスクなし、業種別カスタマイズ済みテンプレートあり。</li><li>公的補助金の課題（岩野氏の見解）： IT導入補助金は期ごとに予算が減少、キックバック等の不正増加、5年間の調査義務、経産省のベンダー登録ツールは機能が限定的で本格的なDXには不向き。</li><li>岩野氏のDX投資経験： 自社で約6,000万円をDXに投資して損失を出した経験があり、ノーション導入で数百万円払って途中損切りした事例もある。</li><li>協会の潜在的価値： 会員企業向けに民間助成金スキーム自体をOEM提供することで、協会の付加価値と収益源を拡大できる可能性がある。</li><li>会議ツール： 本会議はLark上で実施。岩野氏はLark初使用で、iPadのカメラオン時に動作が重くなりカメラオフで参加。</li></ul>
             </div>
         </section>
         <section class="doc-section decision-section">
@@ -297,7 +307,7 @@
                 <h2 class="section-title">決定事項</h2>
             </div>
             <div class="section-body">
-                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>協業の方向性は合意： 寺山氏のLark導入サービスに岩野氏の民間助成金スキームを組み合わせて展開する</div><div class="decision-item"><span class="check">✓</span>価格帯の方向性： 50万円ではなく、数百万円レンジ（200万〜600万円程度）に設定し、助成金で75%程度戻る設計を目指す</div><div class="decision-item"><span class="check">✓</span>導入コストの分担： 岩野氏側も導入コストを負担する意向あり（全額負担＋レベニューシェアも選択肢）</div><div class="decision-item"><span class="check">✓</span>今後の打ち合わせ回数： あと1〜2回（各1時間程度）で詳細を詰めきる</div></div>
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>寺山氏のLark導入支援に民間助成金スキームを組み合わせた高単価パッケージを共同で構築する方向で協業を進める。</div><div class="decision-item"><span class="check">✓</span>還付率は75%を基本設計とし、見せ価格は600〜700万円レンジを想定する。</div><div class="decision-item"><span class="check">✓</span>50万円の低単価帯では民間助成金を絡めず、数百万円レンジの商品に対して民間助成金を適用する。</div><div class="decision-item"><span class="check">✓</span>次回打ち合わせまでに双方が情報を整理し、あと1〜2回（各1時間程度）の打ち合わせで詳細を詰め切る。</div></div>
             </div>
         </section>
         <section class="doc-section action-section">
@@ -309,22 +319,22 @@
                 <div class="action-grid">
             <div class="action-card">
                 <div class="action-who">寺山氏</div>
-                <div class="action-what">費用・単価の提案ベースの資料をまとめる（価格設計・どのレンジで行きたいか）</div>
+                <div class="action-what">費用・単価の提案ベース資料をまとめて岩野氏に共有する</div>
                 <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
             </div>
             <div class="action-card">
                 <div class="action-who">寺山氏</div>
-                <div class="action-what">Larkの資料（説明資料）を岩野氏に送付する</div>
-                <div class="action-when"><span class="when-badge">期限</span>早めに</div>
+                <div class="action-what">Larkの説明資料を岩野氏に送付する</div>
+                <div class="action-when"><span class="when-badge">期限</span>近日中</div>
             </div>
             <div class="action-card">
                 <div class="action-who">岩野氏</div>
-                <div class="action-what">Larkの資料を元に周囲（クリニック等）で反応をテストマーケティングする</div>
+                <div class="action-what">Larkツールについて周囲（クリニック等）に反応テスト（テストマーケティング）を実施する</div>
                 <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
             </div>
             <div class="action-card">
                 <div class="action-who">岩野氏</div>
-                <div class="action-what">IT補助金改定情報等を踏まえて民間助成金スキーム側の情報を整理する</div>
+                <div class="action-what">IT導入補助金の改定情報を含め、民間助成金の設計に関する情報を整理する</div>
                 <div class="action-when"><span class="when-badge">期限</span>次回打ち合わせまで</div>
             </div>
             <div class="action-card">
@@ -333,8 +343,8 @@
                 <div class="action-when"><span class="when-badge">期限</span>近日中</div>
             </div>
             <div class="action-card">
-                <div class="action-who">河江氏</div>
-                <div class="action-what">岩野氏にSignalで送った件について夜に電話で連絡</div>
+                <div class="action-who">河江氏・岩野氏</div>
+                <div class="action-what">別件（Signalで送った件）について夜に電話で連絡する</div>
                 <div class="action-when"><span class="when-badge">期限</span>当日夜</div>
             </div></div>
             </div>
