@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不要【議事録】金本組　2026年4月1日</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+        }
+        .reveal h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .reveal h2 {
+            font-size: 1.3em;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.3em;
+            margin-bottom: 0.6em;
+        }
+        .reveal ul {
+            font-size: 0.78em;
+            line-height: 1.75;
+            text-align: left;
+            margin-left: 1em;
+        }
+        .reveal ul li {
+            margin-bottom: 0.4em;
+        }
+        .title-slide .subtitle {
+            font-size: 0.9em;
+            color: #64748b;
+            margin-top: 1em;
+        }
+        .title-slide .hint {
+            font-size: 0.65em;
+            color: #94a3b8;
+            margin-top: 2em;
+        }
+        .action-slide h2 {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+        .action-slide .action-item {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 0.35em 0.8em;
+            border-radius: 4px;
+            margin-bottom: 0.5em;
+            list-style: none;
+            font-size: 0.78em;
+        }
+        .reveal section {
+            text-align: left;
+        }
+        .title-slide {
+            text-align: center;
+        }
+        .reveal .controls {
+            color: var(--accent);
+        }
+        .reveal .progress {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        
+        <section class="title-slide">
+            <h1>不要【議事録】金本組　2026年4月1日</h1>
+            <p class="subtitle">不要【議事録】金本組様：打ち合わせ</p>
+        </section>
+        <section>
+            <h2>会議の概要</h2>
+            <ul><li>2025年6月23日に金本組の金本氏とLark研究所の寺山氏がオンラインで打ち合わせを実施。建設事業部とICT事業部で分断されている案件管理システムの課題を整理し、Lark上での統合・改善方針を協議した。併せて、今後の研修内容（勤怠管理・日報管理・原価管理のLark化）についても議論し、3段階のステップで段階的にシステムを構築していくロードマップを共有した。</li></ul>
+        </section>
+        <section>
+            <h2>主な議題と内容</h2>
+            <ul><li>▶ 1. 現状の案件管理システムの課題</li><li>情報の分断：建設事業部とICT事業部の案件情報が別々のBaseで管理されており、全社横断でのデータ分析・進捗確認が非効率。入力項目や管理粒度も事業部間で不統一（例：ICT事業部は予算管理あり、建設事業部は未入力）</li><li>データ活用の非効率性：</li><li>失注案件を記録しているがデータ分析に活用できておらず、今後は受注案件に絞って管理したい意向</li><li>見積原価はExcelで算出した数値のみをLarkに転記しており、原価内訳の確認には別途Excelファイルを開く必要がある</li><li>Lark機能の未活用：メンバーの機能理解不足による入力漏れ・運用ルールの不徹底。通知等の自動化機能がほぼ未設定で手作業に依存</li><li>▶ 2. 改善方針と3つのステップ</li><li>Step 1：基盤整備フェーズ（情報の統合）</li><li>2つのBaseを1つに統合し、事業部識別フィールドを設けて一元管理</li><li>全社の受注総額・完工状況・利益率等をリアルタイムで可視化するダッシュボードを構築</li></ul>
+        </section>
+        <section class="action-slide">
+            <h2>ネクストアクション</h2>
+            <ul><li class='action-item'>建設事業部・ICT事業部の2つのBaseを</li></ul>
+        </section>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: 'c/t',
+        controlsTutorial: true,
+    });
+</script>
+</body>
+</html>
