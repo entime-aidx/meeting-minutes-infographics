@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【Day2】Lark　2026年4月1日</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+        }
+        .reveal h1 {
+            font-size: 1.6em;
+            color: var(--primary);
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .reveal h2 {
+            font-size: 1.3em;
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.3em;
+            margin-bottom: 0.6em;
+        }
+        .reveal ul {
+            font-size: 0.78em;
+            line-height: 1.75;
+            text-align: left;
+            margin-left: 1em;
+        }
+        .reveal ul li {
+            margin-bottom: 0.4em;
+        }
+        .title-slide .subtitle {
+            font-size: 0.9em;
+            color: #64748b;
+            margin-top: 1em;
+        }
+        .title-slide .hint {
+            font-size: 0.65em;
+            color: #94a3b8;
+            margin-top: 2em;
+        }
+        .action-slide h2 {
+            color: #dc2626;
+            border-bottom-color: #dc2626;
+        }
+        .action-slide .action-item {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent);
+            padding: 0.35em 0.8em;
+            border-radius: 4px;
+            margin-bottom: 0.5em;
+            list-style: none;
+            font-size: 0.78em;
+        }
+        .reveal section {
+            text-align: left;
+        }
+        .title-slide {
+            text-align: center;
+        }
+        .reveal .controls {
+            color: var(--accent);
+        }
+        .reveal .progress {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        
+        <section class="title-slide">
+            <h1>【Day2】Lark　2026年4月1日</h1>
+            <p class="subtitle">【Day2】Larkエキスパート講座</p>
+        </section>
+        <section>
+            <h2>会議の概要</h2>
+            <ul><li>Larkエキスパート講座Day2として、Day1で学んだ外部連携の基礎（API・認証・Webhook）を踏まえ、HTTP・JSON・GASの具体的な理解を深めた。主な実践内容として、Base × GAS（Google Apps Script）の双方向連携をハンズオン形式で体験し、GASからBaseへのデータ送信およびBaseからGASへのデータ送信の両方向を実装した。また、次回Day3に向けてLark API・MCP連携の予告があった。</li></ul>
+        </section>
+        <section>
+            <h2>主な議題と内容</h2>
+            <ul><li>▶ 1. Day1の振り返り</li><li>API：アプリとシステム間でデータ・機能をやり取りする窓口（マンションの各部屋＝各API用途という比喩）</li><li>APIキー：API利用時の鍵。個人情報に当たるため第三者に漏らさない</li><li>認証と認可：認証＝「あなたは誰ですか」（本人確認）、認可＝「何をしていいですか」（権限・制限）</li><li>API連携 vs Webhook：API連携＝自分からリクエストしてデータ取得、Webhook＝待ち受けで外部から通知を受信</li><li>▶ 2. HTTPの基礎</li><li>ブラウザとサーバー間でデータをやり取りするための通信プロトコル</li><li>HTTPメソッド（5種類）：</li><li>GET：情報取得（例：図書館で本を読む）</li><li>POST：新規作成（例：プロフィール登録）</li></ul>
+        </section>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        hash: true,
+        transition: 'slide',
+        controls: true,
+        progress: true,
+        center: true,
+        slideNumber: 'c/t',
+        controlsTutorial: true,
+    });
+</script>
+</body>
+</html>
