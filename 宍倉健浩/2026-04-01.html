@@ -4,148 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>宍倉健浩　2026年4月1日</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
     <style>
-        :root {
-            --primary: #1a56db;
-            --accent: #f59e0b;
-            --dark: #1e293b;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
         }
-        .reveal h1 {
-            font-size: 1.6em;
-            color: var(--primary);
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 48px 0 56px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .doc-title {
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
         }
-        .reveal h2 {
-            font-size: 1.3em;
-            color: var(--primary);
-            border-bottom: 3px solid var(--accent);
-            padding-bottom: 0.3em;
-            margin-bottom: 0.6em;
-        }
-        .reveal ul {
-            font-size: 0.78em;
-            line-height: 1.75;
-            text-align: left;
-            margin-left: 1em;
-        }
-        .reveal ul li {
-            margin-bottom: 0.4em;
-        }
-        .title-slide .subtitle {
-            font-size: 0.85em;
-            color: #334155;
-            margin-top: 1.2em;
-            line-height: 1.6;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .title-slide .hint {
-            font-size: 0.65em;
+        .doc-overview {
+            font-size: 0.95rem;
             color: #94a3b8;
-            margin-top: 2em;
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 24px;
         }
-        .decision-slide h2 {
-            color: #047857;
-            border-bottom-color: #10b981;
+        .doc-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
         }
-        .decision-slide .decision-item {
-            background: #d1fae5;
-            border-left: 4px solid #10b981;
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
-            list-style: none;
-            font-size: 0.78em;
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
         }
-        .action-slide h2 {
-            color: #dc2626;
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num {
+            background: #059669;
+            font-size: 1.2rem;
+        }
+        .action-num {
+            background: #dc2626;
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            flex: 1;
+        }
+        .decision-section .section-title {
+            border-bottom-color: #059669;
+            color: #065f46;
+        }
+        .action-section .section-title {
             border-bottom-color: #dc2626;
+            color: #991b1b;
         }
-        .action-slide .action-item {
-            background: #fef3c7;
-            border-left: 4px solid var(--accent);
-            padding: 0.35em 0.8em;
-            border-radius: 4px;
-            margin-bottom: 0.5em;
+
+        /* ── 箇条書き ── */
+        .doc-list {
             list-style: none;
-            font-size: 0.78em;
+            padding: 0;
         }
-        .reveal section {
-            text-align: left;
+        .doc-list li {
+            padding: 10px 16px 10px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-        .title-slide {
+        .doc-list li:hover {
+            border-left-color: #0d9488;
+            background: #f8fafc;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .card-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        .card-bullets li {
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 4px 0 4px 12px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 6px;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            color: #064e3b;
+        }
+        .check {
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 12px;
+            border-top: 3px solid #f97316;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .action-who {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .action-what {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
             text-align: center;
-        }
-        .reveal .controls {
-            color: var(--accent);
-        }
-        .reveal .progress {
-            color: var(--accent);
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
-<div class="reveal">
-    <div class="slides">
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">宍倉健浩　2026年4月1日</h1>
+            <p class="doc-overview">寺山氏が運営するLark講座（業務改善ツール研修）のスケールアップに向けて、宍倉氏のAI知見を活用し、受講生向けのAIチャットボットや個別伴走支援の仕組みを構築するための打ち合わせを行った。講座の現状</p>
+            <div class="doc-meta">2026年4月1日</div>
+        </div>
+    </div>
+    <div class="doc-body">
         
-        <section class="title-slide">
-            <h1>宍倉健浩　2026年4月1日</h1>
-            <p class="subtitle">寺山氏が運営するLark講座（業務改善スクール）のスケール拡大に向けて、AIを活用した受講生サポートの仕組みづくり（ナレッジBot化・個別伴走支援の自動化など）について、AI専門家の宍倉氏に相談・依頼</p>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">Lark講座の概要と現状</div>
+            <ul class="card-bullets"><li>Larkは ByteDance（TikTok親会社）が提供するグループウェアで、チャット・ビデオ会議・スプレッドシート・勤怠管理・自動化など多機能を備える</li><li>寺山氏はLarkを活用した業務改善講座を運営しており、売上構成比の5〜6割が法人向け研修</li><li>個人向けの「Lark講座」は30日間で自社に合った業務改善の仕組みを作るプログラム</li><li>現在12期生まで進行。受講生の平均年齢は約43歳</li><li>受講生が作るものは多岐にわたる：勤怠管理、収支管理、売上管理、日報管理、顧客管理、財務管理、外注管理、マーケティング数値管理など</li><li>最終日に発表会を実施し、プレゼン能力・ビジネスモデル設計の斬新さなどを相互採点する</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">講座運営上の課題</div>
+            <ul class="card-bullets"><li>「何期生」制の制約： 期ごとの開講のため、タイミングが合わず失注するケースがある</li><li>スケールのジレンマ： 期制をやめれば柔軟だが、横のつながり・一体感が失われる。講師を増やすとフィードバック品質が下がり「寺山氏本人に聞きたかったのに聞けない」問題が起きる</li><li>寺山氏への依存： 毎週3〜4時間のリアル講座が必要で、質問対応・添削・伴走支援もすべて寺山氏が人力で実施</li><li>本当はもっと質問したい受講生が多いはずだが、現状の対応キャパシティが限界</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">AIで実現したいこと</div>
+            <ul class="card-bullets"><li>ナレッジベースのAIチャットボット化</li><li>過去の質問・回答はLark上でナレッジ化済み（質問入力→チャット連携→回答記録のフロー構築済み）</li><li>過去のQ&amp;Aやビデオ通話の文字起こしをAIに読み込ませ、類似の質問に自動回答するボットを作りたい</li><li>添削・フィードバックのAI化</li><li>受講生が提出した仕組み（Lark上の構築物）をAIに投げると、寺山氏の視点で改善点を指摘してくれる仕組み</li><li>受講生ごとの個別ロードマップ自動生成</li><li>宍倉氏のランニング講座の事例（目標大会・タイムを入力→1ヶ月分の練習メニュー自動生成）を応用</li><li>受講生がゴール設計・現状を入力すると、AIがLark講座専用の学習計画・手順を自動生成</li><li>コンテンツの充実・整理</li><li>既存の動画コンテンツを課題起点で再整理（「機能紹介」→「この課題にはこの機能」へ）</li><li>AIに既存コンテンツを分析させ、未カバーのトピックを抽出して新コンテンツ作成に活用</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">技術的な確認事項</div>
+            <ul class="card-bullets"><li>Larkの外部連携： CSV エクスポート可能、API連携（エニクロス）可能、MCP対応済み、Bot機能あり</li><li>宍倉氏の見解： やりたいことは理論上すべて可能。複雑さ・設計次第</li><li>推奨技術スタック： Claude Code + Lark MCP連携が最適</li><li>APIコストの注意点： 全ファイルを雑に参照させるとコストが嵩む。必要な情報だけを参照する仕組みの設計が重要</li><li>Lark CLIの登場： 寺山氏の受講生から情報共有あり。API→MCP→CLIの進化系で、より柔軟かつ低コストでAIエージェントがLarkを操作可能に</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">宍倉氏のランニング講座の事例共有</div>
+            <ul class="card-bullets"><li>Notionベースで会員管理を構築中</li><li>入会時に自己ベストタイム・目標大会を入力→AIが週単位の練習メニューを自動生成</li><li>コーチングノート：動画フィードバック、学習コンテンツ一覧、ラーニングナレッジデータベース（生理学・栄養学等の学問情報、トップ選手の調整法、FAQ）を構造化</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">寺山氏の既存AI活用状況</div>
+            <ul class="card-bullets"><li>Larkカレンダー × Googleカレンダー連動 → 打ち合わせ後の気づきをClaude Codeが自動でX（旧Twitter）に投稿する仕組みを構築済み（2日間で構築）</li><li>ネタがない場合はAlfred経由で参考ネタを自動取得しX投稿</li><li>課題：画像生成のクオリティ（DALL-E 3→Geminiに切り替え、約6時間かかった）</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">支援形態・費用感の擦り合わせ</div>
+            <ul class="card-bullets"><li>支援形態： 寺山氏のPC上でClaude Codeを操作しながら、宍倉氏がコンサル的に伴走する形式</li><li>宍倉氏の研修単価： 基本1回5万円（最低90分＋事前準備込み）。長期/単発/事前準備量で調整</li><li>寺山氏の予算感： テストとして10万〜30〜40万円程度</li><li>宍倉氏が複数パターンの提案・見積もりを作成予定</li></ul>
+        </div></div>
+            </div>
         </section>
-        <section>
-            <h2>会議の概要</h2>
-            <ul><li>寺山氏が運営するLark講座（業務改善スクール）のスケール拡大に向けて、AIを活用した受講生サポートの仕組みづくり（ナレッジBot化・個別伴走支援の自動化など）について、AI専門家の宍倉氏に相談・依頼を行い、伴走型の研修支援として進めることで合意した。</li></ul>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>寺山氏がLarkにこだわる理由：フロントのセミナー集客から決済・グループ招待・講座運営・ビデオ会議・チャット・採点まですべてLark内で完結できるため（Chatworkへの手動招待等が不要）</li><li>寺山氏は元Notion愛好家（2年間使用）で、現在はLarkに完全移行済み</li><li>「何期生」制度を維持する理由：①横のつながり（過去のエルステップ講座での原体験）、②ブランディング効果</li><li>寺山氏の講座の最終ゴール：講師に頼らずにスケールアップしつつ受講生満足度を高めること</li><li>宍倉氏の現状：ランニング指導とAI事業を5:5の割合で進めており、AI関連の収益化を本格化するフェーズ</li><li>寺山氏はおさる氏のAI講座も受講済みで、Claude Codeの基本的な操作・ファイル構造の知識はある</li><li>ファイル構造の持ち方（CMO/CFO等の役割ベースの設計トレンド）も今後の検討課題</li></ul>
+            </div>
         </section>
-        <section>
-            <h2>Lark講座の概要と現状の共有</h2>
-            <ul><li>寺山氏はLark（ByteDance提供のグループウェアツール）を活用した業務改善講座を運営</li><li>売上構成比の5〜6割は法人向け研修（社内IT化、デジタル化支援）</li><li>個人向けには「Lark講座」を運営。30日間で自社に合った業務改善の仕組みを作り切るプログラム</li><li>受講生の平均年齢は約43歳</li><li>現在12期生まで実施済み</li><li>最終日に受講生が発表を行い、相互採点する仕組み（プレゼン能力・ビジネスモデル設計の斬新さなどを評価）</li><li>毎週3〜4時間のリアル講座がブロックされる運営形態</li><li>講座運営はすべてLark内で完結（ビデオ会議・チャット・顧客管理・採点・提出物管理・決済後の自動グループ招待など）</li></ul>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>支援形態はコンサル型伴走支援とする（宍倉氏がLarkを学習した上で、毎回ロードマップを提示→セッション中に実装→次回課題を出す形式）</div><div class="decision-item"><span class="check">✓</span>初回セッション日程：2026年4月9日（木）14:00〜17:00（最大3時間枠、早く終われば短縮OK）</div><div class="decision-item"><span class="check">✓</span>宍倉氏が費用の見積もり（複数パターン）を初回セッションまでに提示する</div><div class="decision-item"><span class="check">✓</span>当面のやり取りはChatworkで行い、宍倉氏がLarkアカウントを作成次第、Larkに移行する</div></div>
+            </div>
         </section>
-        <section>
-            <h2>現在の課題</h2>
-            <ul><li>「何期生」制にこだわっている理由：横のつながりの醸成、ブランディング効果</li><li>デメリット：商談タイミングと期のスケジュールが合わず失注が発生する、スケールしにくい</li><li>講師を育成してスケールさせると教育コストがかかる＆受講生が「寺山氏本人のフィードバック」を求めているのに別講師になる問題</li><li>質問対応・添削・伴走支援が寺山氏に属人化している</li></ul>
-        </section>
-        <section>
-            <h2>AIで実現したいこと</h2>
-            <ul><li>1. ナレッジBotの構築：過去の質問・回答をナレッジとして蓄積し、新しい受講生がファイルや質問を投げたら「寺山氏の視点」でAIが改善点を返す仕組み 2. 受講生ごとの個別ロードマップ自動生成：ゴール設計・現状入力に基づき、AIが1ヶ月分の学習計画をLark上で自動作成 3. 伴走支援のAI化：手順案内・質問対応を人力ではなくAIで実現 4. コンテンツの拡充支援：過去動画の質問傾向を分析し、未解説トピックを洗い出す</li></ul>
-        </section>
-        <section>
-            <h2>技術的な検討事項</h2>
-            <ul><li>LarkはCSVエクスポート、API連携（Anycross）、MCP対応が可能。Bot機能も搭載</li><li>実装方法の選択肢：</li><li>簡易版：ナレッジをファイル化→NotebookLM等で読み込み→URLを受講生に共有</li><li>本格版：Claude Codeでナレッジを構造化→Lark内のチャットBotとして稼働</li><li>APIコストの注意点：全ファイルを参照させるとコスト高になるため、余計な情報を読み込ませない設計が必要</li><li>Lark CLIが新たに提供開始（昨日、講座生から情報共有あり）。APIより柔軟性が高くコストも安い可能性</li><li>技術進化の流れ：API → MCP → CLI</li></ul>
-        </section>
-        <section>
-            <h2>宍倉氏のランニング講座での実例共有</h2>
-            <ul><li>Notionベースで会員管理を構築中</li><li>入会時に自己ベストタイム・目標大会を入力→AIが1ヶ月分の練習メニューを自動生成</li><li>コーチングノート：動画フィードバック・学習コンテンツを体系化</li><li>ラーニングナレッジデータベース：生理学・栄養学などの学問情報＋よくある質問をすべて集約し、コンテンツ生成の参照元に</li></ul>
-        </section>
-        <section>
-            <h2>寺山氏の既存ナレッジ資産</h2>
-            <ul><li>1期生からの全講座の文字起こしがナレッジとして蓄積済み</li><li>会員コンテンツ・進捗管理機能もLark内に構築済み</li><li>質問→回答のフローもLark内でナレッジ化（質問入力→チャット通知→回答→蓄積）</li><li>Claude Code × Lark連携でX（旧Twitter）自動投稿の仕組みを直近2日で構築済み（打ち合わせの気づきをベースに体験談を投稿、ネタがない場合はAlfred経由で参考ネタから生成）</li></ul>
-        </section>
-        <section>
-            <h2>支援形態と費用の相談</h2>
-            <ul><li>伴走型コンサル研修の形式で進める方向で合意</li><li>寺山氏のPC上でClaude Codeを一緒に操作しながら進めるスタイル</li><li>1回あたり最大3時間、回数は3〜5回程度を想定</li><li>宍倉氏の研修単価：1回5万円（最低90分、事前準備込み）、長期・単発・事前準備量で調整</li><li>寺山氏の予算感：テストとして10〜30〜40万円程度</li><li>宍倉氏が予算内で何ができるかをパターン別に提案することに</li></ul>
-        </section>
-        <section class="decision-slide">
-            <h2>決定事項</h2>
-            <ul><li class='decision-item'>支援形態：伴走型の研修（コンサル＋ハンズオン）として進める</li><li class='decision-item'>初回セッション日程：2026年4月9日（木）14:00〜17:00（3時間枠、早く終われば90分でもOK）</li><li class='decision-item'>進め方：毎回のセッション前に宍倉氏がロードマップを提示→セッション中に操作・課題発見→次回課題として持ち帰り→宍倉氏が調査して次回に反映</li><li class='decision-item'>今後の連絡：一旦はChatworkでやり取りしつつ、宍倉氏が</li></ul>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">Larkのアカウント作成・基本操作の学習</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週中（4/1週）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">Claude Code × Lark連携で何ができるかの検証</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">予算10〜30-40万円の範囲で複数パターンの見積もり・提案を作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">初回セッション（4/9）のロードマップ・アジェンダ準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">Larkアカウント作成後、宍倉氏を招待しやり取りをLarkに移行</div>
+                <div class="action-when"><span class="when-badge">期限</span>宍倉氏のアカウント作成後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">既存ナレッジ（Q&amp;Aデータ、文字起こし、コンテンツ等）の共有準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div></div>
+            </div>
         </section>
     </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script>
-    Reveal.initialize({
-        hash: true,
-        transition: 'slide',
-        controls: true,
-        progress: true,
-        center: true,
-        slideNumber: 'c/t',
-        controlsTutorial: true,
-    });
-</script>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
 </body>
 </html>
