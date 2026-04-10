@@ -112,14 +112,15 @@
             padding: 0;
         }
         .doc-list li {
-            padding: 10px 16px 10px 20px;
+            padding: 12px 16px 12px 20px;
             border-left: 3px solid #e2e8f0;
-            margin-bottom: 8px;
-            font-size: 0.92rem;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
             color: #334155;
             background: #fff;
             border-radius: 0 8px 8px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.7;
         }
         .doc-list li:hover {
             border-left-color: #0d9488;
@@ -129,34 +130,39 @@
         /* ── カードグリッド ── */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
         }
         .info-card {
             background: #fff;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             border-top: 3px solid #0d9488;
         }
         .card-title {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
         }
         .card-bullets {
             list-style: none;
             padding: 0;
         }
         .card-bullets li {
-            font-size: 0.85rem;
-            color: #475569;
-            padding: 4px 0 4px 12px;
-            border-left: 2px solid #e2e8f0;
-            margin-bottom: 6px;
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 6px 0 6px 14px;
+            border-left: 3px solid #ccfbf1;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .card-bullets li:hover {
+            border-left-color: #0d9488;
+            color: #0f172a;
         }
 
         /* ── 決定事項 ── */
@@ -243,8 +249,8 @@
         <div class="header-inner">
             <span class="doc-badge">議事録</span>
             <h1 class="doc-title">宮﨑久幸　2026年4月1日</h1>
-            <p class="doc-overview">株式会社エンタイムの2月度の売上・経費の確認および予実管理を行い、立替金の精算処理、事業区分（構築代行 → 伴走支援）の整理、個人事業主口座への資金移動、妻への給与支払いに関する社会保険上の懸念点など</p>
-            <div class="doc-meta">2026年4月1日</div>
+            <p class="doc-overview">株式会社エンタイムの2月度の売上・経費の確認と予実管理を中心に、立替金の精算処理、事業区分（構築代行 vs 伴走支援）の整理、個人事業主口座への振替処理、奥様への給与支払いに関する社会保険上の懸念、返金対応案件の確認が行われた。今期（第5期）の売上は累計約3,600万円・粗利約2,760万円と好調で、前期（約3,865万円）を超える見通しであることが共有された。</p>
+            <div class="doc-meta">2026年4月1日 ／ 寺田氏（株式会社エンタイム 代表）、宮﨑久幸氏（税理士/経理担当）</div>
         </div>
     </div>
     <div class="doc-body">
@@ -257,44 +263,36 @@
             <div class="section-body">
                 <div class="card-grid">
         <div class="info-card">
-            <div class="card-title">先週のイベントについて</div>
-            <ul class="card-bullets"><li>先週開催したイベント（Lark関連のオフラインイベント）が大盛況だった</li><li>申し込みベースで 100名 が集まった</li><li>イベント後、約15件の個別相談 を地元企業の経営者から受けた</li><li>オフラインでリアルに会うことの価値を実感。年齢層が高い経営者は膝を突き合わせて話を聞きたいというニーズがある</li><li>今後3〜4ヶ月はこのようなイベント企画を継続し、来期への種まきをしていく方針</li></ul>
-        </div>
-        <div class="info-card">
-            <div class="card-title">経費項目の確認</div>
-            <ul class="card-bullets"><li>マック分け（約5,000円）：消耗品（ガジェット系）</li><li>ボンドボンドさん：外注費（ホームページ制作）</li><li>広告宣伝費 272,000円：単発。AI の勉強代（コンサル受講）→ 支払報酬 に科目変更</li><li>ハナナ（花田）さん：外注費で処理（Lark関連）</li><li>グーセッション（坂口氏）：元社員。宮﨑氏が別途適切に処理する</li><li>中央住建：事務所関連費用</li><li>サイファーパートナーズ：事務所のWi-Fi設定費用（消耗品扱い）</li><li>アルーサー 約11万円：通信費。2ヶ月分で契約最後の支払い</li><li>飲食費・交際費：Larkには入力済みだが、マネーフォワードへの反映がまだ一部未確認（レシート未取込の可能性）</li></ul>
-        </div>
-        <div class="info-card">
             <div class="card-title">立替金の精算処理</div>
-            <ul class="card-bullets"><li>過去の立替分について、Larkチャットのピン留めメッセージを参照しながら付け合わせを実施</li><li>未払金の取り崩し処理として、以下の月別対応を確認：</li><li>56,090円 → 2025年8月分</li><li>41,020円 → 2025年10月分</li><li>15万円 → 2025年11月分</li><li>98,000円 → 2025年12月分</li><li>61,930円 → 2025年7月分</li><li>38,000円 → 2025年9月分</li><li>56,000円 → 2026年1月分</li></ul>
+            <ul class="card-bullets"><li>宮﨑氏が不明だった立替金の内訳について、寺田氏がLarkチャットのピン留めメッセージを参照しながら1件ずつ照合を行った</li><li>56,090円は2025年8月分の立替分（接待交際費等）であることを確認した</li><li>41,020円は2025年10月分、15万円は2025年11月分、98,000円は2025年12月分であることを確認した</li><li>61,930円は2025年7月分、38,000円は2025年9月分、56,000円は2026年1月分であることを確認した</li><li>会計処理は未払金の取り崩しとして処理済みであり、宮﨑氏が正しいと確認した</li><li>寺田氏がLarkチャットのピン留めに実際の支払明細を備忘録として残しており、そこで付け合わせが可能であることを共有した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">売上・業績の確認</div>
-            <ul class="card-bullets"><li>2月売上：4,259,900円（Larkベースと一致確認済み）</li><li>主な顧客：原研一郎氏（約60万）、シスコム（約39万）、相馬企画、森山氏、家村氏など</li><li>60万円台が3件、40万円台が2件で約180万円</li><li>今期累計売上（8ヶ月）：約3,600万円</li><li>粗利：2,760万円（一人で外注費を差し引いた残り）</li><li>営業利益：約1,880万円</li><li>前期売上は 3,865万円 → 今期は前期超えの見通し</li><li>当初目標5,000万円だったが、外注費・固定費の低下、坂口氏の退職もあり、4,000〜4,500万円 で着地すれば十分との認識</li><li>銀行評価も売上成長と利益確保により高評価の見込み。ただし継続性が銀行の留意点</li></ul>
+            <div class="card-title">2月度売上・今期業績</div>
+            <ul class="card-bullets"><li>2月の売上は4,259,900円で、Larkの請求書データとマネーフォワードの数値が一致していることを確認した</li><li>主な売上として、原研一郎氏向け約60万円、シスコム向け約39万円、相馬企画、森山氏、家村氏向けなど、60万円台が3件、40万円台が2件で計約180万円の大口案件があった</li><li>今期累計売上は約3,600万円、粗利は約2,760万円、営業利益は約1,880万円（8ヶ月ベース）と非常に好調であることを宮﨑氏が報告した</li><li>前期の売上は3,865万円であり、今期は4,000〜4,500万円で着地すれば十分と寺田氏が判断している</li><li>寺田氏は一人で粗利2,760万円を稼いでおり、宮﨑氏が「一人でこの数字はすごい」と評価した</li><li>当初今期は売上5,000万円を目指していたが、外注費・固定費の削減（坂口氏退職含む）もあり、利益重視の方針に転換した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">事業区分の変更（構築代行 → DX伴走支援）</div>
-            <ul class="card-bullets"><li>当初、法人＝教育事業、個人事業＝構築代行という区分で運営していた</li><li>「構築代行」という言い方をやめ、「DX伴走支援」として事業を再定義</li><li>変更の背景（2つの懸念点）：</li><li>ゴール設計の難しさ：顧客の解像度が低く、言葉の定義にズレがある（例：勤怠管理と言いつつシフト調整・給与計算CSV出力まで求められる）</li><li>費用発生タイミングの問題：要件定義のヒアリング時間に費用が発生していなかった。また構築後に使い方の教育も必要でコンサル的要素が入る</li><li>新しいモデル：</li><li>3ヶ月パッケージ（月額15万円×3ヶ月＝税込約50万円）</li><li>1ヶ月目：課題抽出・ヒアリング</li><li>2〜3ヶ月目：構築・実装</li><li>4ヶ月目以降：必要に応じ延長</li><li>3ヶ月の期限により顧客側もコミットしてくれるため、成果が出やすい</li><li>議論の結果、伴走支援は「構築事業」（伴走込みの構築事業）に分類することで合意</li><li>7〜8割は仕組みの構築であり、教育は付随要素</li><li>運用後の継続的なメンテナンス依頼（月額保守）も見込まれる</li></ul>
+            <div class="card-title">先週のイベント成果と来期の種まき</div>
+            <ul class="card-bullets"><li>先週開催したイベントに申し込みベースで約100名が集まり大盛況だった</li><li>イベント後に地元企業の経営者から約15件の個別相談を獲得した</li><li>寺田氏はオフラインイベントの効果を実感し、YouTubeだけでは時間を取って見てもらえない層にもLarkの魅力を直接伝えられたと述べた</li><li>同友会で聞いた介護施設（スタッフ25名・売上1億3,000万円・利益約2,000万円）の事例と比較し、自社のビジネスモデルは利益率が高い反面、継続性（毎月の新規獲得）が課題であると認識した</li><li>今後3〜4ヶ月はイベント企画などの種まきに注力し、来期の安定的な売上基盤を構築する方針を示した</li><li>銀行評価は売上・利益ともに伸びているため高いと宮﨑氏が見解を示したが、継続性の観点は銀行が留意するポイントであると指摘した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">構築事業2件の個人事業への振替</div>
-            <ul class="card-bullets"><li>相馬企画とヌルカの2件（各495,000円、合計約100万円）は構築事業と確認</li><li>法人口座で受領しているが、本来は個人事業の収益</li><li>契約書の巻き直しは顧客負担を考慮し、この2件はそのまま</li><li>法人口座から個人事業口座へ送金する形で処理</li><li>4月中 に資金移動を実施</li><li>今後の構築案件は、個人事業（エンターム個人事業）で契約する</li><li>ヌルカは月額165,000円×3ヶ月の分割払い</li></ul>
+            <div class="card-title">事業区分の変更（構築代行→DX伴走支援）</div>
+            <ul class="card-bullets"><li>第5期開始時に個人事業を設立し、「教育事業＝法人」「構築代行＝個人事業」と分けていたが、最近「構築代行」という言い方をやめ「DX伴走支援」に切り替えた</li><li>構築代行の問題点として、①顧客が思うゴールの解像度が低く言葉の定義にズレがある（例：勤怠管理と言いつつシフト調整や給与計算CSV出力まで求められる）、②要件定義の打合せ時間に費用が発生しない、③構築後の使い方教育も必要でコンサルティング要素が入る、の3点を寺田氏が説明した</li><li>新たに3ヶ月パッケージ（月額15万円×3ヶ月、税込約50万円）の伴走支援プランを設計し、1ヶ月目は課題抽出、2〜3ヶ月目で構築・教育、必要なら4ヶ月目以降は延長という形式にした</li><li>宮﨑氏との議論の結果、伴走支援は構築が7〜8割を占めるため、事業カテゴリーとしては「構築事業」（伴走込みの構築事業）が適切と整理された</li><li>構築後の運用サポートや継続的メンテナンスの需要も見込まれ、月額の保守契約につながる可能性があると宮﨑氏が指摘した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">Larkベースの銀行明細管理</div>
-            <ul class="card-bullets"><li>法人口座と個人事業口座の両方をLarkの同一テーブル（銀行明細）に入力済み</li><li>タブ（ビュー）で法人・個人を分けて閲覧可能</li><li>宮﨑氏向けに「銀行口座ごと」のビューを新規作成</li><li>2025年1月以降のデータで個人事業分を確認できるよう設定</li></ul>
+            <div class="card-title">個人事業への振替処理</div>
+            <ul class="card-bullets"><li>相馬企画とヌルカの2件（各49.5万円×2＝約99万円）は構築事業であるため、本来は個人事業の売上だが、法人口座に入金されている</li><li>宮﨑氏は法人口座から個人事業口座への振替を「法人で受けたが実は個人だったという訂正処理」として行うよう指示した</li><li>契約書の巻き直しは顧客負担を考慮し今回の2件は不要とし、今後は個人事業（エンターム）名義で契約する方針とした</li><li>振替は4月中（今期中）に実行すべきと宮﨑氏が指示し、寺田氏は今日明日中に対応すると回答した</li><li>個人事業口座の残高がほぼないため、この振替で資金を確保できるタイミングとなった</li><li>Larkベース上の銀行明細は法人口座と個人口座（楽天銀行）の両方を格納しており、タブで分けて管理していることを確認した</li><li>構築事業に伴う外注費等の経費は個人事業の経費として処理し、個人口座から支払うのがベターと確認した</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">妻への給与支払いに関する問題</div>
-            <ul class="card-bullets"><li>妻への支払い額は 29,000円 程度で変更なし</li><li>法人から個人（家族単位）への経費処理として、社会保険料が発生しない形を想定していたが…</li><li>懸念点： 妻はJA（農協）に勤務しており、そちらで社会保険に加入済み</li><li>継続的に別の法人から報酬を得ると、JA に副業報告が必要になる可能性</li><li>JA が副業NGの場合は難しい</li><li>単発（決算期のみの手伝い等）であれば社会保険上の問題は発生しにくい</li><li>→ 妻にJAの副業規定を確認することに</li></ul>
+            <div class="card-title">奥様への給与支払いと社会保険の問題</div>
+            <ul class="card-bullets"><li>奥様への支払額は月額29,000円程度で変更なしと確認した</li><li>奥様がJAに勤務しており、JA側で社会保険に加入しているため、エンタイムからの継続的な報酬支払いはJAへの副業報告が必要になる可能性があると宮﨑氏が指摘した</li><li>単発（決算期のみ手伝い等）であれば社会保険の問題や副業報告は不要と思われるが、継続的な収入となるとJAへの報告義務が生じる可能性がある</li><li>JAが副業NGの場合は対応が難しくなるため、寺田氏が奥様を通じてJA側に確認することとなった</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">返金対応の件</div>
-            <ul class="card-bullets"><li>以前からの返金案件（体調不良による受講中止。クレームではない）</li><li>当初の費用満額ではなく、約10万円の返金 で落ち着きそう</li><li>寺田氏が3月25日頃にLarkチャットで返金合意書（案）を送付済み</li><li>タイトルを「返金ご一緒に」変更、こちらの落ち度がない旨を記載</li><li>宮﨑氏が内容を確認し、フィードバックする</li></ul>
+            <div class="card-title">2月度経費の確認</div>
+            <ul class="card-bullets"><li>広告宣伝費27.2万円はAI関連の勉強代（コンサルティング受講）であり、科目を「支払報酬」に変更する</li><li>外注費のうち、花田氏（ハナナ）はLark関連の外注で処理OK、坂口氏（グーセッション名義）は元社員であるため宮﨑氏が別途適切に処理する</li><li>通信費のうちアルーサー11万円は2ヶ月分で契約最終分であることを確認した</li><li>消耗品のうち中央住建は事務所の扉関連、サイファーパートナーズは事務所のWi-Fi設定費用であることを確認した</li><li>冒頭で確認した「マック分け（約5,000円のガジェット系）」は消耗品、「ボンドボンド」はホームページ制作の外注費と確認した</li><li>接待交際費は現時点で7万円計上だが、レシート未反映分があり、実際はもう少し増える見込み</li><li>2月分のレシートはLarkには入力済みだが、マネーフォワードへの反映が一部未了の可能性があり、宮﨑氏が確認する</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">レシート・領収書の送付状況</div>
-            <ul class="card-bullets"><li>2月分：寺田氏はLarkに入力済み、レターパックでも送付済みの認識</li><li>宮﨑氏側で未取込の可能性あり → 確認する</li><li>3月分：昨日実施分があり、今週中にまとめて送付予定</li><li>接待交際費が現状7万円計上だが、レシート反映後はもう少し増える見込み</li></ul>
+            <div class="card-title">返金対応案件</div>
+            <ul class="card-bullets"><li>体調不良を理由に返金を求めている顧客があり、もともといただいた費用ではなく10万円程度の返金で落ち着きそうと寺田氏が報告した</li><li>寺田氏が3月25日頃にLarkチャットで返金合意書（案）を送付しており、タイトル変更や「こちらの落ち度がない」旨の記載など、宮﨑氏の助言を反映して作成済み</li><li>宮﨑氏がこの合意書案を確認し、問題なければ顧客に送付する流れとなった</li></ul>
         </div></div>
             </div>
         </section>
@@ -304,7 +302,7 @@
                 <h2 class="section-title">その他メモ</h2>
             </div>
             <div class="section-body">
-                <ul class="doc-list"><li>同友会での事例比較：訪問看護・ケアマネ施設を運営する会社の発表を聴講。スタッフ25名で売上1億3,000万円、利益約2,000万円。人件費は安いが、施設入居者がいる限り安定収益。エンタイムとの違いは「継続性・安定性」vs「毎月の新規獲得の必要性」。余剰資金をイベント等に再投資し、自ら仕事を生み出す楽しみを感じている</li><li>ホームページ：外注（ボンドボンド）で新しいホームページを制作中。DX全体像、法人向けDX研修、個人向けLark講座、DX伴走支援の3事業を掲載</li><li>銀行評価：売上成長・利益確保により高評価見込みだが、銀行は「継続性」を留意している</li><li>個人事業口座の資金不足：現時点で個人事業口座にお金がほぼないため、法人からの振替が急務</li><li>役員報酬：現在月額10万円</li></ul>
+                <ul class="doc-list"><li>前期実績： 売上3,865万円（第4期）</li><li>今期実績（8ヶ月時点）： 売上約3,600万円、粗利約2,760万円、営業利益約1,880万円</li><li>今期着地見通し： 売上4,000〜4,500万円（当初目標5,000万円から下方修正するが利益は十分）</li><li>DX伴走支援の料金体系： 月額15万円（税別）×3ヶ月パッケージ（税込約50万円）、ヌルカは月額165,000円×3ヶ月の分割払い</li><li>ホームページ： 外注（ボンドボンド）で新規制作中、Enter.jp ドメインで株式会社エンタイムのサービスページ（DX全体像・法人向けDX研修・個人向けLark講座・DX伴走支援）を公開</li><li>坂口氏： 元社員で既に退職済み、現在は外注（グーセッション名義）で一部業務を依頼</li><li>イベント： 先週開催、申込100名、個別相談15件獲得。今後3〜4ヶ月は同様のオフラインイベントを継続企画予定</li><li>アルーサー： 通信費として2ヶ月分11万円を計上、今回が契約最終</li></ul>
             </div>
         </section>
         <section class="doc-section decision-section">
@@ -313,7 +311,7 @@
                 <h2 class="section-title">決定事項</h2>
             </div>
             <div class="section-body">
-                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>立替金の精算処理：各月の金額と対応月を確認完了。未払金の取り崩しとして処理済み</div><div class="decision-item"><span class="check">✓</span>DX伴走支援の事業区分：「伴走込みの構築事業」として個人事業側に分類</div><div class="decision-item"><span class="check">✓</span>相馬企画・ヌルカの2件（計約100万円）：法人口座から個人事業口座へ振り替える。今回の2件は契約書の巻き直しはしない</div><div class="decision-item"><span class="check">✓</span>今後の構築案件：個人事業（エンターム）名義で契約する</div><div class="decision-item"><span class="check">✓</span>広告宣伝費272,000円：科目を「支払報酬」に変更</div><div class="decision-item"><span class="check">✓</span>今期の売上目標：4,000〜4,500万円で着地すれば十分（当初5,000万円目標から修正）</div><div class="decision-item"><span class="check">✓</span>次回打ち合わせ：4月23日（木）8:30〜</div></div>
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>相馬企画・ヌルカの2件（計約99万円）は構築事業として個人事業の売上に区分し、法人口座から個人事業口座へ4月中に振替を行う</div><div class="decision-item"><span class="check">✓</span>今回の2件の契約書巻き直しは不要とし、今後の構築事業は個人事業（エンターム）名義で契約する</div><div class="decision-item"><span class="check">✓</span>DX伴走支援のLark上のカテゴリーは「構築事業」に変更する</div><div class="decision-item"><span class="check">✓</span>広告宣伝費27.2万円の勘定科目を「支払報酬」に変更する</div><div class="decision-item"><span class="check">✓</span>奥様への給与額は月額29,000円程度で変更なし（ただしJAの副業可否確認が前提）</div><div class="decision-item"><span class="check">✓</span>次回打ち合わせは2026年4月23日（木）8:30とする</div></div>
             </div>
         </section>
         <section class="doc-section action-section">
@@ -325,38 +323,38 @@
                 <div class="action-grid">
             <div class="action-card">
                 <div class="action-who">寺田氏</div>
-                <div class="action-what">妻にJAの副業規定を確認する</div>
-                <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
+                <div class="action-what">法人口座から個人事業口座へ構築事業2件分（約99万円）を振替送金する</div>
+                <div class="action-when"><span class="when-badge">期限</span>4月1〜2日（今日明日中）</div>
             </div>
             <div class="action-card">
                 <div class="action-who">寺田氏</div>
-                <div class="action-what">法人口座から個人事業口座へ構築事業2件分（約100万円）を送金</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月中（今日明日目処）</div>
+                <div class="action-what">奥様にJAの副業可否を確認する</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回会議（4/23）まで</div>
             </div>
             <div class="action-card">
                 <div class="action-who">寺田氏</div>
-                <div class="action-what">3月分のレシート・領収書をまとめて送付</div>
+                <div class="action-what">3月分のレシートを整理して宮﨑氏に送付する</div>
                 <div class="action-when"><span class="when-badge">期限</span>今週中</div>
             </div>
             <div class="action-card">
                 <div class="action-who">宮﨑氏</div>
-                <div class="action-what">3月の給与明細を寺田氏へ送付</div>
+                <div class="action-what">3月分の給与明細を寺田氏に送付する</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回会議（4/23）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮﨑氏</div>
+                <div class="action-what">返金合意書（案）の内容を確認し、寺田氏に連絡する</div>
                 <div class="action-when"><span class="when-badge">期限</span>早急に</div>
             </div>
             <div class="action-card">
                 <div class="action-who">宮﨑氏</div>
-                <div class="action-what">返金合意書（案）の内容を確認し、フィードバック</div>
+                <div class="action-what">2月分のレシート（レターパック送付済み分）の受領・反映状況を確認する</div>
                 <div class="action-when"><span class="when-badge">期限</span>早急に</div>
             </div>
             <div class="action-card">
                 <div class="action-who">宮﨑氏</div>
-                <div class="action-what">2月分レシートの受領・取込状況を確認し、差異があれば連絡</div>
-                <div class="action-when"><span class="when-badge">期限</span>早急に</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">宮﨑氏</div>
-                <div class="action-what">坂口氏（グーセッション）の経費処理を適切に行う</div>
-                <div class="action-when"><span class="when-badge">期限</span>次回MTGまで</div>
+                <div class="action-what">坂口氏（グーセッション）の外注費を適切な勘定科目で処理する</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回会議（4/23）まで</div>
             </div></div>
             </div>
         </section>
