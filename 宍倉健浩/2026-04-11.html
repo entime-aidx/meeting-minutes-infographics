@@ -249,8 +249,8 @@
         <div class="header-inner">
             <span class="doc-badge">議事録</span>
             <h1 class="doc-title">宍倉健浩　2026年4月11日</h1>
-            <p class="doc-overview">寺山氏が運営するLark講座（30日間の業務改善スクール、現在12期まで実施）をスケールさせるために、宍倉氏のAI知見を活用した伴走支援を依頼する打ち合わせ。具体的には、受講生からの質問対応を自動化するAIチャットボットの構築、受講生ごとに個別最適化された学習スケジュールの自動生成、寺山氏のナレッジを活用した採点・フィードバックのAI化について議論し、来週4月9日（木）14時〜17時に第1回の研修セッションを実施することで合意した。</p>
-            <div class="doc-meta">2026年4月11日 ／ 寺山 大夢（Lark研究所で発信中／Lark講座主宰）、宍倉 健浩（AI・クロードコード活用の専門家／ランニングコーチ）</div>
+            <p class="doc-overview">寺山氏が運営するLark講座（30日間完結型・現在12期まで実施・受講生平均年齢43歳）のスケール拡大にあたり、講師（寺山氏）への依存を減らしつつ受講生満足度を維持するためのAI活用について、宍倉氏に伴走型の技術支援を依頼する打ち合わせが行われた。具体的には、過去の質問・添削ナレッジをAIボット化する仕組み、受講生ごとの個別学習計画の自動生成、Claude Codeを用いたLark操作の自動化などが議論され、来週4月9日（木）14:00〜17:00に初回の研修セッションを実施することが決定した。</p>
+            <div class="doc-meta">2026年4月11日 ／ 寺山 大夢（Lark研究所で発信中／Lark講座主宰）、宍倉 健浩（AI・ランニングコーチング）</div>
         </div>
     </div>
     <div class="doc-body">
@@ -264,31 +264,23 @@
                 <div class="card-grid">
         <div class="info-card">
             <div class="card-title">Lark講座の現状と課題</div>
-            <ul class="card-bullets"><li>寺山氏はByteDance社のグループウェア「Lark」を活用した業務改善講座を運営しており、売上構成比の5〜6割が法人向け研修である</li><li>受講生の平均年齢は約43歳で、30日間で自社に合った業務改善の仕組みを作り切るプログラムとして運営し、現在12期まで実施済み</li><li>「何期生」制を採用しているため、商談時にタイミングが合わず失注するケースや、スケジュール調整の手間が発生している</li><li>毎週3〜4時間のリアル講座がブロックされ、寺山氏自身が最も知見を持つため講師の代替が難しく、スケールのボトルネックになっている</li><li>最終日に受講生が発表を行い（精肉店の勤怠管理改善、飲食店の売上可視化など）、プレゼン能力やビジネスモデル設計を採点する形式をとっている</li><li>講師を増やすと「寺山氏本人のフィードバックが欲しかったのに別の人だった」という不満が生じるリスクがあり、AI活用でこの問題を解決したい</li></ul>
+            <ul class="card-bullets"><li>寺山氏はLark（ByteDance提供のグループウェア）を活用した業務改善講座を運営しており、売上構成比の5〜6割が法人向け研修で、残りが個人向けのLark講座である。</li><li>Lark講座は「30日間で自社に合った業務改善の仕組みを作り切る」プログラムで、現在12期まで開催し、受講生の平均年齢は約43歳である。</li><li>「何期生」という区切りを設けることで横のつながりや一体感を生んでいるが、時期が合わず失注するケースや、毎週3〜4時間のリアル講座で寺山氏の時間がブロックされるというスケール上のデメリットがある。</li><li>講師を育成してスケールさせる一般的な方法では、教育コストがかかり「寺山氏本人のフィードバックが欲しかったのに別の人だった」という受講生の不満が生じるリスクがある。</li><li>最終日に受講生が発表を行い（精肉店の勤怠管理改善、飲食店の売上可視化など）、プレゼン能力やビジネスモデル設計を相互採点する仕組みを運用している。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">Larkの機能と技術的な連携可能性</div>
-            <ul class="card-bullets"><li>Larkはチャット・ビデオ会議・タスク管理・勤怠管理・スプレッドシート・自動化（オートメーション）等を一つのプラットフォームで完結できるグループウェアである</li><li>決済後に申込フォームを送信すると自動でグループに招待される仕組みがあり、Chatworkのような手動招待が不要</li><li>LarkはCSVエクスポート、API連携（Anycross経由）、MCP接続が可能で、外部ツールとの連携に技術的な制約は少ない</li><li>宍倉氏がLarkのAPI/MCP連携とCSVエクスポートの可否を確認し、どちらも対応可能であることを寺山氏が回答した</li><li>Lark内にBot機能が存在するため、チャットボットの組み込みも技術的に実現可能</li></ul>
+            <div class="card-title">AI活用で実現したいこと</div>
+            <ul class="card-bullets"><li>寺山氏がこれまで蓄積した添削・質問対応のナレッジをAIボットに読み込ませ、新規受講生がファイルを投げ込むと寺山氏の視点で改善点を返してくれる仕組みを作りたい。</li><li>Lark内で質問をフォーム入力→チャット通知→回答→ナレッジ化という運用を既に行っており、過去のQ&amp;Aデータが蓄積されている状態である。</li><li>受講生ごとに個別の学習計画（30日間のスケジュール）をAIが自動生成し、伴走支援的に「次はこの手順でやりましょう」と提示する機能が欲しい。</li><li>コンテンツの見せ方について、機能起点（「ベースの使い方」）ではなく課題起点（「勤怠管理に困っている方はこの機能」）に再構成したい。</li><li>過去の解説動画タイトル一覧をAIに読み込ませ、まだ解説していないテーマの洗い出しや、質問と動画のマッチングを行いたい。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">既存のナレッジ蓄積状況</div>
-            <ul class="card-bullets"><li>寺山氏は受講生からの質問を全てLark上でナレッジ化しており、質問入力→チャット通知→回答記録→データベース蓄積という仕組みを構築済み</li><li>1期生からの講座内容（5時間以上の講義の文字起こし含む）が全てデータとして残っている</li><li>会員向け学習コンテンツもLark上に整備され、受講生の進捗管理（誰がどこまで視聴したか）も可能</li><li>受講生が作成した成果物のカテゴリは、顧客管理・財務・講座運営・マーケティング（うたげ連携）・勤怠管理・外注管理など多岐にわたる</li></ul>
+            <div class="card-title">技術的な実現方法の検討</div>
+            <ul class="card-bullets"><li>宍倉氏がLarkのCSVエクスポート機能とAPI連携（MCP対応）の可否を確認し、寺山氏が両方とも対応可能であると回答した。</li><li>最もコストをかけない方法として、全ナレッジをファイル化してNotebookLM（Gemini）に読み込ませ、URLを受講生に共有して質問窓口にする案が提示された。</li><li>より高機能な方法として、Claude Codeで専用チャットボットを構築し、ナレッジを構造化して読み込ませ、Lark内のBot機能として組み込む案が提示された。</li><li>API連携のコストに注意が必要で、全ファイルを無差別に参照させるとAPIコストが膨らむため、余計な情報を読み込ませない設計が重要だと宍倉氏が指摘した。</li><li>宍倉氏が自身のランニングコーチング事業で構築中のNotion活用例を画面共有し、会員が目標大会と自己ベストタイムを入力すると週ごとの練習メニューが自動生成される仕組みを紹介した。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">AIで実現したいこと</div>
-            <ul class="card-bullets"><li>寺山氏のナレッジを読み込ませたAIボットを構築し、受講生がファイルを投げ込むと寺山氏の視点で改善点を自動フィードバックする仕組みが最も優先度が高い</li><li>過去のQ&amp;Aデータを参照して類似質問に自動回答するチャットボットの構築（現在は寺山氏が人力で対応）</li><li>受講生ごとにゴール設計と現状を入力すると、AI がLark専用の30日間学習スケジュール・作成計画を自動生成するパーソナライズ機能</li><li>既存の学習コンテンツを「機能別」だけでなく「課題別」（勤怠管理に困っている人向け等）に再構成し、AIが最適なコンテンツをレコメンドする仕組み</li><li>法人研修における要件定義を入力するとAIが自動で仕組みを構築してくれる機能</li></ul>
+            <div class="card-title">寺山氏側の既存資産と下地</div>
+            <ul class="card-bullets"><li>1期生から現在まで全講座の文字起こしデータ、会員向けコンテンツ（動画・進捗管理機能付き）、過去のQ&amp;Aナレッジが全てLark内に蓄積されている。</li><li>寺山氏は直近2日間でLarkのカレンダー（Googleカレンダー連動）→打ち合わせの気づきメモ→Claude CodeがX（旧Twitter）に自動投稿する仕組みを構築済みである。</li><li>メモが空の場合は「アルフレッド」というツールで収集した参考ネタからClaude Codeが自動でX投稿を作成する仕組みも稼働している。</li><li>画像生成でDALL-E 3のAPI品質が低く、Geminiに切り替えるのに約6時間かかったが、一度構築すれば自動運用できると評価している。</li><li>寺山氏の講座生からLark CLIの情報が共有され、MCPよりも柔軟性が高くコストも安い可能性があるとの補足を宍倉氏が説明した。</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">技術的なアプローチと選択肢</div>
-            <ul class="card-bullets"><li>宍倉氏は最もコストをかけない方法として、ナレッジをファイル化してNotebookLM（Gemini）に読み込ませ、URLを受講生に共有する方法を提案した</li><li>より高機能な方法として、Claude Codeでナレッジを構造化し、Lark内のチャットボットとして組み込む方法を提案した</li><li>API連携でチャットボットを動かす場合、ファイルを大量に参照させるとAPIコストが嵩むため、必要な情報のみを参照させる仕組みの設計が重要</li><li>宍倉氏は自身のランニングコーチング事業でNotion AIを活用し、会員の目標大会・自己ベストタイムを入力すると週次の練習メニューとコーチングノートが自動生成される仕組みを実演した</li><li>Lark CLIが最近リリースされたことを寺山氏の講座生が共有しており、MCPよりも柔軟性が高くコストも安い可能性がある</li><li>外部連携の技術的な進化として、API→MCP→CLIの順に柔軟性が高まっている流れを宍倉氏が説明した</li></ul>
-        </div>
-        <div class="info-card">
-            <div class="card-title">寺山氏のClaude Code活用状況</div>
-            <ul class="card-bullets"><li>寺山氏はLarkカレンダーとGoogleカレンダーを連動させ、打ち合わせの気づきをLarkに記入するとClaude Codeが自動でX（旧Twitter）に投稿する仕組みを2日間で構築した</li><li>気づきを入力しない場合は、Alfredで収集した参考ネタやノートからClaude Codeが自動でXの投稿を生成・予約投稿まで完了する</li><li>画像生成でDALL-E 3のAPIを使用したところクオリティが低く、Geminiに切り替えるまで約6時間かかった</li></ul>
-        </div>
-        <div class="info-card">
-            <div class="card-title">支援の進め方と費用感</div>
-            <ul class="card-bullets"><li>寺山氏は宍倉氏のPCで作業を代行する形ではなく、自分のPC上でClaude Codeを操作しながら宍倉氏がコンサル的に伴走する形式を希望した</li><li>宍倉氏の研修単価は1回5万円（最低90分保証）で、事前準備の工数や長期・単発の違いで費用を調整している</li><li>寺山氏はテスト段階の予算感として10万〜30〜40万円程度を提示した</li><li>宍倉氏は現在ランニングコーチングとAI事業を5:5の割合で進めており、AI事業の収益化フェーズに入っている</li></ul>
+            <div class="card-title">支援の進め方と費用</div>
+            <ul class="card-bullets"><li>寺山氏のPC上でClaude Codeを操作しながら宍倉氏がコンサル的に伴走する形式を採用することで合意した。</li><li>1回あたり3時間程度の枠を取り、3〜5回のセッションを想定している。</li><li>宍倉氏の研修費用は基本1回5万円（最低90分保証）で、事前準備の工数や長期契約により調整する形である。</li><li>寺山氏のテスト段階の予算感は10万〜30〜40万円程度である。</li><li>毎回のセッション前に宍倉氏がロードマップを提示し、セッション中に操作・成果物作成を行い、終了後に次回の課題を出す流れで進める。</li></ul>
         </div></div>
             </div>
         </section>
@@ -298,7 +290,7 @@
                 <h2 class="section-title">その他メモ</h2>
             </div>
             <div class="section-body">
-                <ul class="doc-list"><li>Larkの運営会社： ByteDance（TikTokと同じ親会社）で、5年以上前から大企業で利用されているが一般的な認知度はまだ低い</li><li>寺山氏の背景： 元々Notion愛好家で約2年間使用した後、Larkに移行。エルステップの講座（約5年前）で「何期生」制の横のつながりの価値を実感した経験が、現在の講座設計の原点</li><li>講座のスケール課題の本質： 寺山氏は「うまくいっていないスクールは講師が多くて、聞きたい人に聞けなかったという不満が原因」と分析しており、AIで寺山氏本人の知見を再現することでこの問題を解決したい</li><li>Lark CLIの動向： 寺山氏の講座生からLark CLIのリリース情報が共有されており、今後AIエージェントで操作する前提のツール設計が主流になるとの見解を宍倉氏が示した</li><li>宍倉氏のランニングコーチング事例： Notion AI上で会員管理・練習メニュー自動生成・コーチングノート・学習コンテンツ体系化を実装中であり、これをLark講座に応用するイメージが共有された</li></ul>
+                <ul class="doc-list"><li>Larkの背景： LarkはByteDance（TikTok親会社）が提供するグループウェアで、チャット・ビデオ会議・スプレッドシート・フォーム・自動化・Bot・API連携など多機能を備えるが、日本での浸透度はまだ低い。</li><li>寺山氏のチャネル： YouTube（Lark研究所）で発信しており、ニッチだが一定のフォロワーがいる。直近でX（旧Twitter）の自動投稿も開始。</li><li>宍倉氏の現状： ランニングコーチング事業とAI事業を5:5の割合で進めており、AI研修を1回5万円〜で提供開始している段階。</li><li>Lark CLI： 寺山氏の講座生から前日（3/31）に「Lark CLIが出た」との情報共有があり、MCPよりも柔軟性が高くコストも安い可能性があると宍倉氏がコメント。今後のAIエージェント連携の追い風になる。</li><li>寺山氏の元ノーションユーザー歴： 約2年間Notionを使い込んだ経験があり、現在はLarkに完全移行している。</li><li>スケールの方針： 講師を増やすのではなく、AIを活用して寺山氏のナレッジ・フィードバックを再現することで、講師1人体制のまま受講生の満足度を維持しながらスケールさせることを目指している。</li></ul>
             </div>
         </section>
         <section class="doc-section decision-section">
@@ -307,7 +299,7 @@
                 <h2 class="section-title">決定事項</h2>
             </div>
             <div class="section-body">
-                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>宍倉氏が寺山氏のLark講座に対してAI活用の伴走支援（コンサル型研修）を行うことで合意した</div><div class="decision-item"><span class="check">✓</span>第1回研修セッションを2026年4月9日（木）14:00〜17:00（最大3時間枠、早く終われば90分でもOK）で実施する</div><div class="decision-item"><span class="check">✓</span>支援形式は寺山氏のPC上でClaude Codeを操作しながら宍倉氏がアドバイス・ロードマップを提示するコンサル型とする</div><div class="decision-item"><span class="check">✓</span>費用感はテストフェーズとして10万〜30〜40万円の範囲で、宍倉氏が複数パターンの見積もりを作成する</div><div class="decision-item"><span class="check">✓</span>今後のやり取りはLarkに移行することを目指し、当面はChatworkも併用する</div></div>
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>初回研修セッションを2026年4月9日（木）14:00〜17:00（最大3時間枠）で実施する。</div><div class="decision-item"><span class="check">✓</span>支援形式は、寺山氏のPC上でClaude Codeを操作しながら宍倉氏がコンサル型で伴走する方式とする。</div><div class="decision-item"><span class="check">✓</span>宍倉氏が初回セッションまでにLarkのアカウントを作成し、基本的な機能を学習する。</div><div class="decision-item"><span class="check">✓</span>今後のやり取りは当面Chatworkで行い、宍倉氏がLarkに慣れ次第Larkに移行する。</div><div class="decision-item"><span class="check">✓</span>宍倉氏が初回セッションまでに費用見積もり（複数パターン）を提示する。</div></div>
             </div>
         </section>
         <section class="doc-section action-section">
@@ -318,39 +310,34 @@
             <div class="section-body">
                 <div class="action-grid">
             <div class="action-card">
-                <div class="action-who">宍倉</div>
-                <div class="action-what">Larkのアカウントを作成し、基本的な機能を学習する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）まで（今週中にアカウント作成）</div>
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">Larkのアカウントを作成し、基本機能を学習する</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週中（〜4/6頃）</div>
             </div>
             <div class="action-card">
-                <div class="action-who">宍倉</div>
-                <div class="action-what">予算10〜30〜40万円の範囲で複数パターンの見積もり・提案（何ができるか）を作成する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）の研修前まで</div>
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">予算10〜30〜40万円の範囲で何ができるか複数パターンの見積もりを作成し提示する</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）初回セッションまで</div>
             </div>
             <div class="action-card">
-                <div class="action-who">宍倉</div>
-                <div class="action-what">Claude CodeでLarkを操作する前提で、何ができるかを事前に検証する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）の研修前まで</div>
+                <div class="action-who">宍倉氏</div>
+                <div class="action-what">Claude CodeでLarkを操作する前提で、初回セッションのロードマップ・進め方を準備する</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
             </div>
             <div class="action-card">
-                <div class="action-who">宍倉</div>
-                <div class="action-what">第1回研修のロードマップ（今回のゴール・進め方）を準備する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）14:00まで</div>
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">Lark内の既存ナレッジ（Q&amp;Aデータ、講座文字起こし、動画コンテンツ等）を宍倉氏がアクセスできる状態にする</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
             </div>
             <div class="action-card">
-                <div class="action-who">寺山</div>
-                <div class="action-what">宍倉氏にLarkアカウント作成後の連絡先共有・Larkでのやり取り開始</div>
-                <div class="action-when"><span class="when-badge">期限</span>今週中</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">寺山</div>
-                <div class="action-what">費用感の見積もりをChatworkで受領し、合意する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）まで</div>
+                <div class="action-who">寺山氏</div>
+                <div class="action-what">4/9（木）14:00〜17:00の予定を確保し、初回研修セッションを実施する</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）</div>
             </div>
             <div class="action-card">
                 <div class="action-who">両者</div>
-                <div class="action-what">4月9日（木）14:00〜17:00に第1回研修セッションを実施する</div>
-                <div class="action-when"><span class="when-badge">期限</span>4月9日（木）</div>
+                <div class="action-what">当面のやり取りをChatworkで行い、費用合意後に正式スタートする</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週中</div>
             </div></div>
             </div>
         </section>
