@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宍倉健浩　2026年4月13日</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 40px 0 0;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px 32px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 3px 12px;
+            border-radius: 4px;
+            margin-bottom: 16px;
+        }
+        .doc-title {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .doc-overview {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            max-width: 640px;
+            margin-bottom: 16px;
+            padding: 10px 14px;
+            border-left: 3px solid #f97316;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0 6px 6px 0;
+        }
+        .doc-meta {
+            font-size: 0.78rem;
+            color: #64748b;
+            margin-top: 8px;
+        }
+
+        /* ── 統計サマリーバー ── */
+        .stats-row {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: rgba(0,0,0,0.25);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 0;
+        }
+        .stat-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 14px 0;
+            gap: 2px;
+        }
+        .stat-n {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #38bdf8;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+        }
+        .stat-sep {
+            width: 1px;
+            height: 32px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 36px auto;
+            padding: 0 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num { background: #059669; font-size: 1.1rem; }
+        .action-num   { background: #dc2626; font-size: 1.1rem; }
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+            flex: 1;
+        }
+        .decision-section .section-title { border-bottom-color: #059669; color: #065f46; }
+        .action-section .section-title   { border-bottom-color: #dc2626; color: #991b1b; }
+
+        /* ── 箇条書き ── */
+        .doc-list { list-style: none; padding: 0; }
+        .doc-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.6;
+        }
+        .doc-list li::before {
+            content: "▸";
+            color: #0d9488;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .card-bullets { list-style: none; padding: 0; }
+        .card-bullets li {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: #475569;
+            padding: 5px 0;
+            border-bottom: 1px dashed #f1f5f9;
+            line-height: 1.55;
+        }
+        .card-bullets li:last-child { border-bottom: none; }
+        .card-bullets li::before {
+            content: "•";
+            color: #0d9488;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ── 数字ハイライト ── */
+        em.num {
+            font-style: normal;
+            font-weight: 700;
+            color: #0369a1;
+            background: #e0f2fe;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.92em;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list { display: flex; flex-direction: column; gap: 8px; }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 10px 14px;
+            font-size: 0.9rem;
+            color: #064e3b;
+            line-height: 1.6;
+        }
+        .check { color: #059669; font-weight: 700; flex-shrink: 0; }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 14px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 10px;
+            border-top: 3px solid #f97316;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .action-who {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #f97316;
+            letter-spacing: 0.04em;
+            margin-bottom: 6px;
+        }
+        .action-what {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.8rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
+            text-align: center;
+            padding: 36px;
+            color: #94a3b8;
+            font-size: 0.78rem;
+        }
+
+        @media (max-width: 600px) {
+            .doc-title { font-size: 1.5rem; }
+            .header-inner { padding: 0 20px 28px; }
+            .doc-section { padding: 0 20px; margin: 28px auto; }
+            .card-grid { grid-template-columns: 1fr; }
+            .action-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">宍倉健浩　2026年4月13日</h1>
+            <p class="doc-overview">Lark講座のスケール化に向け、AI（Claude Code）を活用した受講生支援の自動化について方針と進め方を協議した。</p>
+            <div class="doc-meta">2026年4月13日 ／ 寺山 大夢（Lark研究所）、宍倉 健浩</div>
+        </div>
+        
+    <div class="stats-row">
+        <div class="stat-item"><span class="stat-n">2</span><span class="stat-label">議題</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat-item"><span class="stat-n">4</span><span class="stat-label">決定事項</span></div>
+        <div class="stat-sep"></div>
+        <div class="stat-item"><span class="stat-n">6</span><span class="stat-label">アクション</span></div>
+    </div>
+    </div>
+    <div class="doc-body">
+        
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">Lark講座の現状と課題</div>
+            <ul class="card-bullets"><li>平均受講者年齢<em class="num">43</em>歳、現在<em class="num">12</em>期まで運営済</li><li><em class="num">30日</em>間で業務改善の成果物を作り発表する形式</li><li>「何期生」制により横のつながりが生まれるが、時期が合わず失注するケースあり</li><li>毎週<em class="num">3</em>〜<em class="num">4時</em>間のリアル講座で寺山氏の工数が逼迫</li><li>講師育成はコスト増＋本人フィードバックを求める受講生の不満リスク</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">売上構成と事業構造</div>
+            <ul class="card-bullets"><li>売上構成比：法人向け研修が<em class="num">5</em>〜<em class="num">6</em>割</li><li>法人研修はIT未経験企業への初DXツール導入が中心</li><li>個人向けはLark講座（自社業務の仕組みを自作する講座）</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">AI活用で実現したいこと</div>
+            <ul class="card-bullets"><li>受講生の質問に自動回答するAIチャットボット</li><li>過去の添削・QAをナレッジ化しAIに読み込ませる</li><li>受講生ごとに個別最適化された<em class="num">30日</em>間の学習計画を自動生成</li><li>発表前の採点・フィードバックをAIで事前実施</li><li>課題別・機能別など複数パターンの学習導線を自動生成</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">技術的な検討事項</div>
+            <ul class="card-bullets"><li>LarkはCSVエクスポート・API連携・MCP・Bot機能すべて対応可能</li><li>大元はByteDance（TikTokと同社）</li><li>最もコスト効率が良いのはClaude Code＋MCP経由でLark操作</li><li>APIコスト削減のため不要情報を参照させない設計が必要</li><li>Lark CLIが昨日リリースされ、MCPより柔軟・低コストの可能性</li><li>NotebookLM（Gemini）で簡易版を無料構築する選択肢もあり</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">宍倉氏のランニング講座での実例紹介</div>
+            <ul class="card-bullets"><li>Notionで会員管理・練習メニュー自動生成を構築済</li><li>目標大会・自己ベスト入力→週次メニューをAIが自動作成</li><li>コーチングノートに動画フィードバック等を集約</li><li>ナレッジDBに学問（生理学・栄養学）＋実践知を格納し参照元に</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">寺山氏の既存ナレッジ資産</div>
+            <ul class="card-bullets"><li><em class="num">1</em>期生〜<em class="num">12</em>期生の講座内容を全て文字起こし・蓄積済</li><li>質問→回答のフローをLark上でナレッジDB化済</li><li>会員コンテンツの進捗管理（閲覧状況）も実装済</li><li>Claude Code＋Larkで自動X投稿の仕組みを<em class="num">2日</em>で構築済</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">支援の進め方と費用</div>
+            <ul class="card-bullets"><li>寺山氏のPC上でClaude Codeを操作しながらのコンサル型伴走支援</li><li><em class="num">1回</em>あたり最大<em class="num">3時</em>間×複数回のセッション形式</li><li>宍倉氏が毎回ロードマップを提示→実装→次回課題を繰り出す</li><li>研修単価：<em class="num">1回</em><em class="num">5万</em>円（最低<em class="num">90分</em>＋事前準備込み）</li><li>寺山氏の予算感：テスト的に<em class="num">10</em>〜<em class="num">30</em>〜<em class="num">40万</em>円程度</li><li>宍倉氏の現在の稼働：ランニング事業とAI事業が<em class="num">5</em>:<em class="num">5</em></li></ul>
+        </div></div>
+            </div>
+        </section>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>寺山氏は元Notion愛好家（<em class="num">2年</em>間使用）→現在は全業務をLarkに移行</li><li>寺山氏は「おさる式」講座も受講済み（エルステップ講座は約<em class="num">5年</em>前）</li><li>講座の最終発表では、プレゼン力・ビジネスモデル設計の斬新さ等を相互採点</li><li>法人研修の例：精肉店の勤怠管理デジタル化、飲食店の売上可視化など</li><li>寺山氏のX自動投稿：打ち合わせの気づき→Claude Codeが投稿文＋画像生成→予約投稿まで自動化（画像生成はDALL-E <em class="num">3</em>→Geminiに切替で約<em class="num">6時</em>間かかった）</li><li>Lark CLIのリリース情報は講座生から共有された（<em class="num">2026</em>/<em class="num">3</em>/<em class="num">31</em>頃）</li></ul>
+            </div>
+        </section>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>Claude Code＋MCP/CLIでLarkを操作する伴走型コンサルで進める</div><div class="decision-item"><span class="check">✓</span>初回セッション：<em class="num">4月</em><em class="num">9日</em>（木）<em class="num">14</em>:<em class="num">00</em>〜<em class="num">17</em>:<em class="num">00</em>（最大<em class="num">3時</em>間）</div><div class="decision-item"><span class="check">✓</span>宍倉氏が今週中にLarkアカウントを作成し、以降のやり取りをLarkで行う</div><div class="decision-item"><span class="check">✓</span>見積もり提示後に正式スタート（費用はChatworkで連絡）</div></div>
+            </div>
+        </section>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">宍倉</div>
+                <div class="action-what">Larkの基本機能を学習</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉</div>
+                <div class="action-what">Larkアカウント作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>今週中</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉</div>
+                <div class="action-what">予算<em class="num">10</em>〜<em class="num">40万</em>円の複数パターンで見積もり作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉</div>
+                <div class="action-what">Claude CodeでLarkを動かす前提で何ができるか検証</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宍倉</div>
+                <div class="action-what">初回セッションのロードマップ準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山</div>
+                <div class="action-what">既存ナレッジ・QAデータの整理・共有準備</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/9（木）まで</div>
+            </div></div>
+            </div>
+        </section>
+    </div>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
+</body>
+</html>
