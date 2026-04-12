@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当日サポーター向け　2026年4月12日</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* ── ヘッダー ── */
+        .doc-header {
+            background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
+            color: #fff;
+            padding: 48px 0 56px;
+        }
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: #f97316;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 4px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .doc-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+        .doc-overview {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 24px;
+        }
+        .doc-meta {
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
+        }
+
+        /* ── コンテンツエリア ── */
+        .doc-section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #0d9488;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-num {
+            background: #059669;
+            font-size: 1.2rem;
+        }
+        .action-num {
+            background: #dc2626;
+            font-size: 1.2rem;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+            flex: 1;
+        }
+        .decision-section .section-title {
+            border-bottom-color: #059669;
+            color: #065f46;
+        }
+        .action-section .section-title {
+            border-bottom-color: #dc2626;
+            color: #991b1b;
+        }
+
+        /* ── 箇条書き ── */
+        .doc-list {
+            list-style: none;
+            padding: 0;
+        }
+        .doc-list li {
+            padding: 12px 16px 12px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
+            color: #334155;
+            background: #fff;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            line-height: 1.7;
+        }
+        .doc-list li:hover {
+            border-left-color: #0d9488;
+            background: #f8fafc;
+        }
+
+        /* ── カードグリッド ── */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            border-top: 3px solid #0d9488;
+        }
+        .card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .card-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        .card-bullets li {
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 6px 0 6px 14px;
+            border-left: 3px solid #ccfbf1;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .card-bullets li:hover {
+            border-left-color: #0d9488;
+            color: #0f172a;
+        }
+
+        /* ── 決定事項 ── */
+        .decision-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-left: 4px solid #059669;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            font-size: 0.92rem;
+            color: #064e3b;
+        }
+        .check {
+            color: #059669;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ── アクションカード ── */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .action-card {
+            background: #fff;
+            border-radius: 12px;
+            border-top: 3px solid #f97316;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .action-who {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .action-what {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        .action-when {
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .when-badge {
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* ── フッター ── */
+        .doc-footer {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="doc-header">
+        <div class="header-inner">
+            <span class="doc-badge">議事録</span>
+            <h1 class="doc-title">当日サポーター向け　2026年4月12日</h1>
+            <p class="doc-overview">4月25日に愛知（名古屋）で開催予定のLarkオフラインイベントについて、当日サポーター向けのキックオフミーティングが行われた。今回のイベントはこれまでの東京・大阪開催と異なり、登壇者の講演に加えて約3時間のグループワーク（収支管理・顧客管理・勤怠管理のダミーデータを使った構築演習）を中心に据え、参加者のスキルアップと実践体験にフォーカスする方針が共有された。サポーターの役割（チーム内の進行支援・質問対応）、事前準備の必要性、グループワークのお題数や進め方に関する議論が行われた。</p>
+            <div class="doc-meta">2026年4月12日 ／ - 寺山 大夢（Lark研究所で発信中／主催・進行）</div>
+        </div>
+    </div>
+    <div class="doc-body">
+        
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">1</span>
+                <h2 class="section-title">主な議題と内容</h2>
+            </div>
+            <div class="section-body">
+                <div class="card-grid">
+        <div class="info-card">
+            <div class="card-title">イベント全体のコンセプトと方針</div>
+            <ul class="card-bullets"><li>寺山氏が、今回の名古屋イベントは「登壇を聞いて終わり」ではなく、参加者自身のスキルアップ・実践体験の場にフォーカスすると説明した。</li><li>顧客の課題をどう咀嚼し、要件定義して構築するかというフローを体験することが最も重要だという運営側の結論を共有した。</li><li>運営メンバー（寺山・安江・MANABU・東海林）が3〜4回の打ち合わせを重ねて決定した内容を、サポーター向けに初めて共有する場である。</li><li>東京・大阪は赤字で、会場費は寺山氏やMANABU氏が負担しており、今後はオフ会を通じた経済圏の構築を目指していると寺山氏が説明した。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">スケジュールと運営変更点</div>
+            <ul class="card-bullets"><li>昼食を運営側で会場内に手配し、コミュニケーション時間に充てる方針（前回は各自で外食だった）。</li><li>登壇者は2名：安江 心氏と二宮 真理子氏で、どちらも愛知にゆかりがある。</li><li>二宮氏はAnygen（ByteDance製AIツール）とLarkの連携活用について、安江氏はLarkを活用した事業構築について登壇する。</li><li>グループワークは13:30〜16:30の約3時間を確保し、最初の2時間で構築・資料作成、残り1時間で各チームが発表する流れを想定している。</li><li>チーム編成は4人1組もしくは5人1組を予定し、100人集まれば約20組になるが、全組発表できるよう時間配分を調整する。</li><li>夜の懇親会はビュッフェ形式の立食で実施予定と安江氏が確認した。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">グループワークの詳細</div>
+            <ul class="card-bullets"><li>お題は現時点で3つ：収支管理・顧客管理・勤怠管理を予定している。</li><li>参加者の属性（Larkで収益を得たい人、自社業務をスマートにしたい人等）を踏まえ、汎用性の高いテーマとして選定した。</li><li>集客状況によりマーケティング施策管理（Meta広告・LINE関連等）が4つ目のお題として追加される可能性がある。</li><li>ダミーデータは運営側（東海林氏・二宮氏）が作成し、サポーターに事前配布する予定。</li><li>模範解答は用意せず、各チームが自分たちの最適解を導き出す形式とする。</li><li>寺山氏のLark講座で過去に実施した縦のつながり（先輩受講生と新規受講生がチームを組み、テキストベースの課題を約1ヶ月かけて解決・発表する形式）の延長線上にある取り組みである。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">サポーターの役割と期待</div>
+            <ul class="card-bullets"><li>サポーターは「見守り隊」として、チームが時間内に発表まで持っていけるようサポートすることが最大の役割。</li><li>参加者のレベルはバラバラ（Larkゴリゴリの人〜アカウント取得直後の人）であることを前提に動く必要がある。</li><li>サポーターには事前に担当するお題（収支管理・顧客管理・勤怠管理のいずれか）を割り当て、予習してもらう方針。</li><li>昼食時にチーム内で「誰が発表するか」「誰が資料を作るか」「誰がメインで構築するか」を決めるようアナウンスする予定。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">グループワークの進め方に関する議論</div>
+            <ul class="card-bullets"><li>MANABU氏が、Lark研究所としての「お作法」（正規化のフロー等）を事前に定め、全チーム共通の進め方を示した方が、役割分担がしやすく全員が参加できると提案した。</li><li>AI利用の制限について、寺山氏は制限なしを想定していたが、MANABU氏がAIを使える人がいるとサクッと終わってしまう懸念を指摘し、「お作法の部分はみんなでやる」ことを提案した。</li><li>Mako氏が、お題を3種類に分けるよりも1種類に統一して全チームが同じ課題に取り組む方が、初心者が置いていかれるリスクが減るのではないかと意見した。</li><li>二宮氏が、初心者はパニックになりやすいため、お題を2つに絞る案を提示した。</li><li>寺山氏は、複数のお題があることで「こんなことができるんだ」という気づきが生まれ、懇親会で受発注につながる可能性もあると考えており、最終決定は運営側で再度検討すると回答した。</li><li>二宮氏が、ダミーデータは普段そのテーマを扱っているサポーターが作った方が当日スムーズに進むのではと提案した（例：小寺氏が勤怠管理をやっているならそのダミーデータを小寺氏が作る）。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">集客状況と今後の集客</div>
+            <ul class="card-bullets"><li>現時点の申込者数は約30人で、正直集まっていないと寺山氏が報告した。</li><li>最も遠い参加者は三重県からの申込者。</li><li>安江氏と二宮氏が名古屋在住・ゆかりがあるため、これからゴリゴリ集客していく予定。</li><li>サポーター各自の周囲にも声がけを依頼し、東海林氏は「ここから入れてきます」と既存顧客への声がけを約束した。</li><li>安江氏が参加者リストの共有を求め、お礼連絡のために誰が来ているか把握したいと発言、寺山氏がリストを全員に共有することを了承した。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">参加者の自己紹介・背景情報</div>
+            <ul class="card-bullets"><li>笹原彰朗氏：鹿児島県、パソコン・スマホ周りの支援業、LarkとLINEの連携やkintoneとLarkの連携など外部連携・APIが得意、最近は表向きは普通のホームページだがデータベースは全てLarkで構築する予約サイトの事例がある。</li><li>山本竜生氏：茨城県、本業は車屋、約1年前にLarkを触り始め寺山氏の講座（5期）に参加、Excel未経験から入って1ヶ月で多数の構築を実現、東京・大阪・今回の名古屋と全て参加。</li><li>小寺健太氏：滋賀県、マツエクサロン運営が本業だが現在ほぼLark一本、講座卒業後1ヶ月で案件5件獲得を目標に活動し売上を伸ばしている、AIも活用、現在キャパオーバー状態、美桜氏など周囲を巻き込んでチームで活動。</li><li>Mako氏：愛知県名古屋市在住、ビジネスコンサル（LINE・ウェブ集客がフック）、Lark講座4期でMVP獲得、業務委託管理ベースを作成（案件投げたら通知→応募制）し現在もブラッシュアップ中。</li><li>鎌田氏（離席中のため寺山氏が紹介）：東京在住、M&amp;Aで会社約4社経営、助成金を使った社員向けLark研修を受講済、宮崎DXサミット（100名規模）にも参加、コミュニケーション力が高い。</li><li>安江心氏：マーケットDXの会社経営、売上構成比がマーケティング7：DX3に変化、東海3県にオフラインで出向く営業スタイル、会社から安江氏含め4人（門田氏・五十嵐氏・内藤氏）が参加、内藤氏は22歳で4月1日入社の新卒（インターンで1年経験あり）でLPを担当。</li><li>東海林悠也氏：愛知県名古屋市、株式会社グラスト社員、Larkと生成AIを活用した企業DX推進事業、ドキュジニアスに知見があり、大規模なデータベース構築の実績がある。</li><li>二宮真理子氏：InstagramでLark発信（「Larkのまりこ」）、Lark歴4年目、最近AnygenをLarkに連携して活用中。</li><li>MANABU氏：大阪、Lark講座5期、自社運用のためにLark開始、現在はAntiGravity（アンチグラビティ）でLarkのデータベースをアプリ化・PDF出力に活用、前回大阪イベントで約50人を集客。</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">前日（4月24日金曜日）の前乗り・決起集会</div>
+            <ul class="card-bullets"><li>前日に名古屋入りする人：笹原氏、寺山氏、鎌田氏が前乗り予定。</li><li>小寺氏は当日入り。</li><li>前日夜に決起集会的な食事会を行う案が出て、名古屋メンバー（Mako・二宮・安江・東海林）に企画を依頼した。</li><li>MANABU氏が「味噌煮込みうどん以外にしてほしい（うどんが硬すぎる）」とリクエストし、名古屋めし談義で盛り上がった。</li></ul>
+        </div></div>
+            </div>
+        </section>
+        <section class="doc-section">
+            <div class="section-header">
+                <span class="section-num">2</span>
+                <h2 class="section-title">その他メモ</h2>
+            </div>
+            <div class="section-body">
+                <ul class="doc-list"><li>イベント日時・場所： 4月25日（土）、愛知県名古屋市内の会場（詳細はLPに記載）。</li><li>過去イベントの経緯： 東京（第1回）→大阪→今回の名古屋が3回目のオフラインイベント。東京・大阪はいずれも赤字運営。</li><li>Anygen（エニージェン）： ByteDance製のAIツール。二宮氏がLarkとの連携活用に注力しており、当日の登壇テーマとなる。</li><li>AntiGravity（アンチグラビティ）： MANABU氏が活用しているツールで、Larkのデータベースをアプリ化したりPDF出力するのに使用。ドキュジニアスの代替になり得るとの見解。</li><li>経済圏構想： 寺山氏は、オフラインイベントを通じて参加者同士の受発注やビジネスマッチングが生まれるコミュニティ経済圏を最終的に構築したいと考えている。</li><li>地方のDXギャップ： 地方ではExcelやスプレッドシートすら馴染みがない層がまだ多く、Claude Code・AntiGravity・Anygenなどの先進ツールの情報は全く届いていないという課題認識が共有された。</li><li>安江氏の会社からの参加者4名： 安江心氏・門田氏・五十嵐氏・内藤氏（22歳・新卒・LP担当）。</li><li>前回大阪イベントでの実績： MANABU氏が約50人集客、Mako氏が受付を担当、小寺氏と鎌田氏が会場で積極的に交流していた。</li><li>宮崎DXサミット： 先月（3月）に寺山氏が主催した100名規模のDXサミットに鎌田氏・笹原氏も参加し、朝3時まで交流した。</li></ul>
+            </div>
+        </section>
+        <section class="doc-section decision-section">
+            <div class="section-header">
+                <span class="section-num decision-num">✓</span>
+                <h2 class="section-title">決定事項</h2>
+            </div>
+            <div class="section-body">
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>イベントのグループワークは、ダミーデータを用いた実践形式（収支管理・顧客管理・勤怠管理の3テーマを軸）で実施する。</div><div class="decision-item"><span class="check">✓</span>昼食は運営側が会場内に手配し、コミュニケーション・アイスブレイクの時間として活用する。</div><div class="decision-item"><span class="check">✓</span>登壇者は安江心氏（Lark活用の事業構築）と二宮真理子氏（Anygen×Lark連携）の2名。</div><div class="decision-item"><span class="check">✓</span>グループワークの模範解答は用意せず、各チームが自分たちの最適解を導く形式とする。</div><div class="decision-item"><span class="check">✓</span>サポーターには事前にダミーデータと課題を共有し、予習してもらう。</div><div class="decision-item"><span class="check">✓</span>参加者リストはサポーター全員に共有する（個人情報の問題なしを全運営メンバーが確認済）。</div><div class="decision-item"><span class="check">✓</span>懇親会はビュッフェ形式の立食で実施する。</div><div class="decision-item"><span class="check">✓</span>今後のサポーターへの連絡はテキストベース（チャット）で行い、再度全員での会議は基本的に行わない予定。</div></div>
+            </div>
+        </section>
+        <section class="doc-section action-section">
+            <div class="section-header">
+                <span class="section-num action-num">→</span>
+                <h2 class="section-title">ネクストアクション</h2>
+            </div>
+            <div class="section-body">
+                <div class="action-grid">
+            <div class="action-card">
+                <div class="action-who">東海林（庄司）・二宮</div>
+                <div class="action-what">グループワーク用ダミーデータの作成</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント2週間前（早急に）</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山</div>
+                <div class="action-what">ダミーデータ完成後、サポーター全員に共有</div>
+                <div class="action-when"><span class="when-badge">期限</span>ダミーデータ完成次第</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山</div>
+                <div class="action-what">今日のアーカイブ（録画）をサポーターに配布</div>
+                <div class="action-when"><span class="when-badge">期限</span>会議後速やかに</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山</div>
+                <div class="action-what">参加者リストをサポーター全員に共有</div>
+                <div class="action-when"><span class="when-badge">期限</span>会議後速やかに</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山・運営側</div>
+                <div class="action-what">サポーターにダミーデータを開放後、担当テーマ希望のアンケートを実施</div>
+                <div class="action-when"><span class="when-badge">期限</span>ダミーデータ共有後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">運営側（寺山・安江・MANABU・東海林・二宮）</div>
+                <div class="action-what">グループワークのお題数（3つ/2つ/1つ）の最終決定</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回運営打ち合わせ</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">運営側</div>
+                <div class="action-what">グループワークの「お作法」（正規化フロー・役割分担の仕組み）の策定</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回運営打ち合わせ</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">運営側</div>
+                <div class="action-what">AI利用ルール（制限の有無）の決定</div>
+                <div class="action-when"><span class="when-badge">期限</span>次回運営打ち合わせ</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">安江・二宮</div>
+                <div class="action-what">名古屋を中心とした集客の強化</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント当日（4/25）まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">東海林（庄司）</div>
+                <div class="action-what">既存顧客への声がけによる集客協力</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント当日まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">サポーター全員</div>
+                <div class="action-what">周囲への声がけ・集客協力</div>
+                <div class="action-when"><span class="when-badge">期限</span>イベント当日まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">Mako・二宮・安江・東海林</div>
+                <div class="action-what">前日（4/24金曜夜）の決起集会・食事会の企画</div>
+                <div class="action-when"><span class="when-badge">期限</span>4/24まで</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">運営側</div>
+                <div class="action-what">チーム分け（参加者の属性・相性を考慮した事前配置）</div>
+                <div class="action-when"><span class="when-badge">期限</span>集客確定後</div>
+            </div></div>
+            </div>
+        </section>
+    </div>
+    <div class="doc-footer">株式会社Entime / 寺山 大夢</div>
+</body>
+</html>
