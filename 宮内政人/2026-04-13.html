@@ -17,115 +17,78 @@
         .doc-header {
             background: linear-gradient(135deg, #0f1c35 0%, #1a2e4a 100%);
             color: #fff;
-            padding: 40px 0 0;
+            padding: 48px 0 56px;
         }
         .header-inner {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 40px 32px;
+            padding: 0 40px;
         }
         .doc-badge {
             display: inline-block;
             background: #f97316;
             color: #fff;
-            font-size: 0.72rem;
+            font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.08em;
-            padding: 3px 12px;
+            padding: 4px 14px;
             border-radius: 4px;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
         .doc-title {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             line-height: 1.3;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             color: #fff;
         }
         .doc-overview {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            line-height: 1.8;
             max-width: 640px;
-            margin-bottom: 16px;
-            padding: 10px 14px;
-            border-left: 3px solid #f97316;
-            background: rgba(255,255,255,0.05);
-            border-radius: 0 6px 6px 0;
+            margin-bottom: 24px;
         }
         .doc-meta {
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             color: #64748b;
-            margin-top: 8px;
-        }
-
-        /* ── 統計サマリーバー ── */
-        .stats-row {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            background: rgba(0,0,0,0.25);
-            border-top: 1px solid rgba(255,255,255,0.08);
-            padding: 0;
-        }
-        .stat-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 14px 0;
-            gap: 2px;
-        }
-        .stat-n {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #38bdf8;
-            line-height: 1;
-        }
-        .stat-label {
-            font-size: 0.7rem;
-            color: #94a3b8;
-            letter-spacing: 0.05em;
-        }
-        .stat-sep {
-            width: 1px;
-            height: 32px;
-            background: rgba(255,255,255,0.1);
+            border-top: 1px solid #1e3a5f;
+            padding-top: 16px;
         }
 
         /* ── コンテンツエリア ── */
         .doc-section {
             max-width: 900px;
-            margin: 36px auto;
+            margin: 40px auto;
             padding: 0 40px;
         }
         .section-header {
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 20px;
+            gap: 16px;
+            margin-bottom: 24px;
         }
         .section-num {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: #0d9488;
             color: #fff;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 800;
             flex-shrink: 0;
         }
-        .decision-num { background: #059669; font-size: 1.1rem; }
-        .action-num   { background: #dc2626; font-size: 1.1rem; }
+        .decision-num { background: #059669; font-size: 1.2rem; }
+        .action-num   { background: #dc2626; font-size: 1.2rem; }
         .section-title {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #0f172a;
             border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 6px;
+            padding-bottom: 8px;
             flex: 1;
         }
         .decision-section .section-title { border-bottom-color: #059669; color: #065f46; }
@@ -134,65 +97,49 @@
         /* ── 箇条書き ── */
         .doc-list { list-style: none; padding: 0; }
         .doc-list li {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            padding: 10px 14px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+            padding: 12px 16px 12px 20px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 10px;
+            font-size: 0.93rem;
             color: #334155;
             background: #fff;
-            border-radius: 8px;
+            border-radius: 0 8px 8px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        .doc-list li::before {
-            content: "▸";
-            color: #0d9488;
-            font-size: 0.75rem;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
+        .doc-list li:hover { border-left-color: #0d9488; background: #f8fafc; }
 
         /* ── カードグリッド ── */
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
         }
         .info-card {
             background: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
             border-top: 3px solid #0d9488;
         }
         .card-title {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #0f172a;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
         }
         .card-bullets { list-style: none; padding: 0; }
         .card-bullets li {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-            font-size: 0.85rem;
-            color: #475569;
-            padding: 5px 0;
-            border-bottom: 1px dashed #f1f5f9;
-            line-height: 1.55;
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 6px 0 6px 14px;
+            border-left: 3px solid #ccfbf1;
+            margin-bottom: 8px;
+            line-height: 1.6;
         }
-        .card-bullets li:last-child { border-bottom: none; }
-        .card-bullets li::before {
-            content: "•";
-            color: #0d9488;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
+        .card-bullets li:hover { border-left-color: #0d9488; color: #0f172a; }
 
         /* ── 数字ハイライト ── */
         em.num {
@@ -206,76 +153,77 @@
         }
 
         /* ── 決定事項 ── */
-        .decision-list { display: flex; flex-direction: column; gap: 8px; }
+        .decision-list { display: flex; flex-direction: column; gap: 10px; }
         .decision-item {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
+            gap: 12px;
             background: #f0fdf4;
             border: 1px solid #bbf7d0;
             border-left: 4px solid #059669;
             border-radius: 0 8px 8px 0;
-            padding: 10px 14px;
-            font-size: 0.9rem;
+            padding: 12px 16px;
+            font-size: 0.92rem;
             color: #064e3b;
             line-height: 1.6;
         }
-        .check { color: #059669; font-weight: 700; flex-shrink: 0; }
+        .check { color: #059669; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
         /* ── アクションカード ── */
         .action-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
         }
         .action-card {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 12px;
             border-top: 3px solid #f97316;
-            padding: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
         }
         .action-who {
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #f97316;
-            letter-spacing: 0.04em;
-            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
         }
         .action-what {
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             font-weight: 600;
             color: #0f172a;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             line-height: 1.5;
         }
         .action-when {
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             color: #64748b;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
         }
         .when-badge {
             background: #fef3c7;
             color: #92400e;
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             font-weight: 700;
-            padding: 2px 7px;
+            padding: 2px 8px;
             border-radius: 4px;
         }
 
         /* ── フッター ── */
         .doc-footer {
             text-align: center;
-            padding: 36px;
+            padding: 40px;
             color: #94a3b8;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
         }
 
         @media (max-width: 600px) {
-            .doc-title { font-size: 1.5rem; }
-            .header-inner { padding: 0 20px 28px; }
+            .doc-title { font-size: 1.6rem; }
+            .header-inner { padding: 0 20px; }
             .doc-section { padding: 0 20px; margin: 28px auto; }
             .card-grid { grid-template-columns: 1fr; }
             .action-grid { grid-template-columns: 1fr; }
@@ -288,17 +236,9 @@
         <div class="header-inner">
             <span class="doc-badge">議事録</span>
             <h1 class="doc-title">宮内政人　2026年4月13日</h1>
-            <p class="doc-overview">整骨院3店舗を運営する宮内氏に対し、Lark導入によるKPI管理・日報・プロジェクト管理の提案と契約合意を行った会議。</p>
+            <p class="doc-overview">宮内氏の整骨院3店舗へのLark導入について、現状課題の確認・デモ・費用感の共有を行い、導入方針を合意した。</p>
             <div class="doc-meta">2026年4月13日 ／ - 寺山 大夢（Lark研究所）</div>
         </div>
-        
-    <div class="stats-row">
-        <div class="stat-item"><span class="stat-n">2</span><span class="stat-label">議題</span></div>
-        <div class="stat-sep"></div>
-        <div class="stat-item"><span class="stat-n">3</span><span class="stat-label">決定事項</span></div>
-        <div class="stat-sep"></div>
-        <div class="stat-item"><span class="stat-n">5</span><span class="stat-label">アクション</span></div>
-    </div>
     </div>
     <div class="doc-body">
         
@@ -311,23 +251,27 @@
                 <div class="card-grid">
         <div class="info-card">
             <div class="card-title">宮内氏の現状と課題</div>
-            <ul class="card-bullets"><li><em class="num">3</em>店舗運営、スタッフ<em class="num">12名</em>体制</li><li><em class="num">2</em>店舗が完全自費、<em class="num">1</em>店舗が保険＋自費</li><li>個人別KPIの未達が課題</li><li>売上・日報をLINEグループにテキスト報告、流れ作業化</li><li>売上進捗がリアルタイム・スマホで可視化できていない</li></ul>
+            <ul class="card-bullets"><li>正社員<em class="num">12名</em>、<em class="num">3</em>店舗（<em class="num">2</em>店舗が完全自費、<em class="num">1</em>店舗が保険＋自費）</li><li>CRM（レセワン／リグア社提供）は院内PCからしかアクセスできない</li><li>日報はLINEグループにテキストで数字を送るだけの作業化</li><li>目標対比の達成率・未達率が可視化されていない</li><li>未達メンバーのみが日報報告対象（全員ではない）</li><li>電卓で手計算し、グループLINEに数字を送付する運用</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">現状の管理ツールと問題点</div>
-            <ul class="card-bullets"><li>CRM（顧客管理ソフト）は導入済み、売上もCRM内で管理</li><li>CRMへのログインは本部権限のみ、各スタッフは個人で閲覧不可</li><li>会計書類はExcelでプリントアウトし税理士に提出</li><li>過去データの遡り参照が困難（月ごとにスプレッドシート複製のため）</li></ul>
+            <div class="card-title">Larkによる KPI管理のデモ</div>
+            <ul class="card-bullets"><li>入力は<em class="num">1</em>箇所、ダッシュボードで複数の見え方に変換可能</li><li>個人別・店舗別・月別・前年同月比など多角的に可視化</li><li>入力後チャットへ自動通知、スクショ→LINE送付の手間を廃止</li><li>スマホからの入力・閲覧が可能</li><li>権限設定で数式保護・個人売上の閲覧制限が可能</li><li>編集履歴が自動記録され、誰がいつ何を変更したか追跡可能</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">Larkの機能デモ・提案内容</div>
-            <ul class="card-bullets"><li>売上データの入力→自動でチャットに通知（手作業のスクショ・LINE送信が不要に）</li><li>権限別の閲覧制御（<em class="num">1</em>つのデータで見せる範囲を人ごとに変更可能）</li><li>スマホからの日々の売上入力が可能</li><li>ガントチャートによるプロジェクト管理・ビュー切替機能</li><li>メンバーアサインで進捗確認・LINE代替のコミュニケーション</li><li>スタッフから上長への指名連絡も可能</li></ul>
+            <div class="card-title">永友氏の院での運用実績</div>
+            <ul class="card-bullets"><li>運用開始から約<em class="num">1.5</em>〜<em class="num">2ヶ</em>月、試行錯誤中</li><li>個人売上の入力項目：人数・窓口売上・回数券・新規成約・稼働率・施術種別・稼働日数など</li><li>保険売上はレセプトシステムから院長分にまとめて入力</li><li>個人売上は自費（窓口売上）のみを対象</li><li>スタッフが入力、経営者は閲覧のみで負担なし</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">料金体系・契約形態の説明</div>
-            <ul class="card-bullets"><li>従来は構築代行スタンダードプランで約<em class="num">50万</em>円</li><li>要件定義に<em class="num">2</em>〜<em class="num">3ヶ</em>月かかるケースあり（勤怠＋有給申請＋給与計算等）</li><li>現在は最初<em class="num">3ヶ</em>月の伴走支援型に移行（不要になれば離脱可能）</li><li>構築後は月額サポート料（約<em class="num">2万</em>円程度）の想定</li><li>永友氏「<em class="num">50万</em>ぐらいなら全然あり」、宮内氏も同意</li></ul>
+            <div class="card-title">プロジェクト管理機能のデモ</div>
+            <ul class="card-bullets"><li>ガントチャート表示で開始日・期限・進捗を一覧管理</li><li>プロジェクト別・ステータス別・担当者別にビュー切替可能</li><li>メンバーアサインで自動グループチャット生成</li><li>期限<em class="num">3日</em>前の自動リマインド通知</li><li>タスクを個人に紐づけ、完了通知も自動送信</li><li>議事録作成・AI活用も同一プラットフォーム内で可能</li><li>宮内氏は同時に約<em class="num">10個</em>のプロジェクトを運営中</li></ul>
         </div>
         <div class="info-card">
-            <div class="card-title">今後の展開・テスト計画</div>
-            <ul class="card-bullets"><li>寺山氏がお客様の声（事例）を収集中</li><li>福祉・放課後デイ、観光協会、整骨院等の事例を蓄積したい</li><li>宮内氏と久保先生でテスト運用→精度を高めてリリースの流れ</li></ul>
+            <div class="card-title">料金体系と導入方針</div>
+            <ul class="card-bullets"><li>Lark本体は<em class="num">20名</em>以下なら無料、超過時は全員×<em class="num">1,420円</em>/月</li><li>権限設定の裏技で有料アカウントは最小限（<em class="num">1</em>アカウント程度）に抑制可能</li><li>構築支援は以前の課題別定額制から伴走支援型に変更済み</li><li>スタンダードプラン：月額<em class="num">15万</em>円×<em class="num">3ヶ</em>月＝税込約<em class="num">50万</em>円</li><li><em class="num">4ヶ</em>月目以降は必要に応じて継続、不要なら終了可能</li><li>宮内氏向けには特別割引を別途検討</li></ul>
+        </div>
+        <div class="info-card">
+            <div class="card-title">整骨院業界への展開構想</div>
+            <ul class="card-bullets"><li>宮内氏が業界第<em class="num">1</em>号の整骨院クライアント</li><li>治療院での需要は<em class="num">2</em>店舗以上の規模感から見込みあり</li><li>個人院は必要性を感じにくい、<em class="num">2</em>〜<em class="num">3</em>店舗以上が響く</li><li>宮内氏・永友氏が横のつながりで業界内に紹介を希望</li><li>紹介料・代理店手数料の支払いも検討</li></ul>
         </div></div>
             </div>
         </section>
@@ -337,7 +281,7 @@
                 <h2 class="section-title">その他メモ</h2>
             </div>
             <div class="section-body">
-                <ul class="doc-list"><li>宮内氏は永友氏の紹介でLark相談に参加（Larkの画面を見るのは初めて）</li><li>永友氏自身もスプレッドシート運用からLarkに移行済みの経験あり（月ごとにスプレッドシート複製→<em class="num">1年</em>で<em class="num">24枚</em>発生していた事例を紹介）</li><li>寺山氏は「お客様の声」として店舗ビジネスの導入事例を収集中であり、宮内氏の事例も今後活用したい意向</li><li>久保先生（白キャム）も同様にLark導入テストに参加見込み</li></ul>
+                <ul class="doc-list"><li>宮内氏の既存ツール：CRM（レセワン／リグア社）、Chatwork（社内・税理士連絡）、Slack（一部税理士）、グループLINE（日報）</li><li>永友氏がLark導入済みで約<em class="num">2ヶ</em>月運用中、宮原氏が入力実務を担当</li><li>レセワンはPC専用・ログインパスワードが半年に<em class="num">1回</em>変更されるためスタッフがアクセスしづらい状況</li><li>保険売上は月末締め後に部位変更等で金額が変動するため、日次ではあくまで概算</li><li>寺山氏のYouTubeチャンネルでChatwork vs Lark比較コンテンツあり</li><li>既存の事例：福祉（放課後デイ）、観光協会、飲食店（<em class="num">6</em>〜<em class="num">7</em>店舗）、美容室、エステなど</li></ul>
             </div>
         </section>
         <section class="doc-section decision-section">
@@ -346,7 +290,7 @@
                 <h2 class="section-title">決定事項</h2>
             </div>
             <div class="section-body">
-                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>宮内氏がLark導入を進める方向で合意（記念すべき<em class="num">1</em>契約目）</div><div class="decision-item"><span class="check">✓</span>最初<em class="num">3ヶ</em>月は伴走支援型でスタート</div><div class="decision-item"><span class="check">✓</span>具体的な価格・要件はテキストベースで後日提示し、OK後に正式スタート</div></div>
+                <div class="decision-list"><div class="decision-item"><span class="check">✓</span>宮内氏の整骨院へLarkを導入する方向で合意（整骨院業界の第<em class="num">1</em>号案件）</div><div class="decision-item"><span class="check">✓</span>永友氏の院で使用中のフォーマットをベースに宮内氏向けにカスタマイズ</div><div class="decision-item"><span class="check">✓</span>KPI管理＋プロジェクト管理を構築範囲とする</div><div class="decision-item"><span class="check">✓</span>導入の条件としてお客様の声（事例・YouTube取材等）への協力を前提とする</div><div class="decision-item"><span class="check">✓</span>費用は特別割引を含め寺山氏が別途提示する</div><div class="decision-item"><span class="check">✓</span>宮内氏に加え、久保先生（白キャム）もテスト導入予定</div><div class="decision-item"><span class="check">✓</span>ChatworkやSlackからLarkへの一本化も視野に入れる</div></div>
             </div>
         </section>
         <section class="doc-section action-section">
@@ -358,28 +302,33 @@
                 <div class="action-grid">
             <div class="action-card">
                 <div class="action-who">寺山</div>
-                <div class="action-what">整骨院向け課題整理・提案内容をテキストベースで宮内氏に送付</div>
-                <div class="action-when"><span class="when-badge">期限</span>後日（未定）</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">宮内</div>
-                <div class="action-what">提案内容を確認しOK判断</div>
-                <div class="action-when"><span class="when-badge">期限</span>提案受領後</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">宮内・久保先生</div>
-                <div class="action-what">Larkのテスト運用を実施</div>
-                <div class="action-when"><span class="when-badge">期限</span>未定</div>
-            </div>
-            <div class="action-card">
-                <div class="action-who">永友</div>
-                <div class="action-what">久保先生への声かけ・テスト参加調整</div>
-                <div class="action-when"><span class="when-badge">期限</span>未定</div>
+                <div class="action-what">宮内氏向けの特別割引を含む費用感をテキストで送付</div>
+                <div class="action-when"><span class="when-badge">期限</span>近日中</div>
             </div>
             <div class="action-card">
                 <div class="action-who">寺山</div>
-                <div class="action-what">精度を高めた上で本番リリース</div>
-                <div class="action-when"><span class="when-badge">期限</span>テスト後</div>
+                <div class="action-what">永友氏のフォーマットをベースに宮内氏版のKPI管理・プロジェクト管理を設計</div>
+                <div class="action-when"><span class="when-badge">期限</span>費用合意後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮内</div>
+                <div class="action-what">費用提示を確認し、OKならスタート</div>
+                <div class="action-when"><span class="when-badge">期限</span>提示後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">永友</div>
+                <div class="action-what">久保先生へのテスト導入の調整</div>
+                <div class="action-when"><span class="when-badge">期限</span>未定</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">宮内・永友</div>
+                <div class="action-what">整骨院業界への横展開・紹介活動</div>
+                <div class="action-when"><span class="when-badge">期限</span>導入・テスト後</div>
+            </div>
+            <div class="action-card">
+                <div class="action-who">寺山</div>
+                <div class="action-what">導入後約<em class="num">3ヶ</em>月でお客様事例の取材（埼玉or宮崎で対面）</div>
+                <div class="action-when"><span class="when-badge">期限</span>導入後3ヶ月目処</div>
             </div></div>
             </div>
         </section>
