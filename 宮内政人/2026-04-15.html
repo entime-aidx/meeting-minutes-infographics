@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宮内政人　2026年4月15日</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.65;
+        }
+
+        /* ══ HEADER ══ */
+        .ig-header {
+            background: linear-gradient(140deg, #0f1c35 0%, #0f3460 60%, #1a4a8a 100%);
+            color: #fff;
+        }
+        .ig-header-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 52px 48px 40px;
+        }
+        .ig-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(249,115,22,0.9);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+        .ig-title {
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .ig-overview {
+            font-size: 1rem;
+            color: #a8c4e0;
+            line-height: 1.75;
+            max-width: 680px;
+            margin-bottom: 28px;
+        }
+        .ig-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .meta-date {
+            font-size: 0.82rem;
+            color: #7098bf;
+            font-weight: 600;
+        }
+        .person-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .person-chip {
+            background: rgba(255,255,255,0.12);
+            color: #d0e4f7;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* ══ STATS BAND ══ */
+        .stats-band {
+            display: flex;
+            align-items: stretch;
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+        .stat-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 16px;
+            gap: 3px;
+        }
+        .stat-icon { font-size: 1.2rem; }
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #38bdf8;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.68rem;
+            color: #7098bf;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+        .stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.08);
+            align-self: stretch;
+            margin: 12px 0;
+        }
+
+        /* ══ SECTION LAYOUT ══ */
+        .ig-section {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 48px;
+        }
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .section-icon {
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .section-heading {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+        .section-content { }
+
+        /* ══ TOPIC CARDS ══ */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .topic-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            overflow: hidden;
+            border: 1px solid #e8edf2;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .topic-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px 12px;
+            background: color-mix(in srgb, var(--accent) 8%, #fff);
+            border-bottom: 2px solid color-mix(in srgb, var(--accent) 20%, transparent);
+        }
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .topic-card-title {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+        .topic-bullets {
+            list-style: none;
+            padding: 14px 18px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .topic-bullets li {
+            font-size: 0.85rem;
+            color: #374151;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+        }
+        .topic-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* ══ MEMO LIST ══ */
+        .memo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .memo-list li {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px 16px 12px 18px;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.65;
+            border-left: 4px solid #cbd5e1;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* ══ DECISIONS ══ */
+        .decision-section .section-icon { background: #f0fdf4; }
+        .decision-section .section-heading { color: #065f46; }
+        .decision-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            border: 1px solid #d1fae5;
+        }
+        .decision-num-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-text {
+            font-size: 0.92rem;
+            color: #064e3b;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        /* ══ ACTIONS ══ */
+        .action-section .section-icon { background: #fff7ed; }
+        .action-section .section-heading { color: #9a3412; }
+        .action-table {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            border: 1px solid #fed7aa;
+        }
+        .action-row {
+            display: grid;
+            grid-template-columns: 130px 1fr 160px;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #fed7aa;
+        }
+        .action-row:last-child { border-bottom: none; }
+        .action-row:nth-child(even) { background: #fffbf7; }
+        .action-person {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #9a3412;
+            border-right: 1px solid #fed7aa;
+        }
+        .person-icon { font-size: 0.9rem; }
+        .action-task {
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            color: #1a202c;
+            line-height: 1.6;
+            border-right: 1px solid #fed7aa;
+        }
+        .action-deadline {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 16px;
+            font-size: 0.8rem;
+            color: #b45309;
+            font-weight: 600;
+        }
+        .deadline-icon { font-size: 0.85rem; }
+
+        /* ══ NUMBER HIGHLIGHT ══ */
+        em.num {
+            font-style: normal;
+            font-weight: 700;
+            color: #0369a1;
+            background: #e0f2fe;
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* ══ FOOTER ══ */
+        .ig-footer {
+            text-align: center;
+            padding: 48px 24px;
+            color: #94a3b8;
+            font-size: 0.78rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 640px) {
+            .ig-header-inner { padding: 36px 24px 28px; }
+            .ig-title { font-size: 1.7rem; }
+            .ig-section { padding: 0 20px; margin: 28px auto; }
+            .card-grid { grid-template-columns: 1fr; }
+            .action-row { grid-template-columns: 1fr; }
+            .action-person, .action-task, .action-deadline {
+                border-right: none;
+                border-bottom: 1px solid #fed7aa;
+                padding: 10px 16px;
+            }
+            .action-deadline { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="ig-header">
+        <div class="ig-header-inner">
+            <div class="ig-badge">📄 議事録</div>
+            <h1 class="ig-title">宮内政人　2026年4月15日</h1>
+            <p class="ig-overview">永友氏の紹介で宮内氏へLarkのKPI管理・プロジェクト管理機能をデモし、導入方針を合意した会議。</p>
+            <div class="ig-meta">
+                <span class="meta-date">🗓 2026年4月15日</span>
+                <div class="person-chips"><span class="person-chip">- 寺山 大夢（Lark研究所）</span></div>
+            </div>
+        </div>
+        
+    <div class="stats-band">
+        <div class="stat-box">
+            <div class="stat-icon">📋</div>
+            <div class="stat-num">7</div>
+            <div class="stat-label">議題</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+            <div class="stat-icon">✅</div>
+            <div class="stat-num">5</div>
+            <div class="stat-label">決定事項</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-num">6</div>
+            <div class="stat-label">アクション</div>
+        </div>
+    </div>
+    </div>
+    <div class="ig-body">
+        
+        <section class="ig-section">
+            <div class="section-label">
+                <span class="section-icon">📋</span>
+                <h2 class="section-heading">主な議題と内容</h2>
+            </div>
+            <div class="section-content"><div class="card-grid">
+        <div class="topic-card" style="--accent:#6366f1">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#6366f1"></span>
+                <span class="topic-card-title">宮内氏の現状と課題</span>
+            </div>
+            <ul class="topic-bullets"><li>正社員<em class="num">12名</em>、<em class="num">3</em>店舗（うち<em class="num">2</em>店舗が完全自費、<em class="num">1</em>店舗が保険+自費）</li><li>CRM（レセワン／リグア販売）導入済だが院内PCからのみアクセス可</li><li>日報はグループLINEにテキストで売上数字を送信（電卓手計算）</li><li>数字送信が目的化し、目標差分・改善アクションに繋がっていない</li><li>KPI未達メンバー（新人等）のみが日報対象</li><li>プロジェクト（新店舗立ち上げ・院内イベント等）が常時約<em class="num">10件</em>並走、管理がまちまち</li><li>Chatworkを社内利用、Slackは税理士とのやり取りに使用</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#0ea5e9">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#0ea5e9"></span>
+                <span class="topic-card-title">Lark KPI管理機能のデモ</span>
+            </div>
+            <ul class="topic-bullets"><li>入力は<em class="num">1</em>箇所、ダッシュボードで複数ビュー（店舗別・個人別・月別・前年比等）表示可能</li><li>入力後チャットへ自動通知、スクショ→LINE送信の手間を排除</li><li>スマホからの入力・閲覧が可能</li><li>高度な権限設定で数式保護・個人売上の閲覧制限が可能</li><li>編集履歴が自動記録され削除不可</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#10b981">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#10b981"></span>
+                <span class="topic-card-title">永友院での運用実態（宮原氏説明）</span>
+            </div>
+            <ul class="topic-bullets"><li>入力項目：人数・窓口売上・回数券数・新規成約数・稼働率・施術/EMS/基礎トレ別売上・稼働日数</li><li>保険売上は院長にまとめて計上、個人売上は自費窓口のみ</li><li>運用開始から約<em class="num">1.5</em>〜<em class="num">2ヶ</em>月、スタッフ各自が入力し経営者は閲覧のみ</li><li>入力の手間は大きくないとの評価</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#f59e0b">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#f59e0b"></span>
+                <span class="topic-card-title">Lark プロジェクト管理機能のデモ</span>
+            </div>
+            <ul class="topic-bullets"><li>ガントチャート・ステータス別・担当者別など複数ビューで表示可能</li><li>プロジェクトごとにメンバーをアサインしグループチャット自動生成</li><li>タスクを個人に紐づけ、期限<em class="num">3日</em>前に自動リマインド通知</li><li>タスク完了時に自動通知、全ビューがリアルタイム連動</li><li>議事録作成・AI活用も可能</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#ec4899">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#ec4899"></span>
+                <span class="topic-card-title">料金体系と導入方針</span>
+            </div>
+            <ul class="topic-bullets"><li>Lark本体：<em class="num">20名</em>以下は無料、超過時は全員×月額<em class="num">1,420円</em>（裏技で<em class="num">1</em>アカウント有料程度に抑制可能）</li><li>従来は構築代行（課題単位で<em class="num">60万</em>円等）→現在は伴走支援型に変更</li><li>スタンダードプラン：月<em class="num">15万</em>円×<em class="num">3ヶ</em>月＝税込約<em class="num">50万</em>円が主流</li><li>不要になれば解約可、<em class="num">4ヶ</em>月目以降は継続or終了を選択</li><li>永友院で構築済のフォーマットを横展開し工数削減</li><li>宮内氏向けには特別割引を検討、後日テキストで提示</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#8b5cf6">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#8b5cf6"></span>
+                <span class="topic-card-title">業界展開の話</span>
+            </div>
+            <ul class="topic-bullets"><li>整骨院への導入は初事例（美容師・エステは実績あり）</li><li>宮内氏が第一号テストユーザー、久保先生（白キャム）もテスト予定</li><li>宮内氏・永友氏の横の繋がりで業界内に紹介・展開したい意向</li><li>導入事例としてお客様の声・YouTube撮影への協力を条件に割引検討</li></ul>
+        </div></div></div>
+        </section>
+        <section class="ig-section">
+            <div class="section-label">
+                <span class="section-icon">📝</span>
+                <h2 class="section-heading">その他メモ</h2>
+            </div>
+            <div class="section-content"><ul class="memo-list"><li>宮内氏の所在地は埼玉県（大宮エリア）、永友氏・寺山氏は宮崎</li><li>宮内氏は永友氏から紹介を受け、モニター的な位置づけでの参加</li><li>レセワン（リグア社）はグループイン（業界内で一定の導入率）だが全員ではない</li><li>保険売上は月末締め→月初に部位変更等で金額が変動するため、日次の個人KPIには自費売上のみ反映が現実的</li><li>Chatwork→Larkへの一本化も宮内氏は希望（既読機能・画像+テキスト一体送信等のメリット）</li><li>寺山氏のYouTubeチャンネルにChatwork vs Lark比較コンテンツあり</li><li>約<em class="num">3ヶ</em>月後に宮崎で対面の打ち上げ・事例撮影を検討</li></ul></div>
+        </section>
+        <section class="ig-section decision-section">
+            <div class="section-label">
+                <span class="section-icon">✅</span>
+                <h2 class="section-heading">決定事項</h2>
+            </div>
+            <div class="section-content"><div class="decision-rows">
+        <div class="decision-row">
+            <span class="decision-num-badge">1</span>
+            <span class="decision-text">宮内氏の整骨院にLarkを導入する方向で合意（整骨院業界の第一号）</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">2</span>
+            <span class="decision-text">永友院の既存フォーマットをベースに宮内氏向けにカスタマイズ</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">3</span>
+            <span class="decision-text">構築範囲はKPI管理＋プロジェクト管理（勤怠管理も関心あり）</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">4</span>
+            <span class="decision-text">導入事例・お客様の声の提供を宮内氏が協力する前提で特別割引を適用</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">5</span>
+            <span class="decision-text">費用は寺山氏が後日テキストで提示、合意後スタート</span>
+        </div></div></div>
+        </section>
+        <section class="ig-section action-section">
+            <div class="section-label">
+                <span class="section-icon">⚡</span>
+                <h2 class="section-heading">ネクストアクション</h2>
+            </div>
+            <div class="section-content"><div class="action-table">
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>寺山</span>
+            </div>
+            <div class="action-task">宮内氏向けの特別割引価格をまとめてテキストで送付</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>近日中（明示なし）</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>寺山</span>
+            </div>
+            <div class="action-task">永友院フォーマットをベースに宮内院向け構築を準備</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>価格合意後</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>宮内</span>
+            </div>
+            <div class="action-task">費用提示を確認し導入可否を回答</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>提示後</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>宮内</span>
+            </div>
+            <div class="action-task">導入後に事例・お客様の声・YouTube撮影に協力</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>運用約3ヶ月後</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>永友</span>
+            </div>
+            <div class="action-task">久保先生（白キャム）にもテスト利用を打診</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>明示なし</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>宮内・永友</span>
+            </div>
+            <div class="action-task">業界内の横のつながりで他院への紹介を進める</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>精度を高めた後</span>
+            </div>
+        </div></div></div>
+        </section>
+    </div>
+    <div class="ig-footer">株式会社Entime / 寺山 大夢</div>
+</body>
+</html>
