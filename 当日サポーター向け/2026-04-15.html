@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当日サポーター向け　2026年4月15日</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+            background: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.65;
+        }
+
+        /* ══ HEADER ══ */
+        .ig-header {
+            background: linear-gradient(140deg, #0f1c35 0%, #0f3460 60%, #1a4a8a 100%);
+            color: #fff;
+        }
+        .ig-header-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 52px 48px 40px;
+        }
+        .ig-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(249,115,22,0.9);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 5px 14px;
+            border-radius: 999px;
+            margin-bottom: 20px;
+        }
+        .ig-title {
+            font-size: 2.4rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 18px;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .ig-overview {
+            font-size: 1rem;
+            color: #a8c4e0;
+            line-height: 1.75;
+            max-width: 680px;
+            margin-bottom: 28px;
+        }
+        .ig-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .meta-date {
+            font-size: 0.82rem;
+            color: #7098bf;
+            font-weight: 600;
+        }
+        .person-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+        .person-chip {
+            background: rgba(255,255,255,0.12);
+            color: #d0e4f7;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* ══ STATS BAND ══ */
+        .stats-band {
+            display: flex;
+            align-items: stretch;
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.07);
+        }
+        .stat-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 16px;
+            gap: 3px;
+        }
+        .stat-icon { font-size: 1.2rem; }
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #38bdf8;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.68rem;
+            color: #7098bf;
+            letter-spacing: 0.06em;
+            font-weight: 600;
+        }
+        .stat-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.08);
+            align-self: stretch;
+            margin: 12px 0;
+        }
+
+        /* ══ SECTION LAYOUT ══ */
+        .ig-section {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 48px;
+        }
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .section-icon {
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            flex-shrink: 0;
+        }
+        .section-heading {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+        }
+        .section-content { }
+
+        /* ══ TOPIC CARDS ══ */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .topic-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 0;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            overflow: hidden;
+            border: 1px solid #e8edf2;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .topic-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px 12px;
+            background: color-mix(in srgb, var(--accent) 8%, #fff);
+            border-bottom: 2px solid color-mix(in srgb, var(--accent) 20%, transparent);
+        }
+        .topic-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .topic-card-title {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+        .topic-bullets {
+            list-style: none;
+            padding: 14px 18px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .topic-bullets li {
+            font-size: 0.85rem;
+            color: #374151;
+            line-height: 1.6;
+            padding-left: 14px;
+            position: relative;
+        }
+        .topic-bullets li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        /* ══ MEMO LIST ══ */
+        .memo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .memo-list li {
+            background: #fff;
+            border-radius: 10px;
+            padding: 12px 16px 12px 18px;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.65;
+            border-left: 4px solid #cbd5e1;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* ══ DECISIONS ══ */
+        .decision-section .section-icon { background: #f0fdf4; }
+        .decision-section .section-heading { color: #065f46; }
+        .decision-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .decision-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 20px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            border: 1px solid #d1fae5;
+        }
+        .decision-num-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .decision-text {
+            font-size: 0.92rem;
+            color: #064e3b;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        /* ══ ACTIONS ══ */
+        .action-section .section-icon { background: #fff7ed; }
+        .action-section .section-heading { color: #9a3412; }
+        .action-table {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+            border: 1px solid #fed7aa;
+        }
+        .action-row {
+            display: grid;
+            grid-template-columns: 130px 1fr 160px;
+            gap: 0;
+            background: #fff;
+            border-bottom: 1px solid #fed7aa;
+        }
+        .action-row:last-child { border-bottom: none; }
+        .action-row:nth-child(even) { background: #fffbf7; }
+        .action-person {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #9a3412;
+            border-right: 1px solid #fed7aa;
+        }
+        .person-icon { font-size: 0.9rem; }
+        .action-task {
+            padding: 14px 16px;
+            font-size: 0.88rem;
+            color: #1a202c;
+            line-height: 1.6;
+            border-right: 1px solid #fed7aa;
+        }
+        .action-deadline {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 14px 16px;
+            font-size: 0.8rem;
+            color: #b45309;
+            font-weight: 600;
+        }
+        .deadline-icon { font-size: 0.85rem; }
+
+        /* ══ NUMBER HIGHLIGHT ══ */
+        em.num {
+            font-style: normal;
+            font-weight: 700;
+            color: #0369a1;
+            background: #e0f2fe;
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* ══ FOOTER ══ */
+        .ig-footer {
+            text-align: center;
+            padding: 48px 24px;
+            color: #94a3b8;
+            font-size: 0.78rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 40px;
+        }
+
+        /* ══ RESPONSIVE ══ */
+        @media (max-width: 640px) {
+            .ig-header-inner { padding: 36px 24px 28px; }
+            .ig-title { font-size: 1.7rem; }
+            .ig-section { padding: 0 20px; margin: 28px auto; }
+            .card-grid { grid-template-columns: 1fr; }
+            .action-row { grid-template-columns: 1fr; }
+            .action-person, .action-task, .action-deadline {
+                border-right: none;
+                border-bottom: 1px solid #fed7aa;
+                padding: 10px 16px;
+            }
+            .action-deadline { border-bottom: none; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="ig-header">
+        <div class="ig-header-inner">
+            <div class="ig-badge">📄 議事録</div>
+            <h1 class="ig-title">当日サポーター向け　2026年4月15日</h1>
+            <p class="ig-overview">名古屋オフラインイベントの全体設計・グループワーク運営方針をサポーター陣に初共有したキックオフ会議。</p>
+            <div class="ig-meta">
+                <span class="meta-date">🗓 2026年4月15日</span>
+                <div class="person-chips"><span class="person-chip">- 寺山 大夢（Lark研究所</span><span class="person-chip">主催</span><span class="person-chip">運営）</span></div>
+            </div>
+        </div>
+        
+    <div class="stats-band">
+        <div class="stat-box">
+            <div class="stat-icon">📋</div>
+            <div class="stat-num">9</div>
+            <div class="stat-label">議題</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+            <div class="stat-icon">✅</div>
+            <div class="stat-num">6</div>
+            <div class="stat-label">決定事項</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-box">
+            <div class="stat-icon">⚡</div>
+            <div class="stat-num">10</div>
+            <div class="stat-label">アクション</div>
+        </div>
+    </div>
+    </div>
+    <div class="ig-body">
+        
+        <section class="ig-section">
+            <div class="section-label">
+                <span class="section-icon">📋</span>
+                <h2 class="section-heading">主な議題と内容</h2>
+            </div>
+            <div class="section-content"><div class="card-grid">
+        <div class="topic-card" style="--accent:#6366f1">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#6366f1"></span>
+                <span class="topic-card-title">イベント全体スケジュールと変更点</span>
+            </div>
+            <ul class="topic-bullets"><li>昼食を会場内で手配、コミュニケーション時間に充当</li><li>登壇者は安江心・二宮真理子の<em class="num">2名</em>（愛知ゆかり）</li><li>グループワークを<em class="num">13</em>:<em class="num">30</em>〜<em class="num">16</em>:<em class="num">30</em>の約<em class="num">3時</em>間設定</li><li>午前：登壇→昼食（アイスブレイク・名刺交換）→午後：グループワーク→発表</li><li>夜の懇親会はビュッフェ形式の立食</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#0ea5e9">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#0ea5e9"></span>
+                <span class="topic-card-title">グループワークの設計</span>
+            </div>
+            <ul class="topic-bullets"><li>テーマは収支管理・顧客管理・勤怠管理の<em class="num">3</em>種（＋候補でマーケティング施策管理）</li><li><em class="num">4</em>〜<em class="num">5人</em><em class="num">1</em>組、最大<em class="num">20</em>組程度を想定（<em class="num">100人</em>集客時）</li><li>最初の<em class="num">2時</em>間で構築・資料作成、残り<em class="num">1時</em>間で発表</li><li>ダミーデータは運営側（東海林・二宮）が事前に作成し配布</li><li>模範解答は用意しない方針、各チームの最適解を重視</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#10b981">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#10b981"></span>
+                <span class="topic-card-title">サポーターの役割</span>
+            </div>
+            <ul class="topic-bullets"><li>参加者の進行サポート（時間内に発表まで持っていく支援）</li><li>事前にテーマ・ダミーデータを受領し予習が必要</li><li>参加者のレベル差が大きいため見守り・質問対応が中心</li><li>担当テーマは希望制で事前に割り振り予定</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#f59e0b">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#f59e0b"></span>
+                <span class="topic-card-title">グループワーク運営上の論点</span>
+            </div>
+            <ul class="topic-bullets"><li>MANABUが「Lark研究所としてのお作法（正規化フロー）」の統一を提案</li><li>役割分担（要件定義・正規化等）を明確にし全員参加を担保</li><li>Makoが「テーマ<em class="num">1</em>つに統一した方が初心者に優しい」と指摘</li><li>二宮が「テーマ<em class="num">2</em>つへの絞り込み」を提案</li><li>AI利用の制限有無も論点（できる人だけが完成させるリスク）</li><li>結論は運営側で再検討とし、本会議では未決定</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#ec4899">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#ec4899"></span>
+                <span class="topic-card-title">登壇内容</span>
+            </div>
+            <ul class="topic-bullets"><li>二宮真理子：Anygen×Lark連携の活用事例（<em class="num">4月</em><em class="num">25日</em>の発信にも言及）</li><li>安江心：Larkを活用した事業構築の実体験</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#8b5cf6">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#8b5cf6"></span>
+                <span class="topic-card-title">集客状況と今後の動き</span>
+            </div>
+            <ul class="topic-bullets"><li>現時点の申込は約<em class="num">30名</em>、目標未達</li><li>最遠方の参加者は三重県から</li><li>安江・二宮が名古屋中心にこれからゴリゴリ集客</li><li>東海林も既存顧客への声がけを約束</li><li>サポーター陣にも周囲への声がけを依頼</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#14b8a6">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#14b8a6"></span>
+                <span class="topic-card-title">自己紹介・メンバー紹介</span>
+            </div>
+            <ul class="topic-bullets"><li>笹原：Lark×LINE・kintone等の外部連携が得意、予約サイト事例あり</li><li>山本：Excel未経験から<em class="num">1年</em>でLark構築可能に、行動量でカバー</li><li>小寺：講座卒業後<em class="num">1ヶ</em>月で案件獲得、現在Lark一本でキャパオーバー状態</li><li>Mako：<em class="num">4</em>期MVP、業務委託管理パッケージを開発中</li><li>鎌田：M&amp;Aで会社<em class="num">4</em>社経営、宮崎DXサミット<em class="num">100名</em>規模にも参加</li><li>MANABU：AntiGravity（アンチグラビティ）でLarkをDB化しアプリ開発</li><li>東海林：株式会社グラスト社員、DocuGenius等の知見あり</li><li>二宮：Lark歴<em class="num">4年</em>目、最近Anygen連携で運用強化中</li><li>安江：会社から<em class="num">4名</em>参加（安江・門田・五十嵐・内藤）、内藤は新卒<em class="num">22</em>歳（LP担当）</li></ul>
+        </div>
+        <div class="topic-card" style="--accent:#f97316">
+            <div class="topic-card-header">
+                <span class="topic-dot" style="background:#f97316"></span>
+                <span class="topic-card-title">経済圏構想（寺山の方針共有）</span>
+            </div>
+            <ul class="topic-bullets"><li>東京・大阪のイベントは赤字（会場費は寺山・MANABU負担）</li><li>今後オフ会を通じてLark経済圏を構築したい</li><li>地方はIT情報格差が大きく、オフライン接点に価値がある</li><li>イベント内で受発注・協業が生まれることを目指す</li></ul>
+        </div></div></div>
+        </section>
+        <section class="ig-section">
+            <div class="section-label">
+                <span class="section-icon">📝</span>
+                <h2 class="section-heading">その他メモ</h2>
+            </div>
+            <div class="section-content"><ul class="memo-list"><li>イベント開催日は<em class="num">4月</em><em class="num">25日</em>（金）、会場は愛知県名古屋市内</li><li>過去イベント：東京（第<em class="num">1回</em>）→大阪→今回名古屋で<em class="num">3回</em>目</li><li>前回大阪は約<em class="num">50名</em>集客（MANABUの貢献大）</li><li>安江の会社は売上構成比がマーケ:DX＝<em class="num">7</em>:<em class="num">3</em>に変化、東海<em class="num">3</em>県に出向く営業スタイル</li><li>Anygen（エニージェン）はByteDance製AIツール、Larkとの連携が注目トピック</li><li>MANABUが使うAntiGravityはLarkをDBにしたアプリ化ツール、DocuGenius代替にもなり得る</li><li>前乗り確定者：笹原、寺山、鎌田（山本は未確定）</li><li>MANABUから「味噌煮込みうどん以外で」とのリクエストあり（麺の硬さが苦手）</li></ul></div>
+        </section>
+        <section class="ig-section decision-section">
+            <div class="section-label">
+                <span class="section-icon">✅</span>
+                <h2 class="section-heading">決定事項</h2>
+            </div>
+            <div class="section-content"><div class="decision-rows">
+        <div class="decision-row">
+            <span class="decision-num-badge">1</span>
+            <span class="decision-text">グループワークのダミーデータは運営側（東海林・二宮）が作成し、サポーターに事前配布</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">2</span>
+            <span class="decision-text">サポーターのテーマ割り振りはダミーデータ開示後にアンケートで希望を取得</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">3</span>
+            <span class="decision-text">参加者リストはサポーター全員に共有（全員が開示OK確認済み）</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">4</span>
+            <span class="decision-text">今回の会議アーカイブをサポーター陣に配布</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">5</span>
+            <span class="decision-text">前日（金曜日）に前乗りメンバーで懇親・決起集会を実施</span>
+        </div>
+        <div class="decision-row">
+            <span class="decision-num-badge">6</span>
+            <span class="decision-text">今後の連絡はテキストベース（チャット）で実施、再度の集合MTGは原則なし</span>
+        </div></div></div>
+        </section>
+        <section class="ig-section action-section">
+            <div class="section-label">
+                <span class="section-icon">⚡</span>
+                <h2 class="section-heading">ネクストアクション</h2>
+            </div>
+            <div class="section-content"><div class="action-table">
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>東海林・二宮</span>
+            </div>
+            <div class="action-task"><em class="num">3</em>テーマ分のダミーデータ作成</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>イベント2週間前まで（早急に）</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>寺山</span>
+            </div>
+            <div class="action-task">会議アーカイブ・参加者リストをサポーター陣に共有</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>会議後すぐ</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>運営側（寺山・安江・MANABU）</span>
+            </div>
+            <div class="action-task">テーマ数（<em class="num">3</em>つ/<em class="num">2</em>つ/<em class="num">1</em>つ）の最終決定</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>ダミーデータ完成前</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>運営側</span>
+            </div>
+            <div class="action-task">グループワークの「お作法」（正規化フロー・役割分担ルール）策定</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>イベント前</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>運営側</span>
+            </div>
+            <div class="action-task">AI利用ルールの決定</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>イベント前</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>安江・二宮・東海林</span>
+            </div>
+            <div class="action-task">名古屋中心の集客強化</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>残り2週間</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>サポーター全員</span>
+            </div>
+            <div class="action-task">周囲への声がけ・集客協力</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>残り2週間</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>サポーター全員</span>
+            </div>
+            <div class="action-task">ダミーデータ開示後に担当テーマ希望を回答</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>データ開示後</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>Mako・二宮・安江・東海林</span>
+            </div>
+            <div class="action-task">前日懇親会（決起集会）の企画</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>イベント前週</span>
+            </div>
+        </div>
+        <div class="action-row">
+            <div class="action-person">
+                <span class="person-icon">👤</span>
+                <span>サポーター全員</span>
+            </div>
+            <div class="action-task">担当テーマの予習・想定質問の準備</div>
+            <div class="action-deadline">
+                <span class="deadline-icon">📅</span>
+                <span>イベント当日まで</span>
+            </div>
+        </div></div></div>
+        </section>
+    </div>
+    <div class="ig-footer">株式会社Entime / 寺山 大夢</div>
+</body>
+</html>
