@@ -92,8 +92,43 @@
     .sec-icon.teal  { background: #ccfbf1; }
     .sec-icon.green { background: #dcfce7; }
     .sec-icon.orange{ background: #ffedd5; }
+    .sec-icon.purple{ background: #ede9fe; }
     .sec-text h2 { font-size: 1.35rem; font-weight: 800; color: var(--dark); }
     .sec-text p  { font-size: 0.82rem; color: var(--gray-text); margin-top: 2px; }
+
+    /* ══ RATE TABLE ══ */
+    .rate-table {
+      background: #fff; border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden; margin-bottom: 20px;
+    }
+    .rate-table-head {
+      background: var(--gray-bg); padding: 12px 20px;
+      font-size: 0.78rem; font-weight: 800; color: var(--gray-text);
+      letter-spacing: 0.06em; border-bottom: 1px solid #e5e7eb;
+    }
+    .rate-table table { width: 100%; border-collapse: collapse; }
+    .rate-table th {
+      padding: 10px 20px; font-size: 0.78rem; font-weight: 700;
+      color: var(--gray-text); text-align: center; background: #fafafa;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .rate-table th:first-child { text-align: left; }
+    .rate-table th.orange-col { color: var(--orange); }
+    .rate-table td {
+      padding: 12px 20px; font-size: 0.88rem; border-bottom: 1px solid #f3f4f6;
+      text-align: center;
+    }
+    .rate-table td:first-child { text-align: left; font-weight: 700; }
+    .rate-table td s { color: #9ca3af; }
+    .rate-table td.orange-col { font-weight: 800; color: var(--orange); }
+    .rate-table tr:last-child td { border-bottom: none; }
+    .rate-note {
+      padding: 12px 20px; font-size: 0.78rem; color: #92400e;
+      background: #fff7ed; border-top: 1px solid #fed7aa;
+      font-weight: 600;
+    }
 
     /* ══ PRICING BLOCK ══ */
     .pricing-grid {
@@ -116,9 +151,21 @@
     }
     .price-card-label {
       font-size: 0.78rem; font-weight: 700; color: var(--gray-text);
-      letter-spacing: 0.06em; margin-bottom: 12px;
+      letter-spacing: 0.06em; margin-bottom: 14px;
     }
     .price-card.highlight .price-card-label { color: var(--orange); }
+    .price-breakdown { margin-bottom: 16px; }
+    .price-breakdown > div {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.84rem; color: var(--gray-text); padding: 4px 0;
+      border-bottom: 1px dashed #f3f4f6;
+    }
+    .price-breakdown > div:last-child { border-bottom: none; }
+    .price-breakdown .total-row {
+      font-weight: 800; color: var(--dark); font-size: 0.92rem;
+      padding-top: 8px; margin-top: 4px; border-top: 1px solid #e5e7eb !important;
+      border-bottom: none !important;
+    }
     .price-main {
       font-size: 2.4rem; font-weight: 900; line-height: 1; color: var(--dark);
       margin-bottom: 4px;
@@ -127,7 +174,6 @@
     .price-main .unit { font-size: 0.85rem; font-weight: 600; color: var(--gray-text); }
     .price-card.highlight .price-main { color: var(--orange); }
     .price-sub { font-size: 0.82rem; color: var(--gray-text); margin-top: 8px; line-height: 1.6; }
-    .price-sub s { color: #9ca3af; }
     .price-total {
       margin-top: 16px; padding-top: 16px;
       border-top: 1px solid #e5e7eb;
@@ -136,6 +182,9 @@
     .price-total-label { font-size: 0.78rem; color: var(--gray-text); }
     .price-total-value { font-size: 1.1rem; font-weight: 800; color: var(--dark); }
     .price-card.highlight .price-total-value { color: var(--orange); }
+    .price-ref {
+      font-size: 0.78rem; color: var(--gray-text); margin-bottom: 6px; line-height: 1.8;
+    }
     .savings-banner {
       background: linear-gradient(90deg, #fff7ed, #fef3c7);
       border: 1px solid #fed7aa; border-radius: 10px;
@@ -143,7 +192,8 @@
       display: flex; align-items: center; justify-content: space-between;
     }
     .savings-text { font-size: 0.88rem; color: #92400e; font-weight: 600; }
-    .savings-amount { font-size: 1.5rem; font-weight: 900; color: var(--orange); }
+    .savings-sub  { font-size: 0.76rem; color: #b45309; margin-top: 2px; }
+    .savings-amount { font-size: 1.5rem; font-weight: 900; color: var(--orange); white-space: nowrap; }
 
     /* ══ MAINTENANCE ROW ══ */
     .maintenance-row {
@@ -154,6 +204,40 @@
     }
     .maint-label { font-size: 0.85rem; font-weight: 700; color: var(--blue-mid); }
     .maint-price { font-size: 1.3rem; font-weight: 900; color: var(--blue-mid); }
+
+    /* ══ ROI SECTION ══ */
+    .roi-card {
+      background: #fff; border-radius: 16px;
+      border: 2px solid #dbeafe;
+      box-shadow: 0 2px 12px rgba(26,74,138,0.07);
+      overflow: hidden;
+    }
+    .roi-header {
+      background: linear-gradient(90deg, #1a4a8a, #2563eb);
+      color: #fff; padding: 20px 28px;
+    }
+    .roi-header h3 { font-size: 1.05rem; font-weight: 800; }
+    .roi-header p  { font-size: 0.8rem; opacity: 0.85; margin-top: 3px; }
+    .roi-body { padding: 24px 28px; display: flex; flex-direction: column; gap: 20px; }
+    .roi-step {
+      display: grid; grid-template-columns: 44px 1fr;
+      gap: 16px; align-items: start;
+    }
+    .roi-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--blue-light); color: var(--blue-mid);
+      font-size: 1.1rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .roi-step-title { font-size: 0.95rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+    .roi-step-body  { font-size: 0.87rem; color: var(--gray-text); line-height: 1.75; }
+    .roi-step-body strong { color: var(--blue-mid); }
+    .roi-bottom {
+      background: var(--blue-light); border-top: 1px solid #bfdbfe;
+      padding: 18px 28px; font-size: 0.87rem; color: var(--blue-mid);
+      font-weight: 600; line-height: 1.75;
+    }
 
     /* ══ TIMELINE ══ */
     .timeline { display: flex; flex-direction: column; gap: 0; }
@@ -260,6 +344,7 @@
       .flow-step + .flow-step::before { content: "↓"; left: 50%; top: -14px; transform: translateX(-50%); }
       .monitor-row { grid-template-columns: 1fr; }
       .tl-item { grid-template-columns: 72px 1fr; }
+      .roi-step { grid-template-columns: 36px 1fr; }
     }
   </style>
 </head>
@@ -281,42 +366,95 @@
 
 <div class="wrapper">
 
+  <!-- ── SCOPE NOTE ── -->
+  <div style="background:#fffbeb;border:1.5px solid #fcd34d;border-radius:14px;padding:20px 24px;margin-top:48px;">
+    <div style="font-size:0.82rem;font-weight:800;color:#92400e;letter-spacing:0.06em;margin-bottom:10px;">📌 今回のご提案スコープについて</div>
+    <p style="font-size:0.88rem;color:#78350f;line-height:1.8;margin-bottom:12px;">
+      本プランは <strong>KPI管理の構築・運用定着</strong> を対象としたものです。<br>
+      以下の機能・制作物については、別途費用が発生します。ご希望の場合はお気軽にご相談ください。
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <div style="background:#fff;border:1px solid #fcd34d;border-radius:8px;padding:8px 16px;font-size:0.84rem;font-weight:700;color:#92400e;">
+        📄 マニュアル・手順書の作成　<span style="color:#f59e0b;">→ 別途 要相談</span>
+      </div>
+      <div style="background:#fff;border:1px solid #fcd34d;border-radius:8px;padding:8px 16px;font-size:0.84rem;font-weight:700;color:#92400e;">
+        🕐 勤怠管理などの追加機能　<span style="color:#f59e0b;">→ 別途 要相談</span>
+      </div>
+    </div>
+  </div>
+
   <!-- ── PRICING ── -->
   <div class="sec-title">
     <div class="sec-icon blue">💴</div>
     <div class="sec-text">
       <h2>費用体系</h2>
-      <p>通常プランと今回のモニター価格をご確認ください</p>
+      <p>宮内先生（3院）のご請求内訳と標準料金の比較</p>
     </div>
   </div>
 
+  <!-- 料金の考え方 -->
+  <div class="rate-table">
+    <div class="rate-table-head">料金の考え方（標準体系）</div>
+    <table>
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>通常価格</th>
+          <th class="orange-col">今回のご提案</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1院目</td>
+          <td><s>¥150,000／月</s></td>
+          <td class="orange-col">¥100,000／月</td>
+        </tr>
+        <tr>
+          <td>追加1院につき</td>
+          <td><s>¥100,000／月</s></td>
+          <td class="orange-col">¥50,000／月</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="rate-note">
+      ※ 今後ご紹介・新規でご導入の方は、院が増えるたびに追加費用が発生します。宮内先生は今回の特別条件でのご案内です。
+    </div>
+  </div>
+
+  <!-- 通常 vs 今回の比較 -->
   <div class="pricing-grid">
     <!-- 通常 -->
     <div class="price-card">
-      <div class="price-card-label">通常プライス</div>
-      <div class="price-main"><span class="yen">¥</span>150,000<span class="unit"> /月</span></div>
-      <div class="price-sub">月額 × 3ヶ月の伴走支援</div>
+      <div class="price-card-label">宮内先生（3院）通常の場合</div>
+      <div class="price-breakdown">
+        <div><span>1院目</span><span>¥150,000</span></div>
+        <div><span>追加2院 × ¥100,000</span><span>¥200,000</span></div>
+        <div class="total-row"><span>月額合計</span><span>¥350,000</span></div>
+      </div>
       <div class="price-total">
         <span class="price-total-label">3ヶ月合計（税抜）</span>
-        <span class="price-total-value">¥450,000</span>
+        <span class="price-total-value">¥1,050,000</span>
       </div>
     </div>
-    <!-- モニター -->
+    <!-- 今回 -->
     <div class="price-card highlight">
-      <div class="price-badge">🎁 モニター特別価格</div>
-      <div class="price-card-label">モニタープライス</div>
-      <div class="price-main"><span class="yen">¥</span>127,500<span class="unit"> /月 相当</span></div>
-      <div class="price-sub"><s>¥450,000</s> から <strong style="color:#f97316">15%オフ</strong></div>
-      <div class="price-total">
-        <span class="price-total-label">3ヶ月合計（税抜）</span>
-        <span class="price-total-value">¥382,500</span>
+      <div class="price-badge">🎁 招待特典 15%引き</div>
+      <div class="price-card-label">今回のご提案価格</div>
+      <div class="price-ref">
+        基準価格（3ヶ月）：<s>¥450,000</s><br>
+        招待特典 −15%：<span style="color:#f97316;font-weight:700;">−¥67,500</span>
       </div>
+      <div class="price-main"><span class="yen">¥</span>382,500<span class="unit">（税抜）</span></div>
+      <div class="price-sub">3院まとめてこの価格でスタートできます</div>
     </div>
   </div>
 
   <div class="savings-banner">
-    <span class="savings-text">🎉 モニター特典による割引額</span>
-    <span class="savings-amount">¥67,500 OFF</span>
+    <div>
+      <div class="savings-text">🎉 通常（3院分）と比べた場合の節約額</div>
+      <div class="savings-sub">¥1,050,000（通常3院分）→ ¥382,500（今回のご提案価格）</div>
+    </div>
+    <span class="savings-amount">¥667,500 OFF</span>
   </div>
 
   <div class="maintenance-row">
@@ -378,6 +516,50 @@
           <span class="tl-tag gray">※ご要望に応じて追加機能相談</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ── ROI / 費用対効果 ── -->
+  <div class="sec-title" style="margin-top:52px">
+    <div class="sec-icon purple">📊</div>
+    <div class="sec-text">
+      <h2>費用対効果</h2>
+      <p>数字の羅列ではなく「現在地の把握」が経営を変える</p>
+    </div>
+  </div>
+
+  <div class="roi-card">
+    <div class="roi-header">
+      <div>
+        <h3>このプランの本質的な価値は「コスト削減」ではありません</h3>
+        <p>整骨院の経営で本当に必要なのは、今自分たちがどこにいるかを知ることです</p>
+      </div>
+    </div>
+    <div class="roi-body">
+      <div class="roi-step">
+        <div class="roi-num">①</div>
+        <div>
+          <div class="roi-step-title">現在地が分かる</div>
+          <div class="roi-step-body">スタッフの稼働・売上・集客の数字はすでに存在しています。しかしそれらが散在した状態では、<strong>「なんとなくうまくいっていない」という感覚</strong>のまま時間が過ぎていきます。KPIをダッシュボードで一元管理することで、感覚ではなくデータとして現状が見えるようになります。</div>
+        </div>
+      </div>
+      <div class="roi-step">
+        <div class="roi-num">②</div>
+        <div>
+          <div class="roi-step-title">ギャップが可視化される</div>
+          <div class="roi-step-body">理想と現状のズレが明確になることで、<strong>課題が「具体的な問題」として特定</strong>できるようになります。どこに問題があるかが一発で分かると、打つべき手が変わります。</div>
+        </div>
+      </div>
+      <div class="roi-step">
+        <div class="roi-num">③</div>
+        <div>
+          <div class="roi-step-title">Next Actionの角度が上がる</div>
+          <div class="roi-step-body">課題が見えると、行動の精度が変わります。3店舗・12名のチームが<strong>同じ数字・同じ課題認識</strong>のもとで動けるようになり、経営の意思決定が感覚から根拠ある判断へと変わります。</div>
+        </div>
+      </div>
+    </div>
+    <div class="roi-bottom">
+      💡 「何が問題か分からないまま時間が過ぎる」という機会損失は、月単位で積み上がります。課題の特定が1ヶ月早まるだけで、その価値はこのプランの投資額を大きく上回ります。
     </div>
   </div>
 
