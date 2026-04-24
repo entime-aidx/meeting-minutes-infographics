@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>葬祭部門 DX推進ヒアリング業務効率化・システム活用状況のヒアリング</title>
+
+<style>
+  :root {
+    --bg:#0f0f14;--surface:#1a1a24;--surface-2:#22222e;--border:#2a2a3a;
+    --text:#e8e6f0;--text-dim:#8888a0;
+    --teal:#4dd0c4;--lime:#a8e06c;--coral:#ff6b6b;--blue:#6ba3ff;--amber:#ffd54f;--orange:#ffb347;--purple:#b388ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+  .page{max-width:1100px;margin:0 auto;padding:48px 36px 80px}
+  .header{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:36px}
+  .header-tag{display:inline-block;background:var(--teal);color:#000;font-size:10px;font-weight:800;letter-spacing:3px;padding:4px 12px;border-radius:3px;margin-bottom:12px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.4}
+  .header .meta{font-size:13px;color:var(--text-dim);margin-top:8px}
+  .attendees{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+  .att{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 14px 5px 5px;font-size:12px}
+  .att-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000}
+  .summary-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+  .pill{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;flex:1;min-width:150px}
+  .pill-label{font-size:10px;color:var(--text-dim);letter-spacing:2px;font-weight:600;margin-bottom:6px}
+  .pill-val{font-size:20px;font-weight:900}
+  .section{margin-bottom:48px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .section-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:#000}
+  .section-title{font-size:18px;font-weight:800}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+  .decision-list{display:flex;flex-direction:column;gap:10px}
+  .decision-item{display:flex;align-items:flex-start;gap:12px;background:var(--surface-2);border-radius:10px;padding:14px 16px}
+  .decision-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .decision-icon.ok{background:rgba(168,224,108,.15);color:var(--lime);border:1px solid rgba(168,224,108,.4)}
+  .decision-icon.pending{background:rgba(255,213,79,.15);color:var(--amber);border:1px solid rgba(255,213,79,.4)}
+  .decision-icon.action{background:rgba(107,163,255,.15);color:var(--blue);border:1px solid rgba(107,163,255,.4)}
+  .decision-text{font-size:14px;line-height:1.6}
+  .action-table{width:100%;border-collapse:collapse;font-size:13px}
+  .action-table th{background:var(--surface-2);padding:10px 14px;text-align:left;font-size:11px;color:var(--text-dim);letter-spacing:1px;font-weight:700;border-bottom:1px solid var(--border)}
+  .action-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  .action-table tr:last-child td{border-bottom:none}
+  .who-tag{display:inline-block;background:var(--surface-2);border-radius:4px;padding:2px 8px;font-size:11px;color:var(--text-dim)}
+  .due-tag{display:inline-block;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700}
+  .due-urgent{background:rgba(255,107,107,.15);color:var(--coral)}
+  .due-soon{background:rgba(255,213,79,.15);color:var(--amber)}
+  .due-later{background:rgba(107,163,255,.15);color:var(--blue)}
+  ul{padding-left:1.2em}
+  li{margin-bottom:6px;font-size:14px}
+  .footer{text-align:center;font-size:12px;color:var(--text-dim);margin-top:48px;padding-top:20px;border-top:1px solid var(--border)}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body><div class="page">
+
+  <!-- ========== HEADER ========== -->
+  <div class="header" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 16px; padding: 36px 40px 28px; margin-bottom: 28px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: rgba(255,255,255,0.03); clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);"></div>
+    <div class="header-tag" style="display: inline-block; background: rgba(229,100,80,0.85); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; text-transform: uppercase;">MEETING MINUTES</div>
+    <h1 style="color: #ffffff; font-size: 26px; font-weight: 800; margin: 0 0 14px; line-height: 1.3;">葬祭部門 DX推進ヒアリング<br><span style="font-size: 16px; font-weight: 400; opacity: 0.75;">業務効率化・システム活用状況のヒアリング</span></h1>
+    <div class="meta" style="color: rgba(255,255,255,0.65); font-size: 13px; display: flex; gap: 24px; flex-wrap: wrap;">
+      <span>📅 2026年4月20日</span>
+      <span>📍 葬祭会社（社名非公開）</span>
+      <span>⏱ 訪問ヒアリング</span>
+    </div>
+  </div>
+
+  <!-- ========== ATTENDEES ========== -->
+  <div class="attendees" style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px;">
+    <div class="att" style="display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #e8eaf0; border-radius: 40px; padding: 8px 18px 8px 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+      <div class="att-dot" style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #e55450, #c0392b); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex-shrink: 0;">A</div>
+      <div>
+        <div style="font-weight: 700; font-size: 13px; color: #1a1a2e;">話者 A</div>
+        <div style="font-size: 11px; color: #888;">葬祭会社 担当者</div>
+      </div>
+    </div>
+    <div class="att" style="display: flex; align-items: center; gap: 10px; background: #fff; border: 1.5px solid #e8eaf0; border-radius: 40px; padding: 8px 18px 8px 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+      <div class="att-dot" style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #2980b9, #1a5276); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; flex-shrink: 0;">B</div>
+      <div>
+        <div style="font-weight: 700; font-size: 13px; color: #1a1a2e;">話者 B</div>
+        <div style="font-size: 11px; color: #888;">提案側（Lark／kintone担当）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SUMMARY PILLS ========== -->
+  <div class="summary-row" style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px;">
+    <div class="pill" style="background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 14px; padding: 16px 24px; min-width: 120px; text-align: center; box-shadow: 0 4px 14px rgba(102,126,234,0.35);">
+      <div class="pill-val" style="color: #fff; font-size: 28px; font-weight: 800; line-height: 1;">4</div>
+      <div class="pill-label" style="color: rgba(255,255,255,0.8); font-size: 11px; font-weight: 600; margin-top: 4px; letter-spacing: 1px;">議　題</div>
+    </div>
+    <div class="pill" style="background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 14px; padding: 16px 24px; min-width: 120px; text-align: center; box-shadow: 0 4px 14px rgba(17,153,142,0.35);">
+      <div class="pill-val" style="color: #fff; font-size: 28px; font-weight: 800; line-height: 1;">3</div>
+      <div class="pill-label" style="color: rgba(255,255,255,0.8); font-size: 11px; font-weight: 600; margin-top: 4px; letter-spacing: 1px;">決定事項</div>
+    </div>
+    <div class="pill" style="background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 14px; padding: 16px 24px; min-width: 120px; text-align: center; box-shadow: 0 4px 14px rgba(245,87,108,0.35);">
+      <div class="pill-val" style="color: #fff; font-size: 28px; font-weight: 800; line-height: 1;">4</div>
+      <div class="pill-label" style="color: rgba(255,255,255,0.8); font-size: 11px; font-weight: 600; margin-top: 4px; letter-spacing: 1px;">アクション</div>
+    </div>
+    <div class="pill" style="background: linear-gradient(135deg, #f7971e, #ffd200); border-radius: 14px; padding: 16px 24px; min-width: 120px; text-align: center; box-shadow: 0 4px 14px rgba(247,151,30,0.35);">
+      <div class="pill-val" style="color: #fff; font-size: 28px; font-weight: 800; line-height: 1;">2</div>
+      <div class="pill-label" style="color: rgba(255,255,255,0.8); font-size: 11px; font-weight: 600; margin-top: 4px; letter-spacing: 1px;">保留事項</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section" style="margin-bottom: 24px;">
+    <div class="section-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <div class="section-num" style="width: 32px; height: 32px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 8px; color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">01</div>
+      <div class="section-title" style="font-size: 17px; font-weight: 800; color: #1a1a2e;">AI・DX導入状況</div>
+    </div>
+    <div class="card" style="background: #fff; border-radius: 14px; padding: 24px 28px; border: 1.5px solid #eef0f6; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+      <p style="color: #444; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">司会者が個別に作成していた <strong>告別式の原稿（故人紹介文）をAIで自動生成</strong> する仕組みを来月から導入予定。項目を入力するとAIが原稿を生成し、司会者の負担を大幅に削減する。</p>
+      <div class="decision-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #f8fff9; border-left: 4px solid #11998e; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon ok" style="width: 22px; height: 22px; border-radius: 50%; background: #11998e; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">✓</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>決定：</strong>司会原稿のAI生成ツールを来月より正式導入する</div>
+        </div>
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #fffbf0; border-left: 4px solid #f7971e; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon pending" style="width: 22px; height: 22px; border-radius: 50%; background: #f7971e; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">⏸</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>保留：</strong>原稿読み上げの機械音声化は品質面の課題があり、当面は人間が読み上げ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section" style="margin-bottom: 24px;">
+    <div class="section-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <div class="section-num" style="width: 32px; height: 32px; background: linear-gradient(135deg, #f093fb, #f5576c); border-radius: 8px; color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">02</div>
+      <div class="section-title" style="font-size: 17px; font-weight: 800; color: #1a1a2e;">経理・事務業務の課題</div>
+    </div>
+    <div class="card" style="background: #fff; border-radius: 14px; padding: 24px 28px; border: 1.5px solid #eef0f6; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+      <p style="color: #444; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">葬祭件数が過去10年で約 <strong>700件増加（現在約2,500件／年）</strong> し、それに伴い請求書・売上処理などの<strong>事務作業量が大幅増加</strong>。経理人員も2名→5〜6名に増員したが、件数に追いつかない状況。働き方改革で休暇取得義務化が重なり、人手不足が深刻化している。</p>
+      <div class="decision-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #fff5f5; border-left: 4px solid #e55450; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon action" style="width: 22px; height: 22px; border-radius: 50%; background: #e55450; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">!</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>課題：</strong>請求書が紙で届き、既存の葬祭システムと手作業で紐付けが必要。会社全体の問題のため葬祭部門単独では解決不可</div>
+        </div>
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #fffbf0; border-left: 4px solid #f7971e; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon pending" style="width: 22px; height: 22px; border-radius: 50%; background: #f7971e; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">⏸</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>保留：</strong>請求書ペーパーレス化は本社主導の全社的な取り組みが必要なため、部門単独での意思決定が困難</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section" style="margin-bottom: 24px;">
+    <div class="section-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <div class="section-num" style="width: 32px; height: 32px; background: linear-gradient(135deg, #11998e, #38ef7d); border-radius: 8px; color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">03</div>
+      <div class="section-title" style="font-size: 17px; font-weight: 800; color: #1a1a2e;">部門間情報共有の現状</div>
+    </div>
+    <div class="card" style="background: #fff; border-radius: 14px; padding: 24px 28px; border: 1.5px solid #eef0f6; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+      <p style="color: #444; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">葬祭部門と営業部門の情報連携は現在 <strong>ホワイトボードをカメラ撮影してデジタル共有</strong> するという簡易的な方法を採用。FAX等の煩雑な手続きを省くためのワークアラウンドだが、情報管理・権限設定の面では工夫が必要。コールセンターからの受電情報は <strong>kintone で共有</strong> する構想がある。</p>
+      <div class="decision-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #f8fff9; border-left: 4px solid #11998e; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon ok" style="width: 22px; height: 22px; border-radius: 50%; background: #11998e; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">✓</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>確認：</strong>ホワイトボード共有にはアクセス権限を設定し、閲覧者を制限済み</div>
+        </div>
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #fff5f5; border-left: 4px solid #e55450; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon action" style="width: 22px; height: 22px; border-radius: 50%; background: #e55450; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">!</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>課題：</strong>コールセンター受電情報のkintone共有化は検討中だが、入力二重作業が発生する懸念あり</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section" style="margin-bottom: 24px;">
+    <div class="section-header" style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+      <div class="section-num" style="width: 32px; height: 32px; background: linear-gradient(135deg, #f7971e, #ffd200); border-radius: 8px; color: #fff; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">04</div>
+      <div class="section-title" style="font-size: 17px; font-weight: 800; color: #1a1a2e;">Lark活用・本社承認フロー</div>
+    </div>
+    <div class="card" style="background: #fff; border-radius: 14px; padding: 24px 28px; border: 1.5px solid #eef0f6; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+      <p style="color: #444; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">営業部では <strong>Lark が定着</strong> し、管理課も連携して活用中。役員・本社もLarkへの理解を示している。一方で、本社への稟議・社内申請は <strong>いまだ紙・印鑑ベース</strong> で運用されており、宮崎本社から各拠点（小林など）への回覧が非効率。葬祭部門から本社に <strong>社内文書のペーパーレス化を要請中</strong>。</p>
+      <div class="decision-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #f8fff9; border-left: 4px solid #11998e; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon ok" style="width: 22px; height: 22px; border-radius: 50%; background: #11998e; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">✓</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>決定：</strong>営業部・管理課のLark活用は継続・拡大。本社役員も活用に前向き</div>
+        </div>
+        <div class="decision-item" style="display: flex; align-items: flex-start; gap: 12px; background: #fff5f5; border-left: 4px solid #e55450; border-radius: 8px; padding: 12px 16px;">
+          <div class="decision-icon action" style="width: 22px; height: 22px; border-radius: 50%; background: #e55450; color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">!</div>
+          <div class="decision-text" style="font-size: 13px; color: #333; line-height: 1.6;"><strong>要請中：</strong>社内承認・回覧文書のデジタル化を本社へ打診。葬祭件数の多さからクレーム・申請文書の件数が他部門と比較にならないほど多く、デジタル化の優先度が高い</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NEXT ACTIONS ==========</body>
+</html>
