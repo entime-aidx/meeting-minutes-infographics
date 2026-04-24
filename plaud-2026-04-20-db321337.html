@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>葬祭会社 DX推進・業務効率化 商談</title>
+
+<style>
+  :root {
+    --bg:#0f0f14;--surface:#1a1a24;--surface-2:#22222e;--border:#2a2a3a;
+    --text:#e8e6f0;--text-dim:#8888a0;
+    --teal:#4dd0c4;--lime:#a8e06c;--coral:#ff6b6b;--blue:#6ba3ff;--amber:#ffd54f;--orange:#ffb347;--purple:#b388ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+  .page{max-width:1100px;margin:0 auto;padding:48px 36px 80px}
+  .header{border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:36px}
+  .header-tag{display:inline-block;background:var(--teal);color:#000;font-size:10px;font-weight:800;letter-spacing:3px;padding:4px 12px;border-radius:3px;margin-bottom:12px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.4}
+  .header .meta{font-size:13px;color:var(--text-dim);margin-top:8px}
+  .attendees{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+  .att{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:5px 14px 5px 5px;font-size:12px}
+  .att-dot{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#000}
+  .summary-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+  .pill{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;flex:1;min-width:150px}
+  .pill-label{font-size:10px;color:var(--text-dim);letter-spacing:2px;font-weight:600;margin-bottom:6px}
+  .pill-val{font-size:20px;font-weight:900}
+  .section{margin-bottom:48px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .section-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;flex-shrink:0;color:#000}
+  .section-title{font-size:18px;font-weight:800}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
+  .decision-list{display:flex;flex-direction:column;gap:10px}
+  .decision-item{display:flex;align-items:flex-start;gap:12px;background:var(--surface-2);border-radius:10px;padding:14px 16px}
+  .decision-icon{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px}
+  .decision-icon.ok{background:rgba(168,224,108,.15);color:var(--lime);border:1px solid rgba(168,224,108,.4)}
+  .decision-icon.pending{background:rgba(255,213,79,.15);color:var(--amber);border:1px solid rgba(255,213,79,.4)}
+  .decision-icon.action{background:rgba(107,163,255,.15);color:var(--blue);border:1px solid rgba(107,163,255,.4)}
+  .decision-text{font-size:14px;line-height:1.6}
+  .action-table{width:100%;border-collapse:collapse;font-size:13px}
+  .action-table th{background:var(--surface-2);padding:10px 14px;text-align:left;font-size:11px;color:var(--text-dim);letter-spacing:1px;font-weight:700;border-bottom:1px solid var(--border)}
+  .action-table td{padding:12px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  .action-table tr:last-child td{border-bottom:none}
+  .who-tag{display:inline-block;background:var(--surface-2);border-radius:4px;padding:2px 8px;font-size:11px;color:var(--text-dim)}
+  .due-tag{display:inline-block;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700}
+  .due-urgent{background:rgba(255,107,107,.15);color:var(--coral)}
+  .due-soon{background:rgba(255,213,79,.15);color:var(--amber)}
+  .due-later{background:rgba(107,163,255,.15);color:var(--blue)}
+  ul{padding-left:1.2em}
+  li{margin-bottom:6px;font-size:14px}
+  .footer{text-align:center;font-size:12px;color:var(--text-dim);margin-top:48px;padding-top:20px;border-top:1px solid var(--border)}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body><div class="page">
+
+<div class="header">
+  <div class="header-tag">商談記録</div>
+  <h1>葬祭会社 DX推進・業務効率化 商談</h1>
+  <div class="meta">📅 2026年4月20日　　👤 話者A（自社）／ 話者B（葬祭会社 担当者）　　📍 葬祭会社 訪問</div>
+</div>
+
+<style>
+  .page { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; max-width: 860px; margin: 0 auto; padding: 32px 24px; background: #f4f6fb; color: #1a1a2e; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 100%); color: #fff; border-radius: 16px; padding: 28px 32px; margin-bottom: 24px; }
+  .header-tag { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; margin-bottom: 10px; }
+  .header h1 { font-size: 22px; font-weight: 800; margin: 0 0 10px 0; }
+  .meta { font-size: 13px; opacity: 0.78; line-height: 1.8; }
+  .attendees { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+  .att { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 30px; padding: 8px 16px 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); font-size: 13px; font-weight: 600; }
+  .att-dot { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #fff; flex-shrink: 0; }
+  .summary-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  .pill { background: #fff; border-radius: 14px; padding: 16px 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); flex: 1; min-width: 120px; text-align: center; }
+  .pill-val { font-size: 30px; font-weight: 900; line-height: 1; }
+  .pill-label { font-size: 11px; color: #6b7280; margin-top: 4px; font-weight: 600; letter-spacing: 0.5px; }
+  .section { margin-bottom: 24px; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .section-num { background: #2d3561; color: #fff; border-radius: 8px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+  .section-title { font-size: 16px; font-weight: 800; color: #1a1a2e; }
+  .card { background: #fff; border-radius: 14px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .card p { margin: 0 0 8px 0; font-size: 14px; line-height: 1.75; color: #374151; }
+  .card p:last-child { margin-bottom: 0; }
+  .decision-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .decision-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.65; color: #374151; }
+  .decision-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+  .decision-icon.ok { background: #d1fae5; color: #059669; }
+  .decision-icon.pending { background: #fef3c7; color: #d97706; }
+  .decision-icon.action { background: #dbeafe; color: #2563eb; }
+  .action-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .action-table th { background: #f1f5f9; padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 700; color: #6b7280; letter-spacing: 0.8px; text-transform: uppercase; }
+  .action-table td { padding: 11px 14px; border-top: 1px solid #f1f5f9; vertical-align: top; line-height: 1.6; color: #374151; }
+  .action-table tr:hover td { background: #f8fafc; }
+  .who-tag { display: inline-block; background: #ede9fe; color: #6d28d9; border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
+  .due-tag { display: inline-block; border-radius: 20px; padding: 2px 10px; font-size: 11px; font-weight: 700; }
+  .due-tag.due-urgent { background: #fee2e2; color: #dc2626; }
+  .due-tag.due-soon { background: #fef3c7; color: #d97706; }
+  .due-tag.due-later { background: #d1fae5; color: #059669; }
+  .footer { text-align: right; font-size: 12px; color: #9ca3af; margin-top: 32px; padding-top: 16px; border-top: 1px solid #e5e7eb; }
+  .highlight-box { background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 0 10px 10px 0; padding: 12px 16px; margin-top: 10px; font-size: 13px; color: #1e40af; line-height: 1.7; }
+</style>
+
+<div class="attendees">
+  <div class="att">
+    <div class="att-dot" style="background:#2d3561;">A</div>
+    話者A（自社営業担当）
+  </div>
+  <div class="att">
+    <div class="att-dot" style="background:#be185d;">B</div>
+    話者B（葬祭会社 部門責任者）
+  </div>
+</div>
+
+<div class="summary-row">
+  <div class="pill">
+    <div class="pill-val" style="color:#2d3561;">4</div>
+    <div class="pill-label">議題数</div>
+  </div>
+  <div class="pill">
+    <div class="pill-val" style="color:#059669;">3</div>
+    <div class="pill-label">確認済み事項</div>
+  </div>
+  <div class="pill">
+    <div class="pill-val" style="color:#d97706;">2</div>
+    <div class="pill-label">検討中事項</div>
+  </div>
+  <div class="pill">
+    <div class="pill-val" style="color:#2563eb;">4</div>
+    <div class="pill-label">ネクストアクション</div>
+  </div>
+</div>
+
+<!-- Section 1 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">1</div>
+    <div class="section-title">業界勉強会・委員講演会のフォローアップ</div>
+  </div>
+  <div class="card">
+    <p>話者Aが直近の委員講演会に参加し、その内容についてフィードバックを実施。</p>
+    <p><strong>花本建設の事例：</strong>kintone活用→Lark乗り換えの流れで、会社ルール・規定の整備や社長スケジュール管理などの業務効率化事例が参考になったと共有。</p>
+    <p><strong>話者Bの感想：</strong>20名規模でも高い売上を実現している同社事例は非常に参考になった。観光協会関係者との連携可能性も感じている。</p>
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">2</div>
+    <div class="section-title">葬祭業務における AI・DX 活用の現状</div>
+  </div>
+  <div class="card">
+    <p><strong>✅ 来月導入予定：</strong>司会者が個別に作成していた「故人紹介原稿（読み上げ原稿）」をAIが自動生成する仕組みを導入予定。必要項目を入力すればAIが原稿を作成する。</p>
+    <p><strong>📌 読み上げ自動化：</strong>機械読み上げシステムは存在するが、品質面の課題から現在も人間が担当。引き続き人員が必要な状況。</p>
+    <div class="highlight-box">
+      💡 担当者コメント：「DXはあまり進んでいないかもしれない。業務効率化は相殺（葬祭）だけでなく、会社全体の課題。」
+    </div>
+  </div>
+</div>
+
+<!-- Section 3 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">3</div>
+    <div class="section-title">本社・経理部門の業務課題（ボトルネック）</div>
+  </div>
+  <div class="card">
+    <ul class="decision-list">
+      <li class="decision-item">
+        <span class="decision-icon pending">⚠</span>
+        <span class="decision-text"><strong>情報伝達・決済・文書管理：</strong>葬祭は件数が多く（現在年間約2,500件・10年前比＋700件）、クレーム文書・社内承認文書の頻度が他部門と比較にならないほど多い。</span>
+      </li>
+      <li class="decision-item">
+        <span class="decision-icon pending">⚠</span>
+        <span class="decision-text"><strong>経理人員の増加：</strong>10年前は2名→現在5〜6名。売上・件数増加に対して事務系人員が増え続けており、本来必要な接客人員へのリソース配分ができていない。</span>
+      </li>
+      <li class="decision-item">
+        <span class="decision-icon ok">✓</span>
+        <span class="decision-text"><strong>既存葬祭システムの活用：</strong>見積・売上・請求管理は既存専用システムで対応済み。ただし付随業務（紙の請求書処理・売上紐付け）は手作業が残存。</span>
+      </li>
+      <li class="decision-item">
+        <span class="decision-icon pending">⚠</span>
+        <span class="decision-text"><strong>働き方改革の影響：</strong>以前は月2〜3日休みだったが、現在は月10日取得が必要。件数増加・人員不足・労働時間制限の三重苦が深刻化。</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">4</div>
+    <div class="section-title">Lark・情報共有ツールの現状と活用範囲</div>
+  </div>
+  <div class="card">
+    <ul class="decision-list">
+      <li class="decision-item">
+        <span class="decision-icon ok">✓</span>
+        <span class="decision-text"><strong>営業部での活用：</strong>Larkを導入済み。意思決定・内部資料のペーパーレス化が進み、役員・本社・管理課もLark活用が拡大中。</span>
+      </li>
+      <li class="decision-item">
+        <span class="decision-icon action">→</span>
+        <span class="decision-text"><strong>葬祭部門の情報共有：</strong>現在はホワイトボードを写真撮影してカメラ共有。ファクス等の手作業を排除するための暫定対応。権限設定で情報セキュリティも考慮済み。</span>
+      </li>
+      <li class="decision-item">
+        <span class="decision-icon action">→</span>
+        <span class="decision-text"><strong>kintone連携の検討：</strong>コールセンターではkintoneで受電情報を共有中。これをLarkと連携させ、インプット二重化を解消できないか検討中。</span>
+      </li>
+      <li class="decision-icon ok">✓</li>
+        <span class="decision-text"><strong>社内承認（社内保証）の電子化要望：</strong>本社への紙・印鑑による社内申請をデジタル化するよう本社に要請中。宮崎本社・都城・小林など拠点間の決裁フロー改善が急務。</span>
+    </ul>
+  </div>
+</div>
+
+<!-- ネクストアクション -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-num">✦</div>
+    <div class="section-title">ネクストアクション</div>
+  </div>
+  <div class="card" style="padding:0; overflow:hidden;">
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>アクション内容</th>
+          <th>担当</th>
+          <th>期限目安</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>葬祭部門向け Lark 活用提案資料の作成（情報共有・承認フロー可視化）</td>
+          <td><span class="who-tag">話者A</span></td>
+          <td><span class="due-tag due-urgent">至急</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>kintone × Lark 連携によるコールセンター情報共有の一元化 方式検討</td>
+          <td><span class="who-tag">話者A</span></td>
+          <td><span class="due-tag due-soon">近日中</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>本社への社内承認（決裁）電子化推進に向けた情報提供・事例共有</td>
+          <td><span class="who-tag">話者B</span></td>
+          <td><span class="due-tag due-soon">近日中</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>AI読み上げ原稿システム導入後の効果確認・次ステップ協議（来月以降）</td>
+          <td><span class="who-tag">話者B</span></td>
+          <td><span class="due-tag due-later">来月以降</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">作成日：2026-04-24　　※本議事録は音声文字起こしをもとに作成しています。</div>
+
+</div></body>
+</html>
