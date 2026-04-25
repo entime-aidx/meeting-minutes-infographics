@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>花本建設 様 訪問商談</title>
+
+<style>
+  :root {
+    --bg:#0a0a10;--surface:#14141e;--surface-2:#1c1c28;--border:#2e2e42;
+    --text:#f0eeff;--text-dim:#9090b0;
+    --teal:#4dd0c4;--lime:#a8e06c;--coral:#ff6b6b;--blue:#6ba3ff;--amber:#ffd54f;--orange:#ffb347;--purple:#c4a3ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
+  .page{max-width:1100px;margin:0 auto;padding:52px 40px 80px}
+
+  /* HEADER */
+  .header{border-bottom:2px solid var(--teal);padding-bottom:28px;margin-bottom:40px}
+  .header-tag{display:inline-block;background:var(--teal);color:#000;font-size:10px;font-weight:900;letter-spacing:3px;padding:4px 14px;border-radius:3px;margin-bottom:14px;text-transform:uppercase}
+  .header h1{font-size:28px;font-weight:900;line-height:1.4;color:#fff}
+  .header .meta{font-size:13px;color:var(--text-dim);margin-top:10px;letter-spacing:.5px}
+
+  /* ATTENDEES */
+  .attendees{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px}
+  .att{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:6px 16px 6px 6px;font-size:13px;color:var(--text);font-weight:600}
+  .att-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#000;flex-shrink:0}
+
+  /* PILLS */
+  .summary-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .pill{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 22px;flex:1;min-width:150px}
+  .pill-label{font-size:10px;color:var(--text-dim);letter-spacing:2px;font-weight:700;margin-bottom:8px;text-transform:uppercase}
+  .pill-val{font-size:24px;font-weight:900;color:#fff}
+
+  /* SECTIONS */
+  .section{margin-bottom:52px}
+  .section-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .section-num{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;flex-shrink:0;color:#000}
+  .section-title{font-size:19px;font-weight:800;color:#fff;letter-spacing:.3px}
+
+  /* CARD */
+  .card{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:12px;padding:20px 24px;margin-bottom:12px;color:var(--text)}
+  .card-title{font-size:12px;font-weight:700;color:var(--text-dim);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+  .card p,.card li{color:var(--text);font-size:14px;line-height:1.8}
+  .card strong{color:#fff;font-weight:700}
+
+  /* DECISION */
+  .decision-list{display:flex;flex-direction:column;gap:10px}
+  .decision-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+  .decision-icon{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px}
+  .decision-icon.ok{background:rgba(168,224,108,.2);color:var(--lime);border:1px solid rgba(168,224,108,.5)}
+  .decision-icon.pending{background:rgba(255,213,79,.2);color:var(--amber);border:1px solid rgba(255,213,79,.5)}
+  .decision-icon.action{background:rgba(107,163,255,.2);color:var(--blue);border:1px solid rgba(107,163,255,.5)}
+  .decision-text{font-size:14px;line-height:1.75;color:var(--text)}
+  .decision-text strong{color:#fff;font-weight:700}
+  .decision-who{font-size:12px;color:var(--text-dim);margin-top:4px}
+
+  /* ACTION TABLE */
+  .action-table{width:100%;border-collapse:collapse;font-size:14px}
+  .action-table th{background:var(--surface-2);padding:11px 16px;text-align:left;font-size:11px;color:var(--text-dim);letter-spacing:1.5px;font-weight:700;border-bottom:2px solid var(--border);text-transform:uppercase}
+  .action-table td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text)}
+  .action-table tr:last-child td{border-bottom:none}
+  .action-table tr:hover td{background:var(--surface-2)}
+  .who-tag{display:inline-block;background:rgba(77,208,196,.15);border:1px solid rgba(77,208,196,.3);border-radius:4px;padding:2px 10px;font-size:11px;color:var(--teal);font-weight:600}
+  .due-tag{display:inline-block;border-radius:4px;padding:2px 10px;font-size:11px;font-weight:700}
+  .due-urgent{background:rgba(255,107,107,.2);color:var(--coral);border:1px solid rgba(255,107,107,.4)}
+  .due-soon{background:rgba(255,213,79,.2);color:var(--amber);border:1px solid rgba(255,213,79,.4)}
+  .due-later{background:rgba(107,163,255,.2);color:var(--blue);border:1px solid rgba(107,163,255,.4)}
+
+  ul{padding-left:1.4em}
+  li{margin-bottom:8px;font-size:14px;color:var(--text)}
+  p{color:var(--text);font-size:14px;line-height:1.8}
+
+  .note{background:rgba(196,163,255,.08);border:1px solid rgba(196,163,255,.25);border-radius:10px;padding:14px 18px;font-size:13px;color:var(--purple);margin-top:14px}
+  .footer{text-align:center;font-size:12px;color:var(--text-dim);margin-top:52px;padding-top:22px;border-top:1px solid var(--border)}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body><div class="page">
+
+  <div class="header">
+    <div class="header-tag">商談記録</div>
+    <h1>花本建設 様 訪問商談</h1>
+    <div class="meta">📅 2026年4月20日 ｜ 📍 花本建設 様 事務所 ｜ 🏢 葬祭事業部・本社連携テーマ</div>
+  </div>
+
+  <div class="attendees">
+    <div class="att"><div class="att-dot" style="background:#4f8ef7;">A</div>自社 営業担当</div>
+    <div class="att"><div class="att-dot" style="background:#e8734a;">B</div>花本建設 担当者</div>
+  </div>
+
+  <div class="summary-row">
+    <div class="pill"><div class="pill-val">4</div><div class="pill-label">議題数</div></div>
+    <div class="pill"><div class="pill-val">3</div><div class="pill-label">課題確認</div></div>
+    <div class="pill"><div class="pill-val">2</div><div class="pill-label">決定事項</div></div>
+    <div class="pill"><div class="pill-val">4</div><div class="pill-label">ネクストアクション</div></div>
+  </div>
+
+  <!-- セクション1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-title">DX・AI導入の現状確認</div>
+    </div>
+    <div class="card">
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon ok"></div>
+          <div class="decision-text">司会者向け弔辞・読み上げ原稿をAIで自動生成する仕組みを<strong>来月より試験導入予定</strong>（項目入力→AI原稿生成）</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">AIによる自動読み上げは音質・自然さに課題があり、現状は<strong>人間による読み上げを継続</strong></div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">業務効率化は「相殺（葬祭）システム」の範囲にとどまっており、<strong>本社・全社レベルのDXは未着手</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-title">業務課題：件数増加と人員増の悪循環</div>
+    </div>
+    <div class="card">
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon action"></div>
+          <div class="decision-text">葬祭件数が10年前比で約<strong>700件増加（現在約2,500件/年）</strong>、それに伴い請求書・各種文書量が大幅増加</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon action"></div>
+          <div class="decision-text">経理人員が以前の2名→現在5〜6名に膨張。<strong>「売上は増えたが経理も増えた」</strong>状態で、接客・現場人員が不足</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon action"></div>
+          <div class="decision-text">働き方改革の影響で休日取得義務化（月10日以上）が加わり、<strong>慢性的な人手不足が深刻化</strong></div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">請求書処理・売上紐付けは現在も<strong>紙ベースの手作業</strong>が残存。デジタル化は全社課題のため葬祭部単独では対応困難</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-title">社内情報共有の現状（Lark・kintone活用状況）</div>
+    </div>
+    <div class="card">
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon ok"></div>
+          <div class="decision-text"><strong>Lark</strong>は営業部で導入済み。ペーパーレス化・役員含む本社理解も進んでいる。管理課も営業部に付随して活用中</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">葬祭部と営業部間の情報共有は現状<strong>「ホワイトボードをカメラ撮影して共有」</strong>というアナログ運用</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon ok"></div>
+          <div class="decision-text">コールセンターではkintoneで受電情報を共有する仕組みあり。<strong>Larkへの統合・権限管理も検討中</strong></div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon action"></div>
+          <div class="decision-text">情報の入力が複数拠点で二重・三重になっており、<strong>「一回のインプットで全体共有できる仕組み」</strong>が最大の要望</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div class="section-title">本社・社内決裁の紙廃止について</div>
+    </div>
+    <div class="card">
+      <div class="decision-list">
+        <div class="decision-item">
+          <div class="decision-icon ok"></div>
+          <div class="decision-text">本社（宮崎）への<strong>「社内資料の紙廃止・PDF化」を正式に要望中</strong>。印鑑承認フローも見直し対象</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">都城・小林など複数拠点間の社内承認フローが煩雑。<strong>社内保証書類はPDF・電子でも代替可能</strong>との認識で本社調整中</div>
+        </div>
+        <div class="decision-item">
+          <div class="decision-icon pending"></div>
+          <div class="decision-text">対外的な請求書と社内承認書類は分けて対応が必要。<strong>本社主導での全社統一ルール整備待ち</strong>の状態</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ネクストアクション -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">NA</div>
+      <div class="section-title">ネクストアクション</div>
+    </div>
+    <div class="card">
+      <table class="action-table">
+        <thead>
+          <tr>
+            <th>アクション</th>
+            <th>担当</th>
+            <th>期日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Larkを葬祭部〜営業部間の情報共有（ホワイトボード代替）に活用する提案資料を作成・提出</td>
+            <td><span class="who-tag">自社 営業担当</span></td>
+            <td><span class="due-tag due-urgent">2026-04-28</span></td>
+          </tr>
+          <tr>
+            <td>コールセンターkintone情報をLarkへ統合する連携方法を調査・提案</td>
+            <td><span class="who-tag">自社 営業担当</span></td>
+            <td><span class="due-tag due-soon">2026-05-09</span></td>
+          </tr>
+          <tr>
+            <td>社内承認フロー（印鑑→電子化）のLark活用事例・デモを用意し本社同席商談を打診</td>
+            <td><span class="who-tag">自社 営業担当</span></td>
+            <td><span class="due-tag due-soon">2026-05-09</span></td>
+          </tr>
+          <tr>
+            <td>AI原稿生成ツール（葬祭司会用）の試験導入結果をヒアリングし、追加提案を検討</td>
+            <td><span class="who-tag">花本建設 担当者</span></td>
+            <td><span class="due-tag due-later">2026-05-末</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">作成日: 2026-04-25</div>
+
+</div></body>
+</html>
