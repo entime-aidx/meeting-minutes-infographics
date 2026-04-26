@@ -3,30 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>業務効率化・DX推進に向けたシステム活用のご提案</title>
+<title>業務効率化・DX推進に向けたご提案</title>
 
 <style>
   :root {
-    --bg:#0f0f14;--surface:#1a1a24;--surface-2:#22222e;--border:#2a2a3a;
-    --text:#e8e6f0;--text-dim:#8888a0;
-    --gold:#f5c842;--teal:#4dd0c4;--coral:#ff6b6b;--blue:#6ba3ff;--green:#a8e06c;
+    --bg:#f5f6fa;--surface:#ffffff;--surface-2:#f0f1f6;--border:#e2e4ed;
+    --text:#1a1a2e;--text-dim:#6b6b8a;
+    --gold:#b8860b;--teal:#0ea5a0;--coral:#e84545;--blue:#3b6fd4;--green:#5aad2e;
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-  .page{max-width:900px;margin:0 auto;padding:48px 36px 80px}
-  .header{border-bottom:2px solid var(--gold);padding-bottom:24px;margin-bottom:40px}
-  .header-tag{display:inline-block;background:var(--gold);color:#000;font-size:10px;font-weight:800;letter-spacing:3px;padding:4px 12px;border-radius:3px;margin-bottom:12px}
-  .header h1{font-size:26px;font-weight:900;line-height:1.4}
-  .header .meta{font-size:13px;color:var(--text-dim);margin-top:8px}
-  h2{font-size:15px;font-weight:800;letter-spacing:2px;color:var(--gold);margin:36px 0 16px;display:flex;align-items:center;gap:8px}
-  h2::before{content:'';display:block;width:3px;height:16px;background:var(--gold);border-radius:2px}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px}
-  ul{padding-left:1.2em}
-  li{margin-bottom:6px}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.75;font-size:15px}
+  .page{max-width:900px;margin:0 auto;padding:52px 40px 80px}
+  .header{background:var(--surface);border-radius:16px;border-left:6px solid var(--gold);padding:32px 36px;margin-bottom:40px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+  .header-tag{display:inline-block;background:var(--gold);color:#fff;font-size:10px;font-weight:900;letter-spacing:3px;padding:4px 14px;border-radius:3px;margin-bottom:14px}
+  .header h1{font-size:26px;font-weight:900;line-height:1.4;color:var(--text)}
+  .header .meta{font-size:13px;color:var(--text-dim);margin-top:10px}
+  h2{font-size:14px;font-weight:800;letter-spacing:2px;color:var(--gold);margin:36px 0 16px;display:flex;align-items:center;gap:10px;text-transform:uppercase}
+  h2::before{content:'';display:block;width:4px;height:18px;background:var(--gold);border-radius:2px;flex-shrink:0}
+  .card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:12px;padding:20px 24px;margin-bottom:12px;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+  .card p,.card li{color:var(--text);font-size:14px;line-height:1.85}
+  ul{padding-left:1.4em}
+  li{margin-bottom:8px;color:var(--text);font-size:14px}
   .highlight{color:var(--teal);font-weight:700}
-  .action-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+  .action-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border)}
   .action-item:last-child{border-bottom:none}
-  .badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;background:var(--teal);color:#000}
+  .badge{display:inline-block;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;background:var(--teal);color:#fff}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 
@@ -35,64 +36,64 @@
 
   <!-- 1. ヘッダー -->
   <div class="header">
-    <div class="header-tag">御提案書</div>
-    <h1>業務効率化・DX推進に向けた<br>システム活用のご提案</h1>
+    <div class="header-tag">ご提案書</div>
+    <h1>業務効率化・DX推進に向けたご提案</h1>
     <p>提案先：葬祭会社 御中　／　提案日：2026年4月20日</p>
   </div>
 
   <!-- 2. 顧客の課題 -->
   <h2>🎯 顧客の課題</h2>
   <div class="card">
-    <p><span class="badge">課題①</span> <strong>情報伝達・社内決裁の非効率</strong><br>
-    本社・各拠点間の情報伝達が紙・FAX・ホワイトボード撮影等のアナログ手段に依存しており、承認フローに時間とコストがかかっている。</p>
+    <p><span class="badge">課題①</span> <strong>件数増加に伴う事務・経理負担の増大</strong><br>
+    葬祭件数が10年前比で約700件増加（現在約2,500件/年）。処理量増加に対し、経理スタッフが2名→5〜6名へ増員を余儀なくされており、コスト増が続いている。</p>
   </div>
   <div class="card">
-    <p><span class="badge">課題②</span> <strong>請求書処理など経理業務の増大</strong><br>
-    葬祭件数の増加（10年で約700件増、現在約2,500件／年）に伴い、紙の請求書処理・売上との手作業紐付けが急増。経理スタッフが10年前の約2名から現在約5〜6名に膨らんでいる。</p>
+    <p><span class="badge">課題②</span> <strong>紙・手作業による情報伝達・決裁フローの非効率</strong><br>
+    請求書は紙で受領後に手作業で売上と紐付け。社内決裁・社内保証も印鑑ベースの紙運用が残っており、本社（宮崎）との間でFAX・郵送が発生している。</p>
   </div>
   <div class="card">
-    <p><span class="badge">課題③</span> <strong>人手不足と働き方改革への対応</strong><br>
-    接客・現場スタッフが不足する一方、事務工数は増加の一途。休暇取得義務化への対応も重なり、業務量と人員のバランスが崩れている。</p>
+    <p><span class="badge">課題③</span> <strong>拠点間・部門間の情報共有が属人的・アナログ</strong><br>
+    葬祭オペレーション部門との情報共有はホワイトボードをカメラ撮影して共有するなど暫定対応。コールセンター受付情報のリアルタイム共有も未整備。</p>
   </div>
   <div class="card">
-    <p><span class="badge">課題④</span> <strong>社内情報共有ツールの未整備</strong><br>
-    コールセンター受電情報やオペレーション部との連携が場当たり的（カメラ共有・kintone部分活用など）にとどまり、情報が一元管理されていない。権限管理も不完全。</p>
-  </div>
-  <div class="card">
-    <p><span class="badge">課題⑤</span> <strong>本社起点の意思決定による推進の遅さ</strong><br>
-    DX・デジタル化の判断権限が本社に集中しており、現場単独での改善が難しい構造になっている。</p>
+    <p><span class="badge">課題④</span> <strong>働き方改革への対応と人手不足の深刻化</strong><br>
+    休日取得義務化・残業規制により実働時間が減少する一方、件数は増加。接客・現場人員が不足しており、事務効率化による人員再配置が急務。</p>
   </div>
 
   <!-- 3. 提案内容 -->
   <h2>💡 提案内容</h2>
   <div class="card">
-    <p><span class="badge">提案①</span> <strong>社内決裁・文書管理のペーパーレス化</strong><br>
-    現在紙・印鑑で運用している社内稟議・承認フローをデジタルワークフローに置き換えます。Lark（ラーク）等のプラットフォームを活用し、本社〜各拠点間の決裁をクラウド上で完結させます。</p>
-    <p class="highlight">➡ 営業部での活用実績をベースに、葬祭部門・管理部門へ横展開が可能です。</p>
+    <p><span class="badge">提案①</span> <strong>社内決裁・社内保証フローのデジタル化（ペーパーレス化）</strong><br>
+    現在紙・印鑑で運用している社内承認フローをPDF＋電子承認（Lark／kintone等）へ移行。都城・小林など各拠点から宮崎本社への書類送付をゼロにし、決裁スピードを向上させます。<br>
+    <span class="highlight">まずは社内文書（対外的な請求書は除く）から段階的に移行することで、リスクを抑えた導入が可能です。</span></p>
   </div>
   <div class="card">
-    <p><span class="badge">提案②</span> <strong>請求書受領・経理業務のデジタル化</strong><br>
-    紙で受領している仕入れ請求書を電子化し、既存の葬祭システム（売上・見積）との自動連携を構築します。手作業による紐付け作業を大幅に削減します。</p>
-    <p class="highlight">➡ 電子帳簿保存法への対応も同時に実現できます。</p>
+    <p><span class="badge">提案②</span> <strong>請求書受領・売上紐付け作業の自動化</strong><br>
+    紙で届く請求書をスキャン＋OCRで電子化し、既存の葬祭システムの売上データと自動マッチング。手作業での突合作業を大幅削減し、経理人員の適正化を図ります。</p>
   </div>
   <div class="card">
-    <p><span class="badge">提案③</span> <strong>オペレーション情報のリアルタイム共有基盤の整備</strong><br>
-    コールセンター受電情報・施行件数・スタッフ配置等をkintoneまたはLarkのデータベース機能で一元管理し、営業部・オペレーション部・管理部が同じ情報をリアルタイムで参照できる環境を構築します。権限設定により情報セキュリティも担保します。</p>
+    <p><span class="badge">提案③</span> <strong>コールセンター受付情報のkintone／Lark連携による即時共有</strong><br>
+    コールセンターへの受付情報（葬儀依頼内容・時刻等）を入力と同時にオペレーション部門・現場担当者へ自動通知。現状のホワイトボード＋カメラ共有を正式なデジタルフローに置き換えます。権限設定により情報セキュリティも担保します。</p>
   </div>
   <div class="card">
-    <p><span class="badge">提案④</span> <strong>AI活用による司会原稿作成支援（既導入予定の拡張）</strong><br>
-    来月導入予定のAI司会原稿作成ツールと連携し、入力項目の標準化・他スタッフへの展開・品質管理の仕組みを整備します。将来的な読み上げ自動化への段階的移行もご支援します。</p>
+    <p><span class="badge">提案④</span> <strong>AI活用による司会原稿自動生成の本格展開</strong><br>
+    現在来月から試験導入予定のAI司会原稿生成ツールを、運用ナレッジの蓄積・品質改善の仕組みとセットで整備。将来的には音声読み上げ（TTS）との連携も視野に入れ、司会者の準備工数をさらに削減します。</p>
   </div>
 
   <!-- 4. 期待される効果 -->
   <h2>✨ 期待される効果</h2>
   <div class="card">
     <p>
-      <span class="badge">効果①</span> <strong>経理・事務工数の削減</strong>　請求書処理・転記作業の自動化により、経理スタッフの増員を抑制し、現場接客人員への資源シフトが可能になります。<br><br>
-      <span class="badge">効果②</span> <strong>決裁スピードの向上</strong>　本社〜拠点間の書類往復がなくなり、承認リードタイムを大幅に短縮できます。<br><br>
-      <span class="badge">効果③</span> <strong>情報伝達ミス・クレームリスクの低減</strong>　オペレーション情報の一元化・リアルタイム共有により、伝達ミスに起因するクレームを予防します。<br><br>
-      <span class="badge">効果④</span> <strong>働き方改革への対応</strong>　業務のデジタル化により一人あたりの処理件数が向上し、休暇取得・残業削減を実現しやすくなります。<br><br>
-      <span class="badge">効果⑤</span> <strong>件数増加への持続的対応</strong>　葬祭件数が今後さらに増加しても、デジタル基盤があれば人員増なしで対応できる体制を構築できます。
+      <span class="highlight">🔹 経理・事務スタッフの増員抑制</span><br>
+      件数増加に比例していたスタッフ増員サイクルを断ち切り、現行体制での処理件数拡大が見込めます。<br><br>
+      <span class="highlight">🔹 決裁・情報伝達のリードタイム短縮</span><br>
+      拠点間の紙書類往来がなくなり、当日〜翌日対応が可能になります。<br><br>
+      <span class="highlight">🔹 現場人員への注力</span><br>
+      事務工数削減により、不足している接客・現場スタッフへ人員をシフトしやすくなります。<br><br>
+      <span class="highlight">🔹 働き方改革への対応</span><br>
+      デジタル化により残業・休日出勤を構造的に削減し、法令遵守と業務継続を両立します。<br><br>
+      <span class="highlight">🔹 クレーム対応・文書管理の品質向上</span><br>
+      高頻度で発生するクレーム対応文書や各種記録をデジタルで一元管理し、対応漏れ・記録紛失を防止します。
     </p>
   </div>
 
@@ -100,35 +101,34 @@
   <h2>💰 概算費用・スケジュール</h2>
   <div class="card">
     <p><span class="badge">費用</span> 別途ご提案<br>
-    現在ご利用中のシステム（葬祭システム・kintone・Lark等）の状況を詳細にヒアリングのうえ、最適な構成と費用をお見積もりします。</p>
+    <small>導入範囲・既存システム（葬祭システム・kintone等）との連携要件を確認のうえ、個別にお見積りいたします。</small></p>
     <br>
-    <p><span class="badge">想定スケジュール（目安）</span></p>
+    <p><span class="badge">スケジュール（想定）</span></p>
     <p>
-      🔹 <strong>フェーズ１（1〜2ヶ月目）</strong>：現状業務の詳細ヒアリング・システム要件定義・本社との合意形成<br>
-      🔹 <strong>フェーズ２（3〜4ヶ月目）</strong>：社内決裁ワークフロー・情報共有基盤の導入・テスト運用<br>
-      🔹 <strong>フェーズ３（5〜6ヶ月目）</strong>：請求書デジタル化・既存システム連携・全拠点展開<br>
-      🔹 <strong>フェーズ４（7ヶ月目以降）</strong>：効果測定・運用定着支援・AI活用拡張
+      <strong>Phase 1（〜3ヶ月）</strong>　社内決裁フローのペーパーレス化・コールセンター情報共有のデジタル化<br>
+      <strong>Phase 2（3〜6ヶ月）</strong>　請求書OCR＋売上自動紐付けの構築・運用開始<br>
+      <strong>Phase 3（6ヶ月〜）</strong>　AI司会原稿生成の本格展開・全拠点への横展開<br>
     </p>
-    <p class="highlight">※ 本社承認プロセスを考慮し、フェーズ１での合意形成を最優先とします。</p>
+    <p><small>※本社（宮崎）との調整状況・既存システムの仕様により変動します。</small></p>
   </div>
 
   <!-- 6. 次のステップ -->
   <h2>🚀 次のステップ</h2>
   <div class="action-item">
-    <strong>① 現状業務の詳細ヒアリング日程の調整</strong><br>
-    経理・オペレーション・コールセンター各担当者を交えたヒアリングを設定します。
+    <strong>① 業務フロー・現行システムのヒアリング実施</strong><br>
+    葬祭システム・kintone・Larkの利用状況と、請求書・決裁フローの詳細を確認します。経理担当者・オペレーション担当者を交えたヒアリングをご調整ください。
   </div>
   <div class="action-item">
-    <strong>② 本社へのご説明・合意形成のサポート</strong><br>
-    提案資料・費用対効果資料をご提供し、本社への社内説明をご支援します。
+    <strong>② 本社（宮崎）への情報共有・合意形成</strong><br>
+    社内決裁ペーパーレス化は本社承認が必要なため、本社キーパーソンへの説明機会をご検討いただけますと幸いです。必要に応じて弊社からの資料提供・同席も対応いたします。
   </div>
   <div class="action-item">
-    <strong>③ 既存システム（葬祭システム・kintone・Lark）の連携可否確認</strong><br>
-    現行ツールのAPI・データ構造を確認し、最適な統合方式を検討します。
+    <strong>③ 優先テーマの絞り込みと概算見積もり提示</strong><br>
+    ヒアリング内容をもとに、効果・実現性の観点から着手すべきテーマをご提案し、概算費用をご提示します。
   </div>
   <div class="action-item">
-    <strong>④ 概算見積もり・フェーズ別ロードマップのご提示</strong><br>
-    ヒアリング内容をもとに、具体的な費用・スケジュールをご提案します。
+    <strong>④ AI司会原稿生成ツールの試験運用状況の共有</strong><br>
+    来月開始予定のAIツールについて、運用開始後の課題や改善点をご共有いただき、次フェーズの展開方針を一緒に検討します。
   </div>
 
 </div>
