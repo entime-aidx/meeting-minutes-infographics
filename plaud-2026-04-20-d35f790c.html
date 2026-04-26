@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>葬祭会社 DX推進・業務効率化 ヒアリング</title>
+<title>葬祭会社 ヒアリング・商談記録</title>
 
 <style>
   :root {
@@ -80,341 +80,161 @@
 </head>
 <body><div class="page">
 
-  <div class="header">
-    <div class="header-tag">商談記録</div>
-    <h1>葬祭会社 DX推進・業務効率化 ヒアリング</h1>
-    <div class="meta">📅 2026年4月20日　　📍 顧客先（葬祭会社）</div>
-  </div>
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif; background: #f0f2f7; color: #2d3142; }
-    .page { max-width: 900px; margin: 0 auto; padding: 32px 20px 48px; }
-
-    /* Header */
-    .header { background: linear-gradient(135deg, #1a2a4a 0%, #2e4a7a 100%); border-radius: 16px; padding: 32px 36px; color: #fff; margin-bottom: 24px; }
-    .header-tag { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 14px; margin-bottom: 14px; color: #c8d8f8; }
-    .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
-    .meta { font-size: 13px; color: #a8bfe8; letter-spacing: 0.3px; }
-
-    /* Attendees */
-    .attendees { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
-    .att { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 40px; padding: 8px 18px 8px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); font-size: 13px; font-weight: 500; }
-    .att-dot { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; }
-
-    /* Summary Pills */
-    .summary-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
-    .pill { background: #fff; border-radius: 12px; padding: 16px 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); display: flex; flex-direction: column; align-items: center; min-width: 120px; flex: 1; border-top: 4px solid #2e4a7a; }
-    .pill-val { font-size: 28px; font-weight: 800; color: #2e4a7a; line-height: 1; }
-    .pill-label { font-size: 11px; color: #8892aa; margin-top: 6px; letter-spacing: 0.5px; text-align: center; }
-
-    /* Section */
-    .section { margin-bottom: 24px; }
-    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-    .section-num { background: #2e4a7a; color: #fff; border-radius: 8px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
-    .section-title { font-size: 15px; font-weight: 700; color: #1a2a4a; letter-spacing: 0.2px; }
-    .card { background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
-
-    /* Decision List */
-    .decision-list { display: flex; flex-direction: column; gap: 10px; }
-    .decision-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 14px; border-radius: 8px; background: #f7f9fc; }
-    .decision-icon { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
-    .decision-icon.ok { background: #e6f9f0; color: #1db36e; }
-    .decision-icon.pending { background: #fff7e6; color: #f59e0b; }
-    .decision-icon.action { background: #eef2ff; color: #4f6ef7; }
-    .decision-text { font-size: 13px; line-height: 1.6; color: #2d3142; }
-    .decision-text strong { color: #1a2a4a; }
-
-    /* Quote block */
-    .quote { border-left: 3px solid #c8d4f0; background: #f3f6fc; border-radius: 0 8px 8px 0; padding: 10px 16px; margin-top: 10px; font-size: 12.5px; color: #5a6485; line-height: 1.7; font-style: italic; }
-
-    /* Keyword tags */
-    .kw { display: inline-block; background: #eef2ff; color: #4f6ef7; border-radius: 20px; font-size: 11px; padding: 2px 10px; margin: 2px; font-weight: 600; }
-    .kw.red { background: #ffeef0; color: #e05570; }
-    .kw.green { background: #e6f9f0; color: #1db36e; }
-    .kw.orange { background: #fff7e6; color: #d97706; }
-
-    /* Action Table */
-    .action-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    .action-table thead tr { background: #1a2a4a; color: #fff; }
-    .action-table thead th { padding: 10px 14px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
-    .action-table thead th:first-child { border-radius: 8px 0 0 0; }
-    .action-table thead th:last-child { border-radius: 0 8px 0 0; }
-    .action-table tbody tr { border-bottom: 1px solid #eef0f5; }
-    .action-table tbody tr:last-child { border-bottom: none; }
-    .action-table tbody td { padding: 11px 14px; vertical-align: top; line-height: 1.5; color: #2d3142; }
-    .action-table tbody tr:nth-child(even) { background: #f7f9fc; }
-    .who-tag { display: inline-block; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 12px; }
-    .due-tag { display: inline-block; border-radius: 6px; font-size: 11px; font-weight: 600; padding: 3px 10px; }
-    .due-urgent { background: #ffeef0; color: #e05570; }
-    .due-soon { background: #fff7e6; color: #d97706; }
-    .due-later { background: #e6f9f0; color: #1db36e; }
-
-    /* Footer */
-    .footer { text-align: center; font-size: 12px; color: #aab0c0; margin-top: 36px; padding-top: 20px; border-top: 1px solid #e4e8f0; }
-  </style>
-
-  <!-- Attendees -->
-  <div class="attendees">
-    <div class="att">
-      <div class="att-dot" style="background:#2e4a7a;">A</div>
-      <span>話者A（葬祭会社 担当者）</span>
-    </div>
-    <div class="att">
-      <div class="att-dot" style="background:#1db36e;">B</div>
-      <span>話者B（Lark／DXベンダー 営業）</span>
+  <!-- ========== HEADER ========== -->
+  <div class="header" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); border-radius: 14px; padding: 32px 36px 28px; margin-bottom: 28px; position: relative; overflow: hidden;">
+    <div style="position:absolute;top:-30px;right:-30px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,0.04);"></div>
+    <div style="position:absolute;bottom:-40px;right:60px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.03);"></div>
+    <div class="header-tag" style="display:inline-block;background:rgba(99,179,237,0.18);color:#90cdf4;font-size:11px;font-weight:700;letter-spacing:2px;padding:4px 14px;border-radius:20px;margin-bottom:14px;text-transform:uppercase;">Sales Meeting</div>
+    <h1 style="color:#fff;font-size:24px;font-weight:800;margin:0 0 12px;line-height:1.3;">葬祭会社 ヒアリング・商談記録</h1>
+    <div class="meta" style="color:#a0aec0;font-size:13px;display:flex;gap:20px;flex-wrap:wrap;">
+      <span>📅 2026年4月20日（月）</span>
+      <span>🏢 葬祭会社（先方オフィス）</span>
+      <span>🕐 商談・ヒアリング</span>
     </div>
   </div>
 
-  <!-- Summary Pills -->
-  <div class="summary-row">
-    <div class="pill">
-      <div class="pill-val">5</div>
-      <div class="pill-label">議題トピック</div>
-    </div>
-    <div class="pill">
-      <div class="pill-val">3</div>
-      <div class="pill-label">課題・ペイン確認</div>
-    </div>
-    <div class="pill">
-      <div class="pill-val">4</div>
-      <div class="pill-label">ネクストアクション</div>
-    </div>
-    <div class="pill">
-      <div class="pill-val">2</div>
-      <div class="pill-label">検討中ツール</div>
-    </div>
-  </div>
-
-  <!-- Section 1 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">1</div>
-      <div class="section-title">導入背景・現状のDX取り組み</div>
-    </div>
-    <div class="card">
-      <div class="decision-list">
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>AI活用（司会原稿自動生成）を来月から試験導入予定。</strong><br>
-            故人ごとの情報を項目入力するとAIが司会原稿を生成。司会者の負荷軽減が目的。
-          </div>
-        </div>
-        <div class="decision-item">
-          <div class="decision-icon pending">⏳</div>
-          <div class="decision-text">
-            <strong>AI音声読み上げは現状「まだ不自然」として人間読み上げを継続。</strong><br>
-            将来的な音声合成活用は検討段階。
-          </div>
-        </div>
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>営業部・管理課ではすでにLarkを活用中。</strong>役員含め本社も理解が進んでいる。
-          </div>
-        </div>
+  <!-- ========== ATTENDEES ========== -->
+  <div class="attendees" style="display:flex;gap:14px;margin-bottom:26px;flex-wrap:wrap;">
+    <div class="att" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:40px;padding:8px 18px 8px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+      <div class="att-dot" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;">A</div>
+      <div>
+        <div style="font-weight:700;font-size:13px;color:#2d3748;">話者A</div>
+        <div style="font-size:11px;color:#718096;">自社側（営業担当）</div>
       </div>
-      <div class="quote">
-        「DXなのかどうかあれですけど、まあちょっと司会者さんの負荷を下げようかなそうですね」<br>
-        「業務効率化っていうところは、もう葬祭だけじゃない部分なのかなっていうのはね」
-      </div>
-      <div style="margin-top:12px;">
-        <span class="kw green">AI原稿生成</span>
-        <span class="kw">Lark導入済</span>
-        <span class="kw orange">音声読み上げ検討中</span>
+    </div>
+    <div class="att" style="display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:40px;padding:8px 18px 8px 8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+      <div class="att-dot" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f093fb,#f5576c);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;">B</div>
+      <div>
+        <div style="font-weight:700;font-size:13px;color:#2d3748;">話者B</div>
+        <div style="font-size:11px;color:#718096;">顧客側（葬祭会社 担当者）</div>
       </div>
     </div>
   </div>
 
-  <!-- Section 2 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">2</div>
-      <div class="section-title">最大の課題：本社・情報伝達・決裁フロー</div>
+  <!-- ========== SUMMARY PILLS ========== -->
+  <div class="summary-row" style="display:flex;gap:12px;margin-bottom:30px;flex-wrap:wrap;">
+    <div class="pill" style="background:linear-gradient(135deg,#667eea,#764ba2);border-radius:12px;padding:14px 22px;color:#fff;min-width:110px;box-shadow:0 4px 12px rgba(102,126,234,0.35);">
+      <div class="pill-val" style="font-size:28px;font-weight:800;line-height:1;">4</div>
+      <div class="pill-label" style="font-size:11px;opacity:0.85;margin-top:2px;">議題数</div>
     </div>
-    <div class="card">
-      <div class="decision-list">
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>課題の根幹は「本社」との情報伝達・決裁・文書処理。</strong><br>
-            宮崎本社との紙ベースの社内承認（印鑑・紙回覧）が残っており、各拠点（都城・小林 等）で非効率が発生している。
-          </div>
+    <div class="pill" style="background:linear-gradient(135deg,#11998e,#38ef7d);border-radius:12px;padding:14px 22px;color:#fff;min-width:110px;box-shadow:0 4px 12px rgba(17,153,142,0.35);">
+      <div class="pill-val" style="font-size:28px;font-weight:800;line-height:1;">3</div>
+      <div class="pill-label" style="font-size:11px;opacity:0.85;margin-top:2px;">確認済み課題</div>
+    </div>
+    <div class="pill" style="background:linear-gradient(135deg,#f093fb,#f5576c);border-radius:12px;padding:14px 22px;color:#fff;min-width:110px;box-shadow:0 4px 12px rgba(245,87,108,0.35);">
+      <div class="pill-val" style="font-size:28px;font-weight:800;line-height:1;">4</div>
+      <div class="pill-label" style="font-size:11px;opacity:0.85;margin-top:2px;">アクション</div>
+    </div>
+    <div class="pill" style="background:linear-gradient(135deg,#f7971e,#ffd200);border-radius:12px;padding:14px 22px;color:#fff;min-width:110px;box-shadow:0 4px 12px rgba(247,151,30,0.35);">
+      <div class="pill-val" style="font-size:28px;font-weight:800;line-height:1;">2500</div>
+      <div class="pill-label" style="font-size:11px;opacity:0.85;margin-top:2px;">年間葬儀件数</div>
+    </div>
+  </div>
+
+  <!-- ========== SECTION 1 ========== -->
+  <div class="section" style="margin-bottom:22px;">
+    <div class="section-header" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <div class="section-num" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+      <div class="section-title" style="font-size:16px;font-weight:700;color:#2d3748;">DX・AI導入の現状</div>
+    </div>
+    <div class="card" style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+      <p style="color:#4a5568;font-size:13.5px;line-height:1.75;margin:0 0 14px;">司会者が読み上げる<strong>お悔やみ原稿（弔辞）の作成にAIを導入予定</strong>。項目入力でAIが原稿を自動生成する仕組みを<strong>来月より運用開始</strong>。一方、原稿の音声読み上げは品質面から引き続き人間が担当。</p>
+      <div class="decision-list" style="display:flex;flex-direction:column;gap:8px;">
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon ok" style="width:22px;height:22px;border-radius:50%;background:#c6f6d5;color:#276749;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">AI原稿生成ツールを来月より導入開始（司会原稿の効率化）</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>葬祭は件数が多く、クレーム・文書発生頻度が他部門（婚礼・営業）と比較して格段に多い。</strong><br>
-            10年前比で約700件増、現在年間約2,500件規模。
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon pending" style="width:22px;height:22px;border-radius:50%;background:#fefcbf;color:#744210;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">⏳</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">音声読み上げは品質課題があり、現状は人間対応を継続検討</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon pending">⏳</div>
-          <div class="decision-text">
-            <strong>本社へ「社内文書の紙廃止・PDF化」を要請済み。</strong>本社側も問題意識はあるが、全社対応のため時間を要している。
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon pending" style="width:22px;height:22px;border-radius:50%;background:#fefcbf;color:#744210;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">⏳</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">全体的な業務効率化DXはまだ着手途上。担当者自身も「勉強不足」と認識</div>
         </div>
-      </div>
-      <div class="quote">
-        「全部もうやっぱり足かせになっているのは、やっぱうちもそういう情報伝達とか決済事とかですね」<br>
-        「本社にお願いしてるのは、その内部資料を紙やめてくれって話をしたんですよ」
-      </div>
-      <div style="margin-top:12px;">
-        <span class="kw red">紙ベース承認</span>
-        <span class="kw red">本社依存</span>
-        <span class="kw orange">社内PDF化要請中</span>
       </div>
     </div>
   </div>
 
-  <!-- Section 3 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">3</div>
-      <div class="section-title">経理・人員増加の課題</div>
+  <!-- ========== SECTION 2 ========== -->
+  <div class="section" style="margin-bottom:22px;">
+    <div class="section-header" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <div class="section-num" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+      <div class="section-title" style="font-size:16px;font-weight:700;color:#2d3748;">経営・業務上の課題（本部ボトルネック）</div>
     </div>
-    <div class="card">
-      <div class="decision-list">
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>売上増加に伴い経理人員が10〜20年前の2名から現在5〜6名に膨張。</strong><br>
-            本来は接客・現場人員を増やすべきなのに、事務・経理が増えてしまっている構造的問題。
-          </div>
+    <div class="card" style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+      <p style="color:#4a5568;font-size:13.5px;line-height:1.75;margin:0 0 14px;">最大の課題は<strong>本社（宮崎）への情報集中・決裁フローの非効率</strong>。葬儀件数が10年前比＋700件（約2500件/年）に増加したにもかかわらず、業務プロセスは旧来のまま。経理人員が2名→5〜6名に膨れ上がる一方、接客・現場人員は不足。</p>
+      <div class="decision-list" style="display:flex;flex-direction:column;gap:8px;">
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon action" style="width:22px;height:22px;border-radius:50%;background:#bee3f8;color:#2a4365;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">!</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">情報伝達・決裁・文書管理が本社集中で現場のボトルネックになっている</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>請求書は対外的に紙で届き、手作業で既存葬祭システムの売上と紐づけ処理。</strong><br>
-            全社レベルの問題であり葬祭部門単独では解決が難しい。
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon action" style="width:22px;height:22px;border-radius:50%;background:#bee3f8;color:#2a4365;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">!</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">件数増加に伴い請求書・クレーム対応文書が急増。紙ベースで手作業処理が続く</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>働き方改革により休日取得義務が増加 → 実働人員不足が深刻化。</strong><br>
-            以前は月2〜3日休みが常態化していたが、現在は10日取得が必要。
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon action" style="width:22px;height:22px;border-radius:50%;background:#bee3f8;color:#2a4365;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">!</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">働き方改革対応で休日取得を強化→現場人員不足がさらに深刻化</div>
         </div>
-      </div>
-      <div class="quote">
-        「売上増えて経理増えてたって感じで、私がまだ10年20年前の時2人ぐらいでやってたのが今6人ぐらい…増えすぎよって話」
-      </div>
-      <div style="margin-top:12px;">
-        <span class="kw red">経理人員膨張</span>
-        <span class="kw red">手作業の請求処理</span>
-        <span class="kw orange">働き方改革対応</span>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon ok" style="width:22px;height:22px;border-radius:50%;background:#c6f6d5;color:#276749;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">本社もDX推進の必要性を認識しており、対応に向けて動き始めている</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Section 4 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">4</div>
-      <div class="section-title">現在の情報共有手段と kintone / Lark 活用状況</div>
+  <!-- ========== SECTION 3 ========== -->
+  <div class="section" style="margin-bottom:22px;">
+    <div class="section-header" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <div class="section-num" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#11998e,#38ef7d);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+      <div class="section-title" style="font-size:16px;font-weight:700;color:#2d3748;">現行のデジタル活用状況（Lark・Kintone・カメラ共有）</div>
     </div>
-    <div class="card">
-      <div class="decision-list">
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>葬祭オペレーション部門では「ホワイトボード＋カメラ共有」で情報連携。</strong><br>
-            入力の都度ファックス等が発生しないよう、ホワイトボードをカメラで撮影・共有する運用を採用。権限管理も実施済み。
-          </div>
+    <div class="card" style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+      <p style="color:#4a5568;font-size:13.5px;line-height:1.75;margin:0 0 14px;">営業部ではLarkを導入済み。管理課も活用し始め、決裁・内部資料の紙削減が進行中。操作部（葬儀施行部）との情報連携は、現在ホワイトボード＋カメラ共有という簡易手法で対応。コールセンターではKintoneで受注情報を共有しているが、葬儀現場との連携には課題が残る。</p>
+      <div class="decision-list" style="display:flex;flex-direction:column;gap:8px;">
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon ok" style="width:22px;height:22px;border-radius:50%;background:#c6f6d5;color:#276749;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">営業部・管理課：Lark導入済み。役員含め活用が拡大している</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon pending">⏳</div>
-          <div class="decision-text">
-            <strong>コールセンターでkintone活用中（入電情報の共有）。</strong><br>
-            オペレーション部門との情報連携をkintoneに統合できないか検討中だが、二重入力の問題が障壁。
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon ok" style="width:22px;height:22px;border-radius:50%;background:#c6f6d5;color:#276749;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">コールセンター：Kintoneで受注情報を共有運用中</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon action">➜</div>
-          <div class="decision-text">
-            <strong>営業部・管理課はLarkを活用。決裁・内部資料共有に利用拡大を検討中。</strong>
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon pending" style="width:22px;height:22px;border-radius:50%;background:#fefcbf;color:#744210;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">⏳</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">操作部（施行部）との情報共有はホワイトボード＋カメラ共有の暫定運用</div>
         </div>
-      </div>
-      <div class="quote">
-        「インプットが一回、その別でまた作ってはおくというか、それが一番大変なんですね」<br>
-        「とにかく二重入力が一番の課題」
-      </div>
-      <div style="margin-top:12px;">
-        <span class="kw">kintone（コールセンター）</span>
-        <span class="kw green">Lark（営業・管理課）</span>
-        <span class="kw orange">WB＋カメラ（葬祭現場）</span>
-        <span class="kw red">二重入力問題</span>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon pending" style="width:22px;height:22px;border-radius:50%;background:#fefcbf;color:#744210;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">⏳</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">コールセンター受注情報のLarkへの統合・一元化は検討段階</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Section 5 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">5</div>
-      <div class="section-title">講演会（委員講演）の振り返り・他社事例</div>
+  <!-- ========== SECTION 4 ========== -->
+  <div class="section" style="margin-bottom:22px;">
+    <div class="section-header" style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+      <div class="section-num" style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#f7971e,#ffd200);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+      <div class="section-title" style="font-size:16px;font-weight:700;color:#2d3748;">社内稟議・内部文書のペーパーレス化</div>
     </div>
-    <div class="card">
-      <div class="decision-list">
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>花本建設（20名規模）のkintone→Lark乗り換え事例が特に参考になった。</strong><br>
-            社長のルール規定のデジタル化・スケジュール管理の事例が自社課題と重なると感じた。
-          </div>
+    <div class="card" style="background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:20px 24px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+      <p style="color:#4a5568;font-size:13.5px;line-height:1.75;margin:0 0 14px;">対外的な請求書はシステム化されているが、<strong>社内稟議・承認文書は依然として紙＋印鑑運用</strong>。本社（宮崎）や複数拠点（都城・小林等）をまたぐ決裁フローで非効率が生じている。担当者から本社へ<strong>「社内文書をPDFに切り替えるよう要請済み」</strong>。</p>
+      <div class="decision-list" style="display:flex;flex-direction:column;gap:8px;">
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon ok" style="width:22px;height:22px;border-radius:50%;background:#c6f6d5;color:#276749;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">✓</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">本社へ社内稟議文書のPDF化・ペーパーレス化を正式に要請済み</div>
         </div>
-        <div class="decision-item">
-          <div class="decision-icon ok">✔</div>
-          <div class="decision-text">
-            <strong>観光協会など他業種との共通課題（営業フロー等）も確認できた。</strong>
-          </div>
+        <div class="decision-item" style="display:flex;align-items:flex-start;gap:10px;">
+          <div class="decision-icon pending" style="width:22px;height:22px;border-radius:50%;background:#fefcbf;color:#744210;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">⏳</div>
+          <div class="decision-text" style="color:#2d3748;font-size:13px;">本社側の意思決定待ち。拠点をまたぐ承認フロー整備が必要</div>
         </div>
-      </div>
-      <div class="quote">
-        「20人ぐらいの会社でも結構な売り上げあられるのかなっていうすごい勉強になった」
       </div>
     </div>
   </div>
 
-  <!-- Next Actions -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-num">✦</div>
-      <div class="section-title">ネクストアクション</div>
-    </div>
-    <div class="card" style="padding:0; overflow:hidden;">
-      <table class="action-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>アクション内容</th>
-            <th>担当</th>
-            <th>期限目安</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>AI司会原稿生成ツールの来月試験導入を推進・効果測定の準備</td>
-            <td><span class="who-tag" style="background:#e8eef8;color:#2e4a7a;">話者A（社内）</span></td>
-            <td><span class="due-tag due-urgent">2026-05 試験開始</span></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>本社への「社内文書PDF化・紙廃止」要請のフォローアップ・進捗確認</td>
-            <td><span class="who-tag" style="background:#e8eef8;color:#2e4a7a;">話者A（社内）</span></td>
-            <td><span class="due-tag due-soon">近日中</span></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>コールセンター入電情報とオペレーション部門のkintone統合可否を検討・提案</td>
-            <td><span class="who-tag" style="background:#e2f5ec;color:#1db36e;">話者B（ベンダー）</span></td>
-            <td><span class="due-tag due-soon">次回商談まで</span></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Larkの社内承認・文</body>
+  <!-- ========== NEXT ACTIONS ========== -->
+  <div class="</body>
 </html>
