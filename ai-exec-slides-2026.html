@@ -12,100 +12,67 @@
   --teal:#0a9e99;--tl:rgba(10,158,153,.1);--tb:rgba(10,158,153,.3);
   --coral:#e03030;--cl:rgba(224,48,48,.08);--cb:rgba(224,48,48,.3);
   --blue:#2d62c8;--bl:rgba(45,98,200,.08);
-  --gold:#b07a00;--gl:rgba(176,122,0,.08);
+  --gold:#b07a00;--gl:rgba(176,122,0,.1);
   --green:#1e8a52;--grl:rgba(30,138,82,.08);
   --amber:#c07800;--al:rgba(192,120,0,.1);
-  --purple:#6d2ed4;
+  --purple:#6d2ed4;--pl:rgba(109,46,212,.08);
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text)}
-
 .deck{width:100%;height:100dvh;overflow:hidden}
 .slides{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1);will-change:transform}
-
-/* Each slide fits viewport exactly — no scroll needed */
-.slide{
-  min-width:100vw;height:100dvh;
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  padding:clamp(20px,4vw,48px) clamp(20px,5vw,64px) 68px;
-  overflow:hidden;
-}
+.slide{min-width:100vw;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(20px,4vw,48px) clamp(20px,5vw,64px) 68px;overflow:hidden}
 .si{width:100%;max-width:800px;display:flex;flex-direction:column;align-items:center;gap:0}
-
-/* NAV */
-.nav{
-  position:fixed;bottom:0;left:0;right:0;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-top:1px solid var(--border);
-  padding:8px 16px env(safe-area-inset-bottom,4px);
-  z-index:100;
-}
-.nbtn{
-  width:38px;height:38px;border-radius:50%;
-  border:1.5px solid #ccc;background:var(--white);
-  color:var(--text);font-size:20px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .15s;flex-shrink:0;
-}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:8px 16px env(safe-area-inset-bottom,4px);z-index:100}
+.nbtn{width:38px;height:38px;border-radius:50%;border:1.5px solid #ccc;background:var(--white);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}
 .nbtn:disabled{opacity:.2;cursor:default}
 .dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:55vw}
 .dot{width:6px;height:6px;border-radius:50%;background:#ccc;cursor:pointer;transition:all .2s;flex-shrink:0}
 .dot.on{background:var(--teal);width:18px;border-radius:3px}
 .cnt{font-size:11px;color:var(--light);min-width:32px;text-align:center;flex-shrink:0}
-
-/* SHARED TYPOGRAPHY — generous sizing */
 .label{display:inline-block;font-size:11px;font-weight:900;letter-spacing:2px;padding:5px 14px;border-radius:3px;text-transform:uppercase;margin-bottom:clamp(10px,2vw,18px)}
 .h1{font-size:clamp(26px,5.5vw,40px);font-weight:900;line-height:1.3;text-align:center;margin-bottom:clamp(10px,2vw,16px)}
-.h2{font-size:clamp(22px,4.5vw,32px);font-weight:900;line-height:1.35;text-align:center;margin-bottom:clamp(8px,1.5vw,12px)}
 .lead{font-size:clamp(16px,3vw,20px);color:var(--dim);text-align:center;line-height:1.7;margin-bottom:clamp(20px,3vw,32px)}
-.body{font-size:clamp(16px,3vw,19px);line-height:1.85;color:var(--text)}
-.body strong{font-weight:700}
 .body-dim{font-size:clamp(15px,2.5vw,17px);line-height:1.85;color:var(--dim)}
 .body-dim strong{color:var(--text);font-weight:700}
-
-/* BIG NUMBER */
 .bnum{font-size:clamp(52px,12vw,88px);font-weight:900;line-height:1}
 .bunit{font-size:clamp(18px,4vw,26px);font-weight:400}
-
-/* CARD */
 .card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:clamp(20px,4vw,32px) clamp(20px,4vw,36px);width:100%;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 .card-l{border-left:5px solid}
-
-/* LIST */
-.pts{display:flex;flex-direction:column;gap:clamp(12px,2vw,16px);width:100%}
-.pt{display:flex;align-items:flex-start;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:clamp(14px,3vw,20px) clamp(16px,3vw,24px);box-shadow:0 1px 5px rgba(0,0,0,.04)}
-.pt-icon{font-size:clamp(22px,4vw,28px);flex-shrink:0;margin-top:2px}
-.pt-body{font-size:clamp(15px,2.8vw,18px);line-height:1.8;color:var(--text)}
+.pts{display:flex;flex-direction:column;gap:clamp(10px,2vw,14px);width:100%}
+.pt{display:flex;align-items:flex-start;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:clamp(12px,2.5vw,18px) clamp(14px,3vw,22px);box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.pt-icon{font-size:clamp(20px,3.5vw,26px);flex-shrink:0;margin-top:2px}
+.pt-body{font-size:clamp(14px,2.8vw,17px);line-height:1.8;color:var(--text)}
 .pt-body strong{font-weight:700}
-
-/* BEFORE/AFTER */
+.pt-sub{font-size:clamp(12px,2.2vw,14px);color:var(--dim);margin-top:4px;display:block;line-height:1.6}
 .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;align-items:center}
-@media(max-width:540px){.ba{grid-template-columns:1fr;}.ba-arr{transform:rotate(90deg);padding:6px 0!important;font-size:20px!important}}
-.ba-col{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:clamp(16px,3vw,24px);box-shadow:0 1px 5px rgba(0,0,0,.05)}
-.ba-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.ba-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border);gap:8px}
+@media(max-width:540px){.ba{grid-template-columns:1fr}.ba-arr{transform:rotate(90deg);padding:6px 0!important;font-size:20px!important}}
+.ba-col{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:clamp(14px,3vw,22px);box-shadow:0 1px 5px rgba(0,0,0,.05)}
+.ba-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.ba-row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--border);gap:8px}
 .ba-row:last-child{border-bottom:none}
-.ba-item{font-size:clamp(13px,2.5vw,15px);color:var(--dim)}
-.ba-val{font-size:clamp(13px,2.5vw,16px);font-weight:800;white-space:nowrap}
-.ba-arr{display:flex;align-items:center;justify-content:center;padding:0 14px;font-size:28px;color:var(--teal)}
-
-/* NOTE BAR */
-.nbar{border-radius:12px;padding:clamp(12px,2vw,16px) clamp(16px,3vw,24px);font-size:clamp(14px,2.5vw,16px);font-weight:700;text-align:center;width:100%;margin-top:clamp(14px,2vw,20px);line-height:1.6}
-
-/* CHIPS */
-.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:clamp(16px,2.5vw,24px)}
+.ba-item{font-size:clamp(12px,2.3vw,14px);color:var(--dim)}
+.ba-val{font-size:clamp(13px,2.5vw,15px);font-weight:800;white-space:nowrap}
+.ba-arr{display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:26px;color:var(--teal)}
+.nbar{border-radius:12px;padding:clamp(12px,2vw,16px) clamp(16px,3vw,24px);font-size:clamp(13px,2.5vw,15px);font-weight:700;text-align:center;width:100%;margin-top:clamp(12px,2vw,18px);line-height:1.6}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:clamp(14px,2.5vw,22px)}
 .chip{border-radius:20px;padding:7px 16px;font-size:clamp(12px,2.5vw,14px);font-weight:600}
-
-/* PHASE GRID */
 .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;width:100%}
-.ph{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:clamp(14px,2.5vw,20px) 14px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.ph{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:clamp(12px,2.5vw,18px) 14px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
 .ph.now{border-color:var(--teal);background:var(--tl)}
 .ph-num{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--light);margin-bottom:5px}
 .ph-date{font-size:12px;color:var(--teal);font-weight:700;background:var(--tl);padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
 .ph-name{font-size:clamp(13px,2.5vw,15px);font-weight:800;margin-bottom:5px}
 .ph-detail{font-size:clamp(11px,2vw,13px);color:var(--dim);line-height:1.65}
+.sch{display:flex;flex-direction:column;gap:6px;width:100%}
+.sch-item{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:clamp(10px,2vw,14px) clamp(14px,3vw,20px);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.sch-time{font-size:clamp(11px,2vw,13px);font-weight:700;color:var(--dim);min-width:clamp(48px,9vw,64px);flex-shrink:0;text-align:right;line-height:1.4}
+.sch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sch-content{flex:1}
+.sch-title{font-size:clamp(14px,2.6vw,16px);font-weight:700;margin-bottom:2px}
+.sch-sub{font-size:clamp(11px,2vw,13px);color:var(--dim);line-height:1.5}
+.sch-sep{display:flex;align-items:center;gap:8px;padding:2px 0;font-size:clamp(10px,1.8vw,12px);color:var(--light)}
+.sch-sep::before,.sch-sep::after{content:'';flex:1;height:1px;background:var(--border)}
 </style>
 </head>
 <body>
@@ -146,18 +113,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">件数が増えるのに<br><span style="color:var(--coral)">事務処理が追いつかない</span></div>
   <div class="card card-l" style="border-color:var(--coral)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">📈</span>
-        <span class="pt-body">年間葬儀件数が<strong>約2,500件</strong>（10年前より+700件）まで増加</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">👥</span>
-        <span class="pt-body">クレーム対応・社内承認文書が他部門と比べ突出して多い</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">📋</span>
-        <span class="pt-body">経理人員を<strong>2名→5〜6名</strong>に増員しても追いつかない</span>
-      </div>
+      <div class="pt"><span class="pt-icon">📈</span><span class="pt-body">年間葬儀件数が<strong>約2,500件</strong>（10年前より+700件）まで増加</span></div>
+      <div class="pt"><span class="pt-icon">👥</span><span class="pt-body">クレーム対応・社内承認文書が他部門と比べ突出して多い</span></div>
+      <div class="pt"><span class="pt-icon">📋</span><span class="pt-body">経理人員を<strong>2名→5〜6名</strong>に増員しても追いつかない</span></div>
     </div>
   </div>
 </div>
@@ -170,18 +128,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">事務に人を取られ<br><span style="color:var(--amber)">接客に人が割けない</span></div>
   <div class="card card-l" style="border-color:var(--amber)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">⚖️</span>
-        <span class="pt-body">売上・件数増加に対して<strong>事務系人員が増え続ける</strong>悪循環</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">😔</span>
-        <span class="pt-body">本来重要な<strong>接客・遺族対応</strong>へのリソース配分ができていない</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">📄</span>
-        <span class="pt-body">紙の請求書処理・売上紐付けが<strong>いまだ手作業で残存</strong></span>
-      </div>
+      <div class="pt"><span class="pt-icon">⚖️</span><span class="pt-body">売上・件数増加に対して<strong>事務系人員が増え続ける</strong>悪循環</span></div>
+      <div class="pt"><span class="pt-icon">😔</span><span class="pt-body">本来重要な<strong>接客・遺族対応</strong>へのリソース配分ができていない</span></div>
+      <div class="pt"><span class="pt-icon">📄</span><span class="pt-body">紙の請求書処理・売上紐付けが<strong>いまだ手作業で残存</strong></span></div>
     </div>
   </div>
 </div>
@@ -194,18 +143,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">働き方改革で<br><span style="color:var(--blue)">月10日休暇が必須に</span></div>
   <div class="card card-l" style="border-color:var(--blue)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">🗓️</span>
-        <span class="pt-body">以前は月2〜3日休み → 現在は<strong>月10日取得が必要</strong></span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🔴</span>
-        <span class="pt-body"><strong>件数増加 × 人員不足 × 労働時間制限</strong>の三重苦が深刻化</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🚫</span>
-        <span class="pt-body">「人を増やして対応する」モデルは<strong>もう限界</strong></span>
-      </div>
+      <div class="pt"><span class="pt-icon">🗓️</span><span class="pt-body">以前は月2〜3日休み → 現在は<strong>月10日取得が必要</strong></span></div>
+      <div class="pt"><span class="pt-icon">🔴</span><span class="pt-body"><strong>件数増加 × 人員不足 × 労働時間制限</strong>の三重苦が深刻化</span></div>
+      <div class="pt"><span class="pt-icon">🚫</span><span class="pt-body">「人を増やして対応する」モデルは<strong>もう限界</strong></span></div>
     </div>
   </div>
 </div>
@@ -217,9 +157,7 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div style="font-size:clamp(48px,10vw,72px);margin-bottom:16px">💡</div>
   <div class="h1" style="color:var(--teal)">この3つの課題、<br>AIで解決できます</div>
   <div class="lead">「人を増やす」ではなく<br>「業務の仕組みを変える」アプローチで解決します</div>
-  <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">
-    次のスライドで、それぞれの解決策をお見せします →
-  </div>
+  <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">次のスライドで、それぞれの解決策をお見せします →</div>
 </div>
 </div>
 
@@ -227,22 +165,22 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策 1</span>
-  <div class="h1">書類処理時間を<br><span style="color:var(--teal)">80% 削減</span></div>
+  <div class="h1">書類処理の時間を<br><span style="color:var(--teal)">大幅に短縮できます</span></div>
   <div class="ba">
     <div class="ba-col" style="border-top:3px solid var(--coral)">
       <div class="ba-lbl" style="color:var(--coral)">🔴 現状</div>
       <div class="ba-row"><span class="ba-item">1件あたり</span><span class="ba-val" style="color:var(--coral)">30〜60分</span></div>
-      <div class="ba-row"><span class="ba-item">年間工数</span><span class="ba-val" style="color:var(--coral)">約2,000時間</span></div>
+      <div class="ba-row"><span class="ba-item">年間工数</span><span class="ba-val" style="color:var(--coral)">1,500〜2,000時間</span></div>
     </div>
     <div class="ba-arr">→</div>
     <div class="ba-col" style="border-top:3px solid var(--teal)">
-      <div class="ba-lbl" style="color:var(--teal)">🟢 AI導入後</div>
-      <div class="ba-row"><span class="ba-item">1件あたり</span><span class="ba-val" style="color:var(--teal)">5〜10分</span></div>
-      <div class="ba-row"><span class="ba-item">年間工数</span><span class="ba-val" style="color:var(--teal)">約400時間</span></div>
+      <div class="ba-lbl" style="color:var(--teal)">🟢 AI活用後</div>
+      <div class="ba-row"><span class="ba-item">1件あたり</span><span class="ba-val" style="color:var(--teal)">10〜20分</span></div>
+      <div class="ba-row"><span class="ba-item">年間工数</span><span class="ba-val" style="color:var(--teal)">600〜800時間</span></div>
     </div>
   </div>
   <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">
-    ✅ 年間<strong style="font-size:1.2em">1,600時間</strong>の削減 ＝ スタッフ約1名分の工数
+    ✅ 年間<strong style="font-size:1.15em">600〜800時間超</strong>の削減効果が見込まれます
   </div>
 </div>
 </div>
@@ -251,21 +189,12 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策 2</span>
-  <div class="h1">請求書・経理処理を<br><span style="color:var(--teal)">手作業ゼロ</span>に</div>
+  <div class="h1">請求書・経理処理を<br><span style="color:var(--teal)">自動化・効率化</span>へ</div>
   <div class="card card-l" style="border-color:var(--teal)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">📷</span>
-        <span class="pt-body">紙の請求書を<strong>スキャンするだけ</strong>でAIが読み取り・分類・紐付けを自動実行</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">👩‍💼</span>
-        <span class="pt-body">経理<strong>2〜3名分の工数</strong>を削減し、接客・遺族対応へ人員を再配置できる</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">💰</span>
-        <span class="pt-body">人件費換算で<strong>年間400〜600万円</strong>の削減効果</span>
-      </div>
+      <div class="pt"><span class="pt-icon">📷</span><span class="pt-body">紙の請求書を<strong>スキャンするだけ</strong>でAIが読み取り・分類・紐付けを自動実行</span></div>
+      <div class="pt"><span class="pt-icon">👩‍💼</span><span class="pt-body">経理スタッフの<strong>手作業を大幅に削減</strong>し、接客・遺族対応へ人員を再配置できる</span></div>
+      <div class="pt"><span class="pt-icon">💰</span><span class="pt-body">人件費換算で<strong>年間100〜200万円規模</strong>の削減効果が期待できます</span></div>
     </div>
   </div>
 </div>
@@ -278,18 +207,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">打合せの議事録・提案書を<br><span style="color:var(--teal)">30分以内</span>に自動作成</div>
   <div class="card card-l" style="border-color:var(--teal)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">🎤</span>
-        <span class="pt-body">打合せを<strong>録音するだけ</strong>でAIが議事録・提案書を自動生成</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">⚡</span>
-        <span class="pt-body">打合せ後<strong>30分以内に先方へ提案書を送付</strong>できる（従来は翌日以降）</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🏆</span>
-        <span class="pt-body">「対応の速さ・丁寧さ」で<strong>競合との差別化</strong>に直結する</span>
-      </div>
+      <div class="pt"><span class="pt-icon">🎤</span><span class="pt-body">打合せを<strong>録音するだけ</strong>でAIが議事録・提案書を自動生成</span></div>
+      <div class="pt"><span class="pt-icon">⚡</span><span class="pt-body">打合せ後<strong>30分以内に先方へ提案書を送付</strong>できる（従来は翌日以降）</span></div>
+      <div class="pt"><span class="pt-icon">🏆</span><span class="pt-body">「対応の速さ・丁寧さ」で<strong>競合との差別化</strong>に直結する</span></div>
     </div>
   </div>
 </div>
@@ -299,7 +219,7 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策 4</span>
-  <div class="h1">イベント事務の工数を<br><span style="color:var(--teal)">75% 削減</span></div>
+  <div class="h1">イベント事務の工数を<br><span style="color:var(--teal)">大幅に削減</span></div>
   <div class="ba">
     <div class="ba-col" style="border-top:3px solid var(--coral)">
       <div class="ba-lbl" style="color:var(--coral)">🔴 現状</div>
@@ -307,15 +227,12 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
     </div>
     <div class="ba-arr">→</div>
     <div class="ba-col" style="border-top:3px solid var(--teal)">
-      <div class="ba-lbl" style="color:var(--teal)">🟢 AI導入後</div>
-      <div class="ba-row"><span class="ba-item">1イベントの事務</span><span class="ba-val" style="color:var(--teal)">3〜5時間</span></div>
+      <div class="ba-lbl" style="color:var(--teal)">🟢 AI活用後</div>
+      <div class="ba-row"><span class="ba-item">1イベントの事務</span><span class="ba-val" style="color:var(--teal)">8〜10時間</span></div>
     </div>
   </div>
   <div class="card" style="margin-top:14px;border-left:5px solid var(--teal)">
-    <div class="body-dim">
-      企画立案 → 案内文作成 → 申込受付 → 当日管理 → 集計報告まで<br>
-      <strong>全工程をデジタル化・自動化</strong>。人的ミスも大幅に減少。
-    </div>
+    <div class="body-dim">企画立案 → 案内文作成 → 申込受付 → 当日管理 → 集計報告まで<br><strong>繰り返し作業をデジタル化</strong>。担当者の負担を継続的に軽減します。</div>
   </div>
 </div>
 </div>
@@ -328,15 +245,15 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="pts" style="gap:10px">
     <div class="pt">
       <span class="pt-icon">⏱</span>
-      <span class="pt-body">年間工数削減：<strong style="color:var(--teal);font-size:1.15em">1,600時間</strong>（スタッフ約1名分）</span>
+      <span class="pt-body">年間工数削減：<strong style="color:var(--teal);font-size:1.1em">数百時間規模</strong><br><span style="font-size:.9em;color:var(--dim)">業務内容・規模によって変動しますが、確実に効果が出ます</span></span>
     </div>
     <div class="pt">
       <span class="pt-icon">💴</span>
-      <span class="pt-body">人件費換算削減：<strong style="color:var(--green);font-size:1.15em">400〜600万円/年</strong></span>
+      <span class="pt-body">人件費換算：<strong style="color:var(--green);font-size:1.1em">100〜300万円/年規模</strong><br><span style="font-size:.9em;color:var(--dim)">どの業務からAI化するかで変わります。まず試して判断できます</span></span>
     </div>
     <div class="pt">
       <span class="pt-icon">📊</span>
-      <span class="pt-body">投資回収：削減効果の<strong style="color:var(--blue);font-size:1.15em">1%以下</strong>の初期投資で体感できる</span>
+      <span class="pt-body"><strong style="color:var(--blue)">「使える」実感</strong>を幹部全員で持ち帰るための<br>最小コストの初期投資です</span>
     </div>
   </div>
 </div>
@@ -348,9 +265,7 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div style="font-size:clamp(52px,10vw,72px);margin-bottom:16px">⚠️</div>
   <div class="h1" style="color:#fff">逆に、<br><span style="color:#f87171">何もしなかったら？</span></div>
   <div class="lead" style="color:rgba(255,255,255,.5)">AI対応を先送りにした場合に<br>起こりうる未来をお伝えします</div>
-  <div class="nbar" style="background:rgba(224,48,48,.15);border:1px solid rgba(224,48,48,.3);color:#f87171">
-    これは脅しではなく、業界で実際に起きていることです
-  </div>
+  <div class="nbar" style="background:rgba(224,48,48,.15);border:1px solid rgba(224,48,48,.3);color:#f87171">これは脅しではなく、業界で実際に起きていることです</div>
 </div>
 </div>
 
@@ -361,18 +276,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">人件費だけが<br><span style="color:var(--coral)">膨らみ続ける</span></div>
   <div class="card card-l" style="border-color:var(--coral)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">📉</span>
-        <span class="pt-body">AI活用企業は<strong>同じ人数で2〜3倍の処理</strong>ができるようになっていく</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">💸</span>
-        <span class="pt-body">対応しない企業は件数が増えるたびに<strong>採用コストが増加し続ける</strong></span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">📊</span>
-        <span class="pt-body">利益率の格差が年々拡大し、<strong>コスト競争で勝てなくなる</strong></span>
-      </div>
+      <div class="pt"><span class="pt-icon">📉</span><span class="pt-body">AI活用企業は<strong>同じ人数で1.5〜2倍の処理</strong>ができるようになっていく</span></div>
+      <div class="pt"><span class="pt-icon">💸</span><span class="pt-body">対応しない企業は件数が増えるたびに<strong>採用コストが増加し続ける</strong></span></div>
+      <div class="pt"><span class="pt-icon">📊</span><span class="pt-body">利益率の格差が徐々に拡大し、<strong>コスト競争で不利な立場になる</strong></span></div>
     </div>
   </div>
 </div>
@@ -385,18 +291,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">競合他社に<br><span style="color:var(--coral)">顧客体験で負ける</span></div>
   <div class="card card-l" style="border-color:var(--coral)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">⚡</span>
-        <span class="pt-body">「打合せ当日に提案書が届く」「問い合わせに即日回答」が<strong>業界標準</strong>になっていく</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🏳️</span>
-        <span class="pt-body">手作業中心では<strong>遺族が求める「速さ・丁寧さ」に応えられなくなる</strong></span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">💔</span>
-        <span class="pt-body">信頼と選ばれる理由が<strong>競合に移っていく</strong></span>
-      </div>
+      <div class="pt"><span class="pt-icon">⚡</span><span class="pt-body">「打合せ当日に提案書が届く」「問い合わせに即日回答」が<strong>業界標準</strong>になっていく</span></div>
+      <div class="pt"><span class="pt-icon">🏳️</span><span class="pt-body">手作業中心では<strong>遺族が求める「速さ・丁寧さ」に応えにくくなる</strong></span></div>
+      <div class="pt"><span class="pt-icon">💔</span><span class="pt-body">信頼と選ばれる理由が<strong>競合に移っていく</strong></span></div>
     </div>
   </div>
 </div>
@@ -409,18 +306,9 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
   <div class="h1">優秀な若手が<br><span style="color:var(--coral)">離れていく</span></div>
   <div class="card card-l" style="border-color:var(--coral)">
     <div class="pts" style="gap:12px">
-      <div class="pt">
-        <span class="pt-icon">🚪</span>
-        <span class="pt-body">「なぜこれを手作業でやるのか」という疑問が積み重なり<strong>転職につながる</strong></span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🔍</span>
-        <span class="pt-body">就職先を選ぶ際に<strong>「AI活用できる環境か」</strong>を重視する世代が増加中</span>
-      </div>
-      <div class="pt">
-        <span class="pt-icon">🔁</span>
-        <span class="pt-body">採用しても定着せず、<strong>採用・教育コストが増え続ける</strong>悪循環に</span>
-      </div>
+      <div class="pt"><span class="pt-icon">🚪</span><span class="pt-body">「なぜこれを手作業でやるのか」という疑問が積み重なり<strong>転職につながる</strong></span></div>
+      <div class="pt"><span class="pt-icon">🔍</span><span class="pt-body">就職先を選ぶ際に<strong>「AI活用できる環境か」</strong>を重視する世代が増加中</span></div>
+      <div class="pt"><span class="pt-icon">🔁</span><span class="pt-body">採用しても定着せず、<strong>採用・教育コストが増え続ける</strong>悪循環に</span></div>
     </div>
   </div>
 </div>
@@ -435,18 +323,16 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
     <div class="ba-col" style="border-top:3px solid var(--teal);text-align:center">
       <div class="ba-lbl" style="color:var(--teal)">🟢 今始めると</div>
       <div style="font-size:clamp(36px,7vw,52px);font-weight:900;color:var(--teal);margin:8px 0">3ヶ月</div>
-      <div style="font-size:clamp(14px,2.5vw,16px);color:var(--dim)">で習得完了</div>
+      <div style="font-size:clamp(13px,2.5vw,15px);color:var(--dim)">で習得完了</div>
     </div>
     <div class="ba-arr">vs</div>
     <div class="ba-col" style="border-top:3px solid var(--coral);text-align:center">
       <div class="ba-lbl" style="color:var(--coral)">🔴 2年後に始めると</div>
       <div style="font-size:clamp(36px,7vw,52px);font-weight:900;color:var(--coral);margin:8px 0">6ヶ月</div>
-      <div style="font-size:clamp(14px,2.5vw,16px);color:var(--dim)">以上かかる</div>
+      <div style="font-size:clamp(13px,2.5vw,15px);color:var(--dim)">以上かかる</div>
     </div>
   </div>
-  <div class="nbar" style="background:var(--cl);border:1.5px solid var(--cb);color:var(--coral)">
-    ⚠️ AI対応は「やるかやらないか」ではなく「いつやるか」の問題です
-  </div>
+  <div class="nbar" style="background:var(--cl);border:1.5px solid var(--cb);color:var(--coral)">⚠️ AI対応は「やるかやらないか」ではなく「いつやるか」の問題です</div>
 </div>
 </div>
 
@@ -464,7 +350,38 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 </div>
 </div>
 
-<!-- 18: PROGRAM Part1 -->
+<!-- 18: 幹部ベネフィット -->
+<div class="slide">
+<div class="si">
+  <span class="label" style="background:var(--gl);color:var(--gold);border:1px solid rgba(176,122,0,.3)">幹部の皆様が得るもの</span>
+  <div class="h1">AIを「任せる」から<br><span style="color:var(--gold)">「率いる」立場</span>へ</div>
+  <div class="pts" style="gap:10px">
+    <div class="pt">
+      <span class="pt-icon">🧭</span>
+      <div>
+        <div class="pt-body"><strong>AIの正否を自分で判断できる</strong>ようになる</div>
+        <span class="pt-sub">流行に流されず、本当に使えるものを見極める判断力が身につく</span>
+      </div>
+    </div>
+    <div class="pt">
+      <span class="pt-icon">💼</span>
+      <div>
+        <div class="pt-body"><strong>部下が安心して動けるようになる</strong></div>
+        <span class="pt-sub">「やってみて」ではなく「こう進めなさい」と具体的な指示が出せる。現場を動かすのはトップの言葉</span>
+      </div>
+    </div>
+    <div class="pt">
+      <span class="pt-icon">🏆</span>
+      <div>
+        <div class="pt-body"><strong>「AI推進を決断した経営者」になれる</strong></div>
+        <span class="pt-sub">取引先・採用候補者への印象が変わる。AI活用を判断できる幹部は、まだ少数派です</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 19: PROGRAM Part1 -->
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--bl);color:var(--blue);border:1px solid rgba(45,98,200,.25)">研修 Part 1 / 3 ｜ 60分</span>
@@ -480,7 +397,7 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 </div>
 </div>
 
-<!-- 19: PROGRAM Part2 -->
+<!-- 20: PROGRAM Part2 -->
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">研修 Part 2 / 3 ｜ 90分</span>
@@ -496,7 +413,7 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 </div>
 </div>
 
-<!-- 20: PROGRAM Part3 -->
+<!-- 21: PROGRAM Part3 -->
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--pl);color:var(--purple);border:1px solid rgba(109,46,212,.25)">研修 Part 3 / 3 ｜ 30分</span>
@@ -512,7 +429,54 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 </div>
 </div>
 
-<!-- 21: ROADMAP -->
+<!-- 22: SCHEDULE -->
+<div class="slide">
+<div class="si">
+  <span class="label" style="background:var(--bl);color:var(--blue);border:1px solid rgba(45,98,200,.25)">当日の流れ（案）</span>
+  <div class="h1">3時間の<span style="color:var(--teal)">タイムライン</span></div>
+  <div class="sch">
+    <div class="sch-item">
+      <div class="sch-time">〜10分</div>
+      <div class="sch-dot" style="background:var(--dim)"></div>
+      <div class="sch-content">
+        <div class="sch-title">オープニング・自己紹介</div>
+        <div class="sch-sub">本日のゴール確認。皆様のAI経験を簡単にヒアリング</div>
+      </div>
+    </div>
+    <div class="sch-sep">Part 1（60分）</div>
+    <div class="sch-item">
+      <div class="sch-time">〜70分</div>
+      <div class="sch-dot" style="background:var(--blue)"></div>
+      <div class="sch-content">
+        <div class="sch-title" style="color:var(--blue)">AIリテラシー基礎</div>
+        <div class="sch-sub">主要ツールを実際に操作。何ができるかを体感</div>
+      </div>
+    </div>
+    <div class="sch-sep">— 休憩 10分 —</div>
+    <div class="sch-sep">Part 2（90分）</div>
+    <div class="sch-item">
+      <div class="sch-time">〜150分</div>
+      <div class="sch-dot" style="background:var(--teal)"></div>
+      <div class="sch-content">
+        <div class="sch-title" style="color:var(--teal)">自社業務への落とし込みワーク</div>
+        <div class="sch-sub">貴社の実務を題材に、実際にAIで動かしてみる</div>
+      </div>
+    </div>
+    <div class="sch-sep">Part 3（30分）</div>
+    <div class="sch-item">
+      <div class="sch-time">〜180分</div>
+      <div class="sch-dot" style="background:var(--purple)"></div>
+      <div class="sch-content">
+        <div class="sch-title" style="color:var(--purple)">推進ロードマップ策定 ＋ Q&amp;A</div>
+        <div class="sch-sub">月曜日から何をするか決めて終了。疑問はその場で解消</div>
+      </div>
+    </div>
+  </div>
+  <div class="nbar" style="background:var(--bl);border:1px solid rgba(45,98,200,.2);color:var(--blue);font-weight:400">※時間は目安です。当日の状況に合わせて柔軟に調整します</div>
+</div>
+</div>
+
+<!-- 23: ROADMAP -->
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--grl);color:var(--green);border:1px solid rgba(30,138,82,.25)">継続支援</span>
@@ -543,13 +507,11 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
       <div class="ph-detail">社内推進担当を育成</div>
     </div>
   </div>
-  <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">
-    各フェーズに合わせた継続サポートプランをご用意しています
-  </div>
+  <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">各フェーズに合わせた継続サポートプランをご用意しています</div>
 </div>
 </div>
 
-<!-- 22: CTA -->
+<!-- 24: CTA -->
 <div class="slide">
 <div class="si">
   <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">まずはここから</span>
