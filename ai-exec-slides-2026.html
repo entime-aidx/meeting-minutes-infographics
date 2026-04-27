@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI活用戦略提案｜メモリード様</title>
+<title>AI活用戦略提案｜メモリード宮崎様</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -73,6 +73,24 @@
   .s3 .sol-body strong{color:var(--teal);font-weight:700}
   .s3-badge{margin-top:16px;background:var(--teal-l);border:1px solid var(--teal-b);border-radius:10px;padding:10px 20px;font-size:13px;color:var(--teal);font-weight:700;text-align:center;max-width:920px;width:100%}
 
+  /* S_ROI: 費用対効果 */
+  .sroi .roi-top{display:grid;grid-template-columns:1fr auto 1fr;gap:0;max-width:920px;width:100%;align-items:stretch;margin-bottom:16px}
+  .sroi .roi-col{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:22px 24px;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+  .sroi .roi-col.before{border-top:4px solid var(--coral)}
+  .sroi .roi-col.after{border-top:4px solid var(--teal)}
+  .sroi .roi-arrow{display:flex;align-items:center;justify-content:center;padding:0 14px;font-size:28px;color:var(--teal)}
+  .sroi .roi-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+  .sroi .roi-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border)}
+  .sroi .roi-row:last-child{border-bottom:none}
+  .sroi .roi-item{font-size:13px;color:var(--text-dim)}
+  .sroi .roi-val{font-size:14px;font-weight:800}
+  .sroi .roi-val.bad{color:var(--coral)}
+  .sroi .roi-val.good{color:var(--teal)}
+  .sroi .roi-bottom{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;max-width:920px;width:100%}
+  .sroi .metric{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,.05)}
+  .sroi .metric-num{font-size:32px;font-weight:900;line-height:1.1;margin:6px 0 4px}
+  .sroi .metric-label{font-size:12px;color:var(--text-dim);line-height:1.6}
+
   /* S4: RISK */
   .s4 .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:920px;width:100%}
   .s4 .risk{background:var(--white);border:1px solid var(--border);border-left:4px solid var(--coral);border-radius:12px;padding:18px 20px;box-shadow:0 1px 5px rgba(0,0,0,.05)}
@@ -127,7 +145,7 @@
   <div class="slide-title" style="max-width:700px">AI活用で変わる業務と<br>未来への投資戦略</div>
   <div class="slide-sub">前回のご相談をもとに、貴社に合わせたAI活用の<br>ロードマップをご提案します</div>
   <div class="s1-chips">
-    <span>🏢 メモリード株式会社 様</span>
+    <span>🏢 メモリード宮崎 様</span>
     <span>📅 2026年6月 幹部研修プログラム</span>
     <span>⏱ 3時間集中</span>
   </div>
@@ -137,7 +155,7 @@
 <div class="slide s2">
   <span class="tag" style="background:var(--amber-l);color:var(--amber);border:1px solid rgba(212,144,10,.3)">前回のご相談</span>
   <div class="slide-title">貴社が抱える<span style="color:var(--amber)">3つの課題</span></div>
-  <div class="slide-sub">前回の打合せでお聞きした、現場の「三重苦」を整理しました</div>
+  <div class="slide-sub">前回メモリード宮崎様との打合せでお聞きした、現場の「三重苦」を整理しました</div>
   <div class="pain-grid">
     <div class="pain" style="border-color:var(--coral)">
       <div class="pain-label" style="color:var(--coral)">課題 1 — 業務量</div>
@@ -199,6 +217,49 @@
     </div>
   </div>
   <div class="s3-badge">✅ AIが「事務作業を引き受ける」ことで、人の力を「接客・判断・関係構築」に集中させられます</div>
+</div>
+
+<!-- S_ROI: 費用対効果 -->
+<div class="slide sroi">
+  <span class="tag" style="background:var(--green-l);color:var(--green);border:1px solid rgba(46,158,106,.25)">ROI</span>
+  <div class="slide-title">AI導入で<span style="color:var(--teal)">何が・どれだけ変わるか</span></div>
+  <div class="slide-sub">貴社の実数値（年間2,500件・経理5〜6名）をもとに試算しました</div>
+  <div class="roi-top">
+    <div class="roi-col before">
+      <div class="roi-label" style="color:var(--coral)">🔴 現状（AI導入前）</div>
+      <div class="roi-row"><span class="roi-item">書類処理（1件あたり）</span><span class="roi-val bad">30〜60分</span></div>
+      <div class="roi-row"><span class="roi-item">年間書類処理工数</span><span class="roi-val bad">約2,000時間</span></div>
+      <div class="roi-row"><span class="roi-item">経理人員</span><span class="roi-val bad">5〜6名</span></div>
+      <div class="roi-row"><span class="roi-item">議事録・提案書作成</span><span class="roi-val bad">打合せ後1〜2日</span></div>
+      <div class="roi-row"><span class="roi-item">イベント1件の事務工数</span><span class="roi-val bad">15〜20時間</span></div>
+    </div>
+    <div class="roi-arrow">→</div>
+    <div class="roi-col after">
+      <div class="roi-label" style="color:var(--teal)">🟢 AI導入後</div>
+      <div class="roi-row"><span class="roi-item">書類処理（1件あたり）</span><span class="roi-val good">5〜10分</span></div>
+      <div class="roi-row"><span class="roi-item">年間書類処理工数</span><span class="roi-val good">約400時間（▲1,600h）</span></div>
+      <div class="roi-row"><span class="roi-item">経理人員</span><span class="roi-val good">2〜3名で対応可能</span></div>
+      <div class="roi-row"><span class="roi-item">議事録・提案書作成</span><span class="roi-val good">打合せ後30分以内</span></div>
+      <div class="roi-row"><span class="roi-item">イベント1件の事務工数</span><span class="roi-val good">3〜5時間（▲75%）</span></div>
+    </div>
+  </div>
+  <div class="roi-bottom">
+    <div class="metric">
+      <div class="metric-label">年間工数削減</div>
+      <div class="metric-num" style="color:var(--teal)">1,600<span style="font-size:16px;font-weight:400">時間</span></div>
+      <div class="metric-label">書類処理だけで<br>スタッフ約1名分に相当</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">人件費換算での削減効果</div>
+      <div class="metric-num" style="color:var(--green)">400〜<span style="font-size:22px">600</span><span style="font-size:16px;font-weight:400">万円</span></div>
+      <div class="metric-label">経理2〜3名分の<br>業務を自動化した場合</div>
+    </div>
+    <div class="metric">
+      <div class="metric-label">研修投資（初回）</div>
+      <div class="metric-num" style="color:var(--blue)">5<span style="font-size:16px;font-weight:400">万円</span></div>
+      <div class="metric-label">削減効果の約<strong style="color:var(--blue)">1%以下</strong>の投資で<br>変化を体感できる</div>
+    </div>
+  </div>
 </div>
 
 <!-- S4: RISK -->
