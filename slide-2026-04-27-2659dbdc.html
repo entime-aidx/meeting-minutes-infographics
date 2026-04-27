@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>後藤麻美 AI活用提案 2026-04-27</title>
+<style>
+:root{
+  --bg:#f4f5f9;--white:#fff;--border:#e0e2ed;
+  --text:#1a1a2e;--dim:#5a5a7a;--light:#9090b0;
+  --teal:#0a9e99;--tl:rgba(10,158,153,.1);--tb:rgba(10,158,153,.3);
+  --coral:#e03030;--cl:rgba(224,48,48,.08);--cb:rgba(224,48,48,.3);
+  --blue:#2d62c8;--bl:rgba(45,98,200,.08);
+  --gold:#b07a00;--gl:rgba(176,122,0,.1);
+  --green:#1e8a52;--grl:rgba(30,138,82,.08);
+  --amber:#c07800;--al:rgba(192,120,0,.1);
+  --purple:#6d2ed4;--pl:rgba(109,46,212,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text)}
+.deck{width:100%;height:100dvh;overflow:hidden}
+.slides{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1);will-change:transform}
+.slide{min-width:100vw;height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(20px,4vw,48px) clamp(20px,5vw,64px) 68px;overflow:hidden}
+.si{width:100%;max-width:800px;display:flex;flex-direction:column;align-items:center;gap:0}
+.nav{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:8px 16px env(safe-area-inset-bottom,4px);z-index:100}
+.nbtn{width:38px;height:38px;border-radius:50%;border:1.5px solid #ccc;background:var(--white);color:var(--text);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}
+.nbtn:disabled{opacity:.2;cursor:default}
+.dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:center;max-width:55vw}
+.dot{width:6px;height:6px;border-radius:50%;background:#ccc;cursor:pointer;transition:all .2s;flex-shrink:0}
+.dot.on{background:var(--teal);width:18px;border-radius:3px}
+.cnt{font-size:11px;color:var(--light);min-width:32px;text-align:center;flex-shrink:0}
+.label{display:inline-block;font-size:11px;font-weight:900;letter-spacing:2px;padding:5px 14px;border-radius:3px;text-transform:uppercase;margin-bottom:clamp(10px,2vw,18px)}
+.h1{font-size:clamp(26px,5.5vw,40px);font-weight:900;line-height:1.3;text-align:center;margin-bottom:clamp(10px,2vw,16px)}
+.lead{font-size:clamp(16px,3vw,20px);color:var(--dim);text-align:center;line-height:1.7;margin-bottom:clamp(20px,3vw,32px)}
+.body-dim{font-size:clamp(15px,2.5vw,17px);line-height:1.85;color:var(--dim)}
+.body-dim strong{color:var(--text);font-weight:700}
+.bnum{font-size:clamp(52px,12vw,88px);font-weight:900;line-height:1}
+.bunit{font-size:clamp(18px,4vw,26px);font-weight:400}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:clamp(20px,4vw,32px) clamp(20px,4vw,36px);width:100%;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.card-l{border-left:5px solid}
+.pts{display:flex;flex-direction:column;gap:clamp(10px,2vw,14px);width:100%}
+.pt{display:flex;align-items:flex-start;gap:14px;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:clamp(12px,2.5vw,18px) clamp(14px,3vw,22px);box-shadow:0 1px 5px rgba(0,0,0,.04)}
+.pt-icon{font-size:clamp(20px,3.5vw,26px);flex-shrink:0;margin-top:2px}
+.pt-body{font-size:clamp(14px,2.8vw,17px);line-height:1.8;color:var(--text)}
+.pt-body strong{font-weight:700}
+.pt-sub{font-size:clamp(12px,2.2vw,14px);color:var(--dim);margin-top:4px;display:block;line-height:1.6}
+.ba{display:grid;grid-template-columns:1fr auto 1fr;gap:0;width:100%;align-items:center}
+@media(max-width:540px){.ba{grid-template-columns:1fr}.ba-arr{transform:rotate(90deg);padding:6px 0!important;font-size:20px!important}}
+.ba-col{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:clamp(14px,3vw,22px);box-shadow:0 1px 5px rgba(0,0,0,.05)}
+.ba-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.ba-row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--border);gap:8px}
+.ba-row:last-child{border-bottom:none}
+.ba-item{font-size:clamp(12px,2.3vw,14px);color:var(--dim)}
+.ba-val{font-size:clamp(13px,2.5vw,15px);font-weight:800;white-space:nowrap}
+.ba-arr{display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:26px;color:var(--teal)}
+.nbar{border-radius:12px;padding:clamp(12px,2vw,16px) clamp(16px,3vw,24px);font-size:clamp(13px,2.5vw,15px);font-weight:700;text-align:center;width:100%;margin-top:clamp(12px,2vw,18px);line-height:1.6}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:clamp(14px,2.5vw,22px)}
+.chip{border-radius:20px;padding:7px 16px;font-size:clamp(12px,2.5vw,14px);font-weight:600}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;width:100%}
+.ph{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:clamp(12px,2.5vw,18px) 14px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.ph.now{border-color:var(--teal);background:var(--tl)}
+.ph-num{font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--light);margin-bottom:5px}
+.ph-date{font-size:12px;color:var(--teal);font-weight:700;background:var(--tl);padding:2px 8px;border-radius:8px;display:inline-block;margin-bottom:6px}
+.ph-name{font-size:clamp(13px,2.5vw,15px);font-weight:800;margin-bottom:5px}
+.ph-detail{font-size:clamp(11px,2vw,13px);color:var(--dim);line-height:1.65}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="deck">
+<div class="slides" id="slides">
+<div class="slide">
+  <div class="si" style="background:linear-gradient(135deg,#0c1a2e,#163352);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:100vh;">
+    <div class="h1" style="color:#fff;font-size:3.5rem;margin-bottom:30px;font-weight:700;letter-spacing:0.05em;">LARKを活用した<br>DX事業の急速成長戦略</div>
+    <div class="lead" style="color:rgba(255,255,255,.65);font-size:1.2rem;max-width:600px;">後藤麻美様<br>スクール・企業支援事業の売上最大化</div>
+    <div style="margin-top:60px;font-size:0.95rem;color:rgba(255,255,255,.45);">2026年4月27日</div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(245,108,96,.3);margin-bottom:30px;">課題1</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">ツール選定の曖昧さが<br>事業拡大を阻害</div>
+    <div class="card card-l" style="border-color:var(--coral);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">❓</span><span class="pt-body">CloudCodeとOpenClowのどちらを選ぶべきか判断がつかない</span></div>
+        <div class="pt"><span class="pt-icon">❓</span><span class="pt-body">両者の役割分担が不明確で戦略的な活用ができていない</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(245,108,96,.3);margin-bottom:30px;">課題2</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">複数ツール同時運用による<br>運用コストの増加リスク</div>
+    <div class="card card-l" style="border-color:var(--coral);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">⚠️</span><span class="pt-body">ツール重複による責任範囲の曖昧化</span></div>
+        <div class="pt"><span class="pt-icon">⚠️</span><span class="pt-body">監査・ログ設計の負担が増加</span></div>
+        <div class="pt"><span class="pt-icon">⚠️</span><span class="pt-body">ワークフロー複雑化による運用コスト増大</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(245,108,96,.3);margin-bottom:30px;">課題3</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">スクール・企業支援の<br>売上拡大の道筋が不透明</div>
+    <div class="card card-l" style="border-color:var(--coral);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">📊</span><span class="pt-body">マーケティング施策とツール選定の接点が不明</span></div>
+        <div class="pt"><span class="pt-icon">📊</span><span class="pt-body">CS（カスタマーサクセス）フォロー体制の最適設計が課題</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--tl);color:var(--teal);border:1px solid rgba(20,184,166,.3);margin-bottom:30px;">解決策1</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">事業目的別の<br>明確なツール選定基準</div>
+    <div class="card card-l" style="border-color:var(--teal);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">✅</span><span class="pt-body"><strong>エンジニア支援型</strong>：CloudCodeでコード生成・テスト自動化に特化</span></div>
+        <div class="pt"><span class="pt-icon">✅</span><span class="pt-body"><strong>業務自動化型</strong>：OpenClowで常駐型タスク管理・日常業務処理</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--tl);color:var(--teal);border:1px solid rgba(20,184,166,.3);margin-bottom:30px;">解決策2</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">ツール役割の明確な<br>切り分けとワークフロー統一</div>
+    <div class="card card-l" style="border-color:var(--teal);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">🎯</span><span class="pt-body">スクール事業は<strong>OpenClowメイン</strong>：自動化・業務処理に最適</span></div>
+        <div class="pt"><span class="pt-icon">🎯</span><span class="pt-body">企業構築支援は<strong>CloudCodeメイン</strong>：コード改修・テストに特化</span></div>
+        <div class="pt"><span class="pt-icon">🎯</span><span class="pt-body">責任範囲・監査ログを明確に整理し運用コストを削減</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--tl);color:var(--teal);border:1px solid rgba(20,184,166,.3);margin-bottom:30px;">解決策3</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2.2rem;">マーケティング×CS体制の<br>統合最適化</div>
+    <div class="card card-l" style="border-color:var(--teal);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">📢</span><span class="pt-body">ツール選定に基づくマーケティング施策の段階的展開</span></div>
+        <div class="pt"><span class="pt-icon">🤝</span><span class="pt-body">事業ごとのCS体制を設計し継続率・満足度向上</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;">
+    <div class="h1" style="color:#0c1a2e;margin-bottom:50px;font-size:2rem;">費用対効果：ツール最適化による<br>売上拡大シナリオ</div>
+    <div class="ba" style="margin-top:40px;">
+      <div class="ba-col" style="border-top:3px solid var(--coral)">
+        <div class="ba-lbl" style="color:var(--coral);font-weight:600;margin-bottom:25px;">🔴 現状（ツール選定曖昧）</div>
+        <div class="ba-row"><span class="ba-item">運用複雑度</span><span class="ba-val" style="color:var(--coral)">高い</span></div>
+        <div class="ba-row"><span class="ba-item">月間運用コスト</span><span class="ba-val" style="color:var(--coral)">高負荷</span></div>
+        <div class="ba-row"><span class="ba-item">事業成長率</span><span class="ba-val" style="color:var(--coral)">停滞傾向</span></div>
+        <div class="ba-row"><span class="ba-item">顧客満足度</span><span class="ba-val" style="color:var(--coral)">不安定</span></div>
+      </div>
+      <div class="ba-arr">→</div>
+      <div class="ba-col" style="border-top:3px solid var(--teal)">
+        <div class="ba-lbl" style="color:var(--teal);font-weight:600;margin-bottom:25px;">🟢 最適化後</div>
+        <div class="ba-row"><span class="ba-item">運用複雑度</span><span class="ba-val" style="color:var(--teal)">シンプル化</span></div>
+        <div class="ba-row"><span class="ba-item">月間運用コスト</span><span class="ba-val" style="color:var(--teal)">20%削減</span></div>
+        <div class="ba-row"><span class="ba-item">事業成長率</span><span class="ba-val" style="color:var(--teal)">加速</span></div>
+        <div class="ba-row"><span class="ba-item">顧客満足度</span><span class="ba-val" style="color:var(--teal)">向上</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="background:linear-gradient(135deg,#1a0505,#2d0a0a);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-height:100vh;">
+    <div class="label" style="background:rgba(255,0,0,.2);color:#ff6b6b;border:1px solid rgba(255,0,0,.4);margin-bottom:30px;">⚠️ リスク</div>
+    <div class="h1" style="color:#fff;margin-bottom:40px;font-size:2.2rem;">このまま曖昧なまま進めた場合の<br>リスク</div>
+    <div class="card card-l" style="border-color:#ff6b6b;background:rgba(255,0,0,.05);">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">🔴</span><span class="pt-body" style="color:#fff;"><strong style="color:#ff9999;">スクール・企業支援の差別化が進まず</strong>、競合との競争激化で売上伸び率が鈍化</span></div>
+        <div class="pt"><span class="pt-icon">🔴</span><span class="pt-body" style="color:#fff;"><strong style="color:#ff9999;">運用コスト増加が続き</strong>、利益率が圧迫される</span></div>
+        <div class="pt"><span class="pt-icon">🔴</span><span class="pt-body" style="color:#fff;"><strong style="color:#ff9999;">顧客サポートの品質低下</strong>により解約・クレーム増加</span></div>
+        <div class="pt"><span class="pt-icon">🔴</span><span class="pt-body" style="color:#fff;"><strong style="color:#ff9999;">事業判断の遅延</strong>が市場機会を逃す</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="label" style="background:var(--gl);color:var(--gold);border:1px solid rgba(192,120,0,.3);margin-bottom:30px;">提案内容</div>
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2rem;">DXツール統合最適化プログラム</div>
+    <div class="card card-l" style="border-color:var(--gold);margin-top:30px;">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">📋</span><span class="pt-body"><strong>Phase 1：現状診断</strong><br>事業別ニーズ、ツール利用状況の詳細把握</span></div>
+        <div class="pt"><span class="pt-icon">🎯</span><span class="pt-body"><strong>Phase 2：戦略設計</strong><br>CloudCode・OpenClow役割分担、切り分け戦略の立案</span></div>
+        <div class="pt"><span class="pt-icon">⚙️</span><span class="pt-body"><strong>Phase 3：実装・最適化</strong><br>ワークフロー統一、CS体制整備</span></div>
+        <div class="pt"><span class="pt-icon">📊</span><span class="pt-body"><strong>Phase 4：マーケティング連動</strong><br>売上拡大を見据えた段階的施策展開</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;">
+    <div class="h1" style="color:#0c1a2e;margin-bottom:40px;font-size:2rem;">期待される成果</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px;">
+      <div class="card card-l" style="border-color:var(--teal);">
+        <div style="color:var(--teal);font-weight:600;margin-bottom:15px;">🎯 即座の効果</div>
+        <div class="pts">
+          <div class="pt"><span class="pt-icon">✓</span><span class="pt-body">運用負荷20%削減</span></div>
+          <div class="pt"><span class="pt-icon">✓</span><span class="pt-body">意思決定の迅速化</span></div>
+        </div>
+      </div>
+      <div class="card card-l" style="border-color:var(--gold);">
+        <div style="color:var(--gold);font-weight:600;margin-bottom:15px;">📈 中期成果</div>
+        <div class="pts">
+          <div class="pt"><span class="pt-icon">✓</span><span class="pt-body">スクール・企業支援の差別化</span></div>
+          <div class="pt"><span class="pt-icon">✓</span><span class="pt-body">顧客満足度向上</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+    <div class="h1" style="color:#0c1a2e;margin-bottom:30px;font-size:2.2rem;">投資額・実施期間</div>
+    <div style="margin:60px 0;">
+      <div class="bnum" style="color:var(--teal);font-size:3rem;margin-bottom:20px;">120<span class="bunit">万円</span></div>
+      <div style="color:#666;font-size:1.1rem;margin-bottom:40px;">（初期診断・戦略設計・実装サポート一式）</div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal);margin:40px 0;font-size:1rem;padding:20px;">
+      実施期間：3ヶ月集中プログラム<br>
+      まずはPhase 1・2（初期2ヶ月）で全体像を確定
+    </div>
+    <div style="margin-top:60px;padding:30px;background:#f5f5f5;border-radius:8px;">
+      <div style="font-weight:600;color:#0c1a2e;margin-bottom:15px;">🎁 スターターパッケージ</div>
+      <div style="color:#666;font-size:0.95rem;">初回診断ドキュメント（事業別ツール選定レポート）無料提供<br>実装後の成果測定支援（3ヶ月フォローアップ）</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si" style="background:linear-gradient(135deg,#0c1a2e,#163352);padding:80px 60px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:100vh;">
+    <div class="h1" style="color:#fff;margin-bottom:50px;font-size:2.5rem;">今、始めるべき理由</div>
+    <div class="card card-l" style="border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05);max-width:700px;margin:0 auto;">
+      <div style="color:#fff;">
+        <div style="margin-bottom:30px;">
+          <div style="color:rgba(255,255,255,.7);font-weight:600;margin-bottom:10px;">✨ 市場動向</div>
+          <div style="color:rgba(255,255,255,.85);">DXツール活用による差別化が急速に進む中、戦略なき運用は競争力を失う</div>
+        </div>
+        <div style="margin-bottom:30px;">
+          <div style="color:rgba(255,255,255,.7);font-weight:600;margin-bottom:10px;">⚡ 売上機会</div>
+          <div style="color:rgba(255,255,255,.85);">明確なツール戦略があれば、スクール・企業支援の展開加速が見込める</div>
+        </div>
+        <div>
+          <div style="color:rgba(255,255,255,.7);font-weight:600;margin-bottom:10px;">🚀 実行推奨時期</div>
+          <div style="color:rgba(255,255,255,.85);">次四半期の新規営業開始を見据えた「今」が最適タイミング</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:80px;">
+      <div style="font-size:1.3rem;color:#fff;font-weight:700;margin-bottom:20px;">次のステップ：</div>
+      <div style="background:var(--teal);color:#fff;padding:20px 40px;border-radius:8px;display:inline-block;font-weight:600;font-size:1.1rem;cursor:pointer;">
+        無料初期診断を依頼する
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+<nav class="nav">
+  <button class="nbtn" id="prev">‹</button>
+  <div class="dots" id="dots"></div>
+  <button class="nbtn" id="next">›</button>
+  <div class="cnt" id="cnt"></div>
+</nav>
+<script>
+const slidesEl=document.getElementById('slides');
+const all=document.querySelectorAll('.slide');
+const total=all.length;
+const dotsEl=document.getElementById('dots');
+const cntEl=document.getElementById('cnt');
+const prev=document.getElementById('prev');
+const next=document.getElementById('next');
+let cur=0;
+for(let i=0;i<total;i++){const d=document.createElement('div');d.className='dot'+(i===0?' on':'');d.onclick=()=>go(i);dotsEl.appendChild(d);}
+function go(n){
+  cur=Math.max(0,Math.min(total-1,n));
+  slidesEl.style.transform=`translateX(-${cur*100}vw)`;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
+  cntEl.textContent=`${cur+1}/${total}`;
+  prev.disabled=cur===0;next.disabled=cur===total-1;
+}
+prev.onclick=()=>go(cur-1);next.onclick=()=>go(cur+1);
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='ArrowDown')go(cur+1);
+  if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(cur-1);
+});
+let tx=0,ty=0,sw=false;
+slidesEl.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;sw=false;},{passive:true});
+slidesEl.addEventListener('touchmove',e=>{const dx=Math.abs(e.touches[0].clientX-tx),dy=Math.abs(e.touches[0].clientY-ty);if(!sw&&dx>dy&&dx>10)sw=true;if(sw)e.preventDefault();},{passive:false});
+slidesEl.addEventListener('touchend',e=>{const dx=tx-e.changedTouches[0].clientX,dy=Math.abs(e.changedTouches[0].clientY-ty);if(sw&&Math.abs(dx)>40&&dy<80)go(cur+(dx>0?1:-1));});
+go(0);
+</script>
+</body>
+</html>
