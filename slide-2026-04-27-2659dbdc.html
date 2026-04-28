@@ -69,38 +69,214 @@ html,body{height:100%;overflow:hidden;font-family:'Noto Sans JP',sans-serif;back
 <body>
 <div class="deck">
 <div class="slides" id="slides">
-申し訳ありませんが、提供いただいた文字起こしは**商談や営業相談の内容ではなく、雑談や個人的な会話が大部分を占めており、明確なビジネス課題・提案内容が抽出できない状態**です。
+<div class="slide" style="background:linear-gradient(135deg,#0c1a2e,#163352)">
+  <div class="si">
+    <span class="label" style="background:var(--al);color:var(--amber);border:1px solid rgba(192,120,0,.3)">2026.04.27 提案書</span>
+    <div class="h1" style="color:#fff">後藤造園様<br>業務効率化・収益最大化<br>AI×Lark 導入提案</div>
+    <div class="lead" style="color:rgba(255,255,255,.55)">工事台帳・勤怠・粗利管理から新規事業まで——<br>アナログ運用をスマートに変える全体設計</div>
+    <div class="chips">
+      <span class="chip" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">年商1.5億円規模</span>
+      <span class="chip" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">造園業・公共＋民間</span>
+      <span class="chip" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">Lark 伴走支援</span>
+    </div>
+  </div>
+</div>
 
-具体的には：
-- 顧客の具体的な経営課題が不明確
-- 提案するAIソリューションが不明確
-- CloudCode/OpenClowの説明はありますが、後藤麻美さんへの提案との関連性が不明確
-- 年商1.5億という情報のみで、解決すべき課題が不明
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(180,60,60,.3)">課題① 工事台帳</span>
+    <div class="h1">工事台帳が「決算前の<br>一気まとめ」になっている</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">📋</span><span class="pt-body"><strong>日々入力ゼロ</strong>　「そろそろつけんと」と気づいた時に過去分をまとめて記入</span></div>
+      <div class="pt"><span class="pt-icon">✏️</span><span class="pt-body"><strong>紙の日報から手作業転記</strong>　誰が書くかも属人的でルール不在</span></div>
+      <div class="pt"><span class="pt-icon">🏛️</span><span class="pt-body"><strong>行政審査で必須提出</strong>　市・県の入札資格審査に契約書と台帳の照合が必要</span></div>
+    </div>
+    <div class="nbar" style="background:var(--cl);border:1px solid var(--cb);color:var(--coral)">「提出用だから適当」では経営判断に使えない。台帳を"経営の羅針盤"に変える必要がある。</div>
+  </div>
+</div>
 
-## スライド生成に必要な情報
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(180,60,60,.3)">課題② 現場管理</span>
+    <div class="h1">「今日どこ行くか」を<br>従業員が知らない</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">🪧</span><span class="pt-body"><strong>ホワイトボード＋タイムツリー</strong>　現場配置は前日口頭・ホワイトボードで管理、従業員は手元に何も持てない</span></div>
+      <div class="pt"><span class="pt-icon">🔄</span><span class="pt-body"><strong>剪定は1日5件以上の掛け持ち</strong>　午前中A邸→午後B邸など複雑な移動をどう日報に落とすか不明</span></div>
+      <div class="pt"><span class="pt-icon">💬</span><span class="pt-body"><strong>進捗・完成時期が事務方に届かない</strong>　「いつ入金できるか」を口頭で毎回確認する非効率が続いている</span></div>
+    </div>
+    <div class="nbar" style="background:var(--cl);border:1px solid var(--cb);color:var(--coral)">豊子さんは現場状況ゼロ把握。材料が先に来ても請求が出せない事態が常態化。</div>
+  </div>
+</div>
 
-以下を整理した上で、改めてご依頼ください：
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(180,60,60,.3)">課題③ 粗利・数字管理</span>
+    <div class="h1">現場ごとの粗利が<br>誰にも見えていない</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">💰</span><span class="pt-body"><strong>民間工事の利益率が肌感覚のみ</strong>　「3割残るはず」だが、実際に検証した記録がない</span></div>
+      <div class="pt"><span class="pt-icon">📦</span><span class="pt-body"><strong>材料ロスが年間100万規模の可能性</strong>　石材・芝・セメントの余り在庫が放置され、重複発注が繰り返される</span></div>
+      <div class="pt"><span class="pt-icon">🧾</span><span class="pt-body"><strong>請求書チェックがゼロ</strong>　「請求書が来たから払う」だけで、納品数量の照合は誰もしていない</span></div>
+    </div>
+    <div class="nbar" style="background:var(--cl);border:1px solid var(--cb);color:var(--coral)">数字で言えないから、従業員への指示も感覚頼み。目標設定も評価も機能しない。</div>
+  </div>
+</div>
 
-1. **顧客の状況**
-   - 後藤麻美さんの事業内容
-   - 現在の主な経営課題（売上向上？業務効率化？）
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--cl);color:var(--coral);border:1px solid rgba(180,60,60,.3)">課題④ 勤怠・人事</span>
+    <div class="h1">有給残日数も従業員が<br>自分で把握できない</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">📅</span><span class="pt-body"><strong>有給確認は麻美さんへの口頭問い合わせのみ</strong>　「私に聞かないとみんな分からない」状態</span></div>
+      <div class="pt"><span class="pt-icon">⏰</span><span class="pt-body"><strong>人工の計算が曖昧</strong>　半日・2時間などの端数対応ルールがなく、集計精度が低い</span></div>
+      <div class="pt"><span class="pt-icon">🧩</span><span class="pt-body"><strong>会社のルール自体が未整備</strong>　「仕組みがそもそもなってないから、そこからなんですよ」（麻美様の言葉）</span></div>
+    </div>
+    <div class="nbar" style="background:var(--cl);border:1px solid var(--cb);color:var(--coral)">若い社員が増えてきたからこそ、今が制度整備の最大のタイミング。</div>
+  </div>
+</div>
 
-2. **具体的な課題**
-   - 何が上手くいっていないのか
-   - どの業務に時間がかかっているのか
-   - 定量的な現状値（売上、作業時間、コスト等）
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策① 工事台帳</span>
+    <div class="h1">Larkで工事台帳を<br>「リアルタイム日次入力」へ</div>
+    <div class="ba">
+      <div class="ba-col" style="border-top:3px solid var(--coral)">
+        <div class="ba-lbl" style="color:var(--coral)">🔴 現状</div>
+        <div class="ba-row"><span class="ba-item">入力タイミング</span><span class="ba-val" style="color:var(--coral)">決算前に一括</span></div>
+        <div class="ba-row"><span class="ba-item">精度</span><span class="ba-val" style="color:var(--coral)">適当・漏れあり</span></div>
+        <div class="ba-row"><span class="ba-item">経営活用</span><span class="ba-val" style="color:var(--coral)">ほぼ不可</span></div>
+      </div>
+      <div class="ba-arr">→</div>
+      <div class="ba-col" style="border-top:3px solid var(--teal)">
+        <div class="ba-lbl" style="color:var(--teal)">🟢 Lark導入後</div>
+        <div class="ba-row"><span class="ba-item">入力タイミング</span><span class="ba-val" style="color:var(--teal)">毎日スマホから</span></div>
+        <div class="ba-row"><span class="ba-item">精度</span><span class="ba-val" style="color:var(--teal)">工事完了時8割完成</span></div>
+        <div class="ba-row"><span class="ba-item">経営活用</span><span class="ba-val" style="color:var(--teal)">粗利・人工がリアルタイムで可視化</span></div>
+      </div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">「セメント3個使った」と入力 → 後から500円×3を足すだけで台帳完成。印刷も可能。</div>
+  </div>
+</div>
 
-3. **提案内容**
-   - どのAI/ツール（CloudCode？OpenClow？LARK？）を提案するのか
-   - それでどう解決するのか
-   - 具体的な導入方法やフロー
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策② 現場配置</span>
+    <div class="h1">現場スケジュールを<br>全員がスマホで確認できる</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">📱</span><span class="pt-body"><strong>藤原さん・高山さんが前日に入力</strong>　「明日あなたはここ」をLarkに入れるだけで全員に共有</span></div>
+      <div class="pt"><span class="pt-icon">📊</span><span class="pt-body"><strong>案件一覧で進捗率が見える</strong>　元請け・担当者・開始〜終了予定・進捗%を一画面で管理（金本組モデルを応用）</span></div>
+      <div class="pt"><span class="pt-icon">💴</span><span class="pt-body"><strong>事務方が入金見通しを把握</strong>　豊子さん・さっちゃんが口頭確認しなくても、案件状況をリアルタイムで閲覧可能</span></div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">ホワイトボードとタイムツリーを1つのLark画面に統合。「今日どこ行くんだろう」がゼロになる。</div>
+  </div>
+</div>
 
-4. **費用感**
-   - 提案金額
-   - 導入期間
-   - ROI見込み
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策③ 粗利・数字</span>
+    <div class="h1">現場ごとの粗利を<br>「感覚」から「数字」へ</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">📈</span><span class="pt-body"><strong>人工コスト・材料費を日次で自動集計</strong>　1人工1万8千円×出動人数が自動計算され、現場の原価がリアルタイムに</span></div>
+      <div class="pt"><span class="pt-icon">🎯</span><span class="pt-body"><strong>目標粗利から使える人工数を逆算</strong>　「この50万の民間工事で3割残すなら何人工まで使えるか」が受注時点で分かる</span></div>
+      <div class="pt"><span class="pt-icon">🏆</span><span class="pt-body"><strong>件数・達成率で従業員評価に連動</strong>　金本組が導入中の人事考課チェックリストを後藤造園仕様にカスタマイズ</span></div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">「数字で言えると、俺も言いやすくなる」（圭介社長の言葉）——その環境をLarkが実現する。</div>
+  </div>
+</div>
 
-**整理した商談記録または要件定義書があればお知らせください。**
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">AI解決策④ 新規事業</span>
+    <div class="h1">ドッグラン×庭サンプル展示で<br>造園受注を自動創出</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">🐕</span><span class="pt-body"><strong>店舗裏の遊休地をドッグランに活用</strong>　Lステップで予約・リマインド・フォローを自動化。レジ決済のみシンプル運用</span></div>
+      <div class="pt"><span class="pt-icon">🌿</span><span class="pt-body"><strong>芝・石材・植栽のサンプル展示を兼用</strong>　「この雰囲気好き」と来場者が実物で選べる＝見積もり前の合意形成が激減</span></div>
+      <div class="pt"><span class="pt-icon">💼</span><span class="pt-body"><strong>犬の飼い主は購買力が高い層</strong>　ヤギパークが900万の仕事につながったモデルを造園業で再現</span></div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">集客→体験→造園受注の導線が一本化。「口で言っても分からない」をゼロにする。</div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--gl);color:var(--green);border:1px solid rgba(0,140,80,.3)">費用対効果</span>
+    <div class="h1">Lark伴走支援 vs<br>クラフトバンク 比較</div>
+    <div class="ba">
+      <div class="ba-col" style="border-top:3px solid var(--coral)">
+        <div class="ba-lbl" style="color:var(--coral)">クラフトバンク</div>
+        <div class="ba-row"><span class="ba-item">初期費用</span><span class="ba-val" style="color:var(--coral)">約280万円</span></div>
+        <div class="ba-row"><span class="ba-item">補助金後</span><span class="ba-val" style="color:var(--coral)">実質約93万円</span></div>
+        <div class="ba-row"><span class="ba-item">月次ランニング</span><span class="ba-val" style="color:var(--coral)">3年目以降 約5万円</span></div>
+        <div class="ba-row"><span class="ba-item">カスタマイズ</span><span class="ba-val" style="color:var(--coral)">出来上がり仕様に合わせる</span></div>
+      </div>
+      <div class="ba-arr">vs</div>
+      <div class="ba-col" style="border-top:3px solid var(--teal)">
+        <div class="ba-lbl" style="color:var(--teal)">Lark伴走支援</div>
+        <div class="ba-row"><span class="ba-item">伴走費用</span><span class="ba-val" style="color:var(--teal)">月15万×3ヶ月〜</span></div>
+        <div class="ba-row"><span class="ba-item">IT補助金</span><span class="ba-val" style="color:var(--teal)">活用検討可（令和8年度）</span></div>
+        <div class="ba-row"><span class="ba-item">月次ランニング</span><span class="ba-val" style="color:var(--teal)">約2,000円〜</span></div>
+        <div class="ba-row"><span class="ba-item">カスタマイズ</span><span class="ba-val" style="color:var(--teal)">後藤造園仕様に自由に変更可</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--gl);color:var(--green);border:1px solid rgba(0,140,80,.3)">導入効果イメージ</span>
+    <div class="h1">数字で見えると、<br>会社が変わる</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">💡</span><span class="pt-body"><strong>材料ロス削減</strong>　年間100万規模とも想定されるロスが、現場ごとの使用量可視化で徐々に圧縮</span></div>
+      <div class="pt"><span class="pt-icon">📋</span><span class="pt-body"><strong>工事台帳の作成工数が大幅削減</strong>　「決算前にブワーっとやる」作業が毎日5行入力に変わる</span></div>
+      <div class="pt"><span class="pt-icon">👥</span><span class="pt-body"><strong>従業員の自律性が向上</strong>　金本組では平均年齢54歳→39歳・4人→20人に成長。目標と評価が見えると人が動く</span></div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">同業・金本組の実績を後藤造園仕様にカスタマイズ。遠回りせず最短で成果へ。</div>
+  </div>
+</div>
+
+<div class="slide" style="background:linear-gradient(135deg,#1a0505,#2d0a0a)">
+  <div class="si">
+    <span class="label" style="background:var(--al);color:var(--amber);border:1px solid rgba(192,120,0,.3)">このまま何もしないリスク</span>
+    <div class="h1" style="color:#fff">「仕組みがないまま」では<br>会社の成長に限界が来る</div>
+    <div class="pts">
+      <div class="pt"><span class="pt-icon">⚠️</span><span class="pt-body" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">引き継ぎができない</strong>　「あの人がいないとゼロから」が続くと、辞めたくても辞めれない状態が固定化</span></div>
+      <div class="pt"><span class="pt-icon">💸</span><span class="pt-body" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">請求書チェックゼロのまま</strong>　「30個頼んだのに60個で請求されても誰も分からない」リスクが継続</span></div>
+      <div class="pt"><span class="pt-icon">🔄</span><span class="pt-body" style="color:rgba(255,255,255,.85)"><strong style="color:#fff">競合他社との差が広がる</strong>　金本組・黒原工業はすでにLarkで数値化・自動化を推進中</span></div>
+    </div>
+    <div class="nbar" style="background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.3);color:#ff8080">「うちは今のままでいい」という声が社内から出た時、変革の機会は一気に遠のく。</div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--tl);color:var(--teal);border:1px solid var(--tb)">提案プログラム</span>
+    <div class="h1">3ステップで<br>後藤造園をスマートに</div>
+    <div class="card card-l" style="border-color:var(--teal)">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">1️⃣</span><span class="pt-body"><strong>STEP1（1〜2ヶ月目）基盤構築</strong>　勤怠・有給管理 / 現場スケジュール共有 / 日報フォーマット設計。金本組・黒原工業への見学同行でベスト事例を収集</span></div>
+        <div class="pt"><span class="pt-icon">2️⃣</span><span class="pt-body"><strong>STEP2（3〜4ヶ月目）工事台帳・粗利管理</strong>　現場ごとの人工・材料費・粗利をLarkで自動集計。行政提出用の印刷フォーマットも整備</span></div>
+        <div class="pt"><span class="pt-icon">3️⃣</span><span class="pt-body"><strong>STEP3（5ヶ月目〜）拡張・新規事業</strong>　ドッグラン予約システム（Lステップ連携）/ 従業員評価制度 / 将来的な同業者へのパッケージ販売</span></div>
+      </div>
+    </div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">一度に全部ではなく、1つずつ確実に。現場が「楽になった」を実感してから次へ進む。</div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="si">
+    <span class="label" style="background:var(--al);color:var(--amber);border:1px solid rgba(192,120,0,.3)">費用・条件 / 次のアクション</span>
+    <div class="h1">まず3ヶ月、<br>一緒に動かしましょう</div>
+    <div class="card card-l" style="border-color:var(--gold)">
+      <div class="pts">
+        <div class="pt"><span class="pt-icon">💴</span><span class="pt-body"><strong>伴走支援費用</strong>　月15万円 × 3ヶ月（計45万円〜）／ IT導入補助金活用で実質負担を軽減可能</span></div>
+        <div class="pt"><span class="pt-icon">🛠️</span><span class="pt-body"><strong>Larkツール代</strong>　圭介さんのみ有料アカウント（月数百円〜）・他全員無料運用で月2,000円程度</span></div>
+        <div class="pt"><span class="pt-icon">🤝</span><span class="pt-body"><strong>まず金本組への見学設定</strong>　担当者から連絡を入れ、後藤様夫妻で実際のLark運用を確認いただく</span></div>
+      </div>
+    </div>
+    <div class="bnum" style="color:var(--teal)">月2,000<span class="bunit">円〜</span></div>
+    <div class="lead">クラフトバンクの月5万円ランニングと比べ、長期コストを大幅に抑えながら後藤造園専用の仕組みを構築</div>
+    <div class="nbar" style="background:var(--tl);border:1px solid var(--tb);color:var(--teal)">次のアクション → 金本組見学の日程調整 ＋ IT補助金申請スケジュールの確認</div>
+  </div>
+</div>
 </div>
 </div>
 <nav class="nav">
